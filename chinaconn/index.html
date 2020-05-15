@@ -185,22 +185,22 @@
 			'id': 'airports',
 			'source': 'airports',
 			'source-layer': 'airports-9c2ftn',
-			'type': 'circle',
-			// 'layout': {
-			// 	'icon-image': "airport-15",
-			// 	'icon-allow-overlap': true,
-			// 	'icon-size': [
-			// 	  "interpolate",
-			// 	  ["linear"],
-			// 	  ["zoom"],
-			// 	  0,
-			// 	  0.1,
-			// 	  22,
-			// 	  3
-			// 	]
-			// },
-			'paint': {},
-			'layout': {'visibility': 'visible'}
+			'type': 'symbol',
+			'layout': {
+				'icon-image': "airport-15",
+				'icon-allow-overlap': true,
+				'icon-size': [
+				  "interpolate",
+				  ["linear"],
+				  ["zoom"],
+				  0,
+				  0.1,
+				  22,
+				  3
+				],
+				'visibility': 'visible'
+			},
+			'paint': {}
 		}, 'admin-1-boundary-bg');
 
 
