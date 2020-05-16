@@ -91,7 +91,7 @@
 			#city {
 			  top: 0;
 			  right: 0;
-			  height: 200px;
+			  height: 170px;
 			  margin-top: 20px;
 			  width: 300px;
 			}
@@ -99,9 +99,10 @@
 			#features {
 /*			  top: 200;
 */			  right: 0;
-			  height: 300px;
-			  margin-top: 230px;
+			  height: 700px;
+			  margin-top: 200px;
 			  width: 300px;
+			  visibility: hidden;
 			}
 
 
@@ -131,15 +132,18 @@
 		<nav id='menu'></nav>
 		<div id='map'></div>
 		<div class='map-overlay' id='city'>
-			<h2>Beijing</h2>
-			<div id='pd'>
-				<p>Beijing, China’s sprawling capital, has history stretching back 3 millennia. Yet it’s known as much for modern architecture as its ancient sites such as the grand Forbidden City complex, the imperial palace during the Ming and Qing dynasties. Nearby, the massive Tiananmen Square pedestrian plaza is the site of Mao Zedong’s mausoleum and the National Museum of China, displaying a vast collection of cultural relics.</p>
+			<h2>北京, 北京
+			<br>Beijing, Beijing</h2>
+			<div>
+				<p>Population:
+				<br>GDP:
+				<br>GDP per capita:
+				<br>Average distance to national pop: <p>
+				<p><em>Hover over a county to see details</em></p>
 			</div>
 		</div>
 		<div class='map-overlay' id='features'>
-			<h2>Beijing</h2>
 			<div id='pd'>
-				<p>Beijing, China’s sprawling capital, has history stretching back 3 millennia. Yet it’s known as much for modern architecture as its ancient sites such as the grand Forbidden City complex, the imperial palace during the Ming and Qing dynasties. Nearby, the massive Tiananmen Square pedestrian plaza is the site of Mao Zedong’s mausoleum and the National Museum of China, displaying a vast collection of cultural relics.</p>
 			</div>
 		</div>
 		<div class='map-overlay' id='legend'></div>
@@ -181,7 +185,16 @@
 			'type': 'vector',
 			'url': 'mapbox://picrazy2.58502mjj'
 		});
-		map.addImage('airport-15', 'icons/airport-15.svg')
+		// var img1 = new Image();
+		// img1.src = 'https://raw.githubusercontent.com/mapbox/maki/a6d16d49a967b73d9379890a7b26712b12b8daef/icons/airport-15.svg';
+		// map.addImage('airport-15', img1);
+
+		// map.loadImage('https://raw.githubusercontent.com/mapbox/maki/a6d16d49a967b73d9379890a7b26712b12b8daef/icons/airport-15.svg',
+		// 	function(error, image) {
+		// 		if (error) throw error;
+		// 		map.addImage('airport-15', image);
+		// 	}
+		// )
 		map.addLayer({
 			'id': 'airports',
 			'source': 'airports',
@@ -404,6 +417,105 @@
 			}
 
         };
+
+
+        map.on('mousemove', function(e) {
+			var counties = map.queryRenderedFeatures(e.point, {
+				layers: ['beijing_dur', 'beijing_mode', 'beijing_rail_dur', 'beijing_car_dur', 'beijing_air_dur']
+			});
+
+
+			if (counties.length > 0) {
+				document.getElementById('features').style.visibility = 'visible';
+				var county_id = counties[0].properties.county_id
+				var province = counties[0].properties.province
+				var city = counties[0].properties.city
+				var county = counties[0].properties.county
+				var shortest_dur = counties[0].properties.Beijing_shortest_dur
+				var shortest_car = counties[0].properties.Beijing_car_dur
+				var shortest_air = counties[0].properties.Beijing_air_dur
+				var shortest_rail = counties[0].properties.Beijing_rail_dur
+
+				var rail_path = counties[0].properties.Beijing_rail_path.split(',')
+				var rail_durs = counties[0].properties.Beijing_rail_path_durs.split(',')
+				var rail_path_str = '&nbsp;&nbsp;&nbsp;&nbsp;Drive to <strong>'  + rail_path[0] + '</strong> (' + get_time_str(counties[0].properties.Beijing_rail_drive_origin_dur) + ')<br>'
+				for(var i = 0; i < rail_path.length-1; i++) {
+					rail_path_str += '<strong>&nbsp;&nbsp;&nbsp;&nbsp;' + rail_path[i] + '</strong> to <strong>' + rail_path[i+1] + '</strong> (' + get_time_str(rail_durs[i]) + ')<br>'
+				}
+				rail_path_str += '&nbsp;&nbsp;&nbsp;&nbsp;Drive to destination (' + get_time_str(counties[0].properties.Beijing_rail_drive_dest_dur) + ')'
+
+				var air_path = counties[0].properties.Beijing_air_path.split(',')
+				var air_durs = counties[0].properties.Beijing_air_path_durs.split(',')
+				var air_path_str = '&nbsp;&nbsp;&nbsp;&nbsp;Drive to <strong>'  + air_path[0] + '</strong> (' + get_time_str(counties[0].properties.Beijing_air_drive_origin_dur) + ')<br>'
+				for(var i = 0; i < air_path.length-1; i++) {
+					air_path_str += '<strong>&nbsp;&nbsp;&nbsp;&nbsp;' + air_path[i] + '</strong> to <strong>' + air_path[i+1] + '</strong> (' + get_time_str(air_durs[i]) + ')<br>'
+				}				
+				air_path_str += '&nbsp;&nbsp;&nbsp;&nbsp;Drive to destination: (' + get_time_str(counties[0].properties.Beijing_air_drive_dest_dur) + ')'
+
+				var data_quality_str = 'Missing '
+				var data_quality_arr = [counties[0].properties.Beijing_car_bool, 
+										counties[0].properties.Beijing_rail_drive_origin_bool, 
+										counties[0].properties.Beijing_rail_drive_dest_bool, 
+										counties[0].properties.Beijing_air_drive_origin_bool, 
+										counties[0].properties.Beijing_air_drive_dest_bool, 
+										]
+				var bad_counter = 0
+				for(var i = 0; i < data_quality_arr.length; i++) {
+					if(data_quality_arr[i] == false) {
+						bad_counter +=1
+					}
+				}
+				if(bad_counter == 0) {
+					data_quality_str = '<strong>Good</strong>'
+				} else if(bad_counter == data_quality_arr.length) {
+					data_quality_str = 'Missing all driving durations (used direct distance in some calculations)'
+				} else {
+					data_quality_str = 'Missing some but not all driving durations (used direct distance in some calculations'
+				}
+
+				function get_time(hours) {
+					return [Math.trunc(hours), Math.trunc(60 *(hours - Math.trunc(hours)))]
+				}
+				function get_time_str(hours) {
+					if(get_time(hours)[0] == 0) {
+						return get_time(hours)[1] + 'min'
+					} else {
+						return get_time(hours)[0] + 'h ' + get_time(hours)[1] + 'm'						
+					}
+				}
+
+				document.getElementById('pd').innerHTML = '<h3><strong>' + county_id + ' ' + province+ '<br>' + city + ' ' + county + '</strong></h3>'
+				+ '<p>'
+				+ '<em>Fastest mode: <strong>' + counties[0].properties.Beijing_shortest_mode + '</strong>'
+				+ '<br>Shortest duration from Beijing: ' + '<strong>' + get_time(shortest_dur)[0] + '</strong>hr <strong>' + get_time(shortest_dur)[1] + '</strong>min</em>'
+
+				+ '<br><br>By car: ' + '<strong>' + get_time(shortest_car)[0] + '</strong>hr <strong>' + get_time(shortest_car)[1] + '</strong>min'
+				+ '<br><br>Shortest rail path: ' + '<strong>' + get_time(shortest_rail)[0] + '</strong>hr <strong>' + get_time(shortest_rail)[1] + '</strong>min'
+				+ '<br>' + rail_path_str
+				+ '<br><br>Shortest air path: ' + '<strong>' + get_time(shortest_air)[0] + '</strong>hr <strong>' + get_time(shortest_air)[1] + '</strong>min'
+				+ '<br>' + air_path_str
+
+				+ '<br><br>Population: <strong>' + counties[0].properties.population + '</strong>'
+				+ '<br>Area: <strong>' + Math.round(counties[0].properties.area) + '</strong> km2'
+				+ '<br>Population density: <strong>' + Math.round(counties[0].properties.pop_density) + '</strong> people/km2'
+				+ '<br>Distance from Beijing: <strong>' + counties[0].properties.Beijing_sld + '</strong> km'	
+
+				+ '<br><br>Closest train stations (drive): '
+					+ '<strong>' + counties[0].properties.closest_rail_0_iata + '</strong> (' + get_time_str(counties[0].properties.closest_rail_0_dur) + '), '
+					+ '<strong>' + counties[0].properties.closest_rail_1_iata + '</strong> (' + get_time_str(counties[0].properties.closest_rail_1_dur) + '), '
+					+ '<strong>' + counties[0].properties.closest_rail_2_iata + '</strong> (' + get_time_str(counties[0].properties.closest_rail_2_dur) + ')'
+				+ '<br>Closest airports (drive): '
+					+ '<strong>' + counties[0].properties.closest_air_0_iata + '</strong> (' + get_time_str(counties[0].properties.closest_air_0_dur) + '), '
+					+ '<strong>' + counties[0].properties.closest_air_1_iata + '</strong> (' + get_time_str(counties[0].properties.closest_air_1_dur) + '), '
+					+ '<strong>' + counties[0].properties.closest_air_2_iata + '</strong> (' + get_time_str(counties[0].properties.closest_air_2_dur) + ')'
+
+				+ '<br><br>Driving data quality: ' + data_quality_str
+				+ '<br>Note: total rail and air path times take into account additional buffer and transfer times.'
+				+ '</p>';
+			} else {
+				document.getElementById('features').style.visibility = 'hidden';
+		  }
+		});
     }
 
 
