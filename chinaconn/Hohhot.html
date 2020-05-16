@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>ChinaConn</title>
+		<title>Connectivity of Hohhot</title>
 		<script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
 		<link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
 		<style>
@@ -15,19 +15,91 @@
 			h3 {
 			  margin: 10px;
 			  font-size: 1.2em;
+			  font-family: 'open_sansbold';
 			}
 
 			h3 {
 			  font-size: 1em;
+			  font-family: 'open_sansbold';
 			}
 
 			p {
 			  font-size: 0.85em;
 			  margin: 10px;
 			  text-align: left;
+			  font-family: 'open_sansregular';
 			}
 
-			
+			@font-face {
+			    font-family: 'open_sansbold';
+			    src: url('opensans-bold-webfont.woff2') format('woff2'),
+			         url('opensans-bold-webfont.woff') format('woff');
+			    font-weight: normal;
+			    font-style: normal;
+			}
+			@font-face {
+			    font-family: 'open_sansbold_italic';
+			    src: url('opensans-bolditalic-webfont.woff2') format('woff2'),
+			         url('opensans-bolditalic-webfont.woff') format('woff');
+			    font-weight: normal;
+			    font-style: normal;
+			}
+			@font-face {
+			    font-family: 'open_sansextrabold';
+			    src: url('opensans-extrabold-webfont.woff2') format('woff2'),
+			         url('opensans-extrabold-webfont.woff') format('woff');
+			    font-weight: normal;
+			    font-style: normal;
+			}
+			@font-face {
+			    font-family: 'open_sansextrabold_italic';
+			    src: url('opensans-extrabolditalic-webfont.woff2') format('woff2'),
+			         url('opensans-extrabolditalic-webfont.woff') format('woff');
+			    font-weight: normal;
+			    font-style: normal;
+			}
+			@font-face {
+			    font-family: 'open_sansitalic';
+			    src: url('opensans-italic-webfont.woff2') format('woff2'),
+			         url('opensans-italic-webfont.woff') format('woff');
+			    font-weight: normal;
+			    font-style: normal;
+			}
+			@font-face {
+			    font-family: 'open_sanslight';
+			    src: url('opensans-light-webfont.woff2') format('woff2'),
+			         url('opensans-light-webfont.woff') format('woff');
+			    font-weight: normal;
+			    font-style: normal;
+			}
+			@font-face {
+			    font-family: 'open_sanslight_italic';
+			    src: url('opensans-lightitalic-webfont.woff2') format('woff2'),
+			         url('opensans-lightitalic-webfont.woff') format('woff');
+			    font-weight: normal;
+			    font-style: normal;
+			}
+			@font-face {
+			    font-family: 'open_sansregular';
+			    src: url('opensans-regular-webfont.woff2') format('woff2'),
+			         url('opensans-regular-webfont.woff') format('woff');
+			    font-weight: normal;
+			    font-style: normal;
+			}
+			@font-face {
+			    font-family: 'open_sanssemibold';
+			    src: url('opensans-semibold-webfont.woff2') format('woff2'),
+			         url('opensans-semibold-webfont.woff') format('woff');
+			    font-weight: normal;
+			    font-style: normal;
+			}
+			@font-face {
+			    font-family: 'open_sanssemibold_italic';
+			    src: url('opensans-semibolditalic-webfont.woff2') format('woff2'),
+			         url('opensans-semibolditalic-webfont.woff') format('woff');
+			    font-weight: normal;
+			    font-style: normal;
+			}
 
 
 			/* MAPPPPPP */
@@ -49,7 +121,7 @@
 		        border-radius: 3px;
 		        width: 150px;
 		        border: 1px solid rgba(0, 0, 0, 0.4);
-		        font-family: 'Open Sans', sans-serif;
+		        font-family: 'open_sansregular', sans-serif;
 		    }
 		    #menu a {
 		        font-size: 13px;
@@ -86,7 +158,7 @@
 /*			  bottom: 0;
 */			  background: rgba(255, 255, 255, 0.8);
 			  margin-right: 20px;
-			  font-family: Open Sans, sans-serif;
+			  font-family: 'open_sansregular', sans-serif;
 			  overflow: auto;
 			  border-radius: 3px;
 			}
@@ -94,17 +166,17 @@
 			#city {
 			  top: 0;
 			  right: 0;
-			  height: 170px;
+			  height: 220px;
 			  margin-top: 20px;
-			  width: 300px;
+			  width: 320px;
 			}
 
 			#features {
 /*			  top: 200;
 */			  right: 0;
-			  height: 700px;
-			  margin-top: 200px;
-			  width: 300px;
+			  height: 600px;
+			  margin-top: 250px;
+			  width: 320px;
 			  visibility: hidden;
 			}
 
@@ -117,22 +189,25 @@
 /*			  line-height: 20px;
 */			  bottom: 40px;
 			  left: 20px;
-			  font-family: 'Open Sans', sans-serif;
+			  font-family: 'open_sansregular', sans-serif;
 			}
 			.legend-key {
 			  display: inline-block;
 			  border-radius: 20%;
-			  width: 20px;
-			  height: 20px;
+			  width: 18px;
+			  height: 18px;
 			  margin-right: 5px;
 			}
 			.legend-key-circle {
 			  display: inline-block;
 			  border-radius: 50%;
-			  width: 20px;
-			  height: 20px;
+			  width: 18px;
+			  height: 18px;
 			  margin-right: 5px;
 			}
+
+
+			.bold {font-family: 'open_sansbold';}
 
 
 
@@ -142,14 +217,16 @@
 		<nav id='menu'></nav>
 		<div id='map'></div>
 		<div class='map-overlay' id='city'>
-			<h2>北京, 北京
-			<br>Beijing, Beijing</h2>
+			<h2><span class='bold'>内蒙古自治区 呼和浩特市
+			<br>Hohhot, Inner Mongolia</span></h2>
 			<div>
-				<p>Population:
-				<br>GDP:
-				<br>GDP per capita:
-				<br>Average distance to national pop: <p>
-				<p><em>Hover over a county to see details</em></p>
+				<p>Population: <span class='bold'>3.1</span>M (27th)
+				<br>GDP: <span class='bold'>$42</span>B USD (26th), <span class='bold'>$13.5</span>K per capita (16th)
+				<br>Avg dist to pop: <span class='bold'>1234.0</span> km (19th)
+				<br>Median travel time: <span class='bold'>5</span>h <span class='bold'>59</span>m (19th)
+				<br>5h: <span class='bold'>17.6</span>%, 7h: <span class='bold'>76.4</span>% of pop reached (20th, 20th)
+				<br>Modes: <span class='bold'>2.2</span>% road (25th), <span class='bold'>0.0</span>% rail (31st), <span class='bold'>97.8</span>% air (5th)
+
 			</div>
 		</div>
 		<div class='map-overlay' id='features'>
@@ -166,15 +243,14 @@
 	// https://account.mapbox.com
 	mapboxgl.accessToken = 'pk.eyJ1IjoicGljcmF6eTIiLCJhIjoiY2thMG1vdDQ0MHMxajNtcXI1ZnpiYnFpZiJ9.iYJgxRpR27z5rtZGoGXl2g';
 
-	var mode_layers = ['Road', 'Rail', 'Air', 'Beijing']
+	var mode_layers = ['Road', 'Rail', 'Air', 'Hohhot']
 	var mode_colors = ["#ffba49", "#ef5b5b", "#20a39e", "#ff0505"]
 
-	var dur_layers = ['<1hr', '1-2hr', '2-3hr', '3-4hr', '4-5hr', '5-6hr', '6-7hr', '7-8hr', '8-9hr', '9-10hr', '10-11hr', '11-12hr', '12+hr', 'Beijing'];
+	var dur_layers = ['<1hr', '1-2hr', '2-3hr', '3-4hr', '4-5hr', '5-6hr', '6-7hr', '7-8hr', '8-9hr', '9-10hr', '10-11hr', '11-12hr', '12+hr', 'Hohhot'];
 	var dur_colors = ["#fde725","#c8e020","#90d743","#5ec962","#35b779","#20a486","#21918c","#287c8e","#31688e","#3b528b","#443983","#481f70","#440154","#ff0505"];
 
 	var map = new mapboxgl.Map({
 		container: 'map', // container id
-		// style: 'mapbox://styles/picrazy2/cka708bvx12eu1imlbfitz04j',
 		style: 'mapbox://styles/picrazy2/cka8a1z1r0d591io0ebssgmz3',
 		center: [104, 38],
 		zoom: 4
@@ -238,7 +314,7 @@
                     2,
                     0.1,
                     22,
-                    7
+                    9
                 ]
 			},
 			'layout': {'visibility': 'visible'}
@@ -257,7 +333,7 @@
 				"circle-color": [
 				  "match",
 				  ["get", "capital_eng"],
-				  ["Beijing"],
+				  ["Hohhot"],
 				  "hsl(0, 100%, 51%)",
 				  "hsl(0, 100%, 76%)"
 				],
@@ -273,7 +349,7 @@
 				"circle-opacity": [
 				  "match",
 				  ["get", "capital_eng"],
-				  ["Beijing"],
+				  ["Hohhot"],
 				  1,
 				  0.5
 				],
@@ -289,19 +365,18 @@
 		map.moveLayer('settlement-major-label', 'capitals')
 		map.moveLayer('state-label', 'capitals')
 
-		map.addSource('beijing', {
+		map.addSource('Hohhot', {
 			'type': 'vector',
-			'url': 'mapbox://picrazy2.84f4gzxk'
-			// 'buffer': 512
+			'url': 'mapbox://picrazy2.431ybtim'
 		});
 		map.addLayer(
 		{
-			'id': 'beijing_dur',
-			'source': 'beijing',
-			'source-layer': 'county_Beijing',
+			'id': 'Hohhot_dur',
+			'source': 'Hohhot',
+			'source-layer': 'county_Hohhot',
 			'type': 'fill',
 			'paint': {
-				'fill-color': ["step",["get","Beijing_shortest_dur"],"#fde725",1,"#c8e020",2,"#90d743",3,"#5ec962",4,"#35b779",5,"#20a486",6,"#21918c",7,"#287c8e",8,"#31688e",9,"#3b528b",10,"#443983",11,"#481f70",12,"#440154"],
+				'fill-color': ["step",["get","Hohhot_shortest_dur"],"#fde725",1,"#c8e020",2,"#90d743",3,"#5ec962",4,"#35b779",5,"#20a486",6,"#21918c",7,"#287c8e",8,"#31688e",9,"#3b528b",10,"#443983",11,"#481f70",12,"#440154"],
 				'fill-opacity': 0.8
 			},
 			'layout': {'visibility': 'visible'}
@@ -309,12 +384,12 @@
 		);
 		map.addLayer(
 		{
-			'id': 'beijing_mode',
-			'source': 'beijing',
-			'source-layer': 'county_Beijing',
+			'id': 'Hohhot_mode',
+			'source': 'Hohhot',
+			'source-layer': 'county_Hohhot',
 			'type': 'fill',
 			'paint': {
-				'fill-color': ["match",["get","Beijing_shortest_mode"],["air"],"#20a39e",["rail"],"#ef5b5b",["car"],"#ffba49","hsl(0, 0%, 59%)"],
+				'fill-color': ["match",["get","Hohhot_shortest_mode"],["air"],"#20a39e",["rail"],"#ef5b5b",["car"],"#ffba49","hsl(0, 0%, 59%)"],
 				'fill-opacity': 0.8
 			},
 			'layout': {'visibility': 'none'}
@@ -322,12 +397,12 @@
 		);
 		map.addLayer(
 		{
-			'id': 'beijing_car_dur',
-			'source': 'beijing',
-			'source-layer': 'county_Beijing',
+			'id': 'Hohhot_car_dur',
+			'source': 'Hohhot',
+			'source-layer': 'county_Hohhot',
 			'type': 'fill',
 			'paint': {
-				'fill-color': ["step",["get","Beijing_car_dur"],"#fde725",1,"#c8e020",2,"#90d743",3,"#5ec962",4,"#35b779",5,"#20a486",6,"#21918c",7,"#287c8e",8,"#31688e",9,"#3b528b",10,"#443983",11,"#481f70",12,"#440154"],
+				'fill-color': ["step",["get","Hohhot_car_dur"],"#fde725",1,"#c8e020",2,"#90d743",3,"#5ec962",4,"#35b779",5,"#20a486",6,"#21918c",7,"#287c8e",8,"#31688e",9,"#3b528b",10,"#443983",11,"#481f70",12,"#440154"],
 				'fill-opacity': 0.8
 			},
 			'layout': {'visibility': 'none'}
@@ -335,12 +410,12 @@
 		);
 		map.addLayer(
 		{
-			'id': 'beijing_rail_dur',
-			'source': 'beijing',
-			'source-layer': 'county_Beijing',
+			'id': 'Hohhot_rail_dur',
+			'source': 'Hohhot',
+			'source-layer': 'county_Hohhot',
 			'type': 'fill',
 			'paint': {
-				'fill-color': ["step",["get","Beijing_rail_dur"],"#fde725",1,"#c8e020",2,"#90d743",3,"#5ec962",4,"#35b779",5,"#20a486",6,"#21918c",7,"#287c8e",8,"#31688e",9,"#3b528b",10,"#443983",11,"#481f70",12,"#440154"],
+				'fill-color': ["step",["get","Hohhot_rail_dur"],"#fde725",1,"#c8e020",2,"#90d743",3,"#5ec962",4,"#35b779",5,"#20a486",6,"#21918c",7,"#287c8e",8,"#31688e",9,"#3b528b",10,"#443983",11,"#481f70",12,"#440154"],
 				'fill-opacity': 0.8
 			},
 			'layout': {'visibility': 'none'}
@@ -348,12 +423,12 @@
 		);
 		map.addLayer(
 		{
-			'id': 'beijing_air_dur',
-			'source': 'beijing',
-			'source-layer': 'county_Beijing',
+			'id': 'Hohhot_air_dur',
+			'source': 'Hohhot',
+			'source-layer': 'county_Hohhot',
 			'type': 'fill',
 			'paint': {
-				'fill-color': ["step",["get","Beijing_air_dur"],"#fde725",1,"#c8e020",2,"#90d743",3,"#5ec962",4,"#35b779",5,"#20a486",6,"#21918c",7,"#287c8e",8,"#31688e",9,"#3b528b",10,"#443983",11,"#481f70",12,"#440154"],
+				'fill-color': ["step",["get","Hohhot_air_dur"],"#fde725",1,"#c8e020",2,"#90d743",3,"#5ec962",4,"#35b779",5,"#20a486",6,"#21918c",7,"#287c8e",8,"#31688e",9,"#3b528b",10,"#443983",11,"#481f70",12,"#440154"],
 				'fill-opacity': 0.8
 			},
 			'layout': {'visibility': 'none'}
@@ -386,11 +461,11 @@
 			new mapboxgl.Popup()
 				.setLngLat(e.lngLat)
 				.setHTML(
-					'<h3 style=\'font-size:18px\'>' + e.features[0].properties.iata + ' ' + e.features[0].properties.english_name + '</h3>'
-					+ '<p style=\'font-size:15px\'>Total destinations: <strong>' + e.features[0].properties.total_dests_num + '</strong>'
-					+ '<br>Domestic destinations: <strong>' + e.features[0].properties.domestic_dests_num + '</strong>'
-					+ '<br>2019 Passenger volume: <strong>' + e.features[0].properties.passenger_vol + '</strong>'
-					+ '<br>Rank in China: <strong>' + e.features[0].properties.passenger_rank + '</strong>/240'
+					'<h3 style=\'font-size:15px\'>' + e.features[0].properties.iata + ' ' + e.features[0].properties.english_name + '</h3>'
+					+ '<p style=\'font-size:14px\'>Total destinations: <span class=\'bold\'>' + e.features[0].properties.total_dests_num + '</span>'
+					+ '<br>Domestic destinations: <span class=\'bold\'>' + e.features[0].properties.domestic_dests_num + '</span>'
+					+ '<br>2019 Passenger volume: <span class=\'bold\'>' + e.features[0].properties.passenger_vol + '</span>'
+					+ '<br>Rank in China: <span class=\'bold\'>' + e.features[0].properties.passenger_rank + '</span>/239'
 					+ '</p>'
 					)
 				.addTo(map);
@@ -411,10 +486,10 @@
 			new mapboxgl.Popup()
 				.setLngLat(e.lngLat)
 				.setHTML(
-					'<h3 style=\'font-size:18px\'>' + e.features[0].properties.name + '</h3>'
-					+ '<p style=\'font-size:15px\'>Class: <strong>' + e.features[0].properties.class + '</strong>'
-					+ '<br>Total destinations: <strong>' + e.features[0].properties.all_dests + '</strong>'
-					+ '<br>HSR destinations: <strong>' + e.features[0].properties.hsr_dests + '</strong>'
+					'<h3 style=\'font-size:15px\'>' + e.features[0].properties.name + '</h3>'
+					+ '<p style=\'font-size:14px\'>Class: <span class=\'bold\'>' + e.features[0].properties.class + '</span>'
+					+ '<br>Total destinations: <span class=\'bold\'>' + e.features[0].properties.all_dests + '</span>'
+					+ '<br>HSR destinations: <span class=\'bold\'>' + e.features[0].properties.hsr_dests + '</span>'
 					+ '</p>'
 					)
 				.addTo(map);
@@ -434,11 +509,11 @@
 			new mapboxgl.Popup()
 				.setLngLat(e.lngLat)
 				.setHTML(
-					'<h3 style=\'font-size:18px\'>' + e.features[0].properties.province + ' ' + e.features[0].properties.capital + '</h3>'
-					+ 	'<h3 style=\'font-size:18px\'>' + e.features[0].properties.capital_eng + ', ' + e.features[0].properties.prov_eng + '</h3>'
-					+ '<p style=\'font-size:15px\'>Population: <strong>' + e.features[0].properties.pop_k + 'k</strong>'
-					+ '<br>GDP: <strong>$' + e.features[0].properties.gdp_usd_m + 'm </strong>USD'
-					+ '<br>GDP per capita: <strong>$' + e.features[0].properties.gdp_pc + ' </strong>USD'
+					'<h3 style=\'font-size:15px\'>' + e.features[0].properties.province + ' ' + e.features[0].properties.capital + '</h3>'
+					+ 	'<h3 style=\'font-size:15px\'>' + e.features[0].properties.capital_eng + ', ' + e.features[0].properties.prov_eng + '</h3>'
+					+ '<p style=\'font-size:14px\'>Population: <span class=\'bold\'>' + e.features[0].properties.pop_k + 'k</span>'
+					+ '<br>GDP: <span class=\'bold\'>$' + e.features[0].properties.gdp_usd_m + 'm </span>USD'
+					+ '<br>GDP per capita: <span class=\'bold\'>$' + e.features[0].properties.gdp_pc + ' </span>USD'
 					+ '</p>'
 					)
 				.addTo(map);
@@ -461,7 +536,7 @@
 
 
 
-	var toggleableLayerIds = ['capitals', 'airports', 'stations', 'beijing_mode','beijing_dur',  'beijing_air_dur', 'beijing_rail_dur', 'beijing_car_dur'];
+	var toggleableLayerIds = ['capitals', 'airports', 'stations', 'Hohhot_mode','Hohhot_dur',  'Hohhot_air_dur', 'Hohhot_rail_dur', 'Hohhot_car_dur'];
 
 	var toggleableLayerLabels = ['Provincial Capitals', 'Airports', 'Train Stations', 'Fastest Mode', 'Shortest Duration',  'Duration by Air', 'Duration by Rail', 'Duration by Car'];
 
@@ -516,15 +591,15 @@
 
             layers = [];
             colors = [];
-            if (this.id === toggleableLayerIds[2]) {
+            if (this.id === toggleableLayerIds[3]) {
             	layers = mode_layers;
             	colors = mode_colors;
-            } else if (toggleableLayerIds.slice(3, toggleableLayerIds.length).includes(this.id)) {
+            } else if (toggleableLayerIds.slice(4, toggleableLayerIds.length).includes(this.id)) {
             	layers = dur_layers;
             	colors = dur_colors;
             }
 
-            if (toggleableLayerIds.slice(2, toggleableLayerIds.length).includes(this.id)) {
+            if (toggleableLayerIds.slice(3, toggleableLayerIds.length).includes(this.id)) {
             	while (legend.lastElementChild) {
 				    legend.removeChild(legend.lastElementChild);
 				  }
@@ -554,7 +629,7 @@
 // RIGHT INFO SCREEN
         map.on('mousemove', function(e) {
 			var counties = map.queryRenderedFeatures(e.point, {
-				layers: ['beijing_dur', 'beijing_mode', 'beijing_rail_dur', 'beijing_car_dur', 'beijing_air_dur']
+				layers: ['Hohhot_dur', 'Hohhot_mode', 'Hohhot_rail_dur', 'Hohhot_car_dur', 'Hohhot_air_dur']
 			});
 
 
@@ -564,33 +639,33 @@
 				var province = counties[0].properties.province
 				var city = counties[0].properties.city
 				var county = counties[0].properties.county
-				var shortest_dur = counties[0].properties.Beijing_shortest_dur
-				var shortest_car = counties[0].properties.Beijing_car_dur
-				var shortest_air = counties[0].properties.Beijing_air_dur
-				var shortest_rail = counties[0].properties.Beijing_rail_dur
+				var shortest_dur = counties[0].properties.Hohhot_shortest_dur
+				var shortest_car = counties[0].properties.Hohhot_car_dur
+				var shortest_air = counties[0].properties.Hohhot_air_dur
+				var shortest_rail = counties[0].properties.Hohhot_rail_dur
 
-				var rail_path = counties[0].properties.Beijing_rail_path.split(',')
-				var rail_durs = counties[0].properties.Beijing_rail_path_durs.split(',')
-				var rail_path_str = '&nbsp;&nbsp;&nbsp;&nbsp;Drive to <strong>'  + rail_path[0] + '</strong> (' + get_time_str(counties[0].properties.Beijing_rail_drive_origin_dur) + ')<br>'
+				var rail_path = counties[0].properties.Hohhot_rail_path.split(',')
+				var rail_durs = counties[0].properties.Hohhot_rail_path_durs.split(',')
+				var rail_path_str = '&nbsp;&nbsp;&nbsp;&nbsp;Drive to <span class=\'bold\'>'  + rail_path[0] + '</span> (' + get_time_str(counties[0].properties.Hohhot_rail_drive_origin_dur) + ')<br>'
 				for(var i = 0; i < rail_path.length-1; i++) {
-					rail_path_str += '<strong>&nbsp;&nbsp;&nbsp;&nbsp;' + rail_path[i] + '</strong> to <strong>' + rail_path[i+1] + '</strong> (' + get_time_str(rail_durs[i]) + ')<br>'
+					rail_path_str += '<span class=\'bold\'>&nbsp;&nbsp;&nbsp;&nbsp;' + rail_path[i] + '</span> to <span class=\'bold\'>' + rail_path[i+1] + '</span> (' + get_time_str(rail_durs[i]) + ')<br>'
 				}
-				rail_path_str += '&nbsp;&nbsp;&nbsp;&nbsp;Drive to destination (' + get_time_str(counties[0].properties.Beijing_rail_drive_dest_dur) + ')'
+				rail_path_str += '&nbsp;&nbsp;&nbsp;&nbsp;Drive to destination (' + get_time_str(counties[0].properties.Hohhot_rail_drive_dest_dur) + ')'
 
-				var air_path = counties[0].properties.Beijing_air_path.split(',')
-				var air_durs = counties[0].properties.Beijing_air_path_durs.split(',')
-				var air_path_str = '&nbsp;&nbsp;&nbsp;&nbsp;Drive to <strong>'  + air_path[0] + '</strong> (' + get_time_str(counties[0].properties.Beijing_air_drive_origin_dur) + ')<br>'
+				var air_path = counties[0].properties.Hohhot_air_path.split(',')
+				var air_durs = counties[0].properties.Hohhot_air_path_durs.split(',')
+				var air_path_str = '&nbsp;&nbsp;&nbsp;&nbsp;Drive to <span class=\'bold\'>'  + air_path[0] + '</span> (' + get_time_str(counties[0].properties.Hohhot_air_drive_origin_dur) + ')<br>'
 				for(var i = 0; i < air_path.length-1; i++) {
-					air_path_str += '<strong>&nbsp;&nbsp;&nbsp;&nbsp;' + air_path[i] + '</strong> to <strong>' + air_path[i+1] + '</strong> (' + get_time_str(air_durs[i]) + ')<br>'
+					air_path_str += '<span class=\'bold\'>&nbsp;&nbsp;&nbsp;&nbsp;' + air_path[i] + '</span> to <span class=\'bold\'>' + air_path[i+1] + '</span> (' + get_time_str(air_durs[i]) + ')<br>'
 				}				
-				air_path_str += '&nbsp;&nbsp;&nbsp;&nbsp;Drive to destination: (' + get_time_str(counties[0].properties.Beijing_air_drive_dest_dur) + ')'
+				air_path_str += '&nbsp;&nbsp;&nbsp;&nbsp;Drive to destination: (' + get_time_str(counties[0].properties.Hohhot_air_drive_dest_dur) + ')'
 
 				var data_quality_str = 'Missing '
-				var data_quality_arr = [counties[0].properties.Beijing_car_bool, 
-										counties[0].properties.Beijing_rail_drive_origin_bool, 
-										counties[0].properties.Beijing_rail_drive_dest_bool, 
-										counties[0].properties.Beijing_air_drive_origin_bool, 
-										counties[0].properties.Beijing_air_drive_dest_bool, 
+				var data_quality_arr = [counties[0].properties.Hohhot_car_bool, 
+										counties[0].properties.Hohhot_rail_drive_origin_bool, 
+										counties[0].properties.Hohhot_rail_drive_dest_bool, 
+										counties[0].properties.Hohhot_air_drive_origin_bool, 
+										counties[0].properties.Hohhot_air_drive_dest_bool, 
 										]
 				var bad_counter = 0
 				for(var i = 0; i < data_quality_arr.length; i++) {
@@ -599,7 +674,7 @@
 					}
 				}
 				if(bad_counter == 0) {
-					data_quality_str = '<strong>Good</strong>'
+					data_quality_str = '<span class=\'bold\'>Good</span>'
 				} else if(bad_counter == data_quality_arr.length) {
 					data_quality_str = 'Missing all driving durations (used direct distance in some calculations)'
 				} else {
@@ -617,33 +692,33 @@
 					}
 				}
 
-				document.getElementById('pd').innerHTML = '<h3><strong>' + county_id + ' ' + province+ '<br>' + city + ' ' + county + '</strong></h3>'
+				document.getElementById('pd').innerHTML = '<h3><span class=\'bold\'>' + county_id + ' ' + province+ '<br>' + city + ' ' + county + '</span></h3>'
 				+ '<p>'
-				+ '<em>Fastest mode: <strong>' + counties[0].properties.Beijing_shortest_mode + '</strong>'
-				+ '<br>Shortest duration from Beijing: ' + '<strong>' + get_time(shortest_dur)[0] + '</strong>hr <strong>' + get_time(shortest_dur)[1] + '</strong>min</em>'
+				+ '<em>Fastest mode from Hohhot: <span class=\'bold\'>' + counties[0].properties.Hohhot_shortest_mode + '</span>'
+				+ '<br>Shortest duration: ' + '<span class=\'bold\'>' + get_time(shortest_dur)[0] + '</span>hr <span class=\'bold\'>' + get_time(shortest_dur)[1] + '</span>min</em>'
 
-				+ '<br><br>By car: ' + '<strong>' + get_time(shortest_car)[0] + '</strong>hr <strong>' + get_time(shortest_car)[1] + '</strong>min'
-				+ '<br><br>Shortest rail path: ' + '<strong>' + get_time(shortest_rail)[0] + '</strong>hr <strong>' + get_time(shortest_rail)[1] + '</strong>min'
+				+ '<br><br>By car: ' + '<span class=\'bold\'><em>' + get_time(shortest_car)[0] + '</span>hr <span class=\'bold\'>' + get_time(shortest_car)[1] + '</span>min</em>'
+				+ '<br>Shortest rail path: ' + '<span class=\'bold\'><em>' + get_time(shortest_rail)[0] + '</span>hr <span class=\'bold\'>' + get_time(shortest_rail)[1] + '</span>min</em>'
 				+ '<br>' + rail_path_str
-				+ '<br><br>Shortest air path: ' + '<strong>' + get_time(shortest_air)[0] + '</strong>hr <strong>' + get_time(shortest_air)[1] + '</strong>min'
+				+ '<br>Shortest air path: ' + '<span class=\'bold\'><em>' + get_time(shortest_air)[0] + '</span>hr <span class=\'bold\'>' + get_time(shortest_air)[1] + '</span>min</em>'
 				+ '<br>' + air_path_str
 
-				+ '<br><br>Population: <strong>' + counties[0].properties.population + '</strong>'
-				+ '<br>Area: <strong>' + Math.round(counties[0].properties.area) + '</strong> km2'
-				+ '<br>Population density: <strong>' + Math.round(counties[0].properties.pop_density) + '</strong> people/km2'
-				+ '<br>Distance from Beijing: <strong>' + counties[0].properties.Beijing_sld + '</strong> km'	
+				+ '<br><br>Population: <span class=\'bold\'>' + counties[0].properties.population + '</span>'
+				+ ', Area: <span class=\'bold\'>' + Math.round(counties[0].properties.area) + '</span> km2'
+				+ '<br>Population density: <span class=\'bold\'>' + Math.round(counties[0].properties.pop_density) + '</span> people/km2'
+				+ '<br>Distance from Hohhot: <span class=\'bold\'>' + counties[0].properties.Hohhot_sld + '</span> km'	
 
 				+ '<br><br>Closest train stations (drive): '
-					+ '<strong>' + counties[0].properties.closest_rail_0_iata + '</strong> (' + get_time_str(counties[0].properties.closest_rail_0_dur) + '), '
-					+ '<strong>' + counties[0].properties.closest_rail_1_iata + '</strong> (' + get_time_str(counties[0].properties.closest_rail_1_dur) + '), '
-					+ '<strong>' + counties[0].properties.closest_rail_2_iata + '</strong> (' + get_time_str(counties[0].properties.closest_rail_2_dur) + ')'
+					+ '<span class=\'bold\'>' + counties[0].properties.closest_rail_0_iata + '</span> (' + get_time_str(counties[0].properties.closest_rail_0_dur) + '), '
+					+ '<span class=\'bold\'>' + counties[0].properties.closest_rail_1_iata + '</span> (' + get_time_str(counties[0].properties.closest_rail_1_dur) + '), '
+					+ '<span class=\'bold\'>' + counties[0].properties.closest_rail_2_iata + '</span> (' + get_time_str(counties[0].properties.closest_rail_2_dur) + ')'
 				+ '<br>Closest airports (drive): '
-					+ '<strong>' + counties[0].properties.closest_air_0_iata + '</strong> (' + get_time_str(counties[0].properties.closest_air_0_dur) + '), '
-					+ '<strong>' + counties[0].properties.closest_air_1_iata + '</strong> (' + get_time_str(counties[0].properties.closest_air_1_dur) + '), '
-					+ '<strong>' + counties[0].properties.closest_air_2_iata + '</strong> (' + get_time_str(counties[0].properties.closest_air_2_dur) + ')'
+					+ '<span class=\'bold\'>' + counties[0].properties.closest_air_0_iata + '</span> (' + get_time_str(counties[0].properties.closest_air_0_dur) + '), '
+					+ '<span class=\'bold\'>' + counties[0].properties.closest_air_1_iata + '</span> (' + get_time_str(counties[0].properties.closest_air_1_dur) + '), '
+					+ '<span class=\'bold\'>' + counties[0].properties.closest_air_2_iata + '</span> (' + get_time_str(counties[0].properties.closest_air_2_dur) + ')'
 
 				// + '<br><br>Driving data quality: ' + data_quality_str
-				+ '<br><br>Note: total rail and air path times take into account additional buffer and transfer times.'
+				// + '<br>Note: total rail/air path times include additional buffer/transfer times.'
 				+ '</p>';
 			} else {
 				document.getElementById('features').style.visibility = 'hidden';
