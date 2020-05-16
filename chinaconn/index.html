@@ -27,6 +27,9 @@
 			  text-align: left;
 			}
 
+			
+
+
 			/* MAPPPPPP */
 			#map {
 			  position: absolute;
@@ -123,6 +126,13 @@
 			  height: 20px;
 			  margin-right: 5px;
 			}
+			.legend-key-circle {
+			  display: inline-block;
+			  border-radius: 50%;
+			  width: 20px;
+			  height: 20px;
+			  margin-right: 5px;
+			}
 
 
 
@@ -156,11 +166,11 @@
 	// https://account.mapbox.com
 	mapboxgl.accessToken = 'pk.eyJ1IjoicGljcmF6eTIiLCJhIjoiY2thMG1vdDQ0MHMxajNtcXI1ZnpiYnFpZiJ9.iYJgxRpR27z5rtZGoGXl2g';
 
-	var mode_layers = ['Road', 'Rail', 'Air']
-	var mode_colors = ["#ffba49", "#ef5b5b", "#20a39e"]
+	var mode_layers = ['Road', 'Rail', 'Air', 'Beijing']
+	var mode_colors = ["#ffba49", "#ef5b5b", "#20a39e", "#ff0505"]
 
-	var dur_layers = ['<1hr', '1-2hr', '2-3hr', '3-4hr', '4-5hr', '5-6hr', '6-7hr', '7-8hr', '8-9hr', '9-10hr', '10-11hr', '11-12hr', '12+hr'];
-	var dur_colors = ["#fde725","#c8e020","#90d743","#5ec962","#35b779","#20a486","#21918c","#287c8e","#31688e","#3b528b","#443983","#481f70","#440154"];
+	var dur_layers = ['<1hr', '1-2hr', '2-3hr', '3-4hr', '4-5hr', '5-6hr', '6-7hr', '7-8hr', '8-9hr', '9-10hr', '10-11hr', '11-12hr', '12+hr', 'Beijing'];
+	var dur_colors = ["#fde725","#c8e020","#90d743","#5ec962","#35b779","#20a486","#21918c","#287c8e","#31688e","#3b528b","#443983","#481f70","#440154","#ff0505"];
 
 	var map = new mapboxgl.Map({
 		container: 'map', // container id
@@ -185,16 +195,7 @@
 			'type': 'vector',
 			'url': 'mapbox://picrazy2.58502mjj'
 		});
-		// var img1 = new Image();
-		// img1.src = 'https://raw.githubusercontent.com/mapbox/maki/a6d16d49a967b73d9379890a7b26712b12b8daef/icons/airport-15.svg';
-		// map.addImage('airport-15', img1);
 
-		// map.loadImage('https://raw.githubusercontent.com/mapbox/maki/a6d16d49a967b73d9379890a7b26712b12b8daef/icons/airport-15.svg',
-		// 	function(error, image) {
-		// 		if (error) throw error;
-		// 		map.addImage('airport-15', image);
-		// 	}
-		// )
 		map.addLayer({
 			'id': 'airports',
 			'source': 'airports',
@@ -216,6 +217,7 @@
 			},
 			'paint': {}
 		}, 'admin-1-boundary-bg');
+
 
 
 		map.addSource('stations', {
@@ -242,6 +244,50 @@
 			'layout': {'visibility': 'visible'}
 		}, 'admin-1-boundary-bg');
 
+		map.addSource('capitals', {
+			'type': 'vector',
+			'url': 'mapbox://picrazy2.2sfy1oip'
+		});
+		map.addLayer({
+			'id': 'capitals',
+			'source': 'capitals',
+			'source-layer': 'pc_combined-ac9jce',
+			'type': 'circle',
+			'paint': {
+				"circle-color": [
+				  "match",
+				  ["get", "capital_eng"],
+				  ["Beijing"],
+				  "hsl(0, 100%, 51%)",
+				  "hsl(0, 100%, 76%)"
+				],
+                "circle-radius": [
+				  "interpolate",
+				  ["linear"],
+				  ["zoom"],
+				  2,
+				  4,
+				  22,
+				  20
+				],
+				"circle-opacity": [
+				  "match",
+				  ["get", "capital_eng"],
+				  ["Beijing"],
+				  1,
+				  0.5
+				],
+				"circle-stroke-color": '#000000',
+				"circle-stroke-width": 1,
+				"circle-stroke-opacity": 0.5
+			},
+			'layout': {'visibility': 'visible'}
+		}, 'admin-1-boundary-bg');
+
+		map.moveLayer('settlement-subdivision-label', 'capitals')
+		map.moveLayer('settlement-minor-label', 'capitals')
+		map.moveLayer('settlement-major-label', 'capitals')
+		map.moveLayer('state-label', 'capitals')
 
 		map.addSource('beijing', {
 			'type': 'vector',
@@ -320,7 +366,13 @@
 		  var color = dur_colors[i];
 		  var item = document.createElement('div');
 		  var key = document.createElement('span');
-		  key.className = 'legend-key';
+		  // console.log(i)
+		  // console.log(dur_layers.length)
+  		  if(i == dur_layers.length - 1) {
+		  	key.className = 'legend-key-circle';
+		  } else {
+		  	key.className = 'legend-key';
+		  }
 		  key.style.backgroundColor = color;
 
 		  var value = document.createElement('span');
@@ -330,12 +382,88 @@
 		  legend.appendChild(item);
 		}
 
-		console.log(map.style.sourceCaches)
+		map.on('click', 'airports', function(e) {
+			new mapboxgl.Popup()
+				.setLngLat(e.lngLat)
+				.setHTML(
+					'<h3 style=\'font-size:18px\'>' + e.features[0].properties.iata + ' ' + e.features[0].properties.english_name + '</h3>'
+					+ '<p style=\'font-size:15px\'>Total destinations: <strong>' + e.features[0].properties.total_dests_num + '</strong>'
+					+ '<br>Domestic destinations: <strong>' + e.features[0].properties.domestic_dests_num + '</strong>'
+					+ '<br>2019 Passenger volume: <strong>' + e.features[0].properties.passenger_vol + '</strong>'
+					+ '<br>Rank in China: <strong>' + e.features[0].properties.passenger_rank + '</strong>/240'
+					+ '</p>'
+					)
+				.addTo(map);
+		});
+			 
+			// Change the cursor to a pointer when the mouse is over the states layer.
+		map.on('mouseenter', 'airports', function() {
+			map.getCanvas().style.cursor = 'pointer';
+		});
+			 
+			// Change it back to a pointer when it leaves.
+		map.on('mouseleave', 'airports', function() {
+			map.getCanvas().style.cursor = '';
+		});
+
+
+		map.on('click', 'stations', function(e) {
+			new mapboxgl.Popup()
+				.setLngLat(e.lngLat)
+				.setHTML(
+					'<h3 style=\'font-size:18px\'>' + e.features[0].properties.name + '</h3>'
+					+ '<p style=\'font-size:15px\'>Class: <strong>' + e.features[0].properties.class + '</strong>'
+					+ '<br>Total destinations: <strong>' + e.features[0].properties.all_dests + '</strong>'
+					+ '<br>HSR destinations: <strong>' + e.features[0].properties.hsr_dests + '</strong>'
+					+ '</p>'
+					)
+				.addTo(map);
+		});
+			 
+			// Change the cursor to a pointer when the mouse is over the states layer.
+		map.on('mouseenter', 'stations', function() {
+			map.getCanvas().style.cursor = 'pointer';
+		});
+			 
+			// Change it back to a pointer when it leaves.
+		map.on('mouseleave', 'stations', function() {
+			map.getCanvas().style.stations = '';
+		});
+
+		map.on('click', 'capitals', function(e) {
+			new mapboxgl.Popup()
+				.setLngLat(e.lngLat)
+				.setHTML(
+					'<h3 style=\'font-size:18px\'>' + e.features[0].properties.province + ' ' + e.features[0].properties.capital + '</h3>'
+					+ 	'<h3 style=\'font-size:18px\'>' + e.features[0].properties.capital_eng + ', ' + e.features[0].properties.prov_eng + '</h3>'
+					+ '<p style=\'font-size:15px\'>Population: <strong>' + e.features[0].properties.pop_k + 'k</strong>'
+					+ '<br>GDP: <strong>$' + e.features[0].properties.gdp_usd_m + 'm </strong>USD'
+					+ '<br>GDP per capita: <strong>$' + e.features[0].properties.gdp_pc + ' </strong>USD'
+					+ '</p>'
+					)
+				.addTo(map);
+		});
+			 
+			// Change the cursor to a pointer when the mouse is over the states layer.
+		map.on('mouseenter', 'capitals', function() {
+			map.getCanvas().style.cursor = 'pointer';
+		});
+			 
+			// Change it back to a pointer when it leaves.
+		map.on('mouseleave', 'capitals', function() {
+			map.getCanvas().style.stations = '';
+		});
 	});
 
-	var toggleableLayerIds = ['airports', 'stations', 'beijing_mode','beijing_dur',  'beijing_air_dur', 'beijing_rail_dur', 'beijing_car_dur'];
 
-	var toggleableLayerLabels = ['Airports', 'Train Stations', 'Fastest Mode', 'Shortest Duration',  'Duration by Air', 'Duration by Rail', 'Duration by Car'];
+
+
+
+
+
+	var toggleableLayerIds = ['capitals', 'airports', 'stations', 'beijing_mode','beijing_dur',  'beijing_air_dur', 'beijing_rail_dur', 'beijing_car_dur'];
+
+	var toggleableLayerLabels = ['Provincial Capitals', 'Airports', 'Train Stations', 'Fastest Mode', 'Shortest Duration',  'Duration by Air', 'Duration by Rail', 'Duration by Car'];
 
 	var links = []
 
@@ -344,7 +472,7 @@
 
         var link = document.createElement('a');
         link.href = '#';
-        if (i < 2 || i == 3) {        
+        if (i < 3 || i == 4) {        
         	link.className = 'active';
 		} else {
 			link.className = '';
@@ -373,8 +501,8 @@
                 map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
             }
 
-            if (this.id !== toggleableLayerIds[0] && this.id !== toggleableLayerIds[1] && visibility !== 'visible') {
-				for (var j = 2; j < toggleableLayerIds.length; j++) {
+            if (this.id !== toggleableLayerIds[0] && this.id !== toggleableLayerIds[1] && this.id !== toggleableLayerIds[2] && visibility !== 'visible') {
+				for (var j = 3; j < toggleableLayerIds.length; j++) {
             		if (this.id !== links[j].id) {
             			var clicked = links[j].id;
             			var vis = map.getLayoutProperty(clicked, 'visibility');
@@ -405,7 +533,11 @@
 				  var color = colors[i];
 				  var item = document.createElement('div');
 				  var key = document.createElement('span');
-				  key.className = 'legend-key';
+				  if(i == layers.length - 1) {
+				  	key.className = 'legend-key-circle';
+				  } else {
+				  	key.className = 'legend-key';
+				  }
 				  key.style.backgroundColor = color;
 
 				  var value = document.createElement('span');
@@ -419,6 +551,7 @@
         };
 
 
+// RIGHT INFO SCREEN
         map.on('mousemove', function(e) {
 			var counties = map.queryRenderedFeatures(e.point, {
 				layers: ['beijing_dur', 'beijing_mode', 'beijing_rail_dur', 'beijing_car_dur', 'beijing_air_dur']
@@ -509,8 +642,8 @@
 					+ '<strong>' + counties[0].properties.closest_air_1_iata + '</strong> (' + get_time_str(counties[0].properties.closest_air_1_dur) + '), '
 					+ '<strong>' + counties[0].properties.closest_air_2_iata + '</strong> (' + get_time_str(counties[0].properties.closest_air_2_dur) + ')'
 
-				+ '<br><br>Driving data quality: ' + data_quality_str
-				+ '<br>Note: total rail and air path times take into account additional buffer and transfer times.'
+				// + '<br><br>Driving data quality: ' + data_quality_str
+				+ '<br><br>Note: total rail and air path times take into account additional buffer and transfer times.'
 				+ '</p>';
 			} else {
 				document.getElementById('features').style.visibility = 'hidden';
