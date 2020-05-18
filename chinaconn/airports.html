@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>Connectivity of Harbin</title>
+		<title>Airports</title>
 		<script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
 		<link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
 		<style>
@@ -119,7 +119,7 @@
 		        top: 20px;
 		        left: 20px;
 		        border-radius: 3px;
-		        width: 150px;
+		        width: 200px;
 		        border: 1px solid rgba(0, 0, 0, 0.4);
 		        font-family: 'open_sansregular', sans-serif;
 		    }
@@ -166,7 +166,7 @@
 			#city {
 			  top: 0;
 			  right: 0;
-			  height: 220px;
+			  height: 240px;
 			  margin-top: 20px;
 			  width: 330px;
 			}
@@ -174,8 +174,8 @@
 			#features {
 /*			  top: 200;
 */			  right: 0;
-			  height: 600px;
-			  margin-top: 250px;
+			  height: 330px;
+			  margin-top: 270px;
 			  width: 330px;
 			  visibility: hidden;
 			}
@@ -217,15 +217,16 @@
 		<nav id='menu'></nav>
 		<div id='map'></div>
 		<div class='map-overlay' id='city'>
-			<h2><span class='bold'>黑龙江省 哈尔滨市
-			<br>Harbin, Heilongjiang</span></h2>
+			<h2><span class='bold'>Airports of China</span></h2>
 			<div>
-				<p>Population: <span class='bold'>9.5</span>M (12th)
-				<br>GDP: <span class='bold'>$74</span>B USD (21st), <span class='bold'>$7.9</span>K per capita (29th)
-				<br>Avg dist to pop: <span class='bold'>1929.0</span> km (29th)
-				<br>Median travel time: <span class='bold'>6</span>h <span class='bold'>53</span>m (28th)
-				<br>5h: <span class='bold'>8.9</span>%, 8h: <span class='bold'>74.8</span>% of pop reached (27th, 28th)
-				<br>Modes: <span class='bold'>2.8</span>% road (22nd), <span class='bold'>5.4</span>% rail (22nd), <span class='bold'>91.8</span>% air (9th)
+				<p>Total airports: <span class='bold'>239</span>
+				<br>Total 2019 Passenger volume: <span class='bold'>1,351,628,545</span></p>
+
+				<p>Largest airports by volume: <span class='bold'>PEK</span> (100M), <span class='bold'>PVG</span> (76M), <span class='bold'>CAN</span> (73M), <span class='bold'>CTU</span> (56M), <span class='bold'>SZX</span> (53M)</p>
+				<p>Most domestic destinations: <span class='bold'>CTU</span> (157), <span class='bold'>XIY</span> (157), <span class='bold'>CAN</span> (148), <span class='bold'>PEK</span> (144), <span class='bold'>PVG</span> (141)</p>
+
+<!-- 				<p>Counties within 30min, 1hr, 1.5hr, 2hr drive of an airport: <span class='bold'>12.2%, 39.7%, 67.4%, 86.0%</span>
+ -->				<p>Population within 30min, 1hr, 1.5hr, 2hr drive of an airport: <span class='bold'>16.2%, 48.7%, 76.6%, 92.7%</span>
 
 			</div>
 		</div>
@@ -242,12 +243,23 @@
 	// ADD YOUR ACCESS TOKEN FROM
 	// https://account.mapbox.com
 	mapboxgl.accessToken = 'pk.eyJ1IjoicGljcmF6eTIiLCJhIjoiY2thMG1vdDQ0MHMxajNtcXI1ZnpiYnFpZiJ9.iYJgxRpR27z5rtZGoGXl2g';
+	
+	function get_time(hours) {
+		return [Math.trunc(hours), Math.trunc(60 *(hours - Math.trunc(hours)))]
+	}
+	function get_time_str(hours) {
+		if(get_time(hours)[0] == 0) {
+			return get_time(hours)[1] + 'min'
+		} else {
+			return get_time(hours)[0] + 'h ' + get_time(hours)[1] + 'm'						
+		}
+	}
 
-	var mode_layers = ['Road', 'Rail', 'Air', 'Harbin']
-	var mode_colors = ["#ffba49", "#ef5b5b", "#20a39e", "#ff0505"]
+	var dest_layers = ['0', '1-24', '25-49', '50-74', '75-99', '100-124', '125-149', '150-174', '175+']
+	var dest_colors = ["#0d0887", "#4c02a1", "#7e03a8", "#aa2395", "#cc4778", "#e66c5c", "#f89540", "#fdc527", "#f0f921"]
 
-	var dur_layers = ['<1hr', '1-2hr', '2-3hr', '3-4hr', '4-5hr', '5-6hr', '6-7hr', '7-8hr', '8-9hr', '9-10hr', '10-11hr', '11-12hr', '12+hr', 'Harbin'];
-	var dur_colors = ["#fde725","#c8e020","#90d743","#5ec962","#35b779","#20a486","#21918c","#287c8e","#31688e","#3b528b","#443983","#481f70","#440154","#ff0505"];
+	var dur_layers = ['<30min', '30min-1hr', '1-1.5hr', '1.5-2hr', '2-2.5hr', '2.5-3hr', '3.5-4hr', '4+hr'];
+	var dur_colors = ["#b40427","#df624e","#f4997b","#f5c4ad","#dedede","#b9d0f9","#8baffe","#6282ea","#3b4cc0"];
 
 	var map = new mapboxgl.Map({
 		container: 'map', // container id
@@ -273,6 +285,120 @@
 		});
 
 		map.addLayer({
+			'id': 'airports_vol',
+			'source': 'airports',
+			'source-layer': 'airports-5026yf',
+			'type': 'circle',
+			'layout': {
+				'visibility': 'none'
+			},
+			'paint': {
+				'circle-radius': [
+				  "interpolate",
+				  ["linear"],
+				  ["zoom"],
+				  2,
+				  [
+				    "interpolate",
+				    ["linear"],
+				    [
+				      "get",
+				      "passenger_vol_int_sqrt"
+				    ],
+				    0,
+				    1,
+				    10000.682076738563,
+				    25
+				  ],
+				  22,
+				  [
+				    "interpolate",
+				    ["linear"],
+				    [
+				      "get",
+				      "passenger_vol_int_sqrt"
+				    ],
+				    0,
+				    10,
+				    10000.682076738563,
+				    250
+				  ]
+				],
+				'circle-color': "hsl(36, 100%, 54%)",
+				'circle-opacity': 0.8,
+				'circle-stroke-color': "hsl(125, 0%, 0%)",
+				'circle-stroke-opacity': 0.8,
+				'circle-stroke-width': 1
+			}
+		}, 'admin-1-boundary-bg');
+
+		map.addLayer({
+			'id': 'airports_dest',
+			'source': 'airports',
+			'source-layer': 'airports-5026yf',
+			'type': 'circle',
+			'layout': {
+				'visibility': 'none'
+			},
+			'paint': {
+				'circle-radius': [
+				  "interpolate",
+				  ["linear"],
+				  ["zoom"],
+				  2,
+				  [
+				    "interpolate",
+				    ["linear"],
+				    ["get", "domdests_sqrt"],
+				    0,
+				    1,
+				    12.529964086141668,
+				    17
+				  ],
+				  22,
+				  [
+				    "interpolate",
+				    ["linear"],
+				    ["get", "domdests_sqrt"],
+				    0,
+				    10,
+				    12.529964086141668,
+				    170
+				  ]
+				],
+				'circle-color': "hsl(36, 100%, 54%)",
+				'circle-opacity': 0.8,
+				'circle-stroke-color': "hsl(125, 100%, 24%)",
+				'circle-stroke-opacity': 0.8,
+				'circle-stroke-width': [
+				  "interpolate",
+				  ["linear"],
+				  ["zoom"],
+				  2,
+				  [
+				    "interpolate",
+				    ["linear"],
+				    ["get", "intl_dests_num"],
+				    0,
+				    0,
+				    123,
+				    7
+				  ],
+				  22,
+				  [
+				    "interpolate",
+				    ["linear"],
+				    ["get", "intl_dests_num"],
+				    0,
+				    0,
+				    123,
+				    70
+				  ]
+				]
+			}
+		}, 'admin-1-boundary-bg');
+
+		map.addLayer({
 			'id': 'airports',
 			'source': 'airports',
 			'source-layer': 'airports-5026yf',
@@ -296,30 +422,6 @@
 
 
 
-		map.addSource('stations', {
-			'type': 'vector',
-			'url': 'mapbox://picrazy2.8ykjxj1q'
-		});
-		map.addLayer({
-			'id': 'stations',
-			'source': 'stations',
-			'source-layer': 'stations-a65n39',
-			'type': 'circle',
-			'paint': {
-				"circle-color": "hsl(0, 100%, 26%)",
-                "circle-radius": [
-                    "interpolate",
-                    ["linear"],
-                    ["zoom"],
-                    2,
-                    0.1,
-                    22,
-                    9
-                ]
-			},
-			'layout': {'visibility': 'visible'}
-		}, 'admin-1-boundary-bg');
-
 		map.addSource('capitals', {
 			'type': 'vector',
 			'url': 'mapbox://picrazy2.2sfy1oip'
@@ -330,13 +432,7 @@
 			'source-layer': 'pc_combined-ac9jce',
 			'type': 'circle',
 			'paint': {
-				"circle-color": [
-				  "match",
-				  ["get", "capital_eng"],
-				  ["Harbin"],
-				  "hsl(0, 100%, 51%)",
-				  "hsl(0, 100%, 76%)"
-				],
+				"circle-color": '#00c925',
                 "circle-radius": [
 				  "interpolate",
 				  ["linear"],
@@ -346,18 +442,30 @@
 				  22,
 				  20
 				],
-				"circle-opacity": [
-				  "match",
-				  ["get", "capital_eng"],
-				  ["Harbin"],
-				  1,
-				  0.5
-				],
+				'circle-opacity': 0.8,
 				"circle-stroke-color": '#000000',
 				"circle-stroke-width": 1,
 				"circle-stroke-opacity": 0.5
 			},
-			'layout': {'visibility': 'visible'}
+			'layout': {'visibility': 'none'}
+		}, 'admin-1-boundary-bg');
+
+		map.addSource('airport_routes', {
+			'type': 'vector',
+			'url': 'mapbox://picrazy2.9hkvdztw'
+		});
+
+		map.addLayer({
+			'id': 'airport_routes',
+			'source': 'airport_routes', 
+			'source-layer': 'airport_routes',
+			'type': 'line',
+			'paint': {
+				'line-color': "hsl(179, 100%, 81%)",
+				'line-opacity': 1,
+				'line-width': 2
+			},
+			'layout': {'visibility': 'none'}
 		}, 'admin-1-boundary-bg');
 
 		map.moveLayer('settlement-subdivision-label', 'capitals')
@@ -365,89 +473,45 @@
 		map.moveLayer('settlement-major-label', 'capitals')
 		map.moveLayer('state-label', 'capitals')
 
-		map.addSource('Harbin', {
+		map.addSource('closest', {
 			'type': 'vector',
-			'url': 'mapbox://picrazy2.9acpjfrh'
+			'url': 'mapbox://picrazy2.5dt7gbvg',
+			'buffer': 512
 		});
 		map.addLayer(
 		{
-			'id': 'Harbin_dur',
-			'source': 'Harbin',
-			'source-layer': 'county_Harbin',
+			'id': 'closest_dur',
+			'source': 'closest',
+			'source-layer': 'closest',
 			'type': 'fill',
 			'paint': {
-				'fill-color': ["step",["get","Harbin_shortest_dur"],"#fde725",1,"#c8e020",2,"#90d743",3,"#5ec962",4,"#35b779",5,"#20a486",6,"#21918c",7,"#287c8e",8,"#31688e",9,"#3b528b",10,"#443983",11,"#481f70",12,"#440154"],
+				'fill-color': ["step",["get","closest_air_0_dur"],"#b40427",0.5,"#df624e",1,"#f4997b",1.5,"#f5c4ad",2,"#dedede",2.5,"#b9d0f9",3,"#8baffe",3.5,"#6282ea",4,"#3b4cc0"],
 				'fill-opacity': 0.8
 			},
 			'layout': {'visibility': 'visible'}
-		}, 'airports'
+		}, 'airports_vol'
 		);
 		map.addLayer(
 		{
-			'id': 'Harbin_mode',
-			'source': 'Harbin',
-			'source-layer': 'county_Harbin',
+			'id': 'closest_dest',
+			'source': 'closest',
+			'source-layer': 'closest',
 			'type': 'fill',
 			'paint': {
-				'fill-color': ["match",["get","Harbin_shortest_mode"],["air"],"#20a39e",["rail"],"#ef5b5b",["car"],"#ffba49","hsl(0, 0%, 59%)"],
+				'fill-color': ["step",["get","closest_air_under2_domdests"],"#0d0887",1,"#4c02a1",25,"#7e03a8",50,"#aa2395",75,"#cc4778",100,"#e66c5c",125,"#f89540",150,"#fdc527",175,"#f0f921"],
 				'fill-opacity': 0.8
 			},
 			'layout': {'visibility': 'none'}
-		}, 'airports'
+		}, 'airports_vol'
 		);
-		map.addLayer(
-		{
-			'id': 'Harbin_car_dur',
-			'source': 'Harbin',
-			'source-layer': 'county_Harbin',
-			'type': 'fill',
-			'paint': {
-				'fill-color': ["step",["get","Harbin_car_dur"],"#fde725",1,"#c8e020",2,"#90d743",3,"#5ec962",4,"#35b779",5,"#20a486",6,"#21918c",7,"#287c8e",8,"#31688e",9,"#3b528b",10,"#443983",11,"#481f70",12,"#440154"],
-				'fill-opacity': 0.8
-			},
-			'layout': {'visibility': 'none'}
-		}, 'airports'
-		);
-		map.addLayer(
-		{
-			'id': 'Harbin_rail_dur',
-			'source': 'Harbin',
-			'source-layer': 'county_Harbin',
-			'type': 'fill',
-			'paint': {
-				'fill-color': ["step",["get","Harbin_rail_dur"],"#fde725",1,"#c8e020",2,"#90d743",3,"#5ec962",4,"#35b779",5,"#20a486",6,"#21918c",7,"#287c8e",8,"#31688e",9,"#3b528b",10,"#443983",11,"#481f70",12,"#440154"],
-				'fill-opacity': 0.8
-			},
-			'layout': {'visibility': 'none'}
-		}, 'airports'
-		);
-		map.addLayer(
-		{
-			'id': 'Harbin_air_dur',
-			'source': 'Harbin',
-			'source-layer': 'county_Harbin',
-			'type': 'fill',
-			'paint': {
-				'fill-color': ["step",["get","Harbin_air_dur"],"#fde725",1,"#c8e020",2,"#90d743",3,"#5ec962",4,"#35b779",5,"#20a486",6,"#21918c",7,"#287c8e",8,"#31688e",9,"#3b528b",10,"#443983",11,"#481f70",12,"#440154"],
-				'fill-opacity': 0.8
-			},
-			'layout': {'visibility': 'none'}
-		}, 'airports'
-		);
-
+		
 
 		for (i = 0; i < dur_layers.length; i++) {
 		  var layer = dur_layers[i];
 		  var color = dur_colors[i];
 		  var item = document.createElement('div');
 		  var key = document.createElement('span');
-		  // console.log(i)
-		  // console.log(dur_layers.length)
-  		  if(i == dur_layers.length - 1) {
-		  	key.className = 'legend-key-circle';
-		  } else {
-		  	key.className = 'legend-key';
-		  }
+		  key.className = 'legend-key';
 		  key.style.backgroundColor = color;
 
 		  var value = document.createElement('span');
@@ -458,7 +522,13 @@
 		}
 
 		map.on('click', 'airports', function(e) {
-			new mapboxgl.Popup()
+			console.log(e.features[0].properties.iata)
+			map.setLayoutProperty('airport_routes', 'visibility', 'none')
+			map.setPaintProperty('airport_routes', 'line-width', 2)
+
+			map.setLayoutProperty('airport_routes', 'visibility', 'visible');
+			map.setPaintProperty('airport_routes', 'line-width', ["match",["get", "start"],[e.features[0].properties.iata],2,0]);
+			popup = new mapboxgl.Popup()
 				.setLngLat(e.lngLat)
 				.setHTML(
 					'<h3 style=\'font-size:15px\'>' + e.features[0].properties.iata + ' ' + e.features[0].properties.english_name + '</h3>'
@@ -469,7 +539,43 @@
 					+ '</p>'
 					)
 				.addTo(map);
+		
 		});
+
+		var path_popups = []
+		map.on('mouseenter', 'airport_routes', function(e) {
+			if(path_popups.length == 0) {
+				path_popups.push(new mapboxgl.Popup({closeButton: false})
+					.setLngLat(e.lngLat)
+					.setHTML(
+						'<p style=\'font-size:12px\'><span class=\'bold\'>' + e.features[0].properties.start + '</span> '
+						+'to '
+						+'<span class=\'bold\'>' + e.features[0].properties.end + '</span> '
+						+'<br>' + Math.trunc(e.features[0].properties.dist) + ' km, ' + get_time_str(e.features[0].properties.dur)
+						+'</p>'
+						)
+					.addTo(map));
+			}
+		});
+
+
+		map.on('mouseleave', 'airport_routes', function() {
+			for(var i = 0; i < path_popups.length; i++) {
+				path_popups[i].remove()
+			}
+			path_popups = []
+
+		});
+		map.on('click', function(e){
+			var layers = map.queryRenderedFeatures(e.point, {
+				layers: ['airports']
+			});
+
+			if(layers.length == 0) {
+				map.setLayoutProperty('airport_routes', 'visibility', 'none')
+				map.setPaintProperty('airport_routes', 'line-width', 2)				
+			}
+		})
 			 
 			// Change the cursor to a pointer when the mouse is over the states layer.
 		map.on('mouseenter', 'airports', function() {
@@ -479,30 +585,6 @@
 			// Change it back to a pointer when it leaves.
 		map.on('mouseleave', 'airports', function() {
 			map.getCanvas().style.cursor = '';
-		});
-
-
-		map.on('click', 'stations', function(e) {
-			new mapboxgl.Popup()
-				.setLngLat(e.lngLat)
-				.setHTML(
-					'<h3 style=\'font-size:15px\'>' + e.features[0].properties.name + '</h3>'
-					+ '<p style=\'font-size:14px\'>Class: <span class=\'bold\'>' + e.features[0].properties.class + '</span>'
-					+ '<br>Total destinations: <span class=\'bold\'>' + e.features[0].properties.all_dests + '</span>'
-					+ '<br>HSR destinations: <span class=\'bold\'>' + e.features[0].properties.hsr_dests + '</span>'
-					+ '</p>'
-					)
-				.addTo(map);
-		});
-			 
-			// Change the cursor to a pointer when the mouse is over the states layer.
-		map.on('mouseenter', 'stations', function() {
-			map.getCanvas().style.cursor = 'pointer';
-		});
-			 
-			// Change it back to a pointer when it leaves.
-		map.on('mouseleave', 'stations', function() {
-			map.getCanvas().style.stations = '';
 		});
 
 		map.on('click', 'capitals', function(e) {
@@ -517,6 +599,7 @@
 					+ '</p>'
 					)
 				.addTo(map);
+			map.setLayoutProperty(clicked, 'visibility', 'none');
 		});
 			 
 			// Change the cursor to a pointer when the mouse is over the states layer.
@@ -528,8 +611,6 @@
 		map.on('mouseleave', 'capitals', function() {
 			map.getCanvas().style.stations = '';
 		});
-
-		
 	});
 
 
@@ -538,9 +619,9 @@
 
 
 
-	var toggleableLayerIds = ['capitals', 'airports', 'stations', 'Harbin_mode','Harbin_dur',  'Harbin_air_dur', 'Harbin_rail_dur', 'Harbin_car_dur'];
+	var toggleableLayerIds = ['capitals', 'airports', 'airports_vol', 'airports_dest', 'closest_dur','closest_dest',];
 
-	var toggleableLayerLabels = ['Provincial Capitals', 'Airports', 'Train Stations', 'Fastest Mode', 'Shortest Duration',  'Duration by Air', 'Duration by Rail', 'Duration by Car'];
+	var toggleableLayerLabels = ['Provincial Capitals', 'Airport Icons', 'Airports with Size by Volume', 'Airports with Size by Destinations','Driving Time to Nearest Airport',  'Direct Domestic Destinations Reached from Airports Within a 2 Hour Drive'];
 
 	var links = []
 
@@ -549,7 +630,7 @@
 
         var link = document.createElement('a');
         link.href = '#';
-        if (i < 3 || i == 4) {        
+        if (i == 1 || i == 4) {        
         	link.className = 'active';
 		} else {
 			link.className = '';
@@ -578,8 +659,21 @@
                 map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
             }
 
-            if (this.id !== toggleableLayerIds[0] && this.id !== toggleableLayerIds[1] && this.id !== toggleableLayerIds[2] && visibility !== 'visible') {
-				for (var j = 3; j < toggleableLayerIds.length; j++) {
+            if ((toggleableLayerIds.slice(2, 4).includes(this.id)) && visibility !== 'visible') {
+				for (var j = 2; j < 4; j++) {
+            		if (this.id !== links[j].id) {
+            			var clicked = links[j].id;
+            			var vis = map.getLayoutProperty(clicked, 'visibility');
+            			if (vis == 'visible') {
+			                map.setLayoutProperty(clicked, 'visibility', 'none');
+			                links[j].className = '';
+			            }
+            		}
+            	}
+            } 
+
+            if ((toggleableLayerIds.slice(4, 6).includes(this.id)) && visibility !== 'visible') {
+				for (var j = 4; j < 6; j++) {
             		if (this.id !== links[j].id) {
             			var clicked = links[j].id;
             			var vis = map.getLayoutProperty(clicked, 'visibility');
@@ -593,15 +687,15 @@
 
             layers = [];
             colors = [];
-            if (this.id === toggleableLayerIds[3]) {
-            	layers = mode_layers;
-            	colors = mode_colors;
-            } else if (toggleableLayerIds.slice(4, toggleableLayerIds.length).includes(this.id)) {
+            if (this.id === toggleableLayerIds[5]) {
+            	layers = dest_layers;
+            	colors = dest_colors;
+            } else if (this.id === toggleableLayerIds[4]) {
             	layers = dur_layers;
             	colors = dur_colors;
             }
 
-            if (toggleableLayerIds.slice(3, toggleableLayerIds.length).includes(this.id)) {
+            if (toggleableLayerIds.slice(4, toggleableLayerIds.length).includes(this.id)) {
             	while (legend.lastElementChild) {
 				    legend.removeChild(legend.lastElementChild);
 				  }
@@ -610,11 +704,8 @@
 				  var color = colors[i];
 				  var item = document.createElement('div');
 				  var key = document.createElement('span');
-				  if(i == layers.length - 1) {
-				  	key.className = 'legend-key-circle';
-				  } else {
-				  	key.className = 'legend-key';
-				  }
+
+				  key.className = 'legend-key';
 				  key.style.backgroundColor = color;
 
 				  var value = document.createElement('span');
@@ -629,11 +720,11 @@
 
 
 // RIGHT INFO SCREEN
+		var total_counties = 2850
         map.on('mousemove', function(e) {
 			var counties = map.queryRenderedFeatures(e.point, {
-				layers: ['Harbin_dur', 'Harbin_mode', 'Harbin_rail_dur', 'Harbin_car_dur', 'Harbin_air_dur']
+				layers: ['closest_dest', 'closest_dur']
 			});
-
 
 			if (counties.length > 0) {
 				document.getElementById('features').style.visibility = 'visible';
@@ -641,86 +732,48 @@
 				var province = counties[0].properties.province
 				var city = counties[0].properties.city
 				var county = counties[0].properties.county
-				var shortest_dur = counties[0].properties.Harbin_shortest_dur
-				var shortest_car = counties[0].properties.Harbin_car_dur
-				var shortest_air = counties[0].properties.Harbin_air_dur
-				var shortest_rail = counties[0].properties.Harbin_rail_dur
 
-				var rail_path = counties[0].properties.Harbin_rail_path.split(',')
-				var rail_durs = counties[0].properties.Harbin_rail_path_durs.split(',')
-				var rail_path_str = '&nbsp;&nbsp;&nbsp;&nbsp;Drive to <span class=\'bold\'>'  + rail_path[0] + '</span> (' + get_time_str(counties[0].properties.Harbin_rail_drive_origin_dur) + ')<br>'
-				for(var i = 0; i < rail_path.length-1; i++) {
-					rail_path_str += '<span class=\'bold\'>&nbsp;&nbsp;&nbsp;&nbsp;' + rail_path[i] + '</span> to <span class=\'bold\'>' + rail_path[i+1] + '</span> (' + get_time_str(rail_durs[i]) + ')<br>'
+				var all_bool = counties[0].properties.closest_air_under2_bool
+				var at_least = ''
+				var not_complete = ''
+				if(all_bool == 'False') {
+					at_least = 'at least '
+					not_complete = ' (list may not be complete)'
 				}
-				rail_path_str += '&nbsp;&nbsp;&nbsp;&nbsp;Drive to destination (' + get_time_str(counties[0].properties.Harbin_rail_drive_dest_dur) + ')'
 
-				var air_path = counties[0].properties.Harbin_air_path.split(',')
-				var air_durs = counties[0].properties.Harbin_air_path_durs.split(',')
-				var air_path_str = '&nbsp;&nbsp;&nbsp;&nbsp;Drive to <span class=\'bold\'>'  + air_path[0] + '</span> (' + get_time_str(counties[0].properties.Harbin_air_drive_origin_dur) + ')<br>'
-				for(var i = 0; i < air_path.length-1; i++) {
-					air_path_str += '<span class=\'bold\'>&nbsp;&nbsp;&nbsp;&nbsp;' + air_path[i] + '</span> to <span class=\'bold\'>' + air_path[i+1] + '</span> (' + get_time_str(air_durs[i]) + ')<br>'
-				}				
-				air_path_str += '&nbsp;&nbsp;&nbsp;&nbsp;Drive to destination: (' + get_time_str(counties[0].properties.Harbin_air_drive_dest_dur) + ')'
+				var under2_names = counties[0].properties.closest_air_under2_names.split(',')
+				var under2_durs = counties[0].properties.closest_air_under2_durs.split(',')
 
-				var data_quality_str = 'Missing '
-				var data_quality_arr = [counties[0].properties.Harbin_car_bool, 
-										counties[0].properties.Harbin_rail_drive_origin_bool, 
-										counties[0].properties.Harbin_rail_drive_dest_bool, 
-										counties[0].properties.Harbin_air_drive_origin_bool, 
-										counties[0].properties.Harbin_air_drive_dest_bool, 
-										]
-				var bad_counter = 0
-				for(var i = 0; i < data_quality_arr.length; i++) {
-					if(data_quality_arr[i] == false) {
-						bad_counter +=1
+
+				under2_str = ''
+				for(var i = 0; i < under2_names.length; i++) {
+					under2_str += '<span class=\'bold\'>' + under2_names[i] + '</span> (' + get_time_str(under2_durs[i]) + ')'
+					if(i != under2_names.length - 1) {
+						under2_str += ', '
 					}
 				}
-				if(bad_counter == 0) {
-					data_quality_str = '<span class=\'bold\'>Good</span>'
-				} else if(bad_counter == data_quality_arr.length) {
-					data_quality_str = 'Missing all driving durations (used direct distance in some calculations)'
-				} else {
-					data_quality_str = 'Missing some but not all driving durations (used direct distance in some calculations'
-				}
 
-				function get_time(hours) {
-					return [Math.trunc(hours), Math.trunc(60 *(hours - Math.trunc(hours)))]
-				}
-				function get_time_str(hours) {
-					if(get_time(hours)[0] == 0) {
-						return get_time(hours)[1] + 'min'
-					} else {
-						return get_time(hours)[0] + 'h ' + get_time(hours)[1] + 'm'						
-					}
+				var closest_airports_str = 'Airports within a 2 hour drive: ' + under2_str + not_complete
+				if(under2_names[0] == '') {
+					closest_airports_str = 'Closest airports (drive): '
+					+ '<span class=\'bold\'>' + counties[0].properties.closest_air_0_name + '</span> (' + get_time_str(counties[0].properties.closest_air_0_dur) + '), '
+					+ '<span class=\'bold\'>' + counties[0].properties.closest_air_1_name + '</span> (' + get_time_str(counties[0].properties.closest_air_1_dur) + '), '
+					+ '<span class=\'bold\'>' + counties[0].properties.closest_air_2_name + '</span> (' + get_time_str(counties[0].properties.closest_air_2_dur) + ')'
 				}
 
 				document.getElementById('pd').innerHTML = '<h3><span class=\'bold\'>' + county_id + ' ' + province+ '<br>' + city + ' ' + county + '</span></h3>'
 				+ '<p>'
-				+ '<em>Fastest mode from Harbin: <span class=\'bold\'>' + counties[0].properties.Harbin_shortest_mode + '</span>'
-				+ '<br>Shortest duration: ' + '<span class=\'bold\'>' + get_time(shortest_dur)[0] + '</span>hr <span class=\'bold\'>' + get_time(shortest_dur)[1] + '</span>min</em>'
-
-				+ '<br><br>By car: ' + '<span class=\'bold\'><em>' + get_time(shortest_car)[0] + '</span>hr <span class=\'bold\'>' + get_time(shortest_car)[1] + '</span>min</em>'
-				+ '<br>Shortest rail path: ' + '<span class=\'bold\'><em>' + get_time(shortest_rail)[0] + '</span>hr <span class=\'bold\'>' + get_time(shortest_rail)[1] + '</span>min</em>'
-				+ '<br>' + rail_path_str
-				+ '<br>Shortest air path: ' + '<span class=\'bold\'><em>' + get_time(shortest_air)[0] + '</span>hr <span class=\'bold\'>' + get_time(shortest_air)[1] + '</span>min</em>'
-				+ '<br>' + air_path_str
-
-				+ '<br><br>Population: <span class=\'bold\'>' + counties[0].properties.population + '</span>'
-				+ ', Area: <span class=\'bold\'>' + Math.round(counties[0].properties.area) + '</span> km2'
-				+ '<br>Population density: <span class=\'bold\'>' + Math.round(counties[0].properties.pop_density) + '</span> people/km2'
-				+ '<br>Distance from Harbin: <span class=\'bold\'>' + counties[0].properties.Harbin_sld + '</span> km'	
-
-				+ '<br><br>Closest train stations (drive): '
-					+ '<span class=\'bold\'>' + counties[0].properties.closest_rail_0_iata + '</span> (' + get_time_str(counties[0].properties.closest_rail_0_dur) + '), '
-					+ '<span class=\'bold\'>' + counties[0].properties.closest_rail_1_iata + '</span> (' + get_time_str(counties[0].properties.closest_rail_1_dur) + '), '
-					+ '<span class=\'bold\'>' + counties[0].properties.closest_rail_2_iata + '</span> (' + get_time_str(counties[0].properties.closest_rail_2_dur) + ')'
-				+ '<br>Closest airports (drive): '
-					+ '<span class=\'bold\'>' + counties[0].properties.closest_air_0_iata + '</span> (' + get_time_str(counties[0].properties.closest_air_0_dur) + '), '
-					+ '<span class=\'bold\'>' + counties[0].properties.closest_air_1_iata + '</span> (' + get_time_str(counties[0].properties.closest_air_1_dur) + '), '
-					+ '<span class=\'bold\'>' + counties[0].properties.closest_air_2_iata + '</span> (' + get_time_str(counties[0].properties.closest_air_2_dur) + ')'
-
-				// + '<br><br>Driving data quality: ' + data_quality_str
-				// + '<br>Note: total rail/air path times include additional buffer/transfer times.'
+				+ '# of airports within a 2 hour drive: ' + at_least + '<span class=\'bold\'>' + counties[0].properties.closest_air_under2_num + '</span>'
+				+ '<br>' + closest_airports_str + '</p>'
+				+ '<p>Total direct destinations from airports within a 2 hour drive: '
+					+ '<span class=\'bold\'>' + counties[0].properties.closest_air_under2_dests + '</span> '
+					+ '(<span class=\'bold\'>' + counties[0].properties.closest_air_under2_dests_rank + '</span>/' + total_counties + ' counties)</p>'
+				+ '<p>Direct domestic destinations from airports within a 2 hour drive: '
+					+ '<span class=\'bold\'>' + counties[0].properties.closest_air_under2_domdests + '</span> '
+					+ '(<span class=\'bold\'>' + counties[0].properties.closest_air_under2_domdests_rank + '</span>/' + total_counties + ' counties)</p>'
+				+ '<p>Direct international destinations from airports within a 2 hour drive: '
+					+ '<span class=\'bold\'>' + counties[0].properties.closest_air_under2_intldests + '</span> '
+					+ '(<span class=\'bold\'>' + counties[0].properties.closest_air_under2_intldests_rank + '</span>/' + total_counties + ' counties)</p>'
 				+ '</p>';
 			} else {
 				document.getElementById('features').style.visibility = 'hidden';
