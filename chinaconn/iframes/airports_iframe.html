@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Airports</title>
+		<script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
+		<link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
+		<style>
+			body {
+			  margin: 0;
+			  padding: 0;
+			}
+
+			h2,
+			h3 {
+			  margin: 10px;
+			  font-size: 1.2em;
+			  font-family: 'open_sansbold';
+			}
+
+			h3 {
+			  font-size: 1em;
+			  font-family: 'open_sansbold';
+			}
+
+			p {
+			  font-size: 0.85em;
+			  margin: 10px;
+			  text-align: left;
+			  font-family: 'open_sansregular';
+			}
+
+			@font-face {
+			    font-family: 'open_sansbold';
+			    src: url('../fonts/opensans-bold-webfont.woff2') format('woff2'),
+			         url('../fonts/opensans-bold-webfont.woff') format('woff');
+			    font-weight: normal;
+			    font-style: normal;
+			}
+			
+			@font-face {
+			    font-family: 'open_sansregular';
+			    src: url('../fonts/opensans-regular-webfont.woff2') format('woff2'),
+			         url('../fonts/opensans-regular-webfont.woff') format('woff');
+			    font-weight: normal;
+			    font-style: normal;
+			}
+
+			/* MAPPPPPP */
+			#map {
+			  position: absolute;
+			  top: 0;
+			  bottom: 0;
+			  width: 100%;
+			}
+
+
+			/* LAYERS: top left */
+			#menu {
+		        background: #fff;
+		        position: absolute;
+		        z-index: 1;
+		        top: 20px;
+		        left: 20px;
+		        border-radius: 3px;
+		        width: 200px;
+		        border: 1px solid rgba(0, 0, 0, 0.4);
+		        font-family: 'open_sansregular', sans-serif;
+		    }
+		    #menu a {
+		        font-size: 13px;
+		        color: #404040;
+		        display: block;
+		        margin: 0;
+		        padding: 0;
+		        padding: 10px;
+		        text-decoration: none;
+		        border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+		        text-align: center;
+		    }
+		    #menu a:last-child {
+		        border: none;
+		    }
+		    #menu a:hover {
+		        background-color: #f8f8f8;
+		        color: #404040;
+		    }
+		    #menu a.active {
+		        background-color: #3887be;
+		        color: #ffffff;
+		    }
+		    #menu a.active:hover {
+		        background: #3074a4;
+		    }
+
+
+
+
+			/*INFO: top right */
+			.map-overlay {
+			  position: absolute;
+/*			  bottom: 0;
+*/			  background: rgba(255, 255, 255, 0.8);
+			  margin-right: 20px;
+			  font-family: 'open_sansregular', sans-serif;
+			  overflow: auto;
+			  border-radius: 3px;
+			}
+
+			#city {
+			  top: 0;
+			  right: 0;
+			  height: 280px;
+			  margin-top: 20px;
+			  width: 330px;
+			}
+
+			#features {
+/*			  top: 200;
+*/			  right: 0;
+			  height: 330px;
+			  margin-top: 310px;
+			  width: 330px;
+			  visibility: hidden;
+			}
+
+
+
+			/* LEGEND: bottom left */
+			#legend {
+			  padding: 20px;
+			  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+/*			  line-height: 20px;
+*/			  bottom: 40px;
+			  left: 20px;
+			  font-family: 'open_sansregular', sans-serif;
+			}
+			.legend-key {
+			  display: inline-block;
+			  border-radius: 20%;
+			  width: 18px;
+			  height: 18px;
+			  margin-right: 5px;
+			}
+			.legend-key-circle {
+			  display: inline-block;
+			  border-radius: 50%;
+			  width: 18px;
+			  height: 18px;
+			  margin-right: 5px;
+			}
+
+
+			.bold {font-family: 'open_sansbold';}
+
+
+
+		</style>
+	</head>
+	<body>
+		<nav id='menu'></nav>
+		<div id='map'></div>
+		<div class='map-overlay' id='city'>
+			<h2><span class='bold'>Airports of China</span></h2>
+			<div>
+				<p>Total airports: <span class='bold'>239</span>
+				<br>Total 2019 Passenger volume: <span class='bold'>1,351,628,545</span></p>
+
+				<p>Largest airports by volume: <span class='bold'>PEK</span> (100M), <span class='bold'>PVG</span> (76M), <span class='bold'>CAN</span> (73M), <span class='bold'>CTU</span> (56M), <span class='bold'>SZX</span> (53M)
+				<br>Most domestic destinations: <span class='bold'>CTU</span> (152), <span class='bold'>XIY</span> (152), <span class='bold'>PEK</span> (142), <span class='bold'>CAN</span> (141), <span class='bold'>PVG</span> (134)</p>
+
+				<p>Shortest air route: <span class='bold'>AAT</span> to <span class='bold'>KJI</span> (97km, 52min)
+				<br>Longest air route: <span class='bold'>SZX</span> to <span class='bold'>KHG</span> (4023km, 5h 47m)</p>
+
+<!-- 				<p>Counties within 30min, 1hr, 1.5hr, 2hr drive of an airport: <span class='bold'>12.2%, 39.7%, 67.4%, 86.0%</span>
+ -->				<p>Population within 30min, 1hr, 1.5hr, 2hr drive of an airport: <span class='bold'>16.2%, 48.7%, 76.6%, 92.7%</span>
+
+			</div>
+		</div>
+		<div class='map-overlay' id='features'>
+			<div id='pd'>
+			</div>
+		</div>
+		<div class='map-overlay' id='legend'></div>
+
+	</body>
+</html>
+<script>
+	// TO MAKE THE MAP APPEAR YOU MUST
+	// ADD YOUR ACCESS TOKEN FROM
+	// https://account.mapbox.com
+	mapboxgl.accessToken = 'pk.eyJ1IjoicGljcmF6eTIiLCJhIjoiY2thMG1vdDQ0MHMxajNtcXI1ZnpiYnFpZiJ9.iYJgxRpR27z5rtZGoGXl2g';
+	// mapboxgl.accessToken = 'pk.eyJ1IjoicGljcmF6eTIiLCJhIjoiY2thMG1xMnR2MDMxeDNtazBjYjVrcjAxZSJ9.Ku2z0w2wiQ9RmhN8oTbbYQ'
+	
+	function get_time(hours) {
+		return [Math.trunc(hours), Math.trunc(60 *(hours - Math.trunc(hours)))]
+	}
+	function get_time_str(hours) {
+		if(get_time(hours)[0] == 0) {
+			return get_time(hours)[1] + 'min'
+		} else {
+			return get_time(hours)[0] + 'h ' + get_time(hours)[1] + 'm'						
+		}
+	}
+
+	var dest_layers = ['0', '1-24', '25-49', '50-74', '75-99', '100-124', '125-149', '150-174', '175+']
+	var dest_colors = ["#0d0887", "#4c02a1", "#7e03a8", "#aa2395", "#cc4778", "#e66c5c", "#f89540", "#fdc527", "#f0f921"]
+
+	var dur_layers = ['<30min', '30min-1hr', '1-1.5hr', '1.5-2hr', '2-2.5hr', '2.5-3hr', '3.5-4hr', '4+hr'];
+	var dur_colors = ["#b40427","#df624e","#f4997b","#f5c4ad","#dedede","#b9d0f9","#8baffe","#6282ea","#3b4cc0"];
+
+	var map = new mapboxgl.Map({
+		container: 'map', // container id
+		style: 'mapbox://styles/picrazy2/cka8a1z1r0d591io0ebssgmz3',
+		center: [104, 38],
+		zoom: 4
+	});
+
+
+	map.on('load', function() {
+
+
+		map.moveLayer('admin-1-boundary-bg', 'settlement-subdivision-label')
+		map.moveLayer('admin-0-boundary-bg', 'settlement-subdivision-label')
+		map.moveLayer('admin-1-boundary', 'settlement-subdivision-label')
+		map.moveLayer('admin-0-boundary', 'settlement-subdivision-label')
+		map.moveLayer('admin-0-boundary-disputed', 'settlement-subdivision-label')
+
+
+		map.addSource('airports', {
+			'type': 'vector',
+			'url': 'mapbox://picrazy2.6f13skae'
+		});
+
+		map.addLayer({
+			'id': 'airports_vol',
+			'source': 'airports',
+			'source-layer': 'airports-d0tvyn',
+			'type': 'circle',
+			'layout': {
+				'visibility': 'none'
+			},
+			'paint': {
+				'circle-radius': [
+				  "interpolate",
+				  ["linear"],
+				  ["zoom"],
+				  2,
+				  [
+				    "interpolate",
+				    ["linear"],
+				    [
+				      "get",
+				      "passenger_vol_int_sqrt"
+				    ],
+				    0,
+				    1,
+				    10000.682076738563,
+				    25
+				  ],
+				  22,
+				  [
+				    "interpolate",
+				    ["linear"],
+				    [
+				      "get",
+				      "passenger_vol_int_sqrt"
+				    ],
+				    0,
+				    10,
+				    10000.682076738563,
+				    250
+				  ]
+				],
+				'circle-color': "hsl(36, 100%, 54%)",
+				'circle-opacity': 0.8,
+				'circle-stroke-color': "hsl(125, 0%, 0%)",
+				'circle-stroke-opacity': 0.8,
+				'circle-stroke-width': 1
+			}
+		}, 'admin-1-boundary-bg');
+
+		map.addLayer({
+			'id': 'airports_dest',
+			'source': 'airports',
+			'source-layer': 'airports-d0tvyn',
+			'type': 'circle',
+			'layout': {
+				'visibility': 'none'
+			},
+			'paint': {
+				'circle-radius': [
+				  "interpolate",
+				  ["linear"],
+				  ["zoom"],
+				  2,
+				  [
+				    "interpolate",
+				    ["linear"],
+				    ["get", "domdests_sqrt"],
+				    0,
+				    1,
+				    12.529964086141668,
+				    17
+				  ],
+				  22,
+				  [
+				    "interpolate",
+				    ["linear"],
+				    ["get", "domdests_sqrt"],
+				    0,
+				    10,
+				    12.529964086141668,
+				    170
+				  ]
+				],
+				'circle-color': "hsl(36, 100%, 54%)",
+				'circle-opacity': 0.8,
+				'circle-stroke-color': "hsl(125, 100%, 24%)",
+				'circle-stroke-opacity': 0.8,
+				'circle-stroke-width': [
+				  "interpolate",
+				  ["linear"],
+				  ["zoom"],
+				  2,
+				  [
+				    "interpolate",
+				    ["linear"],
+				    ["get", "intl_dests_num"],
+				    0,
+				    0,
+				    123,
+				    7
+				  ],
+				  22,
+				  [
+				    "interpolate",
+				    ["linear"],
+				    ["get", "intl_dests_num"],
+				    0,
+				    0,
+				    123,
+				    70
+				  ]
+				]
+			}
+		}, 'admin-1-boundary-bg');
+
+		map.addLayer({
+			'id': 'airports',
+			'source': 'airports',
+			'source-layer': 'airports-d0tvyn',
+			'type': 'symbol',
+			'layout': {
+				'icon-image': "airport-15",
+				'icon-allow-overlap': true,
+				'icon-size': [
+				  "interpolate",
+				  ["linear"],
+				  ["zoom"],
+				  0,
+				  0.1,
+				  22,
+				  3
+				],
+				'visibility': 'visible'
+			},
+			'paint': {}
+		}, 'admin-1-boundary-bg');
+
+
+
+		map.addSource('capitals', {
+			'type': 'vector',
+			'url': 'mapbox://picrazy2.2sfy1oip'
+		});
+		map.addLayer({
+			'id': 'capitals',
+			'source': 'capitals',
+			'source-layer': 'pc_combined-ac9jce',
+			'type': 'circle',
+			'paint': {
+				"circle-color": '#00c925',
+                "circle-radius": [
+				  "interpolate",
+				  ["linear"],
+				  ["zoom"],
+				  2,
+				  4,
+				  22,
+				  20
+				],
+				'circle-opacity': 0.8,
+				"circle-stroke-color": '#000000',
+				"circle-stroke-width": 1,
+				"circle-stroke-opacity": 0.5
+			},
+			'layout': {'visibility': 'none'}
+		}, 'admin-1-boundary-bg');
+
+		map.addSource('airport_routes', {
+			'type': 'vector',
+			'url': 'mapbox://picrazy2.12gl5cuy'
+		});
+
+		map.addLayer({
+			'id': 'airport_routes',
+			'source': 'airport_routes', 
+			'source-layer': 'airport_routes',
+			'type': 'line',
+			'paint': {
+				'line-color': "hsl(179, 100%, 81%)",
+				'line-opacity': 1,
+				'line-width': 2
+			},
+			'layout': {'visibility': 'none'}
+		}, 'admin-1-boundary-bg');
+
+		map.moveLayer('settlement-subdivision-label', 'capitals')
+		map.moveLayer('settlement-minor-label', 'capitals')
+		map.moveLayer('settlement-major-label', 'capitals')
+		map.moveLayer('state-label', 'capitals')
+
+		map.addSource('closest', {
+			'type': 'vector',
+			'url': 'mapbox://picrazy2.asl2ossa',
+		});
+		map.addLayer(
+		{
+			'id': 'closest_dur',
+			'source': 'closest',
+			'source-layer': 'air_closest',
+			'type': 'fill',
+			'paint': {
+				'fill-color': ["step",["get","closest_air_0_dur"],"#b40427",0.5,"#df624e",1,"#f4997b",1.5,"#f5c4ad",2,"#dedede",2.5,"#b9d0f9",3,"#8baffe",3.5,"#6282ea",4,"#3b4cc0"],
+				'fill-opacity': 0.8
+			},
+			'layout': {'visibility': 'visible'}
+		}, 'airports_vol'
+		);
+		map.addLayer(
+		{
+			'id': 'closest_dest',
+			'source': 'closest',
+			'source-layer': 'air_closest',
+			'type': 'fill',
+			'paint': {
+				'fill-color': ["step",["get","closest_air_under2_domdests"],"#0d0887",1,"#4c02a1",25,"#7e03a8",50,"#aa2395",75,"#cc4778",100,"#e66c5c",125,"#f89540",150,"#fdc527",175,"#f0f921"],
+				'fill-opacity': 0.8
+			},
+			'layout': {'visibility': 'none'}
+		}, 'airports_vol'
+		);
+		
+
+		for (i = 0; i < dur_layers.length; i++) {
+		  var layer = dur_layers[i];
+		  var color = dur_colors[i];
+		  var item = document.createElement('div');
+		  var key = document.createElement('span');
+		  key.className = 'legend-key';
+		  key.style.backgroundColor = color;
+
+		  var value = document.createElement('span');
+		  value.innerHTML = layer;
+		  item.appendChild(key);
+		  item.appendChild(value);
+		  legend.appendChild(item);
+		}
+
+		map.on('click', 'airports', function(e) {
+			console.log(e.features[0].properties.iata)
+			map.setLayoutProperty('airport_routes', 'visibility', 'none')
+			map.setPaintProperty('airport_routes', 'line-width', 2)
+			map.setLayoutProperty('airports', 'icon-image', "airport-15")
+			
+			dests = e.features[0].properties.domestic_dest_iata.split(',')
+			// console.log(dests.sort())
+			map.setLayoutProperty('airport_routes', 'visibility', 'visible');
+			map.setPaintProperty('airport_routes', 'line-width', ["match",["get", "start"],[e.features[0].properties.iata],2,0]);
+			map.setLayoutProperty('airports', 'icon-image', ["match",["get", "iata"],dests,"za-provincial-2","airport-15"
+])
+
+			popup = new mapboxgl.Popup()
+				.setLngLat(e.lngLat)
+				.setHTML(
+					'<h3 style=\'font-size:14px\'>' + e.features[0].properties.iata + ' ' + e.features[0].properties.english_name + '</h3>'
+					+ '<p style=\'font-size:13px\'>Total destinations: <span class=\'bold\'>' + e.features[0].properties.total_dests_num + '</span>'
+					+ '<br>Domestic destinations: <span class=\'bold\'>' + e.features[0].properties.domestic_dests_num + '</span>'
+					+ '<br>Passenger volume: <span class=\'bold\'>' + Math.round(1.0*e.features[0].properties.passenger_vol_int/10000.0)/100 + ' </span>M'
+					+ '<br>Volume rank: <span class=\'bold\'>' + e.features[0].properties.passenger_rank + '</span>/239'
+					+ '<br>Dom dests rank: <span class=\'bold\'>' + e.features[0].properties.domdests_rank + '</span>/239'
+					+ '<br>Shortest: <span class=\'bold\'>' + e.features[0].properties.closest_iata + '</span> '
+					+ '(' + Math.trunc(e.features[0].properties.closest_dist) + 'km, ' + get_time_str(e.features[0].properties.closest_dur) + ')'
+					+ '<br>Longest: <span class=\'bold\'>' + e.features[0].properties.furthest_iata + '</span> '
+					+ '(' + Math.trunc(e.features[0].properties.furthest_dist) + 'km, ' + get_time_str(e.features[0].properties.furthest_dur) + ')'
+					+ '</p>'
+					)
+				.addTo(map);
+		
+		});
+
+		var path_popups = []
+		map.on('mouseenter', 'airport_routes', function(e) {
+			if(path_popups.length == 0) {
+				path_popups.push(new mapboxgl.Popup({closeButton: false})
+					.setLngLat(e.lngLat)
+					.setHTML(
+						'<p style=\'font-size:12px\'><span class=\'bold\'>' + e.features[0].properties.start + '</span> '
+						+'to '
+						+'<span class=\'bold\'>' + e.features[0].properties.end + '</span> '
+						+'<br>' + Math.trunc(e.features[0].properties.dist) + ' km, ' + get_time_str(e.features[0].properties.dur)
+						+'</p>'
+						)
+					.addTo(map));
+			}
+		});
+
+		map.on('mouseleave', 'airport_routes', function() {
+			for(var i = 0; i < path_popups.length; i++) {
+				path_popups[i].remove()
+			}
+			path_popups = []
+
+		});
+		map.on('click', function(e){
+			var layers = map.queryRenderedFeatures(e.point, {
+				layers: ['airports']
+			});
+
+			if(layers.length == 0) {
+				map.setLayoutProperty('airport_routes', 'visibility', 'none')
+				map.setPaintProperty('airport_routes', 'line-width', 2)			
+				map.setLayoutProperty('airports', 'icon-image', "airport-15")	
+			}
+		})
+			 
+
+			// Change the cursor to a pointer when the mouse is over the states layer.
+		map.on('mouseenter', 'airports', function() {
+			map.getCanvas().style.cursor = 'pointer';
+		});
+			 
+			// Change it back to a pointer when it leaves.
+		map.on('mouseleave', 'airports', function() {
+			map.getCanvas().style.cursor = '';
+		});
+
+		map.on('click', 'capitals', function(e) {
+			new mapboxgl.Popup()
+				.setLngLat(e.lngLat)
+				.setHTML(
+					'<h3 style=\'font-size:15px\'>' + e.features[0].properties.province + ' ' + e.features[0].properties.capital + '</h3>'
+					+ 	'<h3 style=\'font-size:15px\'>' + e.features[0].properties.capital_eng + ', ' + e.features[0].properties.prov_eng + '</h3>'
+					+ '<p style=\'font-size:14px\'>Population: <span class=\'bold\'>' + e.features[0].properties.pop_k + 'k</span>'
+					+ '<br>GDP: <span class=\'bold\'>$' + e.features[0].properties.gdp_usd_m + 'm </span>USD'
+					+ '<br>GDP per capita: <span class=\'bold\'>$' + e.features[0].properties.gdp_pc + ' </span>USD'
+					+ '</p>'
+					)
+				.addTo(map);
+			map.setLayoutProperty(clicked, 'visibility', 'none');
+		});
+			 
+			// Change the cursor to a pointer when the mouse is over the states layer.
+		map.on('mouseenter', 'capitals', function() {
+			map.getCanvas().style.cursor = 'pointer';
+		});
+			 
+			// Change it back to a pointer when it leaves.
+		map.on('mouseleave', 'capitals', function() {
+			map.getCanvas().style.stations = '';
+		});
+	});
+
+
+
+
+
+
+
+	var toggleableLayerIds = ['capitals', 'airports', 'airports_vol', 'airports_dest', 'closest_dur','closest_dest',];
+
+	var toggleableLayerLabels = ['Provincial Capitals', 'Airport Icons', 'Airports with Size by Volume', 'Airports with Size by Destinations','Driving Time to Nearest Airport',  'Direct Domestic Destinations Reachable from Airports Within a 2 Hour Drive'];
+
+	var links = []
+
+	for (var i = 0; i < toggleableLayerIds.length; i++) {
+        var id = toggleableLayerIds[i];
+
+        var link = document.createElement('a');
+        link.href = '#';
+        if (i == 1 || i == 4) {        
+        	link.className = 'active';
+		} else {
+			link.className = '';
+		}
+		link.id = id
+        link.textContent = toggleableLayerLabels[i];
+
+        var layers = document.getElementById('menu');
+        layers.appendChild(link);
+        links.push(link)
+    }
+
+    for (var i = 0; i < toggleableLayerIds.length; i++) {
+        links[i].onclick = function(e) {
+            var clickedLayer = this.id;
+            e.preventDefault();
+            e.stopPropagation();
+
+            var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+
+            if (visibility === 'visible') {
+                map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+                this.className = '';
+            } else {
+                this.className = 'active';
+                map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+            }
+
+            if ((toggleableLayerIds.slice(2, 4).includes(this.id)) && visibility !== 'visible') {
+				for (var j = 2; j < 4; j++) {
+            		if (this.id !== links[j].id) {
+            			var clicked = links[j].id;
+            			var vis = map.getLayoutProperty(clicked, 'visibility');
+            			if (vis == 'visible') {
+			                map.setLayoutProperty(clicked, 'visibility', 'none');
+			                links[j].className = '';
+			            }
+            		}
+            	}
+            } 
+
+            if ((toggleableLayerIds.slice(4, 6).includes(this.id)) && visibility !== 'visible') {
+				for (var j = 4; j < 6; j++) {
+            		if (this.id !== links[j].id) {
+            			var clicked = links[j].id;
+            			var vis = map.getLayoutProperty(clicked, 'visibility');
+            			if (vis == 'visible') {
+			                map.setLayoutProperty(clicked, 'visibility', 'none');
+			                links[j].className = '';
+			            }
+            		}
+            	}
+            } 
+
+            layers = [];
+            colors = [];
+            if (this.id === toggleableLayerIds[5]) {
+            	layers = dest_layers;
+            	colors = dest_colors;
+            } else if (this.id === toggleableLayerIds[4]) {
+            	layers = dur_layers;
+            	colors = dur_colors;
+            }
+
+            if (toggleableLayerIds.slice(4, toggleableLayerIds.length).includes(this.id)) {
+            	while (legend.lastElementChild) {
+				    legend.removeChild(legend.lastElementChild);
+				  }
+            	for (i = 0; i < layers.length; i++) {
+				  var layer = layers[i];
+				  var color = colors[i];
+				  var item = document.createElement('div');
+				  var key = document.createElement('span');
+
+				  key.className = 'legend-key';
+				  key.style.backgroundColor = color;
+
+				  var value = document.createElement('span');
+				  value.innerHTML = layer;
+				  item.appendChild(key);
+				  item.appendChild(value);
+				  legend.appendChild(item);
+				}
+			}
+
+        };
+    }
+
+
+
+// RIGHT INFO SCREEN
+	var total_counties = 2850
+    map.on('mousemove', function(e) {
+		var counties = map.queryRenderedFeatures(e.point, {
+			layers: ['closest_dest', 'closest_dur']
+		});
+
+		if (counties.length > 0) {
+			document.getElementById('features').style.visibility = 'visible';
+			var county_id = counties[0].properties.county_id
+			var province = counties[0].properties.province
+			var city = counties[0].properties.city
+			var county = counties[0].properties.county
+
+			var all_bool = counties[0].properties.closest_air_under2_bool
+			var at_least = ''
+			var not_complete = ''
+			if(all_bool == 'False') {
+				at_least = 'at least '
+				not_complete = ' (list may not be complete)'
+			}
+
+			var under2_names = counties[0].properties.closest_air_under2_names.split(',')
+			var under2_durs = counties[0].properties.closest_air_under2_durs.split(',')
+
+
+			under2_str = ''
+			for(var i = 0; i < under2_names.length; i++) {
+				under2_str += '<span class=\'bold\'>' + under2_names[i] + '</span> (' + get_time_str(under2_durs[i]) + ')'
+				if(i != under2_names.length - 1) {
+					under2_str += ', '
+				}
+			}
+
+			var closest_airports_str = 'Airports within a 2 hour drive: ' + under2_str + not_complete
+			if(under2_names[0] == '') {
+				closest_airports_str = 'Closest airports (drive): '
+				+ '<span class=\'bold\'>' + counties[0].properties.closest_air_0_name + '</span> (' + get_time_str(counties[0].properties.closest_air_0_dur) + '), '
+				+ '<span class=\'bold\'>' + counties[0].properties.closest_air_1_name + '</span> (' + get_time_str(counties[0].properties.closest_air_1_dur) + '), '
+				+ '<span class=\'bold\'>' + counties[0].properties.closest_air_2_name + '</span> (' + get_time_str(counties[0].properties.closest_air_2_dur) + ')'
+			}
+
+			document.getElementById('pd').innerHTML = '<h3><span class=\'bold\'>' + county_id + ' ' + province+ '<br>' + city + ' ' + county + '</span></h3>'
+			+ '<p>'
+			+ '# of airports within a 2 hour drive: ' + at_least + '<span class=\'bold\'>' + counties[0].properties.closest_air_under2_num + '</span>'
+			+ '<br>' + closest_airports_str + '</p>'
+			+ '<p>Total direct destinations from airports within a 2 hour drive: '
+				+ '<span class=\'bold\'>' + counties[0].properties.closest_air_under2_dests + '</span> '
+				+ '(Beats <span class=\'bold\'>' + counties[0].properties.closest_air_under2_dests_perc + '</span>% of pop)</p>'
+			+ '<p>Direct domestic destinations from airports within a 2 hour drive: '
+				+ '<span class=\'bold\'>' + counties[0].properties.closest_air_under2_domdests + '</span> '
+				+ '(Beats <span class=\'bold\'>' + counties[0].properties.closest_air_under2_domdests_perc + '</span>% of pop)</p>'
+			+ '<p>Direct international destinations from airports within a 2 hour drive: '
+				+ '<span class=\'bold\'>' + counties[0].properties.closest_air_under2_intldests + '</span> '
+				+ '(Beats <span class=\'bold\'>' + counties[0].properties.closest_air_under2_intldests_perc + '</span>% of pop)</p>'
+			+ '</p>';
+		} else {
+			document.getElementById('features').style.visibility = 'hidden';
+	  }
+	});
+
+
+</script>
+ 
+
+</html>
