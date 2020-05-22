@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Airports</title>
+		<script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
+		<link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
+		<style>
+			body {
+			  margin: 0;
+			  padding: 0;
+			}
+
+			h2,
+			h3 {
+			  margin: 10px;
+			  font-size: 1.2em;
+			  font-family: 'open_sansbold';
+			}
+
+			h3 {
+			  font-size: 1em;
+			  font-family: 'open_sansbold';
+			}
+
+			p {
+			  font-size: 0.85em;
+			  margin: 10px;
+			  text-align: left;
+			  font-family: 'open_sansregular';
+			}
+
+			@font-face {
+			    font-family: 'open_sansbold';
+			    src: url('fonts/opensans-bold-webfont.woff2') format('woff2'),
+			         url('fonts/opensans-bold-webfont.woff') format('woff');
+			    font-weight: normal;
+			    font-style: normal;
+			}
+			
+			@font-face {
+			    font-family: 'open_sansregular';
+			    src: url('fonts/opensans-regular-webfont.woff2') format('woff2'),
+			         url('fonts/opensans-regular-webfont.woff') format('woff');
+			    font-weight: normal;
+			    font-style: normal;
+			}
+
+			/* MAPPPPPP */
+			#map {
+			  position: absolute;
+			  top: 0;
+			  bottom: 0;
+			  width: 100%;
+			}
+
+
+			/* LAYERS: top left */
+			#menu {
+		        background: #fff;
+		        position: absolute;
+		        z-index: 1;
+		        top: 20px;
+		        left: 20px;
+		        border-radius: 3px;
+		        width: 200px;
+		        border: 1px solid rgba(0, 0, 0, 0.4);
+		        font-family: 'open_sansregular', sans-serif;
+		    }
+		    #menu a {
+		        font-size: 13px;
+		        color: #404040;
+		        display: block;
+		        margin: 0;
+		        padding: 0;
+		        padding: 10px;
+		        text-decoration: none;
+		        border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+		        text-align: center;
+		    }
+		    #menu a:last-child {
+		        border: none;
+		    }
+		    #menu a:hover {
+		        background-color: #f8f8f8;
+		        color: #404040;
+		    }
+		    #menu a.active {
+		        background-color: #3887be;
+		        color: #ffffff;
+		    }
+		    #menu a.active:hover {
+		        background: #3074a4;
+		    }
+
+
+
+
+			/*INFO: top right */
+			.map-overlay {
+			  position: absolute;
+/*			  bottom: 0;
+*/			  background: rgba(255, 255, 255, 0.8);
+			  margin-right: 20px;
+			  font-family: 'open_sansregular', sans-serif;
+			  overflow: auto;
+			  border-radius: 3px;
+			}
+
+			#city {
+			  top: 0;
+			  right: 0;
+			  height: 280px;
+			  margin-top: 20px;
+			  width: 330px;
+			}
+
+			#features {
+/*			  top: 200;
+*/			  right: 0;
+			  height: 330px;
+			  margin-top: 310px;
+			  width: 330px;
+			  visibility: hidden;
+			}
+
+
+
+			/* LEGEND: bottom left */
+			#legend {
+			  padding: 20px;
+			  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+/*			  line-height: 20px;
+*/			  bottom: 40px;
+			  left: 20px;
+			  font-family: 'open_sansregular', sans-serif;
+			}
+			.legend-key {
+			  display: inline-block;
+			  border-radius: 20%;
+			  width: 18px;
+			  height: 18px;
+			  margin-right: 5px;
+			}
+			.legend-key-circle {
+			  display: inline-block;
+			  border-radius: 50%;
+			  width: 18px;
+			  height: 18px;
+			  margin-right: 5px;
+			}
+
+
+			.bold {font-family: 'open_sansbold';}
+
+
+
+		</style>
+	</head>
+	<body>
+		<nav id='menu'></nav>
+		<div id='map'></div>
+		<div class='map-overlay' id='city'>
+			<h2><span class='bold'>Airports of China</span></h2>
+			<div>
+				<p>Total airports: <span class='bold'>239</span>
+				<br>Total 2019 Passenger volume: <span class='bold'>1,351,628,545</span></p>
+
+				<p>Largest airports by volume: <span class='bold'>PEK</span> (100M), <span class='bold'>PVG</span> (76M), <span class='bold'>CAN</span> (73M), <span class='bold'>CTU</span> (56M), <span class='bold'>SZX</span> (53M)
+				<br>Most domestic destinations: <span class='bold'>CTU</span> (152), <span class='bold'>XIY</span> (152), <span class='bold'>PEK</span> (142), <span class='bold'>CAN</span> (141), <span class='bold'>PVG</span> (134)</p>
+
+				<p>Shortest air route: <span class='bold'>AAT</span> to <span class='bold'>KJI</span> (97km, 52min)
+				<br>Longest air route: <span class='bold'>SZX</span> to <span class='bold'>KHG</span> (4023km, 5h 47m)</p>
+
+<!-- 				<p>Counties within 30min, 1hr, 1.5hr, 2hr drive of an airport: <span class='bold'>12.2%, 39.7%, 67.4%, 86.0%</span>
+ -->				<p>Population within 30min, 1hr, 1.5hr, 2hr drive of an airport: <span class='bold'>16.2%, 48.7%, 76.6%, 92.7%</span>
+
+			</div>
+		</div>
+		<div class='map-overlay' id='features'>
+			<div id='pd'>
+			</div>
+		</div>
+		<div class='map-overlay' id='legend'></div>
+
+	</body>
+</html>
+<script>
+	// TO MAKE THE MAP APPEAR YOU MUST
+	// ADD YOUR ACCESS TOKEN FROM
+	// https://account.mapbox.com
+	mapboxgl.accessToken = 'pk.eyJ1IjoicGljcmF6eTIiLCJhIjoiY2thMG1vdDQ0MHMxajNtcXI1ZnpiYnFpZiJ9.iYJgxRpR27z5rtZGoGXl2g';
+	// mapboxgl.accessToken = 'pk.eyJ1IjoicGljcmF6eTIiLCJhIjoiY2thMG1xMnR2MDMxeDNtazBjYjVrcjAxZSJ9.Ku2z0w2wiQ9RmhN8oTbbYQ'
+	
+	function get_time(hours) {
+		return [Math.trunc(hours), Math.trunc(60 *(hours - Math.trunc(hours)))]
+	}
+	function get_time_str(hours) {
+		if(get_time(hours)[0] == 0) {
+			return get_time(hours)[1] + 'min'
+		} else {
+			return get_time(hours)[0] + 'h ' + get_time(hours)[1] + 'm'						
+		}
+	}
+
+	var map = new mapboxgl.Map({
+		container: 'map', // container id
+		style: 'mapbox://styles/picrazy2/cka8a1z1r0d591io0ebssgmz3',
+		center: [110, 37],
+		zoom: 3.75
+	});
+
+
+	map.on('load', function() {
+
+
+		map.moveLayer('admin-1-boundary-bg', 'settlement-subdivision-label')
+		map.moveLayer('admin-0-boundary-bg', 'settlement-subdivision-label')
+		map.moveLayer('admin-1-boundary', 'settlement-subdivision-label')
+		map.moveLayer('admin-0-boundary', 'settlement-subdivision-label')
+		map.moveLayer('admin-0-boundary-disputed', 'settlement-subdivision-label')
+
+
+		map.addSource('routes', {
+			'type': 'geojson',
+			'data': 'http://picrazy2.github.io/flightlog/routes.geojson'
+		});
+
+		map.addLayer({
+			'id': 'routes',
+			'source': 'routes',
+			// 'source-layer': 'routes-ai806l',
+			'type': 'line',
+			'layout': {
+				'visibility': 'visible'
+			},
+			'paint': {
+				'line-color': '#B920A9',
+				'line-width': [
+				  "interpolate",
+				  ["linear"],
+				  ["get", "count"],
+				  1,
+				  1,
+				  19,
+				  19
+				]
+
+			}
+		}, 'admin-1-boundary-bg');
+   });
+
+</script>
+ 
+
+</html>
