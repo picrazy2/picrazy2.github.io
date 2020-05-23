@@ -28,7 +28,8 @@
     "arr_intdom_hist":"Domestic,1",
     "dep_year_hist":"2018,1",
     "arr_year_hist":"2018,1",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":2
     }
   },
   {
@@ -58,7 +59,8 @@
     "arr_intdom_hist":"International,1",
     "dep_year_hist":"2019,1",
     "arr_year_hist":"2019,1",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":2
     }
   },
   {
@@ -88,7 +90,8 @@
     "arr_intdom_hist":"Domestic,1",
     "dep_year_hist":"2017,1",
     "arr_year_hist":"2017,1",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":2
     }
   },
   {
@@ -118,7 +121,8 @@
     "arr_intdom_hist":"International,1",
     "dep_year_hist":"2016,1",
     "arr_year_hist":"2016,1",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":2
     }
   },
   {
@@ -148,7 +152,8 @@
     "arr_intdom_hist":"Domestic,22;International,5",
     "dep_year_hist":"2015,3;2016,3;2017,7;2018,5;2019,6;2020,3",
     "arr_year_hist":"2015,2;2016,3;2017,7;2018,6;2019,6;2020,3",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":54
     }
   },
   {
@@ -178,7 +183,8 @@
     "arr_intdom_hist":"International,1;Domestic,1",
     "dep_year_hist":"2019,2",
     "arr_year_hist":"2019,2",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":4
     }
   },
   {
@@ -208,7 +214,8 @@
     "arr_intdom_hist":"International,1",
     "dep_year_hist":"2019,2",
     "arr_year_hist":"2019,1",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":3
     }
   },
   {
@@ -238,7 +245,8 @@
     "arr_intdom_hist":"Domestic,1",
     "dep_year_hist":"2016,1",
     "arr_year_hist":"2016,1",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":2
     }
   },
   {
@@ -268,7 +276,8 @@
     "arr_intdom_hist":"Domestic,1",
     "dep_year_hist":"",
     "arr_year_hist":"",
-    "arr_conn_year_hist":"2017,1"
+    "arr_conn_year_hist":"2017,1",
+    "total":1
     }
   },
   {
@@ -298,7 +307,8 @@
     "arr_intdom_hist":"",
     "dep_year_hist":"2020,1",
     "arr_year_hist":"",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":null
     }
   },
   {
@@ -328,7 +338,8 @@
     "arr_intdom_hist":"Domestic,1",
     "dep_year_hist":"2016,1",
     "arr_year_hist":"2016,1",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":2
     }
   },
   {
@@ -358,7 +369,8 @@
     "arr_intdom_hist":"Domestic,2",
     "dep_year_hist":"2017,1;2020,1",
     "arr_year_hist":"2017,1;2020,1",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":4
     }
   },
   {
@@ -388,7 +400,8 @@
     "arr_intdom_hist":"International,2",
     "dep_year_hist":"2019,1",
     "arr_year_hist":"2018,1",
-    "arr_conn_year_hist":"2019,1"
+    "arr_conn_year_hist":"2019,1",
+    "total":3
     }
   },
   {
@@ -418,7 +431,8 @@
     "arr_intdom_hist":"Domestic,12;International,6",
     "dep_year_hist":"2017,1;2018,1;2019,2",
     "arr_year_hist":"2019,2",
-    "arr_conn_year_hist":"2015,3;2016,1;2017,6;2018,3;2019,2;2020,1"
+    "arr_conn_year_hist":"2015,3;2016,1;2017,6;2018,3;2019,2;2020,1",
+    "total":22
     }
   },
   {
@@ -448,7 +462,8 @@
     "arr_intdom_hist":"Domestic,1",
     "dep_year_hist":"",
     "arr_year_hist":"",
-    "arr_conn_year_hist":"2019,1"
+    "arr_conn_year_hist":"2019,1",
+    "total":1
     }
   },
   {
@@ -478,7 +493,8 @@
     "arr_intdom_hist":"International,1",
     "dep_year_hist":"2017,1;2020,1",
     "arr_year_hist":"2017,1",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":3
     }
   },
   {
@@ -508,7 +524,8 @@
     "arr_intdom_hist":"",
     "dep_year_hist":"2018,1",
     "arr_year_hist":"",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":null
     }
   },
   {
@@ -538,7 +555,8 @@
     "arr_intdom_hist":"Domestic,1",
     "dep_year_hist":"2020,1",
     "arr_year_hist":"2020,1",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":2
     }
   },
   {
@@ -568,7 +586,8 @@
     "arr_intdom_hist":"International,3;Domestic,3",
     "dep_year_hist":"",
     "arr_year_hist":"",
-    "arr_conn_year_hist":"2016,1;2017,3;2018,1;2019,1"
+    "arr_conn_year_hist":"2016,1;2017,3;2018,1;2019,1",
+    "total":6
     }
   },
   {
@@ -598,7 +617,8 @@
     "arr_intdom_hist":"Domestic,1;International,1",
     "dep_year_hist":"2019,1",
     "arr_year_hist":"2019,1",
-    "arr_conn_year_hist":"2017,1"
+    "arr_conn_year_hist":"2017,1",
+    "total":3
     }
   },
   {
@@ -628,7 +648,8 @@
     "arr_intdom_hist":"International,1",
     "dep_year_hist":"2018,1",
     "arr_year_hist":"2018,1",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":2
     }
   },
   {
@@ -658,7 +679,8 @@
     "arr_intdom_hist":"International,1",
     "dep_year_hist":"2020,1",
     "arr_year_hist":"2020,1",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":2
     }
   },
   {
@@ -688,7 +710,8 @@
     "arr_intdom_hist":"Domestic,1",
     "dep_year_hist":"2017,1",
     "arr_year_hist":"2017,1",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":2
     }
   },
   {
@@ -718,7 +741,8 @@
     "arr_intdom_hist":"Domestic,1",
     "dep_year_hist":"",
     "arr_year_hist":"",
-    "arr_conn_year_hist":"2019,1"
+    "arr_conn_year_hist":"2019,1",
+    "total":1
     }
   },
   {
@@ -748,7 +772,8 @@
     "arr_intdom_hist":"International,1",
     "dep_year_hist":"2016,1",
     "arr_year_hist":"2016,1",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":2
     }
   },
   {
@@ -778,7 +803,8 @@
     "arr_intdom_hist":"Domestic,1",
     "dep_year_hist":"2016,1",
     "arr_year_hist":"2016,1",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":2
     }
   },
   {
@@ -808,7 +834,8 @@
     "arr_intdom_hist":"Domestic,3;International,1",
     "dep_year_hist":"2015,1;2017,1",
     "arr_year_hist":"2015,1;2017,1;2020,1",
-    "arr_conn_year_hist":"2017,1"
+    "arr_conn_year_hist":"2017,1",
+    "total":6
     }
   },
   {
@@ -838,7 +865,8 @@
     "arr_intdom_hist":"International,1",
     "dep_year_hist":"2019,1",
     "arr_year_hist":"2019,1",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":2
     }
   },
   {
@@ -868,7 +896,8 @@
     "arr_intdom_hist":"International,1",
     "dep_year_hist":"",
     "arr_year_hist":"",
-    "arr_conn_year_hist":"2018,1"
+    "arr_conn_year_hist":"2018,1",
+    "total":1
     }
   },
   {
@@ -898,7 +927,8 @@
     "arr_intdom_hist":"Domestic,1",
     "dep_year_hist":"2019,1",
     "arr_year_hist":"2019,1",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":2
     }
   },
   {
@@ -928,7 +958,8 @@
     "arr_intdom_hist":"Domestic,1",
     "dep_year_hist":"",
     "arr_year_hist":"",
-    "arr_conn_year_hist":"2018,1"
+    "arr_conn_year_hist":"2018,1",
+    "total":1
     }
   },
   {
@@ -958,7 +989,8 @@
     "arr_intdom_hist":"International,1",
     "dep_year_hist":"2018,1",
     "arr_year_hist":"2018,1",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":2
     }
   },
   {
@@ -988,7 +1020,8 @@
     "arr_intdom_hist":"Domestic,1",
     "dep_year_hist":"2019,1",
     "arr_year_hist":"2019,1",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":2
     }
   },
   {
@@ -1018,7 +1051,8 @@
     "arr_intdom_hist":"International,1;Domestic,2",
     "dep_year_hist":"2016,1",
     "arr_year_hist":"2016,1",
-    "arr_conn_year_hist":"2018,1;2020,1"
+    "arr_conn_year_hist":"2018,1;2020,1",
+    "total":4
     }
   },
   {
@@ -1048,7 +1082,8 @@
     "arr_intdom_hist":"International,17;Domestic,7",
     "dep_year_hist":"2015,2;2016,5;2017,7;2018,3;2019,3;2020,2",
     "arr_year_hist":"2015,3;2016,4;2017,8;2018,3;2019,4;2020,2",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":46
     }
   },
   {
@@ -1078,7 +1113,8 @@
     "arr_intdom_hist":"Domestic,3",
     "dep_year_hist":"2017,1;2020,1",
     "arr_year_hist":"2017,2;2020,1",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":5
     }
   },
   {
@@ -1108,7 +1144,8 @@
     "arr_intdom_hist":"Domestic,1;International,1",
     "dep_year_hist":"2017,1;2018,1",
     "arr_year_hist":"2017,1;2018,1",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":4
     }
   },
   {
@@ -1138,7 +1175,8 @@
     "arr_intdom_hist":"Domestic,1",
     "dep_year_hist":"2016,1",
     "arr_year_hist":"2016,1",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":2
     }
   },
   {
@@ -1168,7 +1206,8 @@
     "arr_intdom_hist":"Domestic,2;International,4",
     "dep_year_hist":"2016,1;2019,2",
     "arr_year_hist":"2016,1;2019,2",
-    "arr_conn_year_hist":"2018,1;2019,1;2020,1"
+    "arr_conn_year_hist":"2018,1;2019,1;2020,1",
+    "total":9
     }
   },
   {
@@ -1198,7 +1237,8 @@
     "arr_intdom_hist":"",
     "dep_year_hist":"2017,1",
     "arr_year_hist":"",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":null
     }
   },
   {
@@ -1228,7 +1268,8 @@
     "arr_intdom_hist":"International,2",
     "dep_year_hist":"2018,1",
     "arr_year_hist":"2017,1",
-    "arr_conn_year_hist":"2016,1"
+    "arr_conn_year_hist":"2016,1",
+    "total":3
     }
   },
   {
@@ -1258,7 +1299,8 @@
     "arr_intdom_hist":"Domestic,1",
     "dep_year_hist":"2017,1",
     "arr_year_hist":"2016,1",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":2
     }
   },
   {
@@ -1288,7 +1330,8 @@
     "arr_intdom_hist":"Domestic,1",
     "dep_year_hist":"2015,1",
     "arr_year_hist":"2015,1",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":2
     }
   },
   {
@@ -1318,7 +1361,8 @@
     "arr_intdom_hist":"",
     "dep_year_hist":"2020,1",
     "arr_year_hist":"",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":null
     }
   },
   {
@@ -1348,7 +1392,8 @@
     "arr_intdom_hist":"Domestic,2",
     "dep_year_hist":"2017,2",
     "arr_year_hist":"2017,2",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":4
     }
   },
   {
@@ -1378,7 +1423,8 @@
     "arr_intdom_hist":"",
     "dep_year_hist":"2018,1",
     "arr_year_hist":"",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":null
     }
   },
   {
@@ -1408,7 +1454,8 @@
     "arr_intdom_hist":"Domestic,1",
     "dep_year_hist":"2017,1",
     "arr_year_hist":"2017,1",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":2
     }
   },
   {
@@ -1438,7 +1485,8 @@
     "arr_intdom_hist":"Domestic,1",
     "dep_year_hist":"",
     "arr_year_hist":"",
-    "arr_conn_year_hist":"2016,1"
+    "arr_conn_year_hist":"2016,1",
+    "total":1
     }
   },
   {
@@ -1468,7 +1516,8 @@
     "arr_intdom_hist":"International,1",
     "dep_year_hist":"",
     "arr_year_hist":"",
-    "arr_conn_year_hist":"2019,1"
+    "arr_conn_year_hist":"2019,1",
+    "total":1
     }
   },
   {
@@ -1498,7 +1547,8 @@
     "arr_intdom_hist":"International,1",
     "dep_year_hist":"",
     "arr_year_hist":"2020,1",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":1
     }
   },
   {
@@ -1528,7 +1578,8 @@
     "arr_intdom_hist":"International,1",
     "dep_year_hist":"",
     "arr_year_hist":"2020,1",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":1
     }
   },
   {
@@ -1558,7 +1609,8 @@
     "arr_intdom_hist":"Domestic,1",
     "dep_year_hist":"",
     "arr_year_hist":"2018,1",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":1
     }
   },
   {
@@ -1588,7 +1640,8 @@
     "arr_intdom_hist":"International,1",
     "dep_year_hist":"",
     "arr_year_hist":"2018,1",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":1
     }
   },
   {
@@ -1618,7 +1671,8 @@
     "arr_intdom_hist":"Domestic,1",
     "dep_year_hist":"",
     "arr_year_hist":"2019,1",
-    "arr_conn_year_hist":""
+    "arr_conn_year_hist":"",
+    "total":1
     }
   }
 ]

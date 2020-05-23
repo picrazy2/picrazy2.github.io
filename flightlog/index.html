@@ -206,8 +206,8 @@
 	var map = new mapboxgl.Map({
 		container: 'map', // container id
 		style: 'mapbox://styles/picrazy2/cka8a1z1r0d591io0ebssgmz3',
-		center: [146.6, 56.85],
-		zoom: 1.5
+		center: [-120, 45],
+		zoom: 1.8
 	});
 
 
@@ -234,13 +234,13 @@
 				'visibility': 'visible'
 			},
 			'paint': {
-				'line-color': '#B920A9',
+				'line-color': ["match",["get", "domint"],['Domestic'],'#087E8B','#FF5A5F'],
 				'line-width': [
 				  "interpolate",
 				  ["linear"],
 				  ["get", "count"],
 				  1,
-				  1,
+				  2,
 				  19,
 				  19
 				]
@@ -267,12 +267,107 @@
 				  0,
 				  0.5,
 				  22,
-				  8
+				  6
 				],
 				'visibility': 'visible'
 			},
 			'paint': {}
 		}, 'admin-1-boundary-bg');
+
+
+
+
+		function times(num) {
+			if(num == 1) {
+				return 'time'
+			} else {
+				return 'times'
+			}
+		}
+
+		function parse_hist(hist) {
+			var hist_split = hist.split(';')
+			var hist_str = ''
+			for(var i = 0; i < hist_split.length; i++) {
+				var further_split = hist_split[i].split(',')
+				if(i > 0) {
+					hist_str += ', '
+				}
+				hist_str += further_split[0] + ': <span class=\'bold\'>' + further_split[1] + '</span> ' + times(further_split[1])
+			}
+			return hist_str	
+		}
+
+		var path_popups = []
+		map.on('mouseenter', 'routes', function(e) {
+
+			if(path_popups.length == 0) {
+				var start = e.features[0].properties.start_iata
+				var end = e.features[0].properties.end_iata
+				var origin_hist_split = e.features[0].properties.origin_hist.split(';')
+				var origin_hist_str = ''
+				for(var i = 0; i < origin_hist_split.length; i++) {
+					var further_split = origin_hist_split[i].split(',')
+					if(i > 0) {
+						origin_hist_str += ', '
+					}
+					if(further_split[0] == start) {
+						origin_hist_str += start + '-' + end + ': <span class=\'bold\'>' + further_split[1] + '</span> ' + times(further_split[1])
+					} else {
+						origin_hist_str += end + '-' + start + ': <span class=\'bold\'>' + further_split[1] + '</span> ' + times(further_split[1])
+					}
+				}
+
+				path_popups.push(new mapboxgl.Popup({closeButton: false})
+					.setLngLat(e.lngLat)
+					.setHTML(
+						'<p style=\'font-size:15px\'>Between <span class=\'bold\'>' + start + '</span> and <span class=\'bold\'>' + end + '</span>'
+						+'<br>' + e.features[0].properties.start_city_country.split(',')[0] + ' and ' + e.features[0].properties.end_city_country.split(',')[0] + '</p>'
+						+'<p style=\'font-size:13px\'>' + e.features[0].properties.domint + ', <span class=\'bold\'>' + Math.trunc(e.features[0].properties.dist) + '</span>mi, ' + get_time_str(e.features[0].properties.dur)
+						+'<br> Flown <span class=\'bold\'>' + e.features[0].properties.count + '</span> ' + times(e.features[0].properties.count) + ' (' +  origin_hist_str + ')'
+						+'<br>' + parse_hist(e.features[0].properties.class_hist) 
+						+'<br>' + parse_hist(e.features[0].properties.airline_hist)  
+						+'<br>First time: <span class=\'bold\'>' + e.features[0].properties.earliest_date + '</span>'
+						+'<br>Last time: <span class=\'bold\'>' + e.features[0].properties.latest_date + '</span>'
+						+'</p>'
+						)
+					.addTo(map));
+			}
+		});
+
+		map.on('mouseleave', 'routes', function() {
+			for(var i = 0; i < path_popups.length; i++) {
+				path_popups[i].remove()
+			}
+			path_popups = []
+
+		});
+
+
+		map.on('click', 'airports', function(e) {
+			new mapboxgl.Popup()
+				.setLngLat(e.lngLat)
+				.setHTML(
+					'<p style=\'font-size:14px\'><span class=\'bold\'>' + e.features[0].properties.IATA + ' ' + e.features[0].properties.Name + '</span>'
+					+ '<br>' + e.features[0].properties.City + ', ' + e.features[0].properties.Country + '</p>'
+
+					+ '<p style=\'font-size:13px\'>Departures: <span class=\'bold\'>' + e.features[0].properties.dep_count+ '</span>'
+					+ '<br>Arrivals: <span class=\'bold\'>' + e.features[0].properties.arr_count + '</span>'
+					+ '<br>Connections: <span class=\'bold\'>' + e.features[0].properties.arr_conn_count+ '</span>'
+					+ '</p>'
+					)
+				.addTo(map);
+		});
+			 
+			// Change the cursor to a pointer when the mouse is over the states layer.
+		map.on('mouseenter', 'airports', function() {
+			map.getCanvas().style.cursor = 'pointer';
+		});
+			 
+			// Change it back to a pointer when it leaves.
+		map.on('mouseleave', 'airports', function() {
+			map.getCanvas().style.cursor = '';
+		});
    });
 
 </script>
