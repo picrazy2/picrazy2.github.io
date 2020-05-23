@@ -1,0 +1,1625 @@
+{
+   "type": "FeatureCollection",
+   "features": [
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 2.0784599999999998,41.2971 ]
+    },
+    "properties": {
+    "FIELD1":0,
+    "IATA":"BCN",
+    "Name":"Barcelona International Airport",
+    "City":"Barcelona",
+    "Country":"Spain",
+    "dep_count":1,
+    "arr_count":1,
+    "arr_conn_count":0,
+    "dep_dest_hist":"MUC,1",
+    "arr_dest_hist":"VLL,1",
+    "dep_first":"2018-05-30",
+    "arr_first":"2018-05-28",
+    "dep_last":"2018-05-30",
+    "arr_last":"2018-05-28",
+    "dep_airline_hist":"Lufthansa,1",
+    "arr_airline_hist":"Vueling,1",
+    "dep_intdom_hist":"Domestic,1",
+    "arr_intdom_hist":"Domestic,1",
+    "dep_year_hist":"2018,1",
+    "arr_year_hist":"2018,1",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -64.67870331,32.36399841 ]
+    },
+    "properties": {
+    "FIELD1":1,
+    "IATA":"BDA",
+    "Name":"L.F. Wade International International Airport",
+    "City":"Bermuda",
+    "Country":"Bermuda",
+    "dep_count":1,
+    "arr_count":1,
+    "arr_conn_count":0,
+    "dep_dest_hist":"JFK,1",
+    "arr_dest_hist":"JFK,1",
+    "dep_first":"2019-07-29",
+    "arr_first":"2019-07-26",
+    "dep_last":"2019-07-29",
+    "arr_last":"2019-07-26",
+    "dep_airline_hist":"American,1",
+    "arr_airline_hist":"American,1",
+    "dep_intdom_hist":"International,1",
+    "arr_intdom_hist":"International,1",
+    "dep_year_hist":"2019,1",
+    "arr_year_hist":"2019,1",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -72.68319702,41.93889999 ]
+    },
+    "properties": {
+    "FIELD1":2,
+    "IATA":"BDL",
+    "Name":"Bradley International Airport",
+    "City":"Windsor Locks",
+    "Country":"United States",
+    "dep_count":1,
+    "arr_count":1,
+    "arr_conn_count":0,
+    "dep_dest_hist":"IAD,1",
+    "arr_dest_hist":"DEN,1",
+    "dep_first":"2017-04-13",
+    "arr_first":"2017-04-16",
+    "dep_last":"2017-04-13",
+    "arr_last":"2017-04-16",
+    "dep_airline_hist":"United,1",
+    "arr_airline_hist":"United,1",
+    "dep_intdom_hist":"Domestic,1",
+    "arr_intdom_hist":"Domestic,1",
+    "dep_year_hist":"2017,1",
+    "arr_year_hist":"2017,1",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 153.1170044,-27.38419914 ]
+    },
+    "properties": {
+    "FIELD1":3,
+    "IATA":"BNE",
+    "Name":"Brisbane International Airport",
+    "City":"Brisbane",
+    "Country":"Australia",
+    "dep_count":1,
+    "arr_count":1,
+    "arr_conn_count":0,
+    "dep_dest_hist":"SYD,1",
+    "arr_dest_hist":"SIN,1",
+    "dep_first":"2016-12-29",
+    "arr_first":"2016-12-24",
+    "dep_last":"2016-12-29",
+    "arr_last":"2016-12-24",
+    "dep_airline_hist":"Qantas,1",
+    "arr_airline_hist":"Singapore,1",
+    "dep_intdom_hist":"Domestic,1",
+    "arr_intdom_hist":"International,1",
+    "dep_year_hist":"2016,1",
+    "arr_year_hist":"2016,1",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -71.00520325,42.36429977 ]
+    },
+    "properties": {
+    "FIELD1":4,
+    "IATA":"BOS",
+    "Name":"General Edward Lawrence Logan International Airport",
+    "City":"Boston",
+    "Country":"United States",
+    "dep_count":27,
+    "arr_count":27,
+    "arr_conn_count":0,
+    "dep_dest_hist":"EWR,11;LAX,1;PEK,2;IAD,2;PHL,2;DTW,2;PVG,1;KEF,1;LIS,1;ORD,2;CDG,1;SFO,1",
+    "arr_dest_hist":"EWR,8;LAX,2;IAD,3;PEK,1;SFO,6;JFK,1;DTW,1;PVG,1;KEF,1;CDG,1;FRA,1;PHL,1",
+    "dep_first":"2015-03-08",
+    "arr_first":"2015-03-19",
+    "dep_last":"2020-05-21",
+    "arr_last":"2020-05-20",
+    "dep_airline_hist":"United,16;JetBlue,2;Hainan,3;American,1;Delta,2;Wow,1;TAP,1;Norwegian,1",
+    "arr_airline_hist":"United,18;JetBlue,2;Hainan,2;Delta,2;Wow,1;Norwegian,1;Lufthansa,1",
+    "dep_intdom_hist":"Domestic,21;International,6",
+    "arr_intdom_hist":"Domestic,22;International,5",
+    "dep_year_hist":"2015,3;2016,3;2017,7;2018,5;2019,6;2020,3",
+    "arr_year_hist":"2015,2;2016,3;2017,7;2018,6;2019,6;2020,3",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 2.55,49.012798 ]
+    },
+    "properties": {
+    "FIELD1":5,
+    "IATA":"CDG",
+    "Name":"Charles de Gaulle International Airport",
+    "City":"Paris",
+    "Country":"France",
+    "dep_count":2,
+    "arr_count":2,
+    "arr_conn_count":0,
+    "dep_dest_hist":"NCE,1;BOS,1",
+    "arr_dest_hist":"BOS,1;NCE,1",
+    "dep_first":"2019-03-28",
+    "arr_first":"2019-03-22",
+    "dep_last":"2019-03-31",
+    "arr_last":"2019-03-31",
+    "dep_airline_hist":"Air France,1;Norwegian,1",
+    "arr_airline_hist":"Norwegian,1;Air France,1",
+    "dep_intdom_hist":"Domestic,1;International,1",
+    "arr_intdom_hist":"International,1;Domestic,1",
+    "dep_year_hist":"2019,2",
+    "arr_year_hist":"2019,2",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 18.60169983,-33.96480179 ]
+    },
+    "properties": {
+    "FIELD1":6,
+    "IATA":"CPT",
+    "Name":"Cape Town International Airport",
+    "City":"Cape Town",
+    "Country":"South Africa",
+    "dep_count":2,
+    "arr_count":1,
+    "arr_conn_count":0,
+    "dep_dest_hist":"PLZ,1;DXB,1",
+    "arr_dest_hist":"EWR,1",
+    "dep_first":"2019-12-20",
+    "arr_first":"2019-12-18",
+    "dep_last":"2019-12-28",
+    "arr_last":"2019-12-18",
+    "dep_airline_hist":"Airlink/SAA,1;Emirates,1",
+    "arr_airline_hist":"United,1",
+    "dep_intdom_hist":"Domestic,1;International,1",
+    "arr_intdom_hist":"International,1",
+    "dep_year_hist":"2019,2",
+    "arr_year_hist":"2019,1",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 103.94699859999999,30.57850075 ]
+    },
+    "properties": {
+    "FIELD1":7,
+    "IATA":"CTU",
+    "Name":"Chengdu Shuangliu International Airport",
+    "City":"Chengdu",
+    "Country":"China",
+    "dep_count":1,
+    "arr_count":1,
+    "arr_conn_count":0,
+    "dep_dest_hist":"DNH,1",
+    "arr_dest_hist":"KWL,1",
+    "dep_first":"2016-03-21",
+    "arr_first":"2016-03-18",
+    "dep_last":"2016-03-21",
+    "arr_last":"2016-03-18",
+    "dep_airline_hist":"Sichuan,1",
+    "arr_airline_hist":"Sichuan,1",
+    "dep_intdom_hist":"Domestic,1",
+    "arr_intdom_hist":"Domestic,1",
+    "dep_year_hist":"2016,1",
+    "arr_year_hist":"2016,1",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -104.6729965,39.86169815 ]
+    },
+    "properties": {
+    "FIELD1":8,
+    "IATA":"DEN",
+    "Name":"Denver International Airport",
+    "City":"Denver",
+    "Country":"United States",
+    "dep_count":0,
+    "arr_count":0,
+    "arr_conn_count":1,
+    "dep_dest_hist":"BDL,1",
+    "arr_dest_hist":"LAX,1",
+    "dep_first":"2017-04-16",
+    "arr_first":"2017-04-16",
+    "dep_last":"2017-04-16",
+    "arr_last":"2017-04-16",
+    "dep_airline_hist":"United,1",
+    "arr_airline_hist":"United,1",
+    "dep_intdom_hist":"Domestic,1",
+    "arr_intdom_hist":"Domestic,1",
+    "dep_year_hist":"",
+    "arr_year_hist":"",
+    "arr_conn_year_hist":"2017,1"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 100.60700229999999,13.91259956 ]
+    },
+    "properties": {
+    "FIELD1":9,
+    "IATA":"DMK",
+    "Name":"Don Mueang International Airport",
+    "City":"Bangkok",
+    "Country":"Thailand",
+    "dep_count":1,
+    "arr_count":0,
+    "arr_conn_count":null,
+    "dep_dest_hist":"KIX,1",
+    "arr_dest_hist":"",
+    "dep_first":"2020-01-11",
+    "arr_first":"",
+    "dep_last":"2020-01-11",
+    "arr_last":"",
+    "dep_airline_hist":"NokScoot,1",
+    "arr_airline_hist":"",
+    "dep_intdom_hist":"International,1",
+    "arr_intdom_hist":"",
+    "dep_year_hist":"2020,1",
+    "arr_year_hist":"",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 94.80919647,40.16109848 ]
+    },
+    "properties": {
+    "FIELD1":10,
+    "IATA":"DNH",
+    "Name":"Dunhuang Airport",
+    "City":"Dunhuang",
+    "Country":"China",
+    "dep_count":1,
+    "arr_count":1,
+    "arr_conn_count":0,
+    "dep_dest_hist":"XIY,1",
+    "arr_dest_hist":"CTU,1",
+    "dep_first":"2016-03-24",
+    "arr_first":"2016-03-21",
+    "dep_last":"2016-03-24",
+    "arr_last":"2016-03-21",
+    "dep_airline_hist":"China Eastern,1",
+    "arr_airline_hist":"Sichuan,1",
+    "dep_intdom_hist":"Domestic,1",
+    "arr_intdom_hist":"Domestic,1",
+    "dep_year_hist":"2016,1",
+    "arr_year_hist":"2016,1",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -83.35340118,42.21239853 ]
+    },
+    "properties": {
+    "FIELD1":11,
+    "IATA":"DTW",
+    "Name":"Detroit Metropolitan Wayne County Airport",
+    "City":"Detroit",
+    "Country":"United States",
+    "dep_count":2,
+    "arr_count":2,
+    "arr_conn_count":0,
+    "dep_dest_hist":"BOS,1;EWR,1",
+    "arr_dest_hist":"BOS,2",
+    "dep_first":"2017-11-26",
+    "arr_first":"2017-11-22",
+    "dep_last":"2020-05-20",
+    "arr_last":"2020-03-15",
+    "dep_airline_hist":"Delta,1;United,1",
+    "arr_airline_hist":"Delta,2",
+    "dep_intdom_hist":"Domestic,2",
+    "arr_intdom_hist":"Domestic,2",
+    "dep_year_hist":"2017,1;2020,1",
+    "arr_year_hist":"2017,1;2020,1",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 55.36439896,25.25279999 ]
+    },
+    "properties": {
+    "FIELD1":12,
+    "IATA":"DXB",
+    "Name":"Dubai International Airport",
+    "City":"Dubai",
+    "Country":"United Arab Emirates",
+    "dep_count":1,
+    "arr_count":1,
+    "arr_conn_count":1,
+    "dep_dest_hist":"YYZ,1;PEK,1",
+    "arr_dest_hist":"PEK,1;CPT,1",
+    "dep_first":"2019-01-06",
+    "arr_first":"2018-12-30",
+    "dep_last":"2019-12-29",
+    "arr_last":"2019-12-28",
+    "dep_airline_hist":"Air Canada,1;Emirates,1",
+    "arr_airline_hist":"Air China,1;Emirates,1",
+    "dep_intdom_hist":"International,2",
+    "arr_intdom_hist":"International,2",
+    "dep_year_hist":"2019,1",
+    "arr_year_hist":"2018,1",
+    "arr_conn_year_hist":"2019,1"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.16870117,40.69250107 ]
+    },
+    "properties": {
+    "FIELD1":13,
+    "IATA":"EWR",
+    "Name":"Newark Liberty International Airport",
+    "City":"Newark",
+    "Country":"United States",
+    "dep_count":4,
+    "arr_count":2,
+    "arr_conn_count":16,
+    "dep_dest_hist":"PEK,10;BOS,8;NRT,1;CPT,1",
+    "arr_dest_hist":"BOS,11;PEK,5;NAS,1;DTW,1",
+    "dep_first":"2015-03-08",
+    "arr_first":"2015-03-08",
+    "dep_last":"2020-05-20",
+    "arr_last":"2020-05-20",
+    "dep_airline_hist":"United,20",
+    "arr_airline_hist":"United,18",
+    "dep_intdom_hist":"International,12;Domestic,8",
+    "arr_intdom_hist":"Domestic,12;International,6",
+    "dep_year_hist":"2017,1;2018,1;2019,2",
+    "arr_year_hist":"2019,2",
+    "arr_conn_year_hist":"2015,3;2016,1;2017,6;2018,3;2019,2;2020,1"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 8.570556,50.033333 ]
+    },
+    "properties": {
+    "FIELD1":14,
+    "IATA":"FRA",
+    "Name":"Frankfurt am Main Airport",
+    "City":"Frankfurt",
+    "Country":"Germany",
+    "dep_count":0,
+    "arr_count":0,
+    "arr_conn_count":1,
+    "dep_dest_hist":"BOS,1",
+    "arr_dest_hist":"LHR,1",
+    "dep_first":"2019-12-02",
+    "arr_first":"2019-12-02",
+    "dep_last":"2019-12-02",
+    "arr_last":"2019-12-02",
+    "dep_airline_hist":"Lufthansa,1",
+    "arr_airline_hist":"Lufthansa,1",
+    "dep_intdom_hist":"International,1",
+    "arr_intdom_hist":"Domestic,1",
+    "dep_year_hist":"",
+    "arr_year_hist":"",
+    "arr_conn_year_hist":"2019,1"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 126.791,37.5583 ]
+    },
+    "properties": {
+    "FIELD1":15,
+    "IATA":"GMP",
+    "Name":"Gimpo International Airport",
+    "City":"Seoul",
+    "Country":"South Korea",
+    "dep_count":2,
+    "arr_count":1,
+    "arr_conn_count":0,
+    "dep_dest_hist":"PEK,2",
+    "arr_dest_hist":"PEK,1",
+    "dep_first":"2017-06-28",
+    "arr_first":"2017-06-24",
+    "dep_last":"2020-01-19",
+    "arr_last":"2017-06-24",
+    "dep_airline_hist":"China Southern,1;Air China,1",
+    "arr_airline_hist":"China Southern,1",
+    "dep_intdom_hist":"International,2",
+    "arr_intdom_hist":"International,1",
+    "dep_year_hist":"2017,1;2020,1",
+    "arr_year_hist":"2017,1",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 139.779999,35.552299 ]
+    },
+    "properties": {
+    "FIELD1":16,
+    "IATA":"HND",
+    "Name":"Tokyo Haneda International Airport",
+    "City":"Tokyo",
+    "Country":"Japan",
+    "dep_count":1,
+    "arr_count":0,
+    "arr_conn_count":null,
+    "dep_dest_hist":"PEK,1",
+    "arr_dest_hist":"",
+    "dep_first":"2018-12-24",
+    "arr_first":"",
+    "dep_last":"2018-12-24",
+    "arr_last":"",
+    "dep_airline_hist":"ANA,1",
+    "arr_airline_hist":"",
+    "dep_intdom_hist":"International,1",
+    "arr_intdom_hist":"",
+    "dep_year_hist":"2018,1",
+    "arr_year_hist":"",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 126.25,45.62340164 ]
+    },
+    "properties": {
+    "FIELD1":17,
+    "IATA":"HRB",
+    "Name":"Taiping Airport",
+    "City":"Harbin",
+    "Country":"China",
+    "dep_count":1,
+    "arr_count":1,
+    "arr_conn_count":0,
+    "dep_dest_hist":"PEK,1",
+    "arr_dest_hist":"PEK,1",
+    "dep_first":"2020-01-22",
+    "arr_first":"2020-01-19",
+    "dep_last":"2020-01-22",
+    "arr_last":"2020-01-19",
+    "dep_airline_hist":"Air China,1",
+    "arr_airline_hist":"Air China,1",
+    "dep_intdom_hist":"Domestic,1",
+    "arr_intdom_hist":"Domestic,1",
+    "dep_year_hist":"2020,1",
+    "arr_year_hist":"2020,1",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -77.45580292,38.94449997 ]
+    },
+    "properties": {
+    "FIELD1":18,
+    "IATA":"IAD",
+    "Name":"Washington Dulles International Airport",
+    "City":"Washington",
+    "Country":"United States",
+    "dep_count":0,
+    "arr_count":0,
+    "arr_conn_count":6,
+    "dep_dest_hist":"BOS,3;LAX,1;PHL,1;LHR,1",
+    "arr_dest_hist":"PEK,3;BDL,1;BOS,2",
+    "dep_first":"2016-01-02",
+    "arr_first":"2016-01-02",
+    "dep_last":"2019-11-28",
+    "arr_last":"2019-11-28",
+    "dep_airline_hist":"United,6",
+    "arr_airline_hist":"United,6",
+    "dep_intdom_hist":"Domestic,5;International,1",
+    "arr_intdom_hist":"International,3;Domestic,3",
+    "dep_year_hist":"",
+    "arr_year_hist":"",
+    "arr_conn_year_hist":"2016,1;2017,3;2018,1;2019,1"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.77890015,40.63980103 ]
+    },
+    "properties": {
+    "FIELD1":19,
+    "IATA":"JFK",
+    "Name":"John F Kennedy International Airport",
+    "City":"New York",
+    "Country":"United States",
+    "dep_count":1,
+    "arr_count":1,
+    "arr_conn_count":1,
+    "dep_dest_hist":"BOS,1;BDA,1",
+    "arr_dest_hist":"PHL,1;BDA,1",
+    "dep_first":"2017-11-13",
+    "arr_first":"2017-11-13",
+    "dep_last":"2019-07-26",
+    "arr_last":"2019-07-29",
+    "dep_airline_hist":"Delta,1;American,1",
+    "arr_airline_hist":"Delta,1;American,1",
+    "dep_intdom_hist":"Domestic,1;International,1",
+    "arr_intdom_hist":"Domestic,1;International,1",
+    "dep_year_hist":"2019,1",
+    "arr_year_hist":"2019,1",
+    "arr_conn_year_hist":"2017,1"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -22.60560036,63.98500061 ]
+    },
+    "properties": {
+    "FIELD1":20,
+    "IATA":"KEF",
+    "Name":"Keflavik International Airport",
+    "City":"Keflavik",
+    "Country":"Iceland",
+    "dep_count":1,
+    "arr_count":1,
+    "arr_conn_count":0,
+    "dep_dest_hist":"BOS,1",
+    "arr_dest_hist":"BOS,1",
+    "dep_first":"2018-04-02",
+    "arr_first":"2018-03-31",
+    "dep_last":"2018-04-02",
+    "arr_last":"2018-03-31",
+    "dep_airline_hist":"Wow,1",
+    "arr_airline_hist":"Wow,1",
+    "dep_intdom_hist":"International,1",
+    "arr_intdom_hist":"International,1",
+    "dep_year_hist":"2018,1",
+    "arr_year_hist":"2018,1",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 135.2440033,34.4272995 ]
+    },
+    "properties": {
+    "FIELD1":21,
+    "IATA":"KIX",
+    "Name":"Kansai International Airport",
+    "City":"Osaka",
+    "Country":"Japan",
+    "dep_count":1,
+    "arr_count":1,
+    "arr_conn_count":0,
+    "dep_dest_hist":"ICN,1",
+    "arr_dest_hist":"DMK,1",
+    "dep_first":"2020-01-17",
+    "arr_first":"2020-01-11",
+    "dep_last":"2020-01-17",
+    "arr_last":"2020-01-11",
+    "dep_airline_hist":"Jeju Air,1",
+    "arr_airline_hist":"NokScoot,1",
+    "dep_intdom_hist":"International,1",
+    "arr_intdom_hist":"International,1",
+    "dep_year_hist":"2020,1",
+    "arr_year_hist":"2020,1",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 86.9959,48.2223 ]
+    },
+    "properties": {
+    "FIELD1":22,
+    "IATA":"KJI",
+    "Name":"Kanas Airport",
+    "City":"Burqin",
+    "Country":"China",
+    "dep_count":1,
+    "arr_count":1,
+    "arr_conn_count":0,
+    "dep_dest_hist":"URC,1",
+    "arr_dest_hist":"URC,1",
+    "dep_first":"2017-06-10",
+    "arr_first":"2017-06-09",
+    "dep_last":"2017-06-10",
+    "arr_last":"2017-06-09",
+    "dep_airline_hist":"China Southern,1",
+    "arr_airline_hist":"Tianjin,1",
+    "dep_intdom_hist":"Domestic,1",
+    "arr_intdom_hist":"Domestic,1",
+    "dep_year_hist":"2017,1",
+    "arr_year_hist":"2017,1",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 102.9291667,25.101944399999997 ]
+    },
+    "properties": {
+    "FIELD1":23,
+    "IATA":"KMG",
+    "Name":"Kunming Changshui International Airport",
+    "City":"Kunming",
+    "Country":"China",
+    "dep_count":0,
+    "arr_count":0,
+    "arr_conn_count":1,
+    "dep_dest_hist":"PEK,1",
+    "arr_dest_hist":"LJG,1",
+    "dep_first":"2019-06-01",
+    "arr_first":"2019-06-01",
+    "dep_last":"2019-06-01",
+    "arr_last":"2019-06-01",
+    "dep_airline_hist":"China Eastern,1",
+    "arr_airline_hist":"Sichuan,1",
+    "dep_intdom_hist":"Domestic,1",
+    "arr_intdom_hist":"Domestic,1",
+    "dep_year_hist":"",
+    "arr_year_hist":"",
+    "arr_conn_year_hist":"2019,1"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 101.70999909999999,2.745579958 ]
+    },
+    "properties": {
+    "FIELD1":24,
+    "IATA":"KUL",
+    "Name":"Kuala Lumpur International Airport",
+    "City":"Kuala Lumpur",
+    "Country":"Malaysia",
+    "dep_count":1,
+    "arr_count":1,
+    "arr_conn_count":0,
+    "dep_dest_hist":"SIN,1",
+    "arr_dest_hist":"PEK,1",
+    "dep_first":"2016-12-23",
+    "arr_first":"2016-12-23",
+    "dep_last":"2016-12-23",
+    "arr_last":"2016-12-23",
+    "dep_airline_hist":"Silkair,1",
+    "arr_airline_hist":"AirAsia,1",
+    "dep_intdom_hist":"International,1",
+    "arr_intdom_hist":"International,1",
+    "dep_year_hist":"2016,1",
+    "arr_year_hist":"2016,1",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 110.03900149999998,25.21809959 ]
+    },
+    "properties": {
+    "FIELD1":25,
+    "IATA":"KWL",
+    "Name":"Guilin Liangjiang International Airport",
+    "City":"Guilin",
+    "Country":"China",
+    "dep_count":1,
+    "arr_count":1,
+    "arr_conn_count":0,
+    "dep_dest_hist":"CTU,1",
+    "arr_dest_hist":"PEK,1",
+    "dep_first":"2016-03-18",
+    "arr_first":"2016-03-16",
+    "dep_last":"2016-03-18",
+    "arr_last":"2016-03-16",
+    "dep_airline_hist":"Sichuan,1",
+    "arr_airline_hist":"Hainan,1",
+    "dep_intdom_hist":"Domestic,1",
+    "arr_intdom_hist":"Domestic,1",
+    "dep_year_hist":"2016,1",
+    "arr_year_hist":"2016,1",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -118.40799709999999,33.94250107 ]
+    },
+    "properties": {
+    "FIELD1":26,
+    "IATA":"LAX",
+    "Name":"Los Angeles International Airport",
+    "City":"Los Angeles",
+    "Country":"United States",
+    "dep_count":2,
+    "arr_count":3,
+    "arr_conn_count":1,
+    "dep_dest_hist":"BOS,2;DEN,1",
+    "arr_dest_hist":"BOS,1;SYD,1;IAD,1;ORD,1",
+    "dep_first":"2015-08-01",
+    "arr_first":"2015-07-05",
+    "dep_last":"2017-04-16",
+    "arr_last":"2020-05-21",
+    "dep_airline_hist":"JetBlue,1;United,2",
+    "arr_airline_hist":"JetBlue,1;United,3",
+    "dep_intdom_hist":"Domestic,3",
+    "arr_intdom_hist":"Domestic,3;International,1",
+    "dep_year_hist":"2015,1;2017,1",
+    "arr_year_hist":"2015,1;2017,1;2020,1",
+    "arr_conn_year_hist":"2017,1"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -0.461941,51.4706 ]
+    },
+    "properties": {
+    "FIELD1":27,
+    "IATA":"LHR",
+    "Name":"London Heathrow Airport",
+    "City":"London",
+    "Country":"United Kingdom",
+    "dep_count":1,
+    "arr_count":1,
+    "arr_conn_count":0,
+    "dep_dest_hist":"FRA,1",
+    "arr_dest_hist":"IAD,1",
+    "dep_first":"2019-12-02",
+    "arr_first":"2019-11-28",
+    "dep_last":"2019-12-02",
+    "arr_last":"2019-11-28",
+    "dep_airline_hist":"Lufthansa,1",
+    "arr_airline_hist":"United,1",
+    "dep_intdom_hist":"Domestic,1",
+    "arr_intdom_hist":"International,1",
+    "dep_year_hist":"2019,1",
+    "arr_year_hist":"2019,1",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -9.13592,38.7813 ]
+    },
+    "properties": {
+    "FIELD1":28,
+    "IATA":"LIS",
+    "Name":"Humberto Delgado Airport (Lisbon Portela Airport)",
+    "City":"Lisbon",
+    "Country":"Portugal",
+    "dep_count":0,
+    "arr_count":0,
+    "arr_conn_count":1,
+    "dep_dest_hist":"MAD,1",
+    "arr_dest_hist":"BOS,1",
+    "dep_first":"2018-05-27",
+    "arr_first":"2018-05-26",
+    "dep_last":"2018-05-27",
+    "arr_last":"2018-05-26",
+    "dep_airline_hist":"TAP,1",
+    "arr_airline_hist":"TAP,1",
+    "dep_intdom_hist":"Domestic,1",
+    "arr_intdom_hist":"International,1",
+    "dep_year_hist":"",
+    "arr_year_hist":"",
+    "arr_conn_year_hist":"2018,1"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 100.2460022,26.68000031 ]
+    },
+    "properties": {
+    "FIELD1":29,
+    "IATA":"LJG",
+    "Name":"Lijiang Airport",
+    "City":"Lijiang",
+    "Country":"China",
+    "dep_count":1,
+    "arr_count":1,
+    "arr_conn_count":0,
+    "dep_dest_hist":"KMG,1",
+    "arr_dest_hist":"PEK,1",
+    "dep_first":"2019-06-01",
+    "arr_first":"2019-05-30",
+    "dep_last":"2019-06-01",
+    "arr_last":"2019-05-30",
+    "dep_airline_hist":"Sichuan,1",
+    "arr_airline_hist":"Air China,1",
+    "dep_intdom_hist":"Domestic,1",
+    "arr_intdom_hist":"Domestic,1",
+    "dep_year_hist":"2019,1",
+    "arr_year_hist":"2019,1",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 11.7861,48.353802 ]
+    },
+    "properties": {
+    "FIELD1":30,
+    "IATA":"MUC",
+    "Name":"Munich Airport",
+    "City":"Munich",
+    "Country":"Germany",
+    "dep_count":0,
+    "arr_count":0,
+    "arr_conn_count":1,
+    "dep_dest_hist":"PEK,1",
+    "arr_dest_hist":"BCN,1",
+    "dep_first":"2018-05-30",
+    "arr_first":"2018-05-30",
+    "dep_last":"2018-05-30",
+    "arr_last":"2018-05-30",
+    "dep_airline_hist":"Lufthansa,1",
+    "arr_airline_hist":"Lufthansa,1",
+    "dep_intdom_hist":"International,1",
+    "arr_intdom_hist":"Domestic,1",
+    "dep_year_hist":"",
+    "arr_year_hist":"",
+    "arr_conn_year_hist":"2018,1"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -77.46620178,25.03899956 ]
+    },
+    "properties": {
+    "FIELD1":31,
+    "IATA":"NAS",
+    "Name":"Lynden Pindling International Airport",
+    "City":"Nassau",
+    "Country":"Bahamas",
+    "dep_count":1,
+    "arr_count":1,
+    "arr_conn_count":0,
+    "dep_dest_hist":"EWR,1",
+    "arr_dest_hist":"ORD,1",
+    "dep_first":"2018-11-26",
+    "arr_first":"2018-11-23",
+    "dep_last":"2018-11-26",
+    "arr_last":"2018-11-23",
+    "dep_airline_hist":"United,1",
+    "arr_airline_hist":"United,1",
+    "dep_intdom_hist":"International,1",
+    "arr_intdom_hist":"International,1",
+    "dep_year_hist":"2018,1",
+    "arr_year_hist":"2018,1",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 7.215869904,43.65840149 ]
+    },
+    "properties": {
+    "FIELD1":32,
+    "IATA":"NCE",
+    "Name":"Nice-Côte d'Azur Airport",
+    "City":"Nice",
+    "Country":"France",
+    "dep_count":1,
+    "arr_count":1,
+    "arr_conn_count":0,
+    "dep_dest_hist":"CDG,1",
+    "arr_dest_hist":"CDG,1",
+    "dep_first":"2019-03-31",
+    "arr_first":"2019-03-28",
+    "dep_last":"2019-03-31",
+    "arr_last":"2019-03-28",
+    "dep_airline_hist":"Air France,1",
+    "arr_airline_hist":"Air France,1",
+    "dep_intdom_hist":"Domestic,1",
+    "arr_intdom_hist":"Domestic,1",
+    "dep_year_hist":"2019,1",
+    "arr_year_hist":"2019,1",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -87.9048,41.9786 ]
+    },
+    "properties": {
+    "FIELD1":33,
+    "IATA":"ORD",
+    "Name":"Chicago O'Hare International Airport",
+    "City":"Chicago",
+    "Country":"United States",
+    "dep_count":1,
+    "arr_count":1,
+    "arr_conn_count":2,
+    "dep_dest_hist":"RDU,1;NAS,1;LAX,1",
+    "arr_dest_hist":"PEK,1;BOS,2",
+    "dep_first":"2016-07-05",
+    "arr_first":"2016-07-03",
+    "dep_last":"2020-05-21",
+    "arr_last":"2020-05-21",
+    "dep_airline_hist":"United,3",
+    "arr_airline_hist":"United,3",
+    "dep_intdom_hist":"Domestic,2;International,1",
+    "arr_intdom_hist":"International,1;Domestic,2",
+    "dep_year_hist":"2016,1",
+    "arr_year_hist":"2016,1",
+    "arr_conn_year_hist":"2018,1;2020,1"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 116.58499909999999,40.08010101 ]
+    },
+    "properties": {
+    "FIELD1":34,
+    "IATA":"PEK",
+    "Name":"Beijing Capital International Airport",
+    "City":"Beijing",
+    "Country":"China",
+    "dep_count":22,
+    "arr_count":24,
+    "arr_conn_count":0,
+    "dep_dest_hist":"EWR,5;SYX,1;IAD,3;KWL,1;BOS,1;ORD,1;KUL,1;GMP,1;PVG,1;WUX,1;SIN,1;DXB,1;LJG,1;SFO,2;HRB,1",
+    "arr_dest_hist":"EWR,10;SYX,1;BOS,2;XIY,1;URC,1;GMP,2;PVG,1;WUX,1;MUC,1;HND,1;KMG,1;DXB,1;HRB,1",
+    "dep_first":"2015-03-19",
+    "arr_first":"2015-03-08",
+    "dep_last":"2020-01-26",
+    "arr_last":"2020-01-22",
+    "dep_airline_hist":"United,11;Unknown,2;Hainan,3;AirAsia,1;China Southern,1;Singapore,1;Air China,3",
+    "arr_airline_hist":"United,10;Unknown,2;Hainan,3;China Eastern,2;China Southern,2;Lufthansa,1;ANA,1;Emirates,1;Air China,2",
+    "dep_intdom_hist":"International,16;Domestic,6",
+    "arr_intdom_hist":"International,17;Domestic,7",
+    "dep_year_hist":"2015,2;2016,5;2017,7;2018,3;2019,3;2020,2",
+    "arr_year_hist":"2015,3;2016,4;2017,8;2018,3;2019,4;2020,2",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -75.2410965,39.87189865 ]
+    },
+    "properties": {
+    "FIELD1":35,
+    "IATA":"PHL",
+    "Name":"Philadelphia International Airport",
+    "City":"Philadelphia",
+    "Country":"United States",
+    "dep_count":2,
+    "arr_count":3,
+    "arr_conn_count":0,
+    "dep_dest_hist":"JFK,1;BOS,1",
+    "arr_dest_hist":"IAD,1;BOS,2",
+    "dep_first":"2017-11-13",
+    "arr_first":"2017-09-22",
+    "dep_last":"2020-02-19",
+    "arr_last":"2020-02-19",
+    "dep_airline_hist":"Delta,1;JetBlue,1",
+    "arr_airline_hist":"United,1;American,1;JetBlue,1",
+    "dep_intdom_hist":"Domestic,2",
+    "arr_intdom_hist":"Domestic,3",
+    "dep_year_hist":"2017,1;2020,1",
+    "arr_year_hist":"2017,2;2020,1",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 121.8050003,31.14340019 ]
+    },
+    "properties": {
+    "FIELD1":36,
+    "IATA":"PVG",
+    "Name":"Shanghai Pudong International Airport",
+    "City":"Shanghai",
+    "Country":"China",
+    "dep_count":2,
+    "arr_count":2,
+    "arr_conn_count":0,
+    "dep_dest_hist":"PEK,1;BOS,1",
+    "arr_dest_hist":"PEK,1;BOS,1",
+    "dep_first":"2017-07-19",
+    "arr_first":"2017-07-17",
+    "dep_last":"2018-03-29",
+    "arr_last":"2018-03-22",
+    "dep_airline_hist":"Hainan,2",
+    "arr_airline_hist":"Hainan,2",
+    "dep_intdom_hist":"Domestic,1;International,1",
+    "arr_intdom_hist":"Domestic,1;International,1",
+    "dep_year_hist":"2017,1;2018,1",
+    "arr_year_hist":"2017,1;2018,1",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -78.78749847,35.87760162 ]
+    },
+    "properties": {
+    "FIELD1":37,
+    "IATA":"RDU",
+    "Name":"Raleigh Durham International Airport",
+    "City":"Raleigh-durham",
+    "Country":"United States",
+    "dep_count":1,
+    "arr_count":1,
+    "arr_conn_count":0,
+    "dep_dest_hist":"SFO,1",
+    "arr_dest_hist":"ORD,1",
+    "dep_first":"2016-07-07",
+    "arr_first":"2016-07-05",
+    "dep_last":"2016-07-07",
+    "arr_last":"2016-07-05",
+    "dep_airline_hist":"Unknown,1",
+    "arr_airline_hist":"United,1",
+    "dep_intdom_hist":"Domestic,1",
+    "arr_intdom_hist":"Domestic,1",
+    "dep_year_hist":"2016,1",
+    "arr_year_hist":"2016,1",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -122.375,37.61899948 ]
+    },
+    "properties": {
+    "FIELD1":38,
+    "IATA":"SFO",
+    "Name":"San Francisco International Airport",
+    "City":"San Francisco",
+    "Country":"United States",
+    "dep_count":3,
+    "arr_count":3,
+    "arr_conn_count":3,
+    "dep_dest_hist":"BOS,6",
+    "arr_dest_hist":"RDU,1;SIN,1;YYZ,1;PEK,2;BOS,1",
+    "dep_first":"2016-07-10",
+    "arr_first":"2016-07-07",
+    "dep_last":"2020-01-26",
+    "arr_last":"2020-01-26",
+    "dep_airline_hist":"United,6",
+    "arr_airline_hist":"Unknown,1;United,4;Air Canada,1",
+    "dep_intdom_hist":"Domestic,6",
+    "arr_intdom_hist":"Domestic,2;International,4",
+    "dep_year_hist":"2016,1;2019,2",
+    "arr_year_hist":"2016,1;2019,2",
+    "arr_conn_year_hist":"2018,1;2019,1;2020,1"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 121.33599850000002,31.19790077 ]
+    },
+    "properties": {
+    "FIELD1":39,
+    "IATA":"SHA",
+    "Name":"Shanghai Hongqiao International Airport",
+    "City":"Shanghai",
+    "Country":"China",
+    "dep_count":1,
+    "arr_count":0,
+    "arr_conn_count":null,
+    "dep_dest_hist":"URC,1",
+    "arr_dest_hist":"",
+    "dep_first":"2017-06-08",
+    "arr_first":"",
+    "dep_last":"2017-06-08",
+    "arr_last":"",
+    "dep_airline_hist":"China Southern,1",
+    "arr_airline_hist":"",
+    "dep_intdom_hist":"Domestic,1",
+    "arr_intdom_hist":"",
+    "dep_year_hist":"2017,1",
+    "arr_year_hist":"",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 103.994003,1.35019 ]
+    },
+    "properties": {
+    "FIELD1":40,
+    "IATA":"SIN",
+    "Name":"Singapore Changi Airport",
+    "City":"Singapore",
+    "Country":"Singapore",
+    "dep_count":1,
+    "arr_count":1,
+    "arr_conn_count":1,
+    "dep_dest_hist":"BNE,1;SFO,1",
+    "arr_dest_hist":"KUL,1;PEK,1",
+    "dep_first":"2016-12-24",
+    "arr_first":"2016-12-23",
+    "dep_last":"2018-01-07",
+    "arr_last":"2017-12-30",
+    "dep_airline_hist":"Singapore,1;United,1",
+    "arr_airline_hist":"Silkair,1;Singapore,1",
+    "dep_intdom_hist":"International,2",
+    "arr_intdom_hist":"International,2",
+    "dep_year_hist":"2018,1",
+    "arr_year_hist":"2017,1",
+    "arr_conn_year_hist":"2016,1"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 151.17700200000002,-33.94609833 ]
+    },
+    "properties": {
+    "FIELD1":41,
+    "IATA":"SYD",
+    "Name":"Sydney Kingsford Smith International Airport",
+    "City":"Sydney",
+    "Country":"Australia",
+    "dep_count":1,
+    "arr_count":1,
+    "arr_conn_count":0,
+    "dep_dest_hist":"LAX,1",
+    "arr_dest_hist":"BNE,1",
+    "dep_first":"2017-01-02",
+    "arr_first":"2016-12-29",
+    "dep_last":"2017-01-02",
+    "arr_last":"2016-12-29",
+    "dep_airline_hist":"United,1",
+    "arr_airline_hist":"Qantas,1",
+    "dep_intdom_hist":"International,1",
+    "arr_intdom_hist":"Domestic,1",
+    "dep_year_hist":"2017,1",
+    "arr_year_hist":"2016,1",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 109.41200259999998,18.30290031 ]
+    },
+    "properties": {
+    "FIELD1":42,
+    "IATA":"SYX",
+    "Name":"Sanya Phoenix International Airport",
+    "City":"Sanya",
+    "Country":"China",
+    "dep_count":1,
+    "arr_count":1,
+    "arr_conn_count":0,
+    "dep_dest_hist":"PEK,1",
+    "arr_dest_hist":"PEK,1",
+    "dep_first":"2015-12-24",
+    "arr_first":"2015-12-20",
+    "dep_last":"2015-12-24",
+    "arr_last":"2015-12-20",
+    "dep_airline_hist":"Unknown,1",
+    "arr_airline_hist":"Unknown,1",
+    "dep_intdom_hist":"Domestic,1",
+    "arr_intdom_hist":"Domestic,1",
+    "dep_year_hist":"2015,1",
+    "arr_year_hist":"2015,1",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.810997,22.63929939 ]
+    },
+    "properties": {
+    "FIELD1":43,
+    "IATA":"SZX",
+    "Name":"Shenzhen Bao'an International Airport",
+    "City":"Shenzhen",
+    "Country":"China",
+    "dep_count":1,
+    "arr_count":0,
+    "arr_conn_count":null,
+    "dep_dest_hist":"BKK,1",
+    "arr_dest_hist":"",
+    "dep_first":"2020-01-08",
+    "arr_first":"",
+    "dep_last":"2020-01-08",
+    "arr_last":"",
+    "dep_airline_hist":"Shenzhen,1",
+    "arr_airline_hist":"",
+    "dep_intdom_hist":"International,1",
+    "arr_intdom_hist":"",
+    "dep_year_hist":"2020,1",
+    "arr_year_hist":"",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 87.47419739,43.90710068 ]
+    },
+    "properties": {
+    "FIELD1":44,
+    "IATA":"URC",
+    "Name":"Ürümqi Diwopu International Airport",
+    "City":"Urumqi",
+    "Country":"China",
+    "dep_count":2,
+    "arr_count":2,
+    "arr_conn_count":0,
+    "dep_dest_hist":"KJI,1;PEK,1",
+    "arr_dest_hist":"SHA,1;KJI,1",
+    "dep_first":"2017-06-09",
+    "arr_first":"2017-06-08",
+    "dep_last":"2017-06-15",
+    "arr_last":"2017-06-10",
+    "dep_airline_hist":"Tianjin,1;China Southern,1",
+    "arr_airline_hist":"China Southern,2",
+    "dep_intdom_hist":"Domestic,2",
+    "arr_intdom_hist":"Domestic,2",
+    "dep_year_hist":"2017,2",
+    "arr_year_hist":"2017,2",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -4.851940155,41.70610046 ]
+    },
+    "properties": {
+    "FIELD1":45,
+    "IATA":"VLL",
+    "Name":"Valladolid Airport",
+    "City":"Valladolid",
+    "Country":"Spain",
+    "dep_count":1,
+    "arr_count":0,
+    "arr_conn_count":null,
+    "dep_dest_hist":"BCN,1",
+    "arr_dest_hist":"",
+    "dep_first":"2018-05-28",
+    "arr_first":"",
+    "dep_last":"2018-05-28",
+    "arr_last":"",
+    "dep_airline_hist":"Vueling,1",
+    "arr_airline_hist":"",
+    "dep_intdom_hist":"Domestic,1",
+    "arr_intdom_hist":"",
+    "dep_year_hist":"2018,1",
+    "arr_year_hist":"",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 120.4290009,31.49440002 ]
+    },
+    "properties": {
+    "FIELD1":46,
+    "IATA":"WUX",
+    "Name":"Sunan Shuofang International Airport",
+    "City":"Wuxi",
+    "Country":"China",
+    "dep_count":1,
+    "arr_count":1,
+    "arr_conn_count":0,
+    "dep_dest_hist":"PEK,1",
+    "arr_dest_hist":"PEK,1",
+    "dep_first":"2017-07-25",
+    "arr_first":"2017-07-24",
+    "dep_last":"2017-07-25",
+    "arr_last":"2017-07-24",
+    "dep_airline_hist":"Unknown,1",
+    "arr_airline_hist":"Unknown,1",
+    "dep_intdom_hist":"Domestic,1",
+    "arr_intdom_hist":"Domestic,1",
+    "dep_year_hist":"2017,1",
+    "arr_year_hist":"2017,1",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 108.751999,34.447102 ]
+    },
+    "properties": {
+    "FIELD1":47,
+    "IATA":"XIY",
+    "Name":"Xi'an Xianyang International Airport",
+    "City":"Xi'an",
+    "Country":"China",
+    "dep_count":0,
+    "arr_count":0,
+    "arr_conn_count":1,
+    "dep_dest_hist":"PEK,1",
+    "arr_dest_hist":"DNH,1",
+    "dep_first":"2016-03-24",
+    "arr_first":"2016-03-24",
+    "dep_last":"2016-03-24",
+    "arr_last":"2016-03-24",
+    "dep_airline_hist":"China Eastern,1",
+    "arr_airline_hist":"China Eastern,1",
+    "dep_intdom_hist":"Domestic,1",
+    "arr_intdom_hist":"Domestic,1",
+    "dep_year_hist":"",
+    "arr_year_hist":"",
+    "arr_conn_year_hist":"2016,1"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -79.63059998,43.67720032 ]
+    },
+    "properties": {
+    "FIELD1":48,
+    "IATA":"YYZ",
+    "Name":"Lester B. Pearson International Airport",
+    "City":"Toronto",
+    "Country":"Canada",
+    "dep_count":0,
+    "arr_count":0,
+    "arr_conn_count":1,
+    "dep_dest_hist":"SFO,1",
+    "arr_dest_hist":"DXB,1",
+    "dep_first":"2019-01-07",
+    "arr_first":"2019-01-06",
+    "dep_last":"2019-01-07",
+    "arr_last":"2019-01-06",
+    "dep_airline_hist":"Air Canada,1",
+    "arr_airline_hist":"Air Canada,1",
+    "dep_intdom_hist":"International,1",
+    "arr_intdom_hist":"International,1",
+    "dep_year_hist":"",
+    "arr_year_hist":"",
+    "arr_conn_year_hist":"2019,1"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 100.74700159999999,13.68109989 ]
+    },
+    "properties": {
+    "FIELD1":49,
+    "IATA":"BKK",
+    "Name":"Suvarnabhumi Airport",
+    "City":"Bangkok",
+    "Country":"Thailand",
+    "dep_count":0,
+    "arr_count":1,
+    "arr_conn_count":0,
+    "dep_dest_hist":"",
+    "arr_dest_hist":"SZX,1",
+    "dep_first":"",
+    "arr_first":"2020-01-08",
+    "dep_last":"",
+    "arr_last":"2020-01-08",
+    "dep_airline_hist":"",
+    "arr_airline_hist":"Shenzhen,1",
+    "dep_intdom_hist":"",
+    "arr_intdom_hist":"International,1",
+    "dep_year_hist":"",
+    "arr_year_hist":"2020,1",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 126.45099640000001,37.46910095 ]
+    },
+    "properties": {
+    "FIELD1":50,
+    "IATA":"ICN",
+    "Name":"Incheon International Airport",
+    "City":"Seoul",
+    "Country":"South Korea",
+    "dep_count":0,
+    "arr_count":1,
+    "arr_conn_count":0,
+    "dep_dest_hist":"",
+    "arr_dest_hist":"KIX,1",
+    "dep_first":"",
+    "arr_first":"2020-01-17",
+    "dep_last":"",
+    "arr_last":"2020-01-17",
+    "dep_airline_hist":"",
+    "arr_airline_hist":"Jeju Air,1",
+    "dep_intdom_hist":"",
+    "arr_intdom_hist":"International,1",
+    "dep_year_hist":"",
+    "arr_year_hist":"2020,1",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -3.56264,40.471926 ]
+    },
+    "properties": {
+    "FIELD1":51,
+    "IATA":"MAD",
+    "Name":"Adolfo Suárez Madrid–Barajas Airport",
+    "City":"Madrid",
+    "Country":"Spain",
+    "dep_count":0,
+    "arr_count":1,
+    "arr_conn_count":0,
+    "dep_dest_hist":"",
+    "arr_dest_hist":"LIS,1",
+    "dep_first":"",
+    "arr_first":"2018-05-27",
+    "dep_last":"",
+    "arr_last":"2018-05-27",
+    "dep_airline_hist":"",
+    "arr_airline_hist":"TAP,1",
+    "dep_intdom_hist":"",
+    "arr_intdom_hist":"Domestic,1",
+    "dep_year_hist":"",
+    "arr_year_hist":"2018,1",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 140.3860016,35.76470184 ]
+    },
+    "properties": {
+    "FIELD1":52,
+    "IATA":"NRT",
+    "Name":"Narita International Airport",
+    "City":"Tokyo",
+    "Country":"Japan",
+    "dep_count":0,
+    "arr_count":1,
+    "arr_conn_count":0,
+    "dep_dest_hist":"",
+    "arr_dest_hist":"EWR,1",
+    "dep_first":"",
+    "arr_first":"2018-12-22",
+    "dep_last":"",
+    "arr_last":"2018-12-22",
+    "dep_airline_hist":"",
+    "arr_airline_hist":"United,1",
+    "dep_intdom_hist":"",
+    "arr_intdom_hist":"International,1",
+    "dep_year_hist":"",
+    "arr_year_hist":"2018,1",
+    "arr_conn_year_hist":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 25.61730003,-33.98490143 ]
+    },
+    "properties": {
+    "FIELD1":53,
+    "IATA":"PLZ",
+    "Name":"Port Elizabeth Airport",
+    "City":"Port Elizabeth",
+    "Country":"South Africa",
+    "dep_count":0,
+    "arr_count":1,
+    "arr_conn_count":0,
+    "dep_dest_hist":"",
+    "arr_dest_hist":"CPT,1",
+    "dep_first":"",
+    "arr_first":"2019-12-20",
+    "dep_last":"",
+    "arr_last":"2019-12-20",
+    "dep_airline_hist":"",
+    "arr_airline_hist":"Airlink/SAA,1",
+    "dep_intdom_hist":"",
+    "arr_intdom_hist":"Domestic,1",
+    "dep_year_hist":"",
+    "arr_year_hist":"2019,1",
+    "arr_conn_year_hist":""
+    }
+  }
+]
+}

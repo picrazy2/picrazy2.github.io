@@ -206,8 +206,8 @@
 	var map = new mapboxgl.Map({
 		container: 'map', // container id
 		style: 'mapbox://styles/picrazy2/cka8a1z1r0d591io0ebssgmz3',
-		center: [0, 0],
-		zoom: 1
+		center: [0, 10],
+		zoom: 0.75
 	});
 
 
@@ -247,6 +247,32 @@
 				]
 
 			}
+		}, 'admin-1-boundary-bg');
+
+		map.addSource('airports', {
+			'type': 'geojson',
+			'data': 'https://picrazy2.github.io/flightlog/airports_sub.geojson'
+		});
+
+		map.addLayer({
+			'id': 'airports',
+			'source': 'airports',
+			'type': 'symbol',
+			'layout': {
+				'icon-image': "airport-15",
+				'icon-allow-overlap': true,
+				'icon-size': [
+				  "interpolate",
+				  ["linear"],
+				  ["zoom"],
+				  0,
+				  0.1,
+				  22,
+				  3
+				],
+				'visibility': 'visible'
+			},
+			'paint': {}
 		}, 'admin-1-boundary-bg');
    });
 
