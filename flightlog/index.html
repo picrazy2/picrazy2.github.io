@@ -110,17 +110,17 @@
 			#city {
 			  top: 0;
 			  right: 0;
-			  height: 280px;
+			  height: 480px;
 			  margin-top: 20px;
-			  width: 330px;
+			  width: 350px;
 			}
 
 			#features {
 /*			  top: 200;
 */			  right: 0;
 			  height: 330px;
-			  margin-top: 310px;
-			  width: 330px;
+			  margin-top: 510px;
+			  width: 350px;
 			  visibility: hidden;
 			}
 
@@ -161,19 +161,20 @@
 		<nav id='menu'></nav>
 		<div id='map'></div>
 		<div class='map-overlay' id='city'>
-			<h2><span class='bold'>Airports of China</span></h2>
+			<h2><span class='bold'>Alex's Flight Logs (3/2015-5/2020)</span></h2>
 			<div>
-				<p>Total airports: <span class='bold'>239</span>
-				<br>Total 2019 Passenger volume: <span class='bold'>1,351,628,545</span></p>
-
-				<p>Largest airports by volume: <span class='bold'>PEK</span> (100M), <span class='bold'>PVG</span> (76M), <span class='bold'>CAN</span> (73M), <span class='bold'>CTU</span> (56M), <span class='bold'>SZX</span> (53M)
-				<br>Most domestic destinations: <span class='bold'>CTU</span> (152), <span class='bold'>XIY</span> (152), <span class='bold'>PEK</span> (142), <span class='bold'>CAN</span> (141), <span class='bold'>PVG</span> (134)</p>
-
-				<p>Shortest air route: <span class='bold'>AAT</span> to <span class='bold'>KJI</span> (97km, 52min)
-				<br>Longest air route: <span class='bold'>SZX</span> to <span class='bold'>KHG</span> (4023km, 5h 47m)</p>
-
-<!-- 				<p>Counties within 30min, 1hr, 1.5hr, 2hr drive of an airport: <span class='bold'>12.2%, 39.7%, 67.4%, 86.0%</span>
- -->				<p>Population within 30min, 1hr, 1.5hr, 2hr drive of an airport: <span class='bold'>16.2%, 48.7%, 76.6%, 92.7%</span>
+				<p>Total Distance Flown: <span class='bold'>345130</span>mi
+				<br>Total Flights: <span class='bold'>139</span>
+				<br>Number of Airlines: <span class='bold'>27</span>, Countries: <span class='bold'>19</span>, Airports: <span class='bold'>54</span>
+				<p>Shortest flight: <span class='bold'>PHL</span> to <span class='bold'>JFK</span> (94mi, 11min)
+				<br>Longest flight: <span class='bold'>SIN</span> to <span class='bold'>SFO</span> (8446mi, 16h 53m)</p>
+				<p>Airport distribution (top countries): <span class='bold'>China</span>: 15, <span class='bold'>United States</span>: 12, <span class='bold'>Japan</span>: 3
+				<p>Airports by total visits: <span class='bold'>BOS</span>: 54, <span class='bold'>PEK</span>: 46, <span class='bold'>EWR</span>: 22</p>
+				<p>Top routes: <span class='bold'>BOS</span> to <span class='bold'>EWR</span>: 19, <span class='bold'>EWR</span> to <span class='bold'>PEK</span>: 15, <span class='bold'>BOS</span> to <span class='bold'>SFO</span>: 7</p>
+				<p>Top airlines: <span class='bold'>United</span>: 70, <span class='bold'>Hainan</span>: 8, <span class='bold'>Air China</span>: 5</p>
+				<P><span class='bold'>2015</span>: 29436mi, 10 flights, <span class='bold'>2016</span>: 57999mi, 20 flights, <span class='bold'>2017</span>: 78048mi, 39 flights, <span class='bold'>2018</span>: 76497mi, 24 flights, <span class='bold'>2019</span>: 84043mi, 31 flights, <span class='bold'>2020</span>: 19103mi, 15 flights</p>
+				<p><span class='bold'>Domestic</span>: 69296mi, 81 flights, <span class='bold'>International</span>: 275833mi, 58 flights</p>
+				<p><span class='bold'>Business</span>: 123047mi, 37 flights, <span class='bold'>Economy</span>: 216096mi, 98 flights</p>
 
 			</div>
 		</div>
@@ -293,7 +294,7 @@
 
 
 
-		function add_s(s, num) {
+		function add_s(num, s) {
 			if(num == 1) {
 				return s
 			} else {
@@ -309,7 +310,7 @@
 				if(i > 0) {
 					hist_str += ', '
 				}
-				hist_str += further_split[0] + ': <span class=\'bold\'>' + further_split[1] + '</span> ' + add_s(further_split[1], 'time')
+				hist_str += further_split[0] + ': <span class=\'bold\'>' + further_split[1] + '</span> ' + add_s(further_split[1], s)
 			}
 			return hist_str	
 		}
@@ -328,9 +329,9 @@
 						origin_hist_str += ', '
 					}
 					if(further_split[0] == start) {
-						origin_hist_str += start + '-' + end + ': <span class=\'bold\'>' + further_split[1] + '</span> ' + times(further_split[1])
+						origin_hist_str += start + '-' + end + ': <span class=\'bold\'>' + further_split[1] + '</span> ' + add_s(further_split[1], 'time')
 					} else {
-						origin_hist_str += end + '-' + start + ': <span class=\'bold\'>' + further_split[1] + '</span> ' + times(further_split[1])
+						origin_hist_str += end + '-' + start + ': <span class=\'bold\'>' + further_split[1] + '</span> ' + add_s(further_split[1], 'time')
 					}
 				}
 
@@ -340,9 +341,9 @@
 						'<p style=\'font-size:15px\'>Between <span class=\'bold\'>' + start + '</span> and <span class=\'bold\'>' + end + '</span>'
 						+'<br>' + e.features[0].properties.start_city_country.split(',')[0] + ' and ' + e.features[0].properties.end_city_country.split(',')[0] + '</p>'
 						+'<p style=\'font-size:13px\'>' + e.features[0].properties.domint + ', <span class=\'bold\'>' + Math.trunc(e.features[0].properties.dist) + '</span>mi, ' + get_time_str(e.features[0].properties.dur)
-						+'<br> Flown <span class=\'bold\'>' + e.features[0].properties.count + '</span> ' + times(e.features[0].properties.count) + ' (' +  origin_hist_str + ')'
-						+'<br>' + parse_hist(e.features[0].properties.class_hist) 
-						+'<br>' + parse_hist(e.features[0].properties.airline_hist)  
+						+'<br> Flown <span class=\'bold\'>' + e.features[0].properties.count + '</span> ' + add_s(e.features[0].properties.count, 'time') + ' (' +  origin_hist_str + ')'
+						+'<br>' + parse_hist(e.features[0].properties.class_hist, 'time') 
+						+'<br>' + parse_hist(e.features[0].properties.airline_hist, 'time')  
 						+'<br>First time: <span class=\'bold\'>' + e.features[0].properties.earliest_date + '</span>'
 						+'<br>Last time: <span class=\'bold\'>' + e.features[0].properties.latest_date + '</span>'
 						+'</p>'
@@ -381,16 +382,6 @@
 				}
 			}
 
-			var hist_split = e.features[0].properties.full_year_hist.split(';')
-			var hist_str = ''
-			for(var i = 0; i < hist_split.length; i++) {
-				var further_split = hist_split[i].split(',')
-				if(i > 0) {
-					hist_str += ', '
-				}
-				hist_str += further_split[0] + ': <span class=\'bold\'>' + further_split[1] + '</span> ' + times(further_split[1])
-			}
-
 			new mapboxgl.Popup()
 				.setLngLat(e.lngLat)
 				.setHTML(
@@ -401,6 +392,7 @@
 					+ '<br>Arrivals: <span class=\'bold\'>' + e.features[0].properties.arr_count + '</span>'
 					+ '<br>Connections: <span class=\'bold\'>' + e.features[0].properties.arr_conn_count+ '</span>'
 					+ '<br>Destinations: ' + dest_str
+					+ '<br>' + parse_hist(e.features[0].properties.full_year_hist, 'visit')
 					+ '</p>'
 					)
 				.addTo(map);
