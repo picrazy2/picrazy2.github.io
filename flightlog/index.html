@@ -265,9 +265,25 @@
 				  ["linear"],
 				  ["zoom"],
 				  0,
-				  0.5,
+				  [
+				    "interpolate",
+				    ["linear"],
+				    ["get", "total"],
+				    0,
+				    0.5,
+				    60,
+				    2
+				  ],
 				  22,
-				  6
+				  [
+				    "interpolate",
+				    ["linear"],
+				    ["get", "total"],
+				    8,
+				    0.5,
+				    60,
+				    10
+				  ]
 				],
 				'visibility': 'visible'
 			},
@@ -345,6 +361,7 @@
 
 
 		map.on('click', 'airports', function(e) {
+			console.log(e.features[0].properties.total)
 			new mapboxgl.Popup()
 				.setLngLat(e.lngLat)
 				.setHTML(
