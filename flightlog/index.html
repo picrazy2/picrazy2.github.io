@@ -222,75 +222,82 @@
 		map.moveLayer('admin-0-boundary-disputed', 'settlement-subdivision-label')
 
 
-		map.addSource('routes', {
-			'type': 'geojson',
-			'data': 'https://picrazy2.github.io/flightlog/routes.geojson'
-		});
+		function add_routes(file_name, visibility) {
+			map.addSource(file_name, {
+				'type': 'geojson',
+				'data': 'https://picrazy2.github.io/flightlog/' + file_name + '.geojson'
+			});
 
-		map.addLayer({
-			'id': 'routes',
-			'source': 'routes',
-			'type': 'line',
-			'layout': {
-				'visibility': 'visible'
-			},
-			'paint': {
-				'line-color': ["match",["get", "domint"],['Domestic'],'#087E8B','#FF5A5F'],
-				'line-width': [
-				  "interpolate",
-				  ["linear"],
-				  ["get", "count"],
-				  1,
-				  2,
-				  19,
-				  19
-				]
+			map.addLayer({
+				'id': file_name,
+				'source': file_name,
+				'type': 'line',
+				'layout': {
+					'visibility': visibility
+				},
+				'paint': {
+					'line-color': ["match",["get", "domint"],['Domestic'],'#087E8B','#FF5A5F'],
+					'line-width': [
+					  "interpolate",
+					  ["linear"],
+					  ["get", "count"],
+					  1,
+					  2,
+					  19,
+					  19
+					]
 
-			}
-		}, 'admin-1-boundary-bg');
+				}
+			}, 'admin-1-boundary-bg');			
+		}
 
-		map.addSource('airports', {
-			'type': 'geojson',
-			'data': 'https://picrazy2.github.io/flightlog/airports.geojson'
-		});
 
-		map.addLayer({
-			'id': 'airports',
-			'source': 'airports',
-			'type': 'symbol',
-			'layout': {
-				'icon-image': "airport-15",
-				'icon-allow-overlap': true,
-				'icon-size': [
-				  "interpolate",
-				  ["linear"],
-				  ["zoom"],
-				  0,
-				  [
-				    "interpolate",
-				    ["linear"],
-				    ["get", "total"],
-				    0,
-				    0.5,
-				    60,
-				    2
-				  ],
-				  22,
-				  [
-				    "interpolate",
-				    ["linear"],
-				    ["get", "total"],
-				    0,
-				    5,
-				    60,
-				    10
-				  ]
-				],
-				'visibility': 'visible'
-			},
-			'paint': {}
-		}, 'admin-1-boundary-bg');
+		function add_airports(file_name, visibility) {
+			map.addSource(file_name, {
+				'type': 'geojson',
+				'data': 'https://picrazy2.github.io/flightlog/' + file_name + '.geojson'
+			});
 
+			map.addLayer({
+				'id': file_name,
+				'source': file_name,
+				'type': 'symbol',
+				'layout': {
+					'icon-image': "airport-15",
+					'icon-allow-overlap': true,
+					'icon-size': [
+					  "interpolate",
+					  ["linear"],
+					  ["zoom"],
+					  0,
+					  [
+					    "interpolate",
+					    ["linear"],
+					    ["get", "total"],
+					    0,
+					    0.5,
+					    60,
+					    2
+					  ],
+					  22,
+					  [
+					    "interpolate",
+					    ["linear"],
+					    ["get", "total"],
+					    0,
+					    5,
+					    60,
+					    10
+					  ]
+					],
+					'visibility': visibility
+				},
+				'paint': {}
+			}, 'admin-1-boundary-bg');
+		}
+
+		add_routes('routes', 'visibile')
+		add_routes('airports', 'visibile')
 
 
 
