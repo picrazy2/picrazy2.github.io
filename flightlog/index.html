@@ -206,8 +206,8 @@
 	var map = new mapboxgl.Map({
 		container: 'map', // container id
 		style: 'mapbox://styles/picrazy2/cka8a1z1r0d591io0ebssgmz3',
-		center: [0, 10],
-		zoom: 0.75
+		center: [146.6, 56.85],
+		zoom: 1
 	});
 
 
@@ -229,7 +229,6 @@
 		map.addLayer({
 			'id': 'routes',
 			'source': 'routes',
-			// 'source-layer': 'routes-ai806l',
 			'type': 'line',
 			'layout': {
 				'visibility': 'visible'
