@@ -279,8 +279,8 @@
 				    "interpolate",
 				    ["linear"],
 				    ["get", "total"],
-				    8,
-				    0.5,
+				    0,
+				    5,
 				    60,
 				    10
 				  ]
@@ -293,15 +293,15 @@
 
 
 
-		function times(num) {
+		function add_s(s, num) {
 			if(num == 1) {
-				return 'time'
+				return s
 			} else {
-				return 'times'
+				return s + 's'
 			}
 		}
 
-		function parse_hist(hist) {
+		function parse_hist(hist, s) {
 			var hist_split = hist.split(';')
 			var hist_str = ''
 			for(var i = 0; i < hist_split.length; i++) {
@@ -309,7 +309,7 @@
 				if(i > 0) {
 					hist_str += ', '
 				}
-				hist_str += further_split[0] + ': <span class=\'bold\'>' + further_split[1] + '</span> ' + times(further_split[1])
+				hist_str += further_split[0] + ': <span class=\'bold\'>' + further_split[1] + '</span> ' + add_s(further_split[1], 'time')
 			}
 			return hist_str	
 		}
@@ -360,8 +360,37 @@
 		});
 
 
+
 		map.on('click', 'airports', function(e) {
-			console.log(e.features[0].properties.total)
+			var dest_set = new Set()
+			var dep_hist = e.features[0].properties.dep_dest_hist.split(';')
+			var arr_hist = e.features[0].properties.arr_dest_hist.split(';')
+			for(var i = 0; i < dep_hist.length; i++) {
+				dest_set.add(dep_hist[i].split(',')[0])
+			}
+			for(var i = 0; i < arr_hist.length; i++) {
+				dest_set.add(arr_hist[i].split(',')[0])
+			}
+
+			var dest_str = ''
+			console.log()
+			for(var i = 0; i < Array.from(dest_set).length; i++) {
+				dest_str += Array.from(dest_set)[i]
+				if(i < Array.from(dest_set).length - 1) {
+					dest_str += ', '
+				}
+			}
+
+			var hist_split = e.features[0].properties.full_year_hist.split(';')
+			var hist_str = ''
+			for(var i = 0; i < hist_split.length; i++) {
+				var further_split = hist_split[i].split(',')
+				if(i > 0) {
+					hist_str += ', '
+				}
+				hist_str += further_split[0] + ': <span class=\'bold\'>' + further_split[1] + '</span> ' + times(further_split[1])
+			}
+
 			new mapboxgl.Popup()
 				.setLngLat(e.lngLat)
 				.setHTML(
@@ -371,6 +400,7 @@
 					+ '<p style=\'font-size:13px\'>Departures: <span class=\'bold\'>' + e.features[0].properties.dep_count+ '</span>'
 					+ '<br>Arrivals: <span class=\'bold\'>' + e.features[0].properties.arr_count + '</span>'
 					+ '<br>Connections: <span class=\'bold\'>' + e.features[0].properties.arr_conn_count+ '</span>'
+					+ '<br>Destinations: ' + dest_str
 					+ '</p>'
 					)
 				.addTo(map);
