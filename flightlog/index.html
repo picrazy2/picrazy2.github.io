@@ -243,7 +243,18 @@
 	// https://account.mapbox.com
 	mapboxgl.accessToken = 'pk.eyJ1IjoicGljcmF6eTIiLCJhIjoiY2thMG1vdDQ0MHMxajNtcXI1ZnpiYnFpZiJ9.iYJgxRpR27z5rtZGoGXl2g';
 	// mapboxgl.accessToken = 'pk.eyJ1IjoicGljcmF6eTIiLCJhIjoiY2thMG1xMnR2MDMxeDNtazBjYjVrcjAxZSJ9.Ku2z0w2wiQ9RmhN8oTbbYQ'
-	var years = [2015, 2016, 2017, 2018, 2019, 2020]
+
+	var ranges_raw = read_stats('month_range');
+	var years_raw = ranges_raw.split('\n')[0].split(',');
+	var years = []
+	for(var i = 0; i <years_raw.length; i++) {
+		years.push(parseInt(years_raw[i]))
+	}
+
+	var first_month = ranges_raw.split('\n')[1].split(',')[0];
+	var last_month = ranges_raw.split('\n')[1].split(',')[1];
+
+
 	var route_year_ids = []
 	var airport_year_ids = []
 
@@ -522,7 +533,22 @@
 			add_routes('routes_' + years[i], 'none')
 			add_airports('airports_' + years[i], 'none')
 			hover_routes('routes_' + years[i])
-			click_airports('airports_' + years[i])		}
+			click_airports('airports_' + years[i])	
+
+			for(var j = 1; j < 13; j++) {
+				if(i == 0 && j < first_month) {
+					continue;
+				}
+				if(i == years.length-1 && j > last_month) {
+					continue;
+				}
+				add_routes('routes_cum_' + years[i] + '_' + j, 'none')
+				add_airports('airports_cum_' + years[i] + '_' + j, 'none')
+				hover_routes('routes_cum_' + years[i] + '_' + j)
+				click_airports('airports_cum_' + years[i] + '_' + j)	
+			}	
+
+		}
 
 
 
@@ -601,8 +627,8 @@
 		var getYear = d3.timeFormat("%Y");
 		var parseDate = d3.timeParse("%m/%d/%y");
 
-		var startDate = new Date(2015, 2, 1),
-		    endDate = new Date(2020, 4, 31);
+		var startDate = new Date(years[0], first_month-1, 1),
+		    endDate = new Date(years[years.length-1], last_month-1, 30);
 
 		var margin = {top:-150, right:100, bottom:0, left:40},
 		    width = 600 - margin.left - margin.right,
@@ -671,32 +697,6 @@
 
 		////////// plot //////////
 
-		// var dataset;
-
-		// var plot = svg.append("g")
-		//     .attr("class", "plot")
-		//     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-		// d3.csv("circles.csv", prepare, function(data) {
-		//   dataset = data;
-		//   // drawPlot(dataset);
-		  
-		//   playButton
-		//     .on("click", function() {
-		//     var button = d3.select(this);
-		//     if (button.text() == "Pause") {
-		//       moving = false;
-		//       clearInterval(timer);
-		//       // timer = 0;
-		//       button.text("Play");
-		//     } else {
-		//       moving = true;
-		//       timer = setInterval(step, 100);
-		//       button.text("Pause");
-		//     }
-		//     console.log("Slider moving: " + moving);
-		//   })
-		// })
 		playButton
 		    .on("click", function() {
 		    var button = d3.select(this);
@@ -725,30 +725,6 @@
 		  }
 		}
 
-		// function drawPlot(data) {
-		//   var locations = plot.selectAll(".location")
-		//     .data(data);
-
-		//   // if filtered dataset has more circles than already existing, transition new ones in
-		//   locations.enter()
-		//     .append("circle")
-		//     .attr("class", "location")
-		//     .attr("cx", function(d) { return x(d.date); })
-		//     .attr("cy", height/2)
-		//     .style("fill", function(d) { return d3.hsl(d.date/1000000000, 0.8, 0.8)})
-		//     .style("stroke", function(d) { return d3.hsl(d.date/1000000000, 0.7, 0.7)})
-		//     .style("opacity", 0.5)
-		//     .attr("r", 8)
-		//       .transition()
-		//       .duration(400)
-		//       .attr("r", 25)
-		//         .transition()
-		//         .attr("r", 8);
-
-		//   // if filtered dataset has less circles than already existing, remove excess
-		//   locations.exit()
-		//     .remove();
-		// }
 
 		function update(h) {
 			// update position and text of label according to slider scale
@@ -758,20 +734,38 @@
 			.text(formatDate(h));
 			console.log(getMonth(h))
 			console.log(getYear(h))
+
+
 			for(var i = 0; i < yearIds.length; i++) {
 				layer_id = links[i].id;
 	            map.setLayoutProperty('routes_' + layer_id, 'visibility', 'none');
 	            map.setLayoutProperty('airports_' + layer_id, 'visibility', 'none');
 	            links[i].className = '';		
 			}
+			map.setLayoutProperty('routes_cum_' + getYear(h) + '_' + parseInt(getMonth(h)), 'visibility', 'visible');
+			map.setLayoutProperty('airports_cum_' + getYear(h) + '_' + parseInt(getMonth(h)), 'visibility', 'visible');	
+			for(var i = 0; i < years.length; i++) {
+				for(var j = 1; j < 13; j++) {
+					if(i == 0 && j < first_month) {
+						continue;
+					}
+					if(i == years.length-1 && j > last_month) {
+						continue;
+					}
+					if(years[i] != getYear(h) || j != getMonth(h)) {
+			            map.setLayoutProperty('routes_cum_' + years[i] + '_' + j, 'visibility', 'none');
+			            map.setLayoutProperty('airports_cum_' + years[i] + '_' + j, 'visibility', 'none');						
+					}
+				}	
+
+			}
+
 		}
 
    });
 
 
 
-
-	// SLIDER
 
 </script>
  
