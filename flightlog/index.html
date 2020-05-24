@@ -5,6 +5,7 @@
 		<title>Airports</title>
 		<script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="http://d3js.org/d3.v4.min.js"></script>
 		<link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
 		<style>
 			body {
@@ -129,7 +130,7 @@
 
 			/* LEGEND: bottom left */
 			#legend {
-			  padding: 20px;
+			  padding: 10px;
 			  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 /*			  line-height: 20px;
 */			  bottom: 40px;
@@ -156,6 +157,63 @@
 
 
 
+
+		    #play-button {
+		      position: absolute;
+		      top: 40px;
+		      right: 20px;
+		      display: inline-block;
+		      background: #f08080;
+		      border-radius: 3px;
+		      border: none;
+		      color: white;
+		      margin: 0;
+		      padding: 0 12px;
+		      width: 60px;
+		      cursor: pointer;
+		      height: 30px;
+		    }
+
+		    #play-button:hover {
+		      background-color: #696969;
+		    }    
+		    
+		    .ticks {
+		      font-size: 15px;
+		    }
+
+		    .track,
+		    .track-inset,
+		    .track-overlay {
+		      stroke-linecap: round;
+		    }
+
+		    .track {
+		      stroke: #000;
+		      stroke-opacity: 0.3;
+		      stroke-width: 10px;
+		    }
+
+		    .track-inset {
+		      stroke: #dcdcdc;
+		      stroke-width: 8px;
+		    }
+
+		    .track-overlay {
+		      pointer-events: stroke;
+		      stroke-width: 50px;
+		      stroke: transparent;
+		      cursor: crosshair;
+		    }
+
+		    .handle {
+		      fill: #fff;
+		      stroke: #000;
+		      stroke-opacity: 0.5;
+		      stroke-width: 1.25px;
+		    }
+
+
 		</style>
 	</head>
 	<body>
@@ -169,11 +227,17 @@
 			<div id='pd'>
 			</div>
 		</div>
-		<div class='map-overlay' id='legend'></div>
+		<div class='map-overlay' id='legend'>
+			<div id="vis"></div><button id="play-button">Play</button>
+		</div>
 
 	</body>
 </html>
+
 <script>
+
+
+
 	// TO MAKE THE MAP APPEAR YOU MUST
 	// ADD YOUR ACCESS TOKEN FROM
 	// https://account.mapbox.com
@@ -225,15 +289,12 @@
 
 	
 	var all_stats = read_stats('all_stats')
-	// var year_stats = []
-	// for(var i = 0; i < years.length; i++) {
-	// 	year_stats.push(read_stats(years[i] + '_stats'))
-	// }
+	var year_stats = []
+	for(var i = 0; i < years.length; i++) {
+		year_stats.push(read_stats(years[i] + '_stats'))
+	}
 
-
-
-	document.getElementById('stats').innerHTML = '<h2><span class=\'bold\'>Alex\'s Flight Log (3/2015-5/2020)</span></h2>' + all_stats
-
+	document.getElementById('stats').innerHTML = all_stats
 
 
 	var map = new mapboxgl.Map({
@@ -502,6 +563,15 @@
 	                this.className = 'active';
 	                map.setLayoutProperty('routes_' + clickedLayer, 'visibility', 'visible');
 	                map.setLayoutProperty('airports_' + clickedLayer, 'visibility', 'visible');
+	                for (var j = 0; j <  yearIds.length; j++) {
+	            		if (this.id == links[j].id) {
+	            			if(j == 0) {
+	    						document.getElementById('stats').innerHTML = all_stats
+	            			} else {
+	    						document.getElementById('stats').innerHTML = year_stats[j-1]
+	    					}
+	    				}
+	            	}
 	            }
 
 	            if (visibility !== 'visible') {
@@ -518,43 +588,190 @@
 	            	}
 	            } 
 
-
-	   //          layers = [];
-	   //          colors = [];
-	   //          if (this.id === toggleableLayerIds[5]) {
-	   //          	layers = dest_layers;
-	   //          	colors = dest_colors;
-	   //          } else if (this.id === toggleableLayerIds[4]) {
-	   //          	layers = dur_layers;
-	   //          	colors = dur_colors;
-	   //          }
-
-	   //          if (toggleableLayerIds.slice(4, toggleableLayerIds.length).includes(this.id)) {
-	   //          	while (legend.lastElementChild) {
-				// 	    legend.removeChild(legend.lastElementChild);
-				// 	  }
-	   //          	for (i = 0; i < layers.length; i++) {
-				// 	  var layer = layers[i];
-				// 	  var color = colors[i];
-				// 	  var item = document.createElement('div');
-				// 	  var key = document.createElement('span');
-
-				// 	  key.className = 'legend-key';
-				// 	  key.style.backgroundColor = color;
-
-				// 	  var value = document.createElement('span');
-				// 	  value.innerHTML = layer;
-				// 	  item.appendChild(key);
-				// 	  item.appendChild(value);
-				// 	  legend.appendChild(item);
-				// 	}
-				// }
-
 	        };
 	    }
 
 
+
+
+
+		var formatDateIntoYear = d3.timeFormat("%Y");
+		var formatDate = d3.timeFormat("%b %Y");
+		var getMonth = d3.timeFormat("%m");
+		var getYear = d3.timeFormat("%Y");
+		var parseDate = d3.timeParse("%m/%d/%y");
+
+		var startDate = new Date(2015, 2, 1),
+		    endDate = new Date(2020, 4, 31);
+
+		var margin = {top:-150, right:100, bottom:0, left:40},
+		    width = 600 - margin.left - margin.right,
+		    height = 80 - margin.top - margin.bottom;
+
+		var svg = d3.select("#vis")
+		    .append("svg")
+		    .attr("width", width + margin.left + margin.right)
+		    .attr("height", height + margin.top + margin.bottom)  
+		    .attr("display", 'inline-block');  
+
+		////////// slider //////////
+
+		var moving = false;
+		var currentValue = 0;
+		var targetValue = width;
+
+		var playButton = d3.select("#play-button");
+		    
+		var x = d3.scaleTime()
+		    .domain([startDate, endDate])
+		    .range([0, targetValue])
+		    .clamp(true);
+
+		var slider = svg.append("g")
+		    .attr("class", "slider")
+		    .attr("transform", "translate(" + margin.left + "," + height/5 + ")");
+
+		slider.append("line")
+		    .attr("class", "track")
+		    .attr("x1", x.range()[0])
+		    .attr("x2", x.range()[1])
+		  .select(function() { return this.parentNode.appendChild(this.cloneNode(true)); })
+		    .attr("class", "track-inset")
+		  .select(function() { return this.parentNode.appendChild(this.cloneNode(true)); })
+		    .attr("class", "track-overlay")
+		    .call(d3.drag()
+		        .on("start.interrupt", function() { slider.interrupt(); })
+		        .on("start drag", function() {
+		          currentValue = d3.event.x;
+		          update(x.invert(currentValue)); 
+		        })
+		    );
+
+		slider.insert("g", ".track-overlay")
+		    .attr("class", "ticks")
+		    .attr("transform", "translate(0," + 15 + ")")
+		  .selectAll("text")
+		    .data(x.ticks(10))
+		    .enter()
+		    .append("text")
+		    .attr("x", x)
+		    .attr("y", 10)
+		    .attr("text-anchor", "middle")
+		    .text(function(d) { return formatDateIntoYear(d); });
+
+		var handle = slider.insert("circle", ".track-overlay")
+		    .attr("class", "handle")
+		    .attr("r", 9);
+
+		var label = slider.append("text")  
+		    .attr("class", "label")
+		    .attr("text-anchor", "middle")
+		    .text(formatDate(endDate))
+		    .attr("transform", "translate(0," + (-25) + ")")
+
+		////////// plot //////////
+
+		// var dataset;
+
+		// var plot = svg.append("g")
+		//     .attr("class", "plot")
+		//     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+		// d3.csv("circles.csv", prepare, function(data) {
+		//   dataset = data;
+		//   // drawPlot(dataset);
+		  
+		//   playButton
+		//     .on("click", function() {
+		//     var button = d3.select(this);
+		//     if (button.text() == "Pause") {
+		//       moving = false;
+		//       clearInterval(timer);
+		//       // timer = 0;
+		//       button.text("Play");
+		//     } else {
+		//       moving = true;
+		//       timer = setInterval(step, 100);
+		//       button.text("Pause");
+		//     }
+		//     console.log("Slider moving: " + moving);
+		//   })
+		// })
+		playButton
+		    .on("click", function() {
+		    var button = d3.select(this);
+		    if (button.text() == "Pause") {
+		      moving = false;
+		      clearInterval(timer);
+		      // timer = 0;
+		      button.text("Play");
+		    } else {
+		      moving = true;
+		      timer = setInterval(step, 100);
+		      button.text("Pause");
+		    }
+		    console.log("Slider moving: " + moving);
+		   })
+
+		function step() {
+		  update(x.invert(currentValue));
+		  currentValue = currentValue + (targetValue/80);
+		  if (currentValue > targetValue) {
+		    moving = false;
+		    currentValue = 0;
+		    clearInterval(timer);
+		    playButton.text("Play");
+		    console.log("Slider moving: " + moving);
+		  }
+		}
+
+		// function drawPlot(data) {
+		//   var locations = plot.selectAll(".location")
+		//     .data(data);
+
+		//   // if filtered dataset has more circles than already existing, transition new ones in
+		//   locations.enter()
+		//     .append("circle")
+		//     .attr("class", "location")
+		//     .attr("cx", function(d) { return x(d.date); })
+		//     .attr("cy", height/2)
+		//     .style("fill", function(d) { return d3.hsl(d.date/1000000000, 0.8, 0.8)})
+		//     .style("stroke", function(d) { return d3.hsl(d.date/1000000000, 0.7, 0.7)})
+		//     .style("opacity", 0.5)
+		//     .attr("r", 8)
+		//       .transition()
+		//       .duration(400)
+		//       .attr("r", 25)
+		//         .transition()
+		//         .attr("r", 8);
+
+		//   // if filtered dataset has less circles than already existing, remove excess
+		//   locations.exit()
+		//     .remove();
+		// }
+
+		function update(h) {
+			// update position and text of label according to slider scale
+			handle.attr("cx", x(h));
+			label
+			.attr("x", x(h))
+			.text(formatDate(h));
+			console.log(getMonth(h))
+			console.log(getYear(h))
+			for(var i = 0; i < yearIds.length; i++) {
+				layer_id = links[i].id;
+	            map.setLayoutProperty('routes_' + layer_id, 'visibility', 'none');
+	            map.setLayoutProperty('airports_' + layer_id, 'visibility', 'none');
+	            links[i].className = '';		
+			}
+		}
+
    });
+
+
+
+
+	// SLIDER
 
 </script>
  
