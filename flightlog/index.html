@@ -5,7 +5,7 @@
 		<title>Airports</title>
 		<script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-		<script src="http://d3js.org/d3.v4.min.js"></script>
+		<script src="https://d3js.org/d3.v4.min.js"></script>
 		<link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
 		<style>
 			body {
@@ -589,8 +589,6 @@
 						}
 						var vis = map.getLayoutProperty('routes_cum_' + years[i] + '_' + j, 'visibility');
 						if(vis == 'visible') {
-							console.log(years[i])
-							console.log(j)
 				            map.setLayoutProperty('routes_cum_' + years[i] + '_' + j, 'visibility', 'none');
 				            map.setLayoutProperty('airports_cum_' + years[i] + '_' + j, 'visibility', 'none');				
 						}
@@ -706,13 +704,15 @@
 
 		var handle = slider.insert("circle", ".track-overlay")
 		    .attr("class", "handle")
-		    .attr("r", 9);
+		    .attr("r", 9)
+		    .attr("cx", x(endDate));
 
 		var label = slider.append("text")  
 		    .attr("class", "label")
 		    .attr("text-anchor", "middle")
-		    .text(formatDate(startDate))
+		    .text(formatDate(endDate))
 		    .attr("transform", "translate(0," + (-25) + ")")
+		    .attr("x", x(endDate));
 
 		////////// plot //////////
 
@@ -773,8 +773,6 @@
 					if(years[i] != getYear(h) || j != getMonth(h)) {
 						var vis = map.getLayoutProperty('routes_cum_' + years[i] + '_' + j, 'visibility');
 						if(vis == 'visible') {
-							console.log(years[i])
-							console.log(j)
 				            map.setLayoutProperty('routes_cum_' + years[i] + '_' + j, 'visibility', 'none');
 				            map.setLayoutProperty('airports_cum_' + years[i] + '_' + j, 'visibility', 'none');				
 						}
