@@ -326,7 +326,7 @@
 		map.moveLayer('admin-0-boundary-disputed', 'settlement-subdivision-label')
 
 
-		function add_routes(file_name, visibility) {
+		function add_routes(file_name, visibility, opacity) {
 			map.addSource(file_name, {
 				'type': 'geojson',
 				'data': 'https://picrazy2.github.io/flightlog/' + file_name + '.geojson'
@@ -349,14 +349,15 @@
 					  2,
 					  19,
 					  19
-					]
+					],
+					'line-opacity': opacity
 
 				}
 			}, 'admin-1-boundary-bg');			
 		}
 
 
-		function add_airports(file_name, visibility) {
+		function add_airports(file_name, visibility, opacity) {
 			map.addSource(file_name, {
 				'type': 'geojson',
 				'data': 'https://picrazy2.github.io/flightlog/' + file_name + '.geojson'
@@ -396,7 +397,7 @@
 					],
 					'visibility': visibility
 				},
-				'paint': {}
+				'paint': {'icon-opacity': opacity}
 			}, 'admin-1-boundary-bg');
 		}
 
@@ -523,15 +524,15 @@
 
 
 
-		add_routes('routes_all', 'visible')
-		add_airports('airports_all', 'visible')
+		add_routes('routes_all', 'visible', 1)
+		add_airports('airports_all', 'visible', 1)
 
 		hover_routes('routes_all');
 		click_airports('airports_all');
 
 		for(var i = 0; i < years.length; i++) {
-			add_routes('routes_' + years[i], 'none')
-			add_airports('airports_' + years[i], 'none')
+			add_routes('routes_' + years[i], 'none', 1)
+			add_airports('airports_' + years[i], 'none', 1)
 			hover_routes('routes_' + years[i])
 			click_airports('airports_' + years[i])	
 
@@ -542,8 +543,10 @@
 				if(i == years.length-1 && j > last_month) {
 					continue;
 				}
-				add_routes('routes_cum_' + years[i] + '_' + j, 'none')
-				add_airports('airports_cum_' + years[i] + '_' + j, 'none')
+				// add_routes('routes_cum_' + years[i] + '_' + j, 'none')
+				// add_airports('airports_cum_' + years[i] + '_' + j, 'none')
+				add_routes('routes_cum_' + years[i] + '_' + j, 'visible', 0.00001)
+				add_airports('airports_cum_' + years[i] + '_' + j, 'visible', 0.00001)
 				hover_routes('routes_cum_' + years[i] + '_' + j)
 				click_airports('airports_cum_' + years[i] + '_' + j)	
 			}	
@@ -587,10 +590,14 @@
 						if(i == years.length-1 && j > last_month) {
 							continue;
 						}
-						var vis = map.getLayoutProperty('routes_cum_' + years[i] + '_' + j, 'visibility');
-						if(vis == 'visible') {
-				            map.setLayoutProperty('routes_cum_' + years[i] + '_' + j, 'visibility', 'none');
-				            map.setLayoutProperty('airports_cum_' + years[i] + '_' + j, 'visibility', 'none');				
+						// var vis = map.getLayoutProperty('routes_cum_' + years[i] + '_' + j, 'visibility');
+						var op = map.getPaintProperty('routes_cum_' + years[i] + '_' + j, 'line-opacity');
+						// if(vis == 'visible') {
+						if(op == 1) {
+				            // map.setLayoutProperty('routes_cum_' + years[i] + '_' + j, 'visibility', 'none');
+				            // map.setLayoutProperty('airports_cum_' + years[i] + '_' + j, 'visibility', 'none');	
+				            map.setPaintProperty('routes_cum_' + years[i] + '_' + j, 'line-opacity', 0.00001);
+				            map.setPaintProperty('airports_cum_' + years[i] + '_' + j, 'icon-opacity', 0.00001);			
 						}
 					}	
 
@@ -625,6 +632,7 @@
 	            			if (vis == 'visible') {
 				                map.setLayoutProperty('routes_' + clicked, 'visibility', 'none');
 				                map.setLayoutProperty('airports_' + clicked, 'visibility', 'none');
+
 				                links[j].className = '';
 				            }
 	            		}
@@ -747,9 +755,11 @@
 
 		function update(h) {
 			// update position and text of label according to slider scale
-			map.setLayoutProperty('routes_cum_' + getYear(h) + '_' + parseInt(getMonth(h)), 'visibility', 'visible');
-			map.setLayoutProperty('airports_cum_' + getYear(h) + '_' + parseInt(getMonth(h)), 'visibility', 'visible');	
-			
+			// map.setLayoutProperty('routes_cum_' + getYear(h) + '_' + parseInt(getMonth(h)), 'visibility', 'visible');
+			// map.setLayoutProperty('airports_cum_' + getYear(h) + '_' + parseInt(getMonth(h)), 'visibility', 'visible');	
+			map.setPaintProperty('routes_cum_' + getYear(h) + '_' + parseInt(getMonth(h)), 'line-opacity', 1);
+			map.setPaintProperty('airports_cum_' + getYear(h) + '_' + parseInt(getMonth(h)), 'icon-opacity', 1);				
+			console.log(getYear(h) + ' ' + getMonth(h))
 			handle.attr("cx", x(h));
 			label
 			.attr("x", x(h))
@@ -771,10 +781,15 @@
 						continue;
 					}
 					if(years[i] != getYear(h) || j != getMonth(h)) {
-						var vis = map.getLayoutProperty('routes_cum_' + years[i] + '_' + j, 'visibility');
-						if(vis == 'visible') {
-				            map.setLayoutProperty('routes_cum_' + years[i] + '_' + j, 'visibility', 'none');
-				            map.setLayoutProperty('airports_cum_' + years[i] + '_' + j, 'visibility', 'none');				
+						// var vis = map.getLayoutProperty('routes_cum_' + years[i] + '_' + j, 'visibility');
+						var op = map.getPaintProperty('routes_cum_' + years[i] + '_' + j, 'line-opacity');
+						// if(vis == 'visible') {
+						if(op == 1) {
+				            // map.setLayoutProperty('routes_cum_' + years[i] + '_' + j, 'visibility', 'none');
+				            // map.setLayoutProperty('airports_cum_' + years[i] + '_' + j, 'visibility', 'none');
+				            map.setPaintProperty('routes_cum_' + years[i] + '_' + j, 'line-opacity', 0.00001);
+				            map.setPaintProperty('airports_cum_' + years[i] + '_' + j, 'icon-opacity', 0.00001);
+				            break			
 						}
 					}
 				}	
