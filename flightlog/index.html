@@ -4,6 +4,7 @@
 		<meta charset="utf-8" />
 		<title>Airports</title>
 		<script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 		<link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
 		<style>
 			body {
@@ -161,21 +162,7 @@
 		<nav id='menu'></nav>
 		<div id='map'></div>
 		<div class='map-overlay' id='city'>
-			<h2><span class='bold'>Alex's Flight Logs (3/2015-5/2020)</span></h2>
-			<div>
-				<p>Total Distance Flown: <span class='bold'>345130</span>mi
-				<br>Total Flights: <span class='bold'>139</span>
-				<br>Number of Airlines: <span class='bold'>27</span>, Countries: <span class='bold'>19</span>, Airports: <span class='bold'>54</span>
-				<p>Shortest flight: <span class='bold'>PHL</span> to <span class='bold'>JFK</span> (94mi, 11min)
-				<br>Longest flight: <span class='bold'>SIN</span> to <span class='bold'>SFO</span> (8446mi, 16h 53m)</p>
-				<p>Airport distribution (top countries): <span class='bold'>China</span>: 15, <span class='bold'>United States</span>: 12, <span class='bold'>Japan</span>: 3
-				<p>Airports by total visits: <span class='bold'>BOS</span>: 54, <span class='bold'>PEK</span>: 46, <span class='bold'>EWR</span>: 22</p>
-				<p>Top routes: <span class='bold'>BOS</span> to <span class='bold'>EWR</span>: 19, <span class='bold'>EWR</span> to <span class='bold'>PEK</span>: 15, <span class='bold'>BOS</span> to <span class='bold'>SFO</span>: 7</p>
-				<p>Top airlines: <span class='bold'>United</span>: 70, <span class='bold'>Hainan</span>: 8, <span class='bold'>Air China</span>: 5</p>
-				<P><span class='bold'>2015</span>: 29436mi, 10 flights, <span class='bold'>2016</span>: 57999mi, 20 flights, <span class='bold'>2017</span>: 78048mi, 39 flights, <span class='bold'>2018</span>: 76497mi, 24 flights, <span class='bold'>2019</span>: 84043mi, 31 flights, <span class='bold'>2020</span>: 19103mi, 15 flights</p>
-				<p><span class='bold'>Domestic</span>: 69296mi, 81 flights, <span class='bold'>International</span>: 275833mi, 58 flights</p>
-				<p><span class='bold'>Business</span>: 123047mi, 37 flights, <span class='bold'>Economy</span>: 216096mi, 98 flights</p>
-
+			<div id='stats'>
 			</div>
 		</div>
 		<div class='map-overlay' id='features'>
@@ -216,38 +203,36 @@
 		}
 	}
 
-	// read csv
-	$(document).ready(function() {
-	    $.ajax({
-	        type: "GET",
-	        url: "data.txt",
-	        dataType: "text",
-	        success: function(data) {processData(data);}
-	     });
-	});
+	// read stats
 
-	function processData(allText) {
-	    var allTextLines = allText.split(/\r\n|\n/);
-	    console.log(allTextLines)
-	    // var headers = allTextLines[0].split(',');
-	    // var lines = [];
-
-	    // for (var i=1; i<allTextLines.length; i++) {
-	    //     var data = allTextLines[i].split(',');
-	    //     if (data.length == headers.length) {
-
-	    //         var tarr = [];
-	    //         for (var j=0; j<headers.length; j++) {
-	    //             tarr.push(headers[j]+":"+data[j]);
-	    //         }
-	    //         lines.push(tarr);
-	    //     }
-	    // }
-	    alert(lines);
+	function read_stats(file_name){
+	    var rawFile = new XMLHttpRequest();
+	    var text;
+	    rawFile.open("GET", "https://picrazy2.github.io/flightlog/" + file_name + ".txt", false);
+	    rawFile.onreadystatechange = function ()
+	    {
+	        if(rawFile.readyState === 4)
+	        {
+	            if(rawFile.status === 200 || rawFile.status == 0)
+	            {
+	                text = rawFile.responseText;
+	            }
+	        }
+	    }
+	    rawFile.send(null);
+	    return text;
 	}
 
+	
+	var all_stats = read_stats('all_stats')
+	// var year_stats = []
+	// for(var i = 0; i < years.length; i++) {
+	// 	year_stats.push(read_stats(years[i] + '_stats'))
+	// }
 
 
+
+	document.getElementById('stats').innerHTML = '<h2><span class=\'bold\'>Alex\'s Flight Log (3/2015-5/2020)</span></h2>' + all_stats
 
 
 

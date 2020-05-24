@@ -1,4 +1,4 @@
-<p>Total Distance Flown: <span class='bold'>19104</span>mi
+<h2><span class='bold'>Alex's Flight Log (2020)</span></h2><p>Total Distance Flown: <span class='bold'>19104</span>mi
 <br>Total Flights: <span class='bold'>15</span>
 <br>Number of Airlines: <span class='bold'>7</span>, Countries: <span class='bold'>5</span>, Airports: <span class='bold'>15</span>
 <p>Shortest flight: <span class='bold'>EWR</span> to <span class='bold'>BOS</span> (201mi, 24min)
