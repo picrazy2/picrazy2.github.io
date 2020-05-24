@@ -63,7 +63,7 @@
 		        top: 20px;
 		        left: 20px;
 		        border-radius: 3px;
-		        width: 200px;
+		        width: 150px;
 		        border: 1px solid rgba(0, 0, 0, 0.4);
 		        font-family: 'open_sansregular', sans-serif;
 		    }
@@ -488,7 +488,7 @@
 					for (var j = 0; j <  yearIds.length; j++) {
 	            		if (this.id !== links[j].id) {
 	            			var clicked = links[j].id;
-	            			var vis = map.getLayoutProperty(clicked, 'visibility');
+	            			var vis = map.getLayoutProperty('routes_' + clicked, 'visibility');
 	            			if (vis == 'visible') {
 				                map.setLayoutProperty('routes_' + clicked, 'visibility', 'none');
 				                map.setLayoutProperty('airports_' + clicked, 'visibility', 'none');
