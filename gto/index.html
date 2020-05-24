@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Airports</title>
+		<script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+		<link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
+		<style>
+			body {
+			  margin: 0;
+			  padding: 0;
+			}
+
+			h2,
+			h3 {
+			  margin: 10px;
+			  font-size: 1.2em;
+			  font-family: 'open_sansbold';
+			}
+
+			h3 {
+			  font-size: 1em;
+			  font-family: 'open_sansbold';
+			}
+
+			p {
+			  font-size: 0.85em;
+			  margin: 10px;
+			  text-align: left;
+			  font-family: 'open_sansregular';
+			}
+
+			@font-face {
+			    font-family: 'open_sansbold';
+			    src: url('fonts/opensans-bold-webfont.woff2') format('woff2'),
+			         url('fonts/opensans-bold-webfont.woff') format('woff');
+			    font-weight: normal;
+			    font-style: normal;
+			}
+			
+			@font-face {
+			    font-family: 'open_sansregular';
+			    src: url('fonts/opensans-regular-webfont.woff2') format('woff2'),
+			         url('fonts/opensans-regular-webfont.woff') format('woff');
+			    font-weight: normal;
+			    font-style: normal;
+			}
+
+			/* MAPPPPPP */
+			#map {
+			  position: absolute;
+			  top: 0;
+			  bottom: 0;
+			  width: 100%;
+			}
+
+
+			/* LAYERS: top left */
+			#menu {
+		        background: #fff;
+		        position: absolute;
+		        z-index: 1;
+		        top: 20px;
+		        left: 20px;
+		        border-radius: 3px;
+		        width: 100px;
+		        border: 1px solid rgba(0, 0, 0, 0.4);
+		        font-family: 'open_sansregular', sans-serif;
+		    }
+		    #menu a {
+		        font-size: 13px;
+		        color: #404040;
+		        display: block;
+		        margin: 0;
+		        padding: 0;
+		        padding: 10px;
+		        text-decoration: none;
+		        border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+		        text-align: center;
+		    }
+		    #menu a:last-child {
+		        border: none;
+		    }
+		    #menu a:hover {
+		        background-color: #f8f8f8;
+		        color: #404040;
+		    }
+		    #menu a.active {
+		        background-color: #3887be;
+		        color: #ffffff;
+		    }
+		    #menu a.active:hover {
+		        background: #3074a4;
+		    }
+
+
+
+
+			/*INFO: top right */
+			.map-overlay {
+			  position: absolute;
+/*			  bottom: 0;
+*/			  background: rgba(255, 255, 255, 0.8);
+			  margin-right: 20px;
+			  font-family: 'open_sansregular', sans-serif;
+			  overflow: auto;
+			  border-radius: 3px;
+			}
+
+			#city {
+			  top: 0;
+			  right: 0;
+			  height: 480px;
+			  margin-top: 20px;
+			  width: 350px;
+			}
+
+			#features {
+/*			  top: 200;
+*/			  right: 0;
+			  height: 330px;
+			  margin-top: 510px;
+			  width: 350px;
+			  visibility: hidden;
+			}
+
+
+
+			/* LEGEND: bottom left */
+			#legend {
+			  padding: 10px;
+			  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+/*			  line-height: 20px;
+*/			  bottom: 40px;
+			  left: 20px;
+			  font-family: 'open_sansregular', sans-serif;
+			}
+			.legend-key {
+			  display: inline-block;
+			  border-radius: 20%;
+			  width: 18px;
+			  height: 18px;
+			  margin-right: 5px;
+			}
+			.legend-key-circle {
+			  display: inline-block;
+			  border-radius: 50%;
+			  width: 18px;
+			  height: 18px;
+			  margin-right: 5px;
+			}
+
+
+			.bold {font-family: 'open_sansbold';}
+
+
+
+
+		    #play-button {
+		      position: absolute;
+		      top: 40px;
+		      right: 20px;
+		      display: inline-block;
+		      background: #f08080;
+		      border-radius: 3px;
+		      border: none;
+		      color: white;
+		      margin: 0;
+		      padding: 0 12px;
+		      width: 60px;
+		      cursor: pointer;
+		      height: 30px;
+		    }
+
+		    #play-button:hover {
+		      background-color: #696969;
+		    }    
+		    
+		    .ticks {
+		      font-size: 15px;
+		    }
+
+		    .track,
+		    .track-inset,
+		    .track-overlay {
+		      stroke-linecap: round;
+		    }
+
+		    .track {
+		      stroke: #000;
+		      stroke-opacity: 0.3;
+		      stroke-width: 10px;
+		    }
+
+		    .track-inset {
+		      stroke: #dcdcdc;
+		      stroke-width: 8px;
+		    }
+
+		    .track-overlay {
+		      pointer-events: stroke;
+		      stroke-width: 50px;
+		      stroke: transparent;
+		      cursor: crosshair;
+		    }
+
+		    .handle {
+		      fill: #fff;
+		      stroke: #000;
+		      stroke-opacity: 0.5;
+		      stroke-width: 1.25px;
+		    }
+
+
+		</style>
+	</head>
+	<body>
+		<nav id='menu'></nav>
+		<div id='map'></div>
+		<div class='map-overlay' id='city'>
+			<div id='stats'>
+			</div>
+		</div>
+		<div class='map-overlay' id='features'>
+			<div id='pd'>
+			</div>
+		</div>
+		<div class='map-overlay' id='legend'>
+			<div id="vis"></div><button id="play-button">Play</button>
+		</div>
+
+	</body>
+</html>
+
+<script>
+
+	mapboxgl.accessToken = 'pk.eyJ1IjoicGljcmF6eTIiLCJhIjoiY2thMG1vdDQ0MHMxajNtcXI1ZnpiYnFpZiJ9.iYJgxRpR27z5rtZGoGXl2g';
+	
+	var map = new mapboxgl.Map({
+		container: 'map', // container id
+		style: 'mapbox://styles/picrazy2/cka8a1z1r0d591io0ebssgmz3',
+		center: [-100, 45],
+		zoom: 1.3
+	});
+
+
+	map.on('load', function() {
+		map.moveLayer('admin-1-boundary-bg', 'settlement-subdivision-label')
+		map.moveLayer('admin-0-boundary-bg', 'settlement-subdivision-label')
+		map.moveLayer('admin-1-boundary', 'settlement-subdivision-label')
+		map.moveLayer('admin-0-boundary', 'settlement-subdivision-label')
+		map.moveLayer('admin-0-boundary-disputed', 'settlement-subdivision-label')
+
+
+		map.addSource('data', {
+			'type': 'geojson',
+			'data': 'https://picrazy2.github.io/gto/data.geojson'
+		});
+
+		map.addLayer({
+			'id': 'data',
+			'source': 'data',
+			'type': 'circle',
+			'layout': {
+				'visibility': 'visible'
+			},
+			'paint': {
+				'circle-color': '#FF5A5F',
+				'circle-radius': 1
+				'line-opacity': 1
+
+			}
+		}, 'admin-1-boundary-bg');			
+
+	});
+
+</script>
+
