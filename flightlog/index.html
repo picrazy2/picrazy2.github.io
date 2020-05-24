@@ -379,9 +379,9 @@
 					    ["linear"],
 					    ["get", "total"],
 					    0,
-					    0.5,
+					    0.2,
 					    60,
-					    2
+					    0.8
 					  ],
 					  22,
 					  [
@@ -391,7 +391,7 @@
 					    0,
 					    5,
 					    60,
-					    10
+					    20
 					  ]
 					],
 					'visibility': visibility
@@ -579,6 +579,25 @@
 	            e.preventDefault();
 	            e.stopPropagation();
 
+	            for(var i = 0; i < years.length; i++) {
+					for(var j = 1; j < 13; j++) {
+						if(i == 0 && j < first_month) {
+							continue;
+						}
+						if(i == years.length-1 && j > last_month) {
+							continue;
+						}
+						var vis = map.getLayoutProperty('routes_cum_' + years[i] + '_' + j, 'visibility');
+						if(vis == 'visible') {
+							console.log(years[i])
+							console.log(j)
+				            map.setLayoutProperty('routes_cum_' + years[i] + '_' + j, 'visibility', 'none');
+				            map.setLayoutProperty('airports_cum_' + years[i] + '_' + j, 'visibility', 'none');				
+						}
+					}	
+
+				}
+
 	            var visibility = map.getLayoutProperty('routes_' + clickedLayer, 'visibility');
 
 	            if (visibility === 'visible') {
@@ -692,7 +711,7 @@
 		var label = slider.append("text")  
 		    .attr("class", "label")
 		    .attr("text-anchor", "middle")
-		    .text(formatDate(endDate))
+		    .text(formatDate(startDate))
 		    .attr("transform", "translate(0," + (-25) + ")")
 
 		////////// plot //////////
@@ -728,13 +747,13 @@
 
 		function update(h) {
 			// update position and text of label according to slider scale
+			map.setLayoutProperty('routes_cum_' + getYear(h) + '_' + parseInt(getMonth(h)), 'visibility', 'visible');
+			map.setLayoutProperty('airports_cum_' + getYear(h) + '_' + parseInt(getMonth(h)), 'visibility', 'visible');	
+			
 			handle.attr("cx", x(h));
 			label
 			.attr("x", x(h))
 			.text(formatDate(h));
-			console.log(getMonth(h))
-			console.log(getYear(h))
-
 
 			for(var i = 0; i < yearIds.length; i++) {
 				layer_id = links[i].id;
@@ -742,8 +761,7 @@
 	            map.setLayoutProperty('airports_' + layer_id, 'visibility', 'none');
 	            links[i].className = '';		
 			}
-			map.setLayoutProperty('routes_cum_' + getYear(h) + '_' + parseInt(getMonth(h)), 'visibility', 'visible');
-			map.setLayoutProperty('airports_cum_' + getYear(h) + '_' + parseInt(getMonth(h)), 'visibility', 'visible');	
+
 			for(var i = 0; i < years.length; i++) {
 				for(var j = 1; j < 13; j++) {
 					if(i == 0 && j < first_month) {
@@ -753,8 +771,13 @@
 						continue;
 					}
 					if(years[i] != getYear(h) || j != getMonth(h)) {
-			            map.setLayoutProperty('routes_cum_' + years[i] + '_' + j, 'visibility', 'none');
-			            map.setLayoutProperty('airports_cum_' + years[i] + '_' + j, 'visibility', 'none');						
+						var vis = map.getLayoutProperty('routes_cum_' + years[i] + '_' + j, 'visibility');
+						if(vis == 'visible') {
+							console.log(years[i])
+							console.log(j)
+				            map.setLayoutProperty('routes_cum_' + years[i] + '_' + j, 'visibility', 'none');
+				            map.setLayoutProperty('airports_cum_' + years[i] + '_' + j, 'visibility', 'none');				
+						}
 					}
 				}	
 
