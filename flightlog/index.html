@@ -63,7 +63,7 @@
 		        top: 20px;
 		        left: 20px;
 		        border-radius: 3px;
-		        width: 150px;
+		        width: 100px;
 		        border: 1px solid rgba(0, 0, 0, 0.4);
 		        font-family: 'open_sansregular', sans-serif;
 		    }
@@ -216,11 +216,46 @@
 		}
 	}
 
+	// read csv
+	$(document).ready(function() {
+	    $.ajax({
+	        type: "GET",
+	        url: "data.txt",
+	        dataType: "text",
+	        success: function(data) {processData(data);}
+	     });
+	});
+
+	function processData(allText) {
+	    var allTextLines = allText.split(/\r\n|\n/);
+	    console.log(allTextLines)
+	    // var headers = allTextLines[0].split(',');
+	    // var lines = [];
+
+	    // for (var i=1; i<allTextLines.length; i++) {
+	    //     var data = allTextLines[i].split(',');
+	    //     if (data.length == headers.length) {
+
+	    //         var tarr = [];
+	    //         for (var j=0; j<headers.length; j++) {
+	    //             tarr.push(headers[j]+":"+data[j]);
+	    //         }
+	    //         lines.push(tarr);
+	    //     }
+	    // }
+	    alert(lines);
+	}
+
+
+
+
+
+
 	var map = new mapboxgl.Map({
 		container: 'map', // container id
 		style: 'mapbox://styles/picrazy2/cka8a1z1r0d591io0ebssgmz3',
-		center: [-120, 45],
-		zoom: 1.8
+		center: [-100, 45],
+		zoom: 1.3
 	});
 
 

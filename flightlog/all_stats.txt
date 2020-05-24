@@ -1,0 +1,12 @@
+<p>Total Distance Flown: <span class='bold'>345130</span>mi
+<br>Total Flights: <span class='bold'>139</span>
+<br>Number of Airlines: <span class='bold'>28</span>, Countries: <span class='bold'>19</span>, Airports: <span class='bold'>54</span>
+<p>Shortest flight: <span class='bold'>PHL</span> to <span class='bold'>JFK</span> (94mi, 11min)
+<br>Longest flight: <span class='bold'>SIN</span> to <span class='bold'>SFO</span> (8446mi, 16h 53m)</p>
+<p>Airport distribution (top countries): <span class='bold'>China</span>: 15, <span class='bold'>United States</span>: 12, <span class='bold'>Japan</span>: 3
+<p>Airports by total visits: <span class='bold'>BOS</span>: 54, <span class='bold'>PEK</span>: 46, <span class='bold'>EWR</span>: 22</p>
+<p>Top routes: <span class='bold'>BOS</span> to <span class='bold'>EWR</span>: 19, <span class='bold'>EWR</span> to <span class='bold'>PEK</span>: 15, <span class='bold'>BOS</span> to <span class='bold'>SFO</span>: 7</p>
+<p>Top airlines: <span class='bold'>United</span>: 70, <span class='bold'>Hainan</span>: 8, <span class='bold'>Air China</span>: 5</p>
+<P><span class='bold'>2015</span>: 29436mi, 10 flights, <span class='bold'>2016</span>: 57999mi, 20 flights, <span class='bold'>2017</span>: 78048mi, 39 flights, <span class='bold'>2018</span>: 76497mi, 24 flights, <span class='bold'>2019</span>: 84043mi, 31 flights, <span class='bold'>2020</span>: 19103mi, 15 flights</p>
+<p><span class='bold'>Domestic</span>: 69296mi, 81 flights, <span class='bold'>International</span>: 275833mi, 58 flights</p>
+<p><span class='bold'>Business</span>: 123047mi, 37 flights, <span class='bold'>Economy</span>: 216096mi, 98 flights, <span class='bold'>Unknown</span>: 5986mi, 4 flights</p>

@@ -1,0 +1,11 @@
+<p>Total Distance Flown: <span class='bold'>78048</span>mi
+<br>Total Flights: <span class='bold'>39</span>
+<br>Number of Airlines: <span class='bold'>8</span>, Countries: <span class='bold'>5</span>, Airports: <span class='bold'>18</span>
+<p>Shortest flight: <span class='bold'>PHL</span> to <span class='bold'>JFK</span> (94mi, 11min)
+<br>Longest flight: <span class='bold'>SYD</span> to <span class='bold'>LAX</span> (7488mi, 14h 58m)</p>
+<p>Airport distribution (top countries): <span class='bold'>United States</span>: 9, <span class='bold'>China</span>: 6, <span class='bold'>Australia</span>: 1
+<p>Airports by total visits: <span class='bold'>PEK</span>: 15, <span class='bold'>BOS</span>: 14, <span class='bold'>EWR</span>: 7</p>
+<p>Top routes: <span class='bold'>BOS</span> to <span class='bold'>EWR</span>: 7, <span class='bold'>EWR</span> to <span class='bold'>PEK</span>: 6, <span class='bold'>BOS</span> to <span class='bold'>DTW</span>: 2</p>
+<p>Top airlines: <span class='bold'>United</span>: 23, <span class='bold'>China Southern</span>: 5, <span class='bold'>Delta</span>: 4</p>
+<p><span class='bold'>Domestic</span>: 18719mi, 28 flights, <span class='bold'>International</span>: 59328mi, 11 flights</p>
+<p><span class='bold'>Business</span>: 26942mi, 7 flights, <span class='bold'>Economy</span>: 51106mi, 32 flights</p>

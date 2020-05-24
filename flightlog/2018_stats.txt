@@ -1,0 +1,11 @@
+<p>Total Distance Flown: <span class='bold'>76498</span>mi
+<br>Total Flights: <span class='bold'>24</span>
+<br>Number of Airlines: <span class='bold'>8</span>, Countries: <span class='bold'>10</span>, Airports: <span class='bold'>18</span>
+<p>Shortest flight: <span class='bold'>EWR</span> to <span class='bold'>BOS</span> (201mi, 24min)
+<br>Longest flight: <span class='bold'>SIN</span> to <span class='bold'>SFO</span> (8446mi, 16h 53m)</p>
+<p>Airport distribution (top countries): <span class='bold'>United States</span>: 5, <span class='bold'>Spain</span>: 3, <span class='bold'>China</span>: 2
+<p>Airports by total visits: <span class='bold'>BOS</span>: 11, <span class='bold'>PEK</span>: 6, <span class='bold'>EWR</span>: 4</p>
+<p>Top routes: <span class='bold'>BOS</span> to <span class='bold'>EWR</span>: 3, <span class='bold'>BOS</span> to <span class='bold'>KEF</span>: 2, <span class='bold'>BOS</span> to <span class='bold'>PVG</span>: 2</p>
+<p>Top airlines: <span class='bold'>United</span>: 13, <span class='bold'>Hainan</span>: 2, <span class='bold'>Lufthansa</span>: 2</p>
+<p><span class='bold'>Domestic</span>: 5945mi, 9 flights, <span class='bold'>International</span>: 70552mi, 15 flights</p>
+<p><span class='bold'>Business</span>: 18262mi, 7 flights, <span class='bold'>Economy</span>: 58235mi, 17 flights</p>
