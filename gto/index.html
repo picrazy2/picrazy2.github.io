@@ -254,14 +254,14 @@
 		map.moveLayer('admin-0-boundary-disputed', 'settlement-subdivision-label')
 
 
-		// map.addSource('data', {
+		// map.addSource('points', {
 		// 	'type': 'geojson',
-		// 	'data': 'https://picrazy2.github.io/gto/data.geojson'
+		// 	'data': 'https://picrazy2.github.io/gto/points.geojson'
 		// });
 
 		// map.addLayer({
-		// 	'id': 'data',
-		// 	'source': 'data',
+		// 	'id': 'points',
+		// 	'source': 'points',
 		// 	'type': 'circle',
 		// 	'layout': {
 		// 		'visibility': 'visible'
@@ -274,12 +274,32 @@
 		// }, 'admin-1-boundary-bg');		
 
 
-		map.addSource('data', {
+		map.addSource('segments', {
+			'type': 'geojson',
+			'data': 'https://picrazy2.github.io/gto/segments.geojson'
+		});
+
+		map.addLayer({
+			'id': 'segments',
+			'source': 'segments',
+			'type': 'line',
+			'layout': {
+				'visibility': 'visible'
+			},
+			'paint': {
+				'line-color': '#FF5A5F',
+				'line-opacity': 1
+			}
+		}, 'admin-1-boundary-bg');		
+
+
+
+		map.addSource('points', {
             type: 'geojson',
             // Point to GeoJSON data. This example visualizes all M1.0+ earthquakes
             // from 12/22/15 to 1/21/16 as logged by USGS' Earthquake hazards program.
             data:
-                'https://picrazy2.github.io/gto/data.geojson',
+                'https://picrazy2.github.io/gto/points.geojson',
             cluster: true,
             clusterMaxZoom: 14, // Max zoom to cluster points on
             clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
@@ -288,18 +308,19 @@
         map.addLayer({
             id: 'clusters',
             type: 'circle',
-            source: 'data',
+            source: 'points',
             filter: ['has', 'point_count'],
             paint: {
-                'circle-color': ["step", ["get", "point_count"], "#9e0142", 10, "#f88d52", 100, "#ffffbf", 1000, "#89d0a4", 5000, "#5e4fa2"],
-                'circle-radius': ["step", ["get", "point_count"], 10, 10, 20, 100, 30, 1000, 40, 5000, 50]
+                'circle-color': ["step", ["get", "point_count"], "#9e0142", 10, "#f88d52", 100, "#ffffbf", 500, "#89d0a4", 1000, "#5e4fa2"],
+                'circle-radius': ["step", ["get", "point_count"], 10, 10, 20, 100, 30, 500, 40, 1000, 50]
+
             }
         });
 
         map.addLayer({
             id: 'cluster-count',
             type: 'symbol',
-            source: 'data',
+            source: 'points',
             filter: ['has', 'point_count'],
             layout: {
                 'text-field': '{point_count_abbreviated}',
@@ -311,7 +332,7 @@
         map.addLayer({
             id: 'unclustered-point',
             type: 'circle',
-            source: 'data',
+            source: 'points',
             filter: ['!', ['has', 'point_count']],
             paint: {
                 'circle-color': '#11b4da',
