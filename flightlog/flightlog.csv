@@ -141,6 +141,6 @@ Date,Airline,Flight,Dep Airport,Arr Airport,Domestic/International,Class,Arr Con
 7/5/20,United,UA2304,LAX,EWR,Domestic,Business,1
 7/5/20,United,UA3423,EWR,BOS,Domestic,Business,
 8/23/20,United,UA647,BOS,DEN,Domestic,Business,1
-8/23/20,United,UA2451,DEN,ANC,Domestic,Econommy,
+8/23/20,United,UA2451,DEN,ANC,Domestic,Economy,
 8/27/20,United,UA1104,ANC,DEN,Domestic,Economy,1
 8/28/20,United,UA260,DEN,BOS,Domestic,Economy,
