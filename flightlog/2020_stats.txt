@@ -8,4 +8,4 @@
 <p>Top routes: <span class='bold'>BOS</span> to <span class='bold'>SFO</span>: 3, <span class='bold'>ANC</span> to <span class='bold'>DEN</span>: 2, <span class='bold'>BOS</span> to <span class='bold'>DEN</span>: 2</p>
 <p>Top airlines: <span class='bold'>United</span>: 14, <span class='bold'>Air China</span>: 3, <span class='bold'>JetBlue</span>: 2</p>
 <p><span class='bold'>Domestic</span>: 24821mi, 18 flights, <span class='bold'>International</span>: 10664mi, 5 flights</p>
-<p><span class='bold'>Business</span>: 18795mi, 10 flights, <span class='bold'>Econommy</span>: 2704mi, 1 flights, <span class='bold'>Economy</span>: 13985mi, 12 flights</p>
+<p><span class='bold'>Business</span>: 18795mi, 10 flights, <span class='bold'>Economy</span>: 16689mi, 13 flights</p>
