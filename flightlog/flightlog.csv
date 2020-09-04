@@ -1,148 +1,150 @@
-Date,Airline,Flight,Dep Airport,Arr Airport,Domestic/International,Class,Arr Connect
-3/8/15,United,UA1711,BOS,EWR,Domestic,Business,1
-3/8/15,United,UA89,EWR,PEK,International,Economy,
-3/19/15,United,UA88,PEK,EWR,International,Economy,1
-3/19/15,United,UA1409,EWR,BOS,Domestic,Economy,
-7/5/15,JetBlue,B6487,BOS,LAX,Domestic,Economy,
-8/1/15,JetBlue,B6488,LAX,BOS,Domestic,Economy,
-12/18/15,United,UA1928,BOS,EWR,Domestic,Business,1
-12/18/15,United,UA89,EWR,PEK,International,Economy,
-12/20/15,,,PEK,SYX,Domestic,,
-12/24/15,,,SYX,PEK,Domestic,,
-1/2/16,United,UA808,PEK,IAD,International,Economy,1
-1/2/16,United,UA352,IAD,BOS,Domestic,Economy,
-3/13/16,Hainan,HU482,BOS,PEK,International,Business,
-3/16/16,Hainan,HU7215,PEK,KWL,Domestic,Economy,
-3/18/16,Sichuan,3U8428,KWL,CTU,Domestic,Economy,
-3/21/16,Sichuan,3U8569,CTU,DNH,Domestic,Economy,
-3/24/16,China Eastern,MU2117,DNH,XIY,Domestic,Economy,1
-3/24/16,China Eastern,MU2117,XIY,PEK,Domestic,Economy,
-3/28/16,Hainan,HU481,PEK,BOS,International,Business,
-6/5/16,Hainan,HU482,BOS,PEK,International,Economy,
-7/3/16,United,UA850,PEK,ORD,International,Economy,
-7/5/16,United,UA4859,ORD,RDU,Domestic,Economy,
-7/7/16,,,RDU,SFO,Domestic,,
-7/10/16,United,UA788,SFO,BOS,Domestic,Economy,
-12/15/16,United,UA1710,BOS,EWR,Domestic,Business,1
-12/15/16,United,UA89,EWR,PEK,International,Business,
-12/23/16,AirAsia,D7317,PEK,KUL,International,Business,
-12/23/16,Silkair,MI341,KUL,SIN,International,Economy,1
-12/24/16,Singapore,SQ255,SIN,BNE,International,Business,
-12/29/16,Qantas,QF551,BNE,SYD,Domestic,,
-1/2/17,United,UA840,SYD,LAX,International,Business,1
-1/2/17,United,UA824,LAX,BOS,Domestic,Business,
-3/11/17,United,UA1548,BOS,EWR,Domestic,Economy,1
-3/11/17,United,UA89,EWR,PEK,International,Economy,
-3/20/17,United,UA88,PEK,EWR,International,Business,1
-3/20/17,United,UA1775,EWR,BOS,Domestic,Business,
-4/13/17,United,UA1873,BDL,IAD,Domestic,Economy,1
-4/13/17,United,UA632,IAD,LAX,Domestic,Economy,
-4/16/17,United,UA134,LAX,DEN,Domestic,Economy,1
-4/16/17,United,UA1887,DEN,BDL,Domestic,Economy,
-5/31/17,United,UA700,BOS,EWR,Domestic,Economy,1
-5/31/17,United,UA89,EWR,PEK,International,Economy,
-6/8/17,China Southern,CZ6974,SHA,URC,Domestic,Economy,
-6/9/17,Tianjin,GS7465,URC,KJI,Domestic,Economy,
-6/10/17,China Southern,CZ6620,KJI,URC,Domestic,Economy,
-6/15/17,China Southern,CZ6911,URC,PEK,Domestic,Economy,
-6/24/17,China Southern,CZ317,PEK,GMP,International,Economy,
-6/28/17,China Southern,CZ318,GMP,PEK,International,Economy,
-7/17/17,Hainan,HU7609,PEK,PVG,Domestic,Economy,
-7/19/17,Hainan,HU7610,PVG,PEK,Domestic,Economy,
-7/24/17,,,PEK,WUX,Domestic,Economy,
-7/25/17,,,WUX,PEK,Domestic,Economy,
-8/12/17,United,UA88,PEK,EWR,International,Economy,1
-8/12/17,United,UA276,EWR,BOS,Domestic,Economy,
-9/22/17,United,UA389,BOS,IAD,Domestic,Economy,1
-9/22/17,United,UA6071,IAD,PHL,Domestic,Economy,
-9/24/17,United,UA1922,EWR,BOS,Domestic,Economy,
-10/7/17,United,UA1001,BOS,EWR,Domestic,Economy,1
-10/7/17,United,UA89,EWR,PEK,International,Economy,
-10/10/17,United,UA808,PEK,IAD,International,Economy,1
-10/10/17,United,UA352,IAD,BOS,Domestic,Economy,
-11/12/17,American,AA555,BOS,PHL,Domestic,Economy,
-11/13/17,Delta,DL3854,PHL,JFK,Domestic,Economy,1
-11/13/17,Delta,DL4010,JFK,BOS,Domestic,Economy,
-11/22/17,Delta,DL0753,BOS,DTW,Domestic,Economy,
-11/26/17,Delta,DL1145,DTW,BOS,Domestic,Economy,
-12/19/17,United,UA2047,BOS,EWR,Domestic,Business,1
-12/20/17,United,UA89,EWR,PEK,International,Business,
-12/30/17,Singapore,SQ807,PEK,SIN,International,Business,
-1/7/18,United,UA2,SIN,SFO,International,Business,1
-1/7/18,United,UA1865,SFO,BOS,Domestic,Business,
-3/22/18,Hainan,HU7962,BOS,PVG,International,Economy,
-3/29/18,Hainan,HU7961,PVG,BOS,International,Economy,
-3/31/18,Wow,WW126,BOS,KEF,International,Economy,
-4/2/18,Wow,WW125,KEF,BOS,International,Economy,
-5/26/18,TAP,TP218,BOS,LIS,International,Economy,1
-5/27/18,TAP,TP1016,LIS,MAD,Domestic,Economy,
-5/28/18,Vueling,VY1585,VLL,BCN,Domestic,Economy,
-5/30/18,Lufthansa,LH2657,BCN,MUC,Domestic,Economy,1
-5/30/18,Lufthansa,LH722,MUC,PEK,International,Economy,
-6/7/18,United,UA808,PEK,IAD,International,Economy,1
-6/7/18,United,UA352,IAD,BOS,Domestic,Economy,
-10/3/18,United,UA1928,BOS,EWR,Domestic,Economy,1
-10/3/18,United,UA89,EWR,PEK,International,Economy,
-10/9/18,United,UA88,PEK,EWR,International,Economy,1
-10/9/18,United,UA2323,EWR,BOS,Domestic,Economy,
-11/23/18,United,UA449,BOS,ORD,Domestic,Business,1
-11/23/18,United,UA5481,ORD,NAS,International,Business,
-11/26/18,United,UA1539,NAS,EWR,International,Business,1
-11/26/18,United,UA2323,EWR,BOS,Domestic,Business,
-12/22/18,United,UA79,EWR,NRT,International,Economy,
-12/24/18,ANA,NH963,HND,PEK,International,Economy,
-12/30/18,Air China,CA941,PEK,DXB,International,Business,
-1/6/19,Air Canada,AC57,DXB,YYZ,International,Business,1
-1/7/19,Air Canada,AC737,YYZ,SFO,International,Business,
-2/1/19,United,UA2360,SFO,BOS,Domestic,Economy,
-3/22/19,Norwegian,DY7150,BOS,CDG,International,Economy,
-3/28/19,Air France,AF7706,CDG,NCE,Domestic,Economy,
-3/31/19,Air France,AF7705,NCE,CDG,Domestic,Economy,
-3/31/19,Norwegian,DY7149,CDG,BOS,International,Economy,
-5/24/19,United,UA700,BOS,EWR,Domestic,Business,1
-5/24/19,United,UA89,EWR,PEK,International,Economy,
-5/30/19,Air China,CA1469,PEK,LJG,Domestic,Economy,
-6/1/19,Sichuan,3U8818,LJG,KMG,Domestic,Economy,1
-6/1/19,China Eastern,MU2570,KMG,PEK,Domestic,Economy,
-6/9/19,United,UA88,PEK,EWR,International,Economy,
-7/26/19,American,AA1416,JFK,BDA,International,Economy,
-7/29/19,American,AA1443,BDA,JFK,International,Economy,
-8/17/19,United,UA89,EWR,PEK,International,Business,
-8/25/19,United,UA889,PEK,SFO,International,Business,1
-8/25/19,United,UA235,SFO,BOS,Domestic,Economy,
-9/26/19,United,UA2394,BOS,EWR,Domestic,Economy,
-9/28/19,United,UA421,EWR,BOS,Domestic,Economy,
-11/21/19,United,UA2400,BOS,SFO,Domestic,Economy,
-11/23/19,United,UA768,SFO,BOS,Domestic,Economy,
-11/28/19,United,UA389,BOS,IAD,Domestic,Business,1
-11/28/19,United,UA122,IAD,LHR,International,Economy,
-12/2/19,Lufthansa,LH921,LHR,FRA,Domestic,Economy,1
-12/2/19,Lufthansa,LH422,FRA,BOS,International,Economy,
-12/18/19,United,UA1425,BOS,EWR,Domestic,Economy,1
-12/18/19,United,UA1122,EWR,CPT,International,Business,
-12/20/19,Airlink/SAA,SA8621,CPT,PLZ,Domestic,Economy,
-12/28/19,Emirates,EK771,CPT,DXB,International,Business,1
-12/29/19,Emirates,EK308,DXB,PEK,International,Business,
-1/8/20,Shenzhen,ZH9003,SZX,BKK,International,Economy,
-1/11/20,NokScoot,XW112,DMK,KIX,International,Economy,
-1/17/20,Jeju Air,7C1301,KIX,ICN,International,Economy,
-1/19/20,Air China,CA124,GMP,PEK,International,Economy,
-1/19/20,Air China,CA1611,PEK,HRB,Domestic,Economy,
-1/22/20,Air China,CA1644,HRB,PEK,Domestic,Economy,
-1/26/20,United,UA889,PEK,SFO,International,Business,1
-1/26/20,United,UA1213,SFO,BOS,Domestic,Business,
-2/19/20,JetBlue,B6159,BOS,PHL,Domestic,Economy,
-2/19/20,JetBlue,B6160,PHL,BOS,Domestic,Economy,
-3/15/20,Delta,DL2667,BOS,DTW,Domestic,Business,
-5/20/20,United,UA3501,DTW,EWR,Domestic,Business,1
-5/20/20,United,UA3418,EWR,BOS,Domestic,Business,
-5/21/20,United,UA3412,BOS,ORD,Domestic,Economy,1
-5/21/20,United,UA1434,ORD,LAX,Domestic,Business,
-7/5/20,United,UA2304,LAX,EWR,Domestic,Business,1
-7/5/20,United,UA3423,EWR,BOS,Domestic,Business,
-8/23/20,United,UA647,BOS,DEN,Domestic,Business,1
-8/23/20,United,UA2451,DEN,ANC,Domestic,Economy,
-8/28/20,United,UA1104,ANC,DEN,Domestic,Economy,1
-8/29/20,United,UA260,DEN,BOS,Domestic,Economy,
-10/14/20,United,UA575,BOS,SFO,Domestic,Business,
-10/15/20,United,UA1666,SFO,BOS,Domestic,Economy,
+Date,Airline,Flight,Dep Airport,Arr Airport,Domestic/International,Class,Seat,Aircraft,Arr Connect
+3/8/15,United,UA1711,BOS,EWR,Domestic,Business,,,1
+3/8/15,United,UA89,EWR,PEK,International,Economy,,,
+3/19/15,United,UA88,PEK,EWR,International,Economy,,,1
+3/19/15,United,UA1409,EWR,BOS,Domestic,Economy,,,
+7/5/15,JetBlue,B6487,BOS,LAX,Domestic,Economy,20E,,
+8/1/15,JetBlue,B6488,LAX,BOS,Domestic,Economy,15E,,
+12/18/15,United,UA1928,BOS,EWR,Domestic,Business,,,1
+12/18/15,United,UA89,EWR,PEK,International,Economy,,,
+12/20/15,,,PEK,SYX,Domestic,,,,
+12/24/15,,,SYX,PEK,Domestic,,,,
+1/2/16,United,UA808,PEK,IAD,International,Economy,,,1
+1/2/16,United,UA352,IAD,BOS,Domestic,Economy,,,
+3/13/16,Hainan,HU482,BOS,PEK,International,Business,,,
+3/16/16,Hainan,HU7215,PEK,KWL,Domestic,Economy,,,
+3/18/16,Sichuan,3U8428,KWL,CTU,Domestic,Economy,,,
+3/21/16,Sichuan,3U8569,CTU,DNH,Domestic,Economy,,,
+3/24/16,China Eastern,MU2117,DNH,XIY,Domestic,Economy,,,1
+3/24/16,China Eastern,MU2117,XIY,PEK,Domestic,Economy,,,
+3/28/16,Hainan,HU481,PEK,BOS,International,Business,,,
+6/5/16,Hainan,HU482,BOS,PEK,International,Economy,48K,B787-8,
+7/3/16,United,UA850,PEK,ORD,International,Economy,,,
+7/5/16,United,UA67,ORD,RDU,Domestic,Economy,,,
+7/6/16,American,AA4611,RDU,PHL,Domestic,Economy,,,
+7/7/16,American,AA709,PHL,SFO,Domestic,Economy,,,
+7/10/16,United,UA768,SFO,BOS,Domestic,Economy,10C,B737-800,
+12/15/16,United,UA1710,BOS,EWR,Domestic,Business,2A,A320,1
+12/15/16,United,UA89,EWR,PEK,International,Business,10L,B777-200,
+12/23/16,AirAsia,D7317,PEK,KUL,International,Business,,,
+12/23/16,Silkair,MI341,KUL,SIN,International,Economy,,,1
+12/24/16,Singapore,SQ255,SIN,BNE,International,Business,,,
+12/29/16,Qantas,QF551,BNE,SYD,Domestic,,,,
+1/2/17,United,UA840,SYD,LAX,International,Business,8L,B787-9,1
+1/2/17,United,UA824,LAX,BOS,Domestic,Business,3F,B737-800,
+3/11/17,United,UA1548,BOS,EWR,Domestic,Economy,10A,B737-900,1
+3/11/17,United,UA89,EWR,PEK,International,Economy,17L,B777-200,
+3/20/17,United,UA88,PEK,EWR,International,Business,8L,B777-200,1
+3/20/17,United,UA1775,EWR,BOS,Domestic,Business,4A,B737-800,
+4/13/17,United,UA1873,BDL,IAD,Domestic,Economy,32A,A320,1
+4/13/17,United,UA632,IAD,LAX,Domestic,Economy,32F,B737-900,
+4/16/17,United,UA134,LAX,DEN,Domestic,Economy,49G,B777-200,1
+4/16/17,United,UA1887,DEN,BDL,Domestic,Economy,15F,B737-800,
+5/31/17,United,UA700,BOS,EWR,Domestic,Economy,24A,A320,1
+5/31/17,United,UA89,EWR,PEK,International,Economy,24A,B777-200,
+6/8/17,China Southern,CZ6974,SHA,URC,Domestic,Economy,,,
+6/9/17,Tianjin,GS7465,URC,KJI,Domestic,Economy,,,
+6/10/17,China Southern,CZ6620,KJI,URC,Domestic,Economy,,,
+6/15/17,China Southern,CZ6911,URC,PEK,Domestic,Economy,,,
+6/24/17,China Southern,CZ317,PEK,GMP,International,Economy,,,
+6/28/17,China Southern,CZ318,GMP,PEK,International,Economy,,,
+7/17/17,Hainan,HU7609,PEK,PVG,Domestic,Economy,,,
+7/19/17,Hainan,HU7610,PVG,PEK,Domestic,Economy,,,
+7/24/17,,,PEK,WUX,Domestic,Economy,,,
+7/25/17,,,WUX,PEK,Domestic,Economy,,,
+8/12/17,United,UA88,PEK,EWR,International,Economy,18A,,1
+8/12/17,United,UA276,EWR,BOS,Domestic,Economy,,,
+9/22/17,United,UA389,BOS,IAD,Domestic,Economy,39F,B737-900,1
+9/22/17,United,UA6071,IAD,PHL,Domestic,Economy,23D,CRJ-700,
+9/24/17,United,UA1922,EWR,BOS,Domestic,Economy,34A,,
+10/7/17,United,UA1001,BOS,EWR,Domestic,Economy,24F,B757-300,1
+10/7/17,United,UA89,EWR,PEK,International,Economy,41L,B777-200,
+10/10/17,United,UA808,PEK,IAD,International,Economy,41K,B777-200,1
+10/10/17,United,UA352,IAD,BOS,Domestic,Economy,32F,,
+11/12/17,American,AA555,BOS,PHL,Domestic,Economy,,,
+11/13/17,Delta,DL3854,PHL,JFK,Domestic,Economy,,,1
+11/13/17,Delta,DL4010,JFK,BOS,Domestic,Economy,,,
+11/22/17,Delta,DL0753,BOS,DTW,Domestic,Economy,,,
+11/26/17,Delta,DL1145,DTW,BOS,Domestic,Economy,,,
+12/19/17,United,UA2047,BOS,EWR,Domestic,Business,,,1
+12/20/17,United,UA89,EWR,PEK,International,Business,4K,B777-200,
+12/30/17,Singapore,SQ807,PEK,SIN,International,Business,,,
+1/7/18,United,UA2,SIN,SFO,International,Business,4B,B787-9,1
+1/7/18,United,UA1865,SFO,BOS,Domestic,Business,2B,B757-200,
+3/22/18,Hainan,HU7962,BOS,PVG,International,Economy,,,
+3/29/18,Hainan,HU7961,PVG,BOS,International,Economy,,,
+3/31/18,Wow,WW126,BOS,KEF,International,Economy,,,
+4/2/18,Wow,WW125,KEF,BOS,International,Economy,,,
+5/26/18,TAP,TP218,BOS,LIS,International,Economy,,,1
+5/27/18,TAP,TP1016,LIS,MAD,Domestic,Economy,,,
+5/28/18,Vueling,VY1585,VLL,BCN,Domestic,Economy,,,
+5/30/18,Lufthansa,LH2657,BCN,MUC,Domestic,Economy,,,1
+5/30/18,Lufthansa,LH722,MUC,PEK,International,Economy,,,
+6/7/18,United,UA808,PEK,IAD,International,Economy,16L,B787,1
+6/7/18,United,UA352,IAD,BOS,Domestic,Economy,7F,B737-900,
+10/3/18,United,UA1928,BOS,EWR,Domestic,Economy,9A,B737-900,1
+10/3/18,United,UA89,EWR,PEK,International,Economy,22L,B777-200,
+10/9/18,United,UA88,PEK,EWR,International,Economy,22L,B777-200,1
+10/9/18,United,UA2323,EWR,BOS,Domestic,Economy,7A,A320,
+11/23/18,United,UA449,BOS,ORD,Domestic,Business,2A,B737-900,1
+11/23/18,United,UA5481,ORD,NAS,International,Business,2A,ERJ175,
+11/26/18,United,UA1539,NAS,EWR,International,Business,3F,B737-800,1
+11/26/18,United,UA2323,EWR,BOS,Domestic,Business,3A,B737-900,
+12/22/18,United,UA79,EWR,NRT,International,Economy,28L,B777-300ER,
+12/24/18,ANA,NH963,HND,PEK,International,Economy,,B787,
+12/30/18,Air China,CA941,PEK,DXB,International,Business,,,
+1/6/19,Air Canada,AC57,DXB,YYZ,International,Business,6A,B777-300ER,1
+1/7/19,Air Canada,AC737,YYZ,SFO,International,Business,5A,ERJ190,
+2/1/19,United,UA2360,SFO,BOS,Domestic,Economy,10A,B757-200,
+3/22/19,Norwegian,DY7150,BOS,CDG,International,Economy,,,
+3/28/19,Air France,AF7706,CDG,NCE,Domestic,Economy,,,
+3/31/19,Air France,AF7705,NCE,CDG,Domestic,Economy,,,
+3/31/19,Norwegian,DY7149,CDG,BOS,International,Economy,,,
+5/24/19,United,UA700,BOS,EWR,Domestic,Business,10F,B737-700,1
+5/24/19,United,UA89,EWR,PEK,International,Economy,19L,B777-200,
+5/30/19,Air China,CA1469,PEK,LJG,Domestic,Economy,,,
+6/1/19,Sichuan,3U8818,LJG,KMG,Domestic,Economy,,,1
+6/1/19,China Eastern,MU2570,KMG,PEK,Domestic,Economy,,,
+6/9/19,United,UA88,PEK,EWR,International,Economy,19L,B777-200,
+7/8/19,United,UA2165,BOS,EWR,Domestic,Econommy,10F,B737-700,
+7/26/19,American,AA1416,JFK,BDA,International,Economy,,,
+7/29/19,American,AA1443,BDA,JFK,International,Economy,,,
+8/17/19,United,UA89,EWR,PEK,International,Business,3K,B777-200,
+8/25/19,United,UA889,PEK,SFO,International,Business,5A,B777-200,1
+8/25/19,United,UA235,SFO,BOS,Domestic,Economy,8A,B757-200,
+9/26/19,United,UA2394,BOS,EWR,Domestic,Economy,,,
+9/28/19,United,UA421,EWR,BOS,Domestic,Economy,21A,,
+11/21/19,United,UA2400,BOS,SFO,Domestic,Economy,,,
+11/23/19,United,UA768,SFO,BOS,Domestic,Economy,,,
+11/28/19,United,UA389,BOS,IAD,Domestic,Business,,,1
+11/28/19,United,UA122,IAD,LHR,International,Economy,,,
+12/2/19,Lufthansa,LH921,LHR,FRA,Domestic,Economy,,,1
+12/2/19,Lufthansa,LH422,FRA,BOS,International,Economy,,,
+12/18/19,United,UA1425,BOS,EWR,Domestic,Economy,,,1
+12/18/19,United,UA1122,EWR,CPT,International,Business,,,
+12/20/19,Airlink/SAA,SA8621,CPT,PLZ,Domestic,Economy,,,
+12/28/19,Emirates,EK771,CPT,DXB,International,Business,,B777-300ER,1
+12/29/19,Emirates,EK308,DXB,PEK,International,Business,,B777-300ER,
+1/8/20,Shenzhen,ZH9003,SZX,BKK,International,Economy,,,
+1/11/20,NokScoot,XW112,DMK,KIX,International,Economy,,,
+1/17/20,Jeju Air,7C1301,KIX,ICN,International,Economy,,,
+1/19/20,Air China,CA124,GMP,PEK,International,Economy,,,
+1/19/20,Air China,CA1611,PEK,HRB,Domestic,Economy,,,
+1/22/20,Air China,CA1644,HRB,PEK,Domestic,Economy,,,
+1/26/20,United,UA889,PEK,SFO,International,Business,,,1
+1/26/20,United,UA1213,SFO,BOS,Domestic,Business,,,
+2/19/20,JetBlue,B6159,BOS,PHL,Domestic,Economy,,,
+2/19/20,JetBlue,B6160,PHL,BOS,Domestic,Economy,,,
+3/15/20,Delta,DL2667,BOS,DTW,Domestic,Business,,,
+5/20/20,United,UA3501,DTW,EWR,Domestic,Business,,,1
+5/20/20,United,UA3418,EWR,BOS,Domestic,Business,,,
+5/21/20,United,UA3412,BOS,ORD,Domestic,Economy,,,1
+5/21/20,United,UA1434,ORD,LAX,Domestic,Business,,,
+7/5/20,United,UA2304,LAX,EWR,Domestic,Business,,,1
+7/5/20,United,UA3423,EWR,BOS,Domestic,Business,,,
+8/23/20,United,UA647,BOS,DEN,Domestic,Business,,,1
+8/23/20,United,UA2451,DEN,ANC,Domestic,Economy,,,
+8/28/20,United,UA1104,ANC,DEN,Domestic,Economy,,,1
+8/29/20,United,UA260,DEN,BOS,Domestic,Economy,,,
+10/14/20,United,UA575,BOS,SFO,Domestic,Business,,,
+10/15/20,United,UA1666,SFO,BOS,Domestic,Economy,,,
