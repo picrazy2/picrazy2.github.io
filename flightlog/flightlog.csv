@@ -106,7 +106,7 @@ Date,Airline,Flight,Dep Airport,Arr Airport,Domestic/International,Class,Seat,Ai
 6/1/19,Sichuan,3U8818,LJG,KMG,Domestic,Economy,,,1
 6/1/19,China Eastern,MU2570,KMG,PEK,Domestic,Economy,,,
 6/9/19,United,UA88,PEK,EWR,International,Economy,19L,B777-200,
-7/8/19,United,UA2165,BOS,EWR,Domestic,Econommy,10F,B737-700,
+7/8/19,United,UA2165,BOS,EWR,Domestic,Economy,10F,B737-700,
 7/26/19,American,AA1416,JFK,BDA,International,Economy,,,
 7/29/19,American,AA1443,BDA,JFK,International,Economy,,,
 8/17/19,United,UA89,EWR,PEK,International,Business,3K,B777-200,
@@ -146,5 +146,7 @@ Date,Airline,Flight,Dep Airport,Arr Airport,Domestic/International,Class,Seat,Ai
 8/23/20,United,UA2451,DEN,ANC,Domestic,Economy,,,
 8/28/20,United,UA1104,ANC,DEN,Domestic,Economy,,,1
 8/29/20,United,UA260,DEN,BOS,Domestic,Economy,,,
-10/14/20,United,UA575,BOS,SFO,Domestic,Business,,,
-10/15/20,United,UA1666,SFO,BOS,Domestic,Economy,,,
+10/14/20,United,UA511,BOS,IAD,Domestic,Economy,,A320,1
+10/14/20,United,UA2435,IAD,SFO,Domestic,Business,,B787-8,
+10/15/20,United,UA1494,SFO,EWR,Domestic,Economy,20A,B757-200,1
+10/15/20,United,UA312,EWR,BOS,Domestic,Economy,21A,A319,

@@ -8,4 +8,4 @@
 <p>Top routes: <span class='bold'>BOS</span> to <span class='bold'>EWR</span>: 5, <span class='bold'>BOS</span> to <span class='bold'>SFO</span>: 4, <span class='bold'>EWR</span> to <span class='bold'>PEK</span>: 3</p>
 <p>Top airlines: <span class='bold'>United</span>: 16, <span class='bold'>Air Canada</span>: 2, <span class='bold'>Air France</span>: 2</p>
 <p><span class='bold'>Domestic</span>: 16722mi, 17 flights, <span class='bold'>International</span>: 67521mi, 15 flights</p>
-<p><span class='bold'>Business</span>: 38705mi, 9 flights, <span class='bold'>Econommy</span>: 200mi, 1 flights, <span class='bold'>Economy</span>: 45338mi, 22 flights</p>
+<p><span class='bold'>Business</span>: 38705mi, 9 flights, <span class='bold'>Economy</span>: 45538mi, 23 flights</p>
