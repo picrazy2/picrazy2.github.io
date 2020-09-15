@@ -1,11 +1,11 @@
-<h2><span class='bold'>Alex's Flight Log (2020)</span></h2><p>Total Distance Flown: <span class='bold'>35675</span>mi
-<br>Total Flights: <span class='bold'>25</span>
-<br>Number of Airlines: <span class='bold'>7</span>, Countries: <span class='bold'>5</span>, Airports: <span class='bold'>18</span>
+<h2><span class='bold'>Alex's Flight Log (2020)</span></h2><p>Total Distance Flown: <span class='bold'>35547</span>mi
+<br>Total Flights: <span class='bold'>24</span>
+<br>Number of Airlines: <span class='bold'>7</span>, Countries: <span class='bold'>5</span>, Airports: <span class='bold'>17</span>
 <p>Shortest flight: <span class='bold'>EWR</span> to <span class='bold'>BOS</span> (201mi, 24min)
 <br>Longest flight: <span class='bold'>PEK</span> to <span class='bold'>SFO</span> (5913mi, 11h 49m)</p>
-<p>Airport distribution (top countries): <span class='bold'>United States</span>: 10, <span class='bold'>China</span>: 3, <span class='bold'>South Korea</span>: 2
+<p>Airport distribution (top countries): <span class='bold'>United States</span>: 9, <span class='bold'>China</span>: 3, <span class='bold'>South Korea</span>: 2
 <p>Airports by total visits: <span class='bold'>BOS</span>: 11, <span class='bold'>PEK</span>: 4, <span class='bold'>SFO</span>: 3</p>
 <p>Top routes: <span class='bold'>BOS</span> to <span class='bold'>EWR</span>: 3, <span class='bold'>ANC</span> to <span class='bold'>DEN</span>: 2, <span class='bold'>BOS</span> to <span class='bold'>DEN</span>: 2</p>
-<p>Top airlines: <span class='bold'>United</span>: 16, <span class='bold'>Air China</span>: 3, <span class='bold'>JetBlue</span>: 2</p>
-<p><span class='bold'>Domestic</span>: 25010mi, 20 flights, <span class='bold'>International</span>: 10664mi, 5 flights</p>
-<p><span class='bold'>Business</span>: 18510mi, 10 flights, <span class='bold'>Economy</span>: 17164mi, 15 flights</p>
+<p>Top airlines: <span class='bold'>United</span>: 15, <span class='bold'>Air China</span>: 3, <span class='bold'>JetBlue</span>: 2</p>
+<p><span class='bold'>Domestic</span>: 24882mi, 19 flights, <span class='bold'>International</span>: 10664mi, 5 flights</p>
+<p><span class='bold'>Business</span>: 16091mi, 9 flights, <span class='bold'>Economy</span>: 19455mi, 15 flights</p>
