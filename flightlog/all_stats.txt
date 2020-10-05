@@ -1,12 +1,12 @@
-<h2><span class='bold'>Alex's Flight Log (3/2015-10/2020)</span></h2><p>Total Distance Flown: <span class='bold'>362232</span>mi
-<br>Total Flights: <span class='bold'>150</span>
-<br>Number of Airlines: <span class='bold'>28</span>, Countries: <span class='bold'>19</span>, Airports: <span class='bold'>55</span>
+<h2><span class='bold'>Alex's Flight Log (3/2015-12/2020)</span></h2><p>Total Distance Flown: <span class='bold'>370183</span>mi
+<br>Total Flights: <span class='bold'>154</span>
+<br>Number of Airlines: <span class='bold'>28</span>, Countries: <span class='bold'>19</span>, Airports: <span class='bold'>56</span>
 <p>Shortest flight: <span class='bold'>PHL</span> to <span class='bold'>JFK</span> (94mi, 11min)
 <br>Longest flight: <span class='bold'>SIN</span> to <span class='bold'>SFO</span> (8446mi, 16h 53m)</p>
-<p>Airport distribution (top countries): <span class='bold'>China</span>: 15, <span class='bold'>United States</span>: 13, <span class='bold'>Japan</span>: 3
-<p>Airports by total visits: <span class='bold'>BOS</span>: 60, <span class='bold'>PEK</span>: 46, <span class='bold'>EWR</span>: 25</p>
-<p>Top routes: <span class='bold'>BOS</span> to <span class='bold'>EWR</span>: 22, <span class='bold'>EWR</span> to <span class='bold'>PEK</span>: 15, <span class='bold'>BOS</span> to <span class='bold'>SFO</span>: 8</p>
-<p>Top airlines: <span class='bold'>United</span>: 80, <span class='bold'>Hainan</span>: 8, <span class='bold'>Air China</span>: 5</p>
-<P><span class='bold'>2015</span>: 29436mi, 10 flights, <span class='bold'>2016</span>: 58458mi, 21 flights, <span class='bold'>2017</span>: 78048mi, 39 flights, <span class='bold'>2018</span>: 76497mi, 24 flights, <span class='bold'>2019</span>: 84244mi, 32 flights, <span class='bold'>2020</span>: 35547mi, 24 flights</p>
-<p><span class='bold'>Domestic</span>: 86399mi, 92 flights, <span class='bold'>International</span>: 275833mi, 58 flights</p>
-<p><span class='bold'>Business</span>: 127456mi, 40 flights, <span class='bold'>Economy</span>: 231189mi, 107 flights, <span class='bold'>Unknown</span>: 3586mi, 3 flights</p>
+<p>Airport distribution (top countries): <span class='bold'>China</span>: 15, <span class='bold'>United States</span>: 14, <span class='bold'>Japan</span>: 3
+<p>Airports by total visits: <span class='bold'>BOS</span>: 61, <span class='bold'>PEK</span>: 46, <span class='bold'>EWR</span>: 24</p>
+<p>Top routes: <span class='bold'>BOS</span> to <span class='bold'>EWR</span>: 21, <span class='bold'>EWR</span> to <span class='bold'>PEK</span>: 15, <span class='bold'>BOS</span> to <span class='bold'>SFO</span>: 8</p>
+<p>Top airlines: <span class='bold'>United</span>: 84, <span class='bold'>Hainan</span>: 8, <span class='bold'>Air China</span>: 5</p>
+<P><span class='bold'>2015</span>: 29436mi, 10 flights, <span class='bold'>2016</span>: 58458mi, 21 flights, <span class='bold'>2017</span>: 78048mi, 39 flights, <span class='bold'>2018</span>: 76497mi, 24 flights, <span class='bold'>2019</span>: 84244mi, 32 flights, <span class='bold'>2020</span>: 43497mi, 28 flights</p>
+<p><span class='bold'>Domestic</span>: 94349mi, 96 flights, <span class='bold'>International</span>: 275833mi, 58 flights</p>
+<p><span class='bold'>Business</span>: 127456mi, 40 flights, <span class='bold'>Economy</span>: 239139mi, 111 flights, <span class='bold'>Unknown</span>: 3586mi, 3 flights</p>

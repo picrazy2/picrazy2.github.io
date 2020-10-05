@@ -147,5 +147,9 @@ Date,Airline,Flight,Dep Airport,Arr Airport,Domestic/International,Class,Seat,Ai
 8/28/20,United,UA1104,ANC,DEN,Domestic,Economy,,,1
 8/29/20,United,UA260,DEN,BOS,Domestic,Economy,,,
 10/14/20,United,UA531,BOS,SFO,Domestic,Economy,8D,B737-800,
-10/15/20,United,UA1494,SFO,EWR,Domestic,Economy,20A,B757-200,1
-10/15/20,United,UA312,EWR,BOS,Domestic,Economy,21A,A319,
+10/15/20,United,UA2356,SFO,ORD,Domestic,Economy,10A,B737-800,
+10/17/20,United,UA664,ORD,BOS,Domestic,Economy,10A,A319,
+11/23/20,United,UA774,BOS,ORD,Domestic,Economy,12A,B737-800,1
+11/23/20,United,UA219,ORD,HNL,Domestic,Economy,20A,B767-300,
+12/1/20,United,UA534,HNL,LAX,Domestic,Economy,22A,B777-200,1
+12/2/20,United,UA501,LAX,SFO,Domestic,Economy,9A,B737-900,1
