@@ -1,0 +1,11 @@
+<h2><span class='bold'>Alex's Flight Log (2021)</span></h2><p>Total Distance Flown: <span class='bold'>1950</span>mi
+<br>Total Flights: <span class='bold'>2</span>
+<br>Number of Airlines: <span class='bold'>1</span>, Countries: <span class='bold'>2</span>, Airports: <span class='bold'>3</span>
+<p>Shortest flight: <span class='bold'>EWR</span> to <span class='bold'>BOS</span> (201mi, 24min)
+<br>Longest flight: <span class='bold'>SKB</span> to <span class='bold'>EWR</span> (1749mi, 3h 29m)</p>
+<p>Airport distribution (top countries): <span class='bold'>United States</span>: 2, <span class='bold'>Saint Kitts and Nevis</span>: 1
+<p>Airports by total visits: <span class='bold'>EWR</span>: 1, <span class='bold'>SKB</span>: 1, <span class='bold'>BOS</span>: 1</p>
+<p>Top routes: <span class='bold'>BOS</span> to <span class='bold'>EWR</span>: 1, <span class='bold'>EWR</span> to <span class='bold'>SKB</span>: 1</p>
+<p>Top airlines: <span class='bold'>United</span>: 2</p>
+<p><span class='bold'>Domestic</span>: 200mi, 1 flights, <span class='bold'>International</span>: 1749mi, 1 flights</p>
+<p><span class='bold'>Business</span>: 1950mi, 2 flights</p>

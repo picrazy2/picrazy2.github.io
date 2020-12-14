@@ -1,11 +1,11 @@
-<h2><span class='bold'>Alex's Flight Log (2020)</span></h2><p>Total Distance Flown: <span class='bold'>46105</span>mi
-<br>Total Flights: <span class='bold'>28</span>
-<br>Number of Airlines: <span class='bold'>7</span>, Countries: <span class='bold'>5</span>, Airports: <span class='bold'>19</span>
+<h2><span class='bold'>Alex's Flight Log (2020)</span></h2><p>Total Distance Flown: <span class='bold'>48055</span>mi
+<br>Total Flights: <span class='bold'>30</span>
+<br>Number of Airlines: <span class='bold'>7</span>, Countries: <span class='bold'>6</span>, Airports: <span class='bold'>20</span>
 <p>Shortest flight: <span class='bold'>EWR</span> to <span class='bold'>BOS</span> (201mi, 24min)
 <br>Longest flight: <span class='bold'>PEK</span> to <span class='bold'>SFO</span> (5913mi, 11h 49m)</p>
 <p>Airport distribution (top countries): <span class='bold'>United States</span>: 11, <span class='bold'>China</span>: 3, <span class='bold'>South Korea</span>: 2
-<p>Airports by total visits: <span class='bold'>BOS</span>: 13, <span class='bold'>ORD</span>: 4, <span class='bold'>PEK</span>: 4</p>
-<p>Top routes: <span class='bold'>BOS</span> to <span class='bold'>ORD</span>: 3, <span class='bold'>ANC</span> to <span class='bold'>DEN</span>: 2, <span class='bold'>BOS</span> to <span class='bold'>DEN</span>: 2</p>
-<p>Top airlines: <span class='bold'>United</span>: 19, <span class='bold'>Air China</span>: 3, <span class='bold'>JetBlue</span>: 2</p>
-<p><span class='bold'>Domestic</span>: 35441mi, 23 flights, <span class='bold'>International</span>: 10664mi, 5 flights</p>
-<p><span class='bold'>Business</span>: 16091mi, 9 flights, <span class='bold'>Economy</span>: 30013mi, 19 flights</p>
+<p>Airports by total visits: <span class='bold'>BOS</span>: 14, <span class='bold'>PEK</span>: 4, <span class='bold'>ORD</span>: 4</p>
+<p>Top routes: <span class='bold'>BOS</span> to <span class='bold'>EWR</span>: 3, <span class='bold'>BOS</span> to <span class='bold'>ORD</span>: 3, <span class='bold'>ANC</span> to <span class='bold'>DEN</span>: 2</p>
+<p>Top airlines: <span class='bold'>United</span>: 21, <span class='bold'>Air China</span>: 3, <span class='bold'>JetBlue</span>: 2</p>
+<p><span class='bold'>Domestic</span>: 35641mi, 24 flights, <span class='bold'>International</span>: 12413mi, 6 flights</p>
+<p><span class='bold'>Business</span>: 20535mi, 11 flights, <span class='bold'>Economy</span>: 27519mi, 19 flights</p>
