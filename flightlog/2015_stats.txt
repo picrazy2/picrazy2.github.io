@@ -1,8 +1,8 @@
 <h2><span class='bold'>Alex's Flight Log (2015)</span></h2><p>Total Distance Flown: <span class='bold'>29436</span>mi
 <br>Total Flights: <span class='bold'>10</span>
 <br>Number of Airlines: <span class='bold'>3</span>, Countries: <span class='bold'>2</span>, Airports: <span class='bold'>5</span>
-<p>Shortest flight: <span class='bold'>BOS</span> to <span class='bold'>EWR</span> (201mi, 24min)
-<br>Longest flight: <span class='bold'>EWR</span> to <span class='bold'>PEK</span> (6831mi, 13h 39m)</p>
+<p>Shortest flight: <span class='bold'>BOS</span> to <span class='bold'>EWR</span> (201mi, 2940h 0m)
+<br>Longest flight: <span class='bold'>EWR</span> to <span class='bold'>PEK</span> (6831mi, 48208h 0m)</p>
 <p>Airport distribution (top countries): <span class='bold'>United States</span>: 3, <span class='bold'>China</span>: 2
 <p>Airports by total visits: <span class='bold'>BOS</span>: 5, <span class='bold'>PEK</span>: 5, <span class='bold'>EWR</span>: 3</p>
 <p>Top routes: <span class='bold'>BOS</span> to <span class='bold'>EWR</span>: 3, <span class='bold'>EWR</span> to <span class='bold'>PEK</span>: 3, <span class='bold'>BOS</span> to <span class='bold'>LAX</span>: 2</p>

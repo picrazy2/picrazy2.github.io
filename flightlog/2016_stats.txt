@@ -1,11 +1,11 @@
-<h2><span class='bold'>Alex's Flight Log (2016)</span></h2><p>Total Distance Flown: <span class='bold'>58458</span>mi
-<br>Total Flights: <span class='bold'>21</span>
-<br>Number of Airlines: <span class='bold'>9</span>, Countries: <span class='bold'>5</span>, Airports: <span class='bold'>16</span>
-<p>Shortest flight: <span class='bold'>KUL</span> to <span class='bold'>SIN</span> (185mi, 22min)
-<br>Longest flight: <span class='bold'>PEK</span> to <span class='bold'>IAD</span> (6921mi, 13h 50m)</p>
-<p>Airport distribution (top countries): <span class='bold'>United States</span>: 7, <span class='bold'>China</span>: 5, <span class='bold'>Australia</span>: 2
+<h2><span class='bold'>Alex's Flight Log (2016)</span></h2><p>Total Distance Flown: <span class='bold'>58571</span>mi
+<br>Total Flights: <span class='bold'>22</span>
+<br>Number of Airlines: <span class='bold'>10</span>, Countries: <span class='bold'>5</span>, Airports: <span class='bold'>17</span>
+<p>Shortest flight: <span class='bold'>KUL</span> to <span class='bold'>SIN</span> (185mi, 2460h 0m)
+<br>Longest flight: <span class='bold'>PEK</span> to <span class='bold'>IAD</span> (6921mi, 45480h 0m)</p>
+<p>Airport distribution (top countries): <span class='bold'>United States</span>: 7, <span class='bold'>China</span>: 6, <span class='bold'>Australia</span>: 2
 <p>Airports by total visits: <span class='bold'>PEK</span>: 9, <span class='bold'>BOS</span>: 6, <span class='bold'>BNE</span>: 2</p>
 <p>Top routes: <span class='bold'>BOS</span> to <span class='bold'>PEK</span>: 3, <span class='bold'>BNE</span> to <span class='bold'>SIN</span>: 1, <span class='bold'>IAD</span> to <span class='bold'>PEK</span>: 1</p>
 <p>Top airlines: <span class='bold'>United</span>: 7, <span class='bold'>Hainan</span>: 4, <span class='bold'>American</span>: 2</p>
-<p><span class='bold'>Domestic</span>: 11184mi, 12 flights, <span class='bold'>International</span>: 47273mi, 9 flights</p>
-<p><span class='bold'>Business</span>: 27053mi, 6 flights, <span class='bold'>Economy</span>: 30937mi, 14 flights, <span class='bold'>Unknown</span>: 466mi, 1 flights</p>
+<p><span class='bold'>Domestic</span>: 11296mi, 13 flights, <span class='bold'>International</span>: 47273mi, 9 flights</p>
+<p><span class='bold'>Business</span>: 27053mi, 6 flights, <span class='bold'>Economy</span>: 31050mi, 15 flights, <span class='bold'>Unknown</span>: 466mi, 1 flights</p>
