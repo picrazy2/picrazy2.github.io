@@ -1,4 +1,5 @@
 <h2><span class='bold'>Alex's Flight Log (2016)</span></h2><p>Total Distance Flown: <span class='bold'>58571</span>mi
+<p>Total Time in Air: <span class='bold'>4 days, 20:35:46</span>
 <br>Total Flights: <span class='bold'>22</span>
 <br>Number of Airlines: <span class='bold'>10</span>, Countries: <span class='bold'>5</span>, Airports: <span class='bold'>17</span>
 <p>Shortest flight: <span class='bold'>KUL</span> to <span class='bold'>SIN</span> (185mi, 2460h 0m)

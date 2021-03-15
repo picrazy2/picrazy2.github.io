@@ -1,4 +1,5 @@
 <h2><span class='bold'>Alex's Flight Log (2021)</span></h2><p>Total Distance Flown: <span class='bold'>5298</span>mi
+<p>Total Time in Air: <span class='bold'>12:22:03</span>
 <br>Total Flights: <span class='bold'>4</span>
 <br>Number of Airlines: <span class='bold'>2</span>, Countries: <span class='bold'>3</span>, Airports: <span class='bold'>4</span>
 <p>Shortest flight: <span class='bold'>EWR</span> to <span class='bold'>BOS</span> (201mi, 2480h 0m)
