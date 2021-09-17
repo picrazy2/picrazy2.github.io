@@ -1,8 +1,8 @@
 <h2><span class='bold'>Alex's Flight Log (3/2015-11/2021)</span></h2><p>Total Distance Flown: <span class='bold'>428756</span>mi
 <br>Total Flights: <span class='bold'>186</span>
 <br>Number of Airlines: <span class='bold'>28</span>, Countries: <span class='bold'>25</span>, Airports: <span class='bold'>68</span>
-<p>Shortest flight: <span class='bold'>PHL</span> to <span class='bold'>JFK</span> (94mi, 29h 0m)
-<br>Longest flight: <span class='bold'>SIN</span> to <span class='bold'>SFO</span> (8446mi, 849h 0m)</p>
+<p>Shortest flight: <span class='bold'>PHL</span> to <span class='bold'>JFK</span> (94mi, 29min)
+<br>Longest flight: <span class='bold'>SIN</span> to <span class='bold'>SFO</span> (8446mi, 14h 835m)</p>
 <p>Airport distribution (top countries): <span class='bold'>United States</span>: 18, <span class='bold'>China</span>: 16, <span class='bold'>Japan</span>: 3
 <p>Airports by total visits: <span class='bold'>BOS</span>: 73, <span class='bold'>PEK</span>: 46, <span class='bold'>EWR</span>: 30</p>
 <p>Top routes: <span class='bold'>BOS</span> to <span class='bold'>EWR</span>: 26, <span class='bold'>EWR</span> to <span class='bold'>PEK</span>: 15, <span class='bold'>BOS</span> to <span class='bold'>SFO</span>: 8</p>
