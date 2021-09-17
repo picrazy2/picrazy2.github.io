@@ -1,9 +1,8 @@
 <h2><span class='bold'>Alex's Flight Log (2019)</span></h2><p>Total Distance Flown: <span class='bold'>84244</span>mi
-<p>Total Time in Air: <span class='bold'>6 days, 23:37:08</span>
 <br>Total Flights: <span class='bold'>32</span>
 <br>Number of Airlines: <span class='bold'>11</span>, Countries: <span class='bold'>9</span>, Airports: <span class='bold'>17</span>
-<p>Shortest flight: <span class='bold'>LJG</span> to <span class='bold'>KMG</span> (199mi, 2521h 0m)
-<br>Longest flight: <span class='bold'>EWR</span> to <span class='bold'>CPT</span> (7817mi, 48774h 0m)</p>
+<p>Shortest flight: <span class='bold'>LJG</span> to <span class='bold'>KMG</span> (199mi, 53h 0m)
+<br>Longest flight: <span class='bold'>EWR</span> to <span class='bold'>CPT</span> (7817mi, 814h 0m)</p>
 <p>Airport distribution (top countries): <span class='bold'>United States</span>: 5, <span class='bold'>China</span>: 3, <span class='bold'>France</span>: 2
 <p>Airports by total visits: <span class='bold'>BOS</span>: 13, <span class='bold'>EWR</span>: 7, <span class='bold'>PEK</span>: 7</p>
 <p>Top routes: <span class='bold'>BOS</span> to <span class='bold'>EWR</span>: 5, <span class='bold'>BOS</span> to <span class='bold'>SFO</span>: 4, <span class='bold'>EWR</span> to <span class='bold'>PEK</span>: 3</p>

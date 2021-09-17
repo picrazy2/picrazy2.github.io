@@ -1,9 +1,8 @@
 <h2><span class='bold'>Alex's Flight Log (2018)</span></h2><p>Total Distance Flown: <span class='bold'>76498</span>mi
-<p>Total Time in Air: <span class='bold'>6 days, 8:27:18</span>
 <br>Total Flights: <span class='bold'>24</span>
 <br>Number of Airlines: <span class='bold'>8</span>, Countries: <span class='bold'>10</span>, Airports: <span class='bold'>18</span>
-<p>Shortest flight: <span class='bold'>EWR</span> to <span class='bold'>BOS</span> (201mi, 2590h 0m)
-<br>Longest flight: <span class='bold'>SIN</span> to <span class='bold'>SFO</span> (8446mi, 50940h 0m)</p>
+<p>Shortest flight: <span class='bold'>EWR</span> to <span class='bold'>BOS</span> (201mi, 43h 0m)
+<br>Longest flight: <span class='bold'>SIN</span> to <span class='bold'>SFO</span> (8446mi, 849h 0m)</p>
 <p>Airport distribution (top countries): <span class='bold'>United States</span>: 5, <span class='bold'>Spain</span>: 3, <span class='bold'>China</span>: 2
 <p>Airports by total visits: <span class='bold'>BOS</span>: 11, <span class='bold'>PEK</span>: 6, <span class='bold'>EWR</span>: 4</p>
 <p>Top routes: <span class='bold'>BOS</span> to <span class='bold'>EWR</span>: 3, <span class='bold'>BOS</span> to <span class='bold'>KEF</span>: 2, <span class='bold'>BOS</span> to <span class='bold'>PVG</span>: 2</p>

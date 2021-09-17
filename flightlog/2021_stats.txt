@@ -1,12 +1,11 @@
-<h2><span class='bold'>Alex's Flight Log (2021)</span></h2><p>Total Distance Flown: <span class='bold'>5298</span>mi
-<p>Total Time in Air: <span class='bold'>12:22:03</span>
-<br>Total Flights: <span class='bold'>4</span>
-<br>Number of Airlines: <span class='bold'>2</span>, Countries: <span class='bold'>3</span>, Airports: <span class='bold'>4</span>
-<p>Shortest flight: <span class='bold'>EWR</span> to <span class='bold'>BOS</span> (201mi, 2480h 0m)
-<br>Longest flight: <span class='bold'>SKB</span> to <span class='bold'>EWR</span> (1749mi, 15523h 0m)</p>
-<p>Airport distribution (top countries): <span class='bold'>United States</span>: 2, <span class='bold'>Puerto Rico</span>: 1, <span class='bold'>Saint Kitts and Nevis</span>: 1
-<p>Airports by total visits: <span class='bold'>BOS</span>: 3, <span class='bold'>SJU</span>: 2, <span class='bold'>EWR</span>: 1</p>
-<p>Top routes: <span class='bold'>BOS</span> to <span class='bold'>SJU</span>: 2, <span class='bold'>BOS</span> to <span class='bold'>EWR</span>: 1, <span class='bold'>EWR</span> to <span class='bold'>SKB</span>: 1</p>
-<p>Top airlines: <span class='bold'>JetBlue</span>: 2, <span class='bold'>United</span>: 2</p>
-<p><span class='bold'>Domestic</span>: 3549mi, 3 flights, <span class='bold'>International</span>: 1749mi, 1 flights</p>
-<p><span class='bold'>Business</span>: 1950mi, 2 flights, <span class='bold'>Economy</span>: 3348mi, 2 flights</p>
+<h2><span class='bold'>Alex's Flight Log (2021)</span></h2><p>Total Distance Flown: <span class='bold'>53918</span>mi
+<br>Total Flights: <span class='bold'>29</span>
+<br>Number of Airlines: <span class='bold'>5</span>, Countries: <span class='bold'>9</span>, Airports: <span class='bold'>17</span>
+<p>Shortest flight: <span class='bold'>EWR</span> to <span class='bold'>BOS</span> (201mi, 65h 0m)
+<br>Longest flight: <span class='bold'>LIS</span> to <span class='bold'>SFO</span> (5681mi, 0min)</p>
+<p>Airport distribution (top countries): <span class='bold'>United States</span>: 8, <span class='bold'>Turkey</span>: 2, <span class='bold'>Germany</span>: 1
+<p>Airports by total visits: <span class='bold'>BOS</span>: 10, <span class='bold'>EWR</span>: 5, <span class='bold'>SFO</span>: 5</p>
+<p>Top routes: <span class='bold'>BOS</span> to <span class='bold'>EWR</span>: 4, <span class='bold'>BOS</span> to <span class='bold'>DEN</span>: 2, <span class='bold'>DEN</span> to <span class='bold'>SGU</span>: 2</p>
+<p>Top airlines: <span class='bold'>United</span>: 18, <span class='bold'>TAP</span>: 4, <span class='bold'>JetBlue</span>: 3</p>
+<p><span class='bold'>Domestic</span>: 25380mi, 19 flights, <span class='bold'>International</span>: 28537mi, 10 flights</p>
+<p><span class='bold'>Business</span>: 19039mi, 6 flights, <span class='bold'>Economy</span>: 32459mi, 22 flights, <span class='bold'>Premium</span>: 2418mi, 1 flights</p>
