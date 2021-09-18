@@ -3,10 +3,10 @@
 <br>Total Flights: <span class='bold'>22</span>
 <br>Number of Airlines: <span class='bold'>10</span>, Countries: <span class='bold'>5</span>, Airports: <span class='bold'>17</span>
 <p>Shortest flight: <span class='bold'>KUL</span> to <span class='bold'>SIN</span> (185mi, 43min)
-<br>Longest flight: <span class='bold'>PEK</span> to <span class='bold'>IAD</span> (6921mi, 12h 35m)</p>
+<br>Longest flight: <span class='bold'>PEK</span> to <span class='bold'>IAD</span> (6,921mi, 12h 35m)</p>
 <p>Airport distribution (top countries): <span class='bold'>United States</span>: 7, <span class='bold'>China</span>: 6, <span class='bold'>Australia</span>: 2
 <p>Airports by total visits: <span class='bold'>PEK</span>: 9, <span class='bold'>BOS</span>: 6, <span class='bold'>BNE</span>: 2</p>
 <p>Top routes: <span class='bold'>BOS</span> to <span class='bold'>PEK</span>: 3, <span class='bold'>BNE</span> to <span class='bold'>SIN</span>: 1, <span class='bold'>IAD</span> to <span class='bold'>PEK</span>: 1</p>
 <p>Top airlines: <span class='bold'>United</span>: 7, <span class='bold'>Hainan</span>: 4, <span class='bold'>American</span>: 2</p>
-<p><span class='bold'>Domestic</span>: 11296mi, 13 flights, <span class='bold'>International</span>: 47273mi, 9 flights</p>
-<p><span class='bold'>Business</span>: 27053mi, 6 flights, <span class='bold'>Economy</span>: 31050mi, 15 flights, <span class='bold'>Unknown</span>: 466mi, 1 flights</p>
+<p><span class='bold'>Domestic</span>: 11,297mi, 13 flights, <span class='bold'>International</span>: 47,274mi, 9 flights</p>
+<p><span class='bold'>Business</span>: 27,054mi, 6 flights, <span class='bold'>Economy</span>: 31,051mi, 15 flights, <span class='bold'>Unknown</span>: 467mi, 1 flights</p>
