@@ -10,10 +10,10 @@
 <br>Airports by total visits: <span class='bold'>BOS</span>: 13, <span class='bold'>EWR</span>: 7, <span class='bold'>PEK</span>: 7
 <br>Top routes: <span class='bold'>BOS</span> to <span class='bold'>EWR</span>: 26, <span class='bold'>EWR</span> to <span class='bold'>PEK</span>: 15, <span class='bold'>BOS</span> to <span class='bold'>SFO</span>: 8, <span class='bold'>BOS</span> to <span class='bold'>IAD</span>: 6, <span class='bold'>BOS</span> to <span class='bold'>DEN</span>: 4
 <br>Top airlines: <span class='bold'>United</span>: 104, <span class='bold'>Hainan</span>: 9, <span class='bold'>JetBlue</span>: 7
-<p>Early arrivals: <span class='bold'>2</span> (1%)
-<br>On-time arrivals (within 15min): <span class='bold'>68</span> (36%)
-<br>Late arrivals (up to 1hr delay): <span class='bold'>101</span> (54%)
-<br>Really late arrivals (>1hr delay): <span class='bold'>11</span> (6%)
+<p>Early arrivals: <span class='bold'>132</span> (70%)
+<br>On-time arrivals (within 15min): <span class='bold'>27</span> (14%)
+<br>Late arrivals (up to 1hr delay): <span class='bold'>17</span> (9%)
+<br>Really late arrivals (>1hr delay): <span class='bold'>6</span> (3%)
 </p>
 <p>Morning flights (5am-12p): <span class='bold'>76</span> (40%)
 <br>Afternoon flights (12p-6p): <span class='bold'>63</span> (34%)
