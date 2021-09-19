@@ -7,8 +7,8 @@ Date,Scheduled Dep Time (Local),Scheduled Arr Time (Local),Scheduled Duration,Ac
 8/1/15,11:35,20:05,5:30,12:10,19:59,4:49,JetBlue,B6488,LAX,BOS,Domestic,Economy,,,15E,A320,N590JB,,FlightStats
 12/18/15,7:50,9:24,1:34,8:35,9:29,0:54,United,UA1928,BOS,EWR,Domestic,Business,Recliner,,,B733,N76503,1,FlightStats
 12/18/15,12:00,15:00,14:00,12:19,14:41,13:22,United,UA89,EWR,PEK,International,Economy,,,,B772,N78008,,FlightStats
-12/20/15,,,,,,3:50,,,PEK,SYX,Domestic,,,,,,,,FlightStats
-12/24/15,,,,,,3:15,,,SYX,PEK,Domestic,,,,,,,,FlightStats
+12/20/15,,,,,,3:50,,,PEK,SYX,Domestic,Economy,,,,,,,FlightStats
+12/24/15,,,,,,3:15,,,SYX,PEK,Domestic,Economy,,,,,,,FlightStats
 1/2/16,18:25,19:05,13:40,18:48,18:23,12:35,United,UA808,PEK,IAD,International,Economy,,,,B772,N222UA,1,FlightStats
 1/2/16,22:25,23:58,1:33,22:32,23:36,1:04,United,UA352,IAD,BOS,Domestic,Economy,,,,A320,N448UA,,FlightStats
 3/13/16,16:50,19:05,14:15,16:58,18:24,13:26,Hainan,HU482,BOS,PEK,International,Business,Lie-flat,Old layout,,B788,B2731,,FlightStats
@@ -30,7 +30,7 @@ Date,Scheduled Dep Time (Local),Scheduled Arr Time (Local),Scheduled Duration,Ac
 12/23/16,2:30,8:55,6:25,2:50,8:44,5:54,AirAsia,D7317,PEK,KUL,International,Business,Lie-flat,,,A330,9MXXF,,FlightStats
 12/23/16,21:45,22:50,1:05,21:52,22:35,0:43,Silkair,MI341,KUL,SIN,International,Economy,,,,A319,9VSBE,1,FlightStats
 12/24/16,0:45,10:45,8:00,1:07,10:48,7:41,Singapore,SQ255,SIN,BNE,International,Business,Lie-flat,,,A333,9VSSI,,FlightStats
-12/29/16,17:35,20:10,1:35,18:02,20:14,1:12,Qantas,QF551,BNE,SYD,Domestic,,,,,B738,VHVXJ,,FlightStats
+12/29/16,17:35,20:10,1:35,18:02,20:14,1:12,Qantas,QF551,BNE,SYD,Domestic,Economy,,,,B738,VHVXJ,,FlightStats
 1/2/17,11:30,6:30,14:00,11:45,5:53,13:08,United,UA840,SYD,LAX,International,Business,Lie-flat,Old Polaris,8L,B789,N36962,1,FlightStats
 1/2/17,8:15,16:47,5:32,8:37,16:16,4:39,United,UA824,LAX,BOS,Domestic,Business,,,3F,B738,N77530,,FlightStats
 3/11/17,7:06,8:30,1:24,7:51,8:38,0:47,United,UA1548,BOS,EWR,Domestic,Economy,,,10A,B739,N67827,1,FlightStats
@@ -183,7 +183,7 @@ Date,Scheduled Dep Time (Local),Scheduled Arr Time (Local),Scheduled Duration,Ac
 6/29/21,18:35,21:05,5:30,18:52,20:57,5:05,United,UA2435,IAD,SFO,Domestic,Premium,,,,B772,N69020,,Flightradar24
 9/4/21,8:45,14:31,3:46,9:10,14:32,3:21,United,UA1212,SFO,PVR,International,Economy,,,8A,A320,N407UA,,Flightradar24
 9/6/21,15:10,16:58,3:48,15:16,16:22,3:10,United,UA1243,PVR,SFO,International,Economy,,,23A,A320,N414UA,,Flightradar24
-11/20/21,16:40,11:30,,,,,TAP,TP236,SFO,LIS,International,Economy,,,,,,,
+11/20/21,16:40,11:30,,,,,TAP,TP236,SFO,LIS,International,Economy,,,,,,1,
 11/21/21,13:05,17:00,,,,,TAP,TP842,LIS,FCO,International,Economy,,,,,,,
-11/27/21,6:05,8:10,,,,,TAP,TP837,FCO,LIS,International,Economy,,,,,,,
+11/27/21,6:05,8:10,,,,,TAP,TP837,FCO,LIS,International,Economy,,,,,,1,
 11/27/21,9:55,14:55,,,,,TAP,TP237,LIS,SFO,International,Economy,,,,,,,
