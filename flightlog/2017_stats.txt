@@ -21,7 +21,7 @@
 <br>Late night flights (11p-5a): <span class='bold'>9</span> (5%)
 </p>
 <p><span class='bold'>Domestic</span>: 124,077mi, 119 flights
-<br><span class='bold'>International</span>: 306,104mi, 69 flight</p>
+<br><span class='bold'>International</span>: 306,104mi, 69 flights</p>
 <p><span class='bold'>Business</span>: 150,939mi, 48 flights
 <br><span class='bold'>Economy</span>: 276,822mi, 139 flights
-<br><span class='bold'>Premium</span>: 2,418mi, 1 flight</p>
+<br><span class='bold'>Premium</span>: 2,418mi, 1 flights</p>

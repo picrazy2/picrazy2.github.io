@@ -21,14 +21,14 @@
 <br>Late night flights (11p-5a): <span class='bold'>9</span> (5%)
 </p>
 <p><span class='bold'>Domestic</span>: 124,077mi, 119 flights
-<br><span class='bold'>International</span>: 306,104mi, 69 flight</p>
+<br><span class='bold'>International</span>: 306,104mi, 69 flights</p>
 <p><span class='bold'>Business</span>: 150,939mi, 48 flights
 <br><span class='bold'>Economy</span>: 276,822mi, 139 flights
-<br><span class='bold'>Premium</span>: 2,418mi, 1 flight</p>
+<br><span class='bold'>Premium</span>: 2,418mi, 1 flights</p>
 <p><span class='bold'>2015</span>: 59h 33m, 10 flights, 29,436mi 
 <br><span class='bold'>2016</span>: 116h 54m, 22 flights, 58,570mi 
 <br><span class='bold'>2017</span>: 158h 22m, 39 flights, 78,048mi 
 <br><span class='bold'>2018</span>: 154h 37m, 26 flights, 77,923mi 
 <br><span class='bold'>2019</span>: 168h 11m, 32 flights, 84,244mi 
 <br><span class='bold'>2020</span>: 101h 5m, 30 flights, 48,040mi 
-<br><span class='bold'>2021</span>: 85h 33m, 29 flights, 53,917mi</p>
+<br><span class='bold'>2021</span>: 85h 33m, 29 flights, 53,917mi </p>
