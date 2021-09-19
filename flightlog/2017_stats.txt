@@ -7,9 +7,9 @@
 <p>Shortest flight: <span class='bold'>PHL</span> to <span class='bold'>JFK</span> (93mi, 29min)
 <br>Longest flight: <span class='bold'>SYD</span> to <span class='bold'>LAX</span> (7,487mi, 13h 8m)</p>
 <p>Airport distribution (top countries): <span class='bold'>United States</span>: 18, <span class='bold'>China</span>: 17, <span class='bold'>Japan</span>: 3
-<p>Airports by total visits: <span class='bold'>PEK</span>: 15, <span class='bold'>BOS</span>: 14, <span class='bold'>EWR</span>: 7</p>
-<p>Top routes: <span class='bold'>BOS</span> to <span class='bold'>EWR</span>: 26, <span class='bold'>EWR</span> to <span class='bold'>PEK</span>: 15, <span class='bold'>BOS</span> to <span class='bold'>SFO</span>: 8</p>
-<p>Top airlines: <span class='bold'>United</span>: 104, <span class='bold'>Hainan</span>: 9, <span class='bold'>JetBlue</span>: 7</p>
+<br>Airports by total visits: <span class='bold'>PEK</span>: 15, <span class='bold'>BOS</span>: 14, <span class='bold'>EWR</span>: 7
+<br>Top routes: <span class='bold'>BOS</span> to <span class='bold'>EWR</span>: 26, <span class='bold'>EWR</span> to <span class='bold'>PEK</span>: 15, <span class='bold'>BOS</span> to <span class='bold'>SFO</span>: 8
+<br>Top airlines: <span class='bold'>United</span>: 104, <span class='bold'>Hainan</span>: 9, <span class='bold'>JetBlue</span>: 7
 <p>Early arrivals: <span class='bold'>2</span> (1%)
 <br>On-time arrivals (within 15min): <span class='bold'>68</span> (36%)
 <br>Late arrivals (up to 1hr delay): <span class='bold'>101</span> (54%)
@@ -20,5 +20,8 @@
 <br>Evening flights (6p-11p): <span class='bold'>38</span> (20%)
 <br>Late night flights (11p-5a): <span class='bold'>9</span> (5%)
 </p>
-<p><span class='bold'>Domestic</span>: 124,077mi, 119 flights, <span class='bold'>International</span>: 306,104mi, 69 flights</p>
-<p><span class='bold'>Business</span>: 150,939mi, 48 flights, <span class='bold'>Economy</span>: 276,822mi, 139 flights, <span class='bold'>Premium</span>: 2,418mi, 1 flights</p>
+<p><span class='bold'>Domestic</span>: 124,077mi, 119 flights
+<br><span class='bold'>International</span>: 306,104mi, 69 flight</p>
+<p><span class='bold'>Business</span>: 150,939mi, 48 flights
+<br><span class='bold'>Economy</span>: 276,822mi, 139 flights
+<br><span class='bold'>Premium</span>: 2,418mi, 1 flight</p>
