@@ -187,3 +187,7 @@ Date,Scheduled Dep Time (Local),Scheduled Arr Time (Local),Scheduled Duration,Ac
 11/21/21,13:05,17:00,,,,,TAP,TP842,LIS,FCO,International,Economy,,,,,,,
 11/27/21,6:05,8:10,,,,,TAP,TP837,FCO,LIS,International,Economy,,,,,,1,
 11/27/21,9:55,14:55,,,,,TAP,TP237,LIS,SFO,International,Economy,,,,,,,
+12/23/21,21:35,5:58,,,,,JetBlue,B61516,SFO,JFK,Domestic,Business,,,,,,,
+12/24/21,7:24,12:08,,,,,JetBlue,B6869,JFK,PUJ,International,Economy,,,,,,,
+1/3/22,13:45,16:35,,,,,United,UA524,PUJ,IAH,International,Business,,,,,,,
+1/3/22,18:25,20:50,,,,,United,UA1853,IAH,SFO,Domestic,Business,,,,,,,

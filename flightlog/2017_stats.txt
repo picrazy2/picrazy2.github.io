@@ -1,27 +1,27 @@
-<h2><span class='bold'>Alex's Flight Log (2017)</span></h2><p>Total Distance Flown: <span class='bold'>430,181</span>mi
+<h2><span class='bold'>Alex's Flight Log (2017)</span></h2><p>Total Distance Flown: <span class='bold'>437,825</span>mi
 <br>Total Time in Air: <span class='bold'>35 days, 4:15:00</span>
-<br>Total Flights: <span class='bold'>188</span>
-<br>Number of Airlines: <span class='bold'>28</span>, Countries: <span class='bold'>25</span>, Airports: <span class='bold'>69</span>
+<br>Total Flights: <span class='bold'>192</span>
+<br>Number of Airlines: <span class='bold'>28</span>, Countries: <span class='bold'>26</span>, Airports: <span class='bold'>70</span>
 <p>Longest interval between flights: <span class='bold'>157 days 18:22:00</span> (2016-07-10 to 2016-12-15)
 <br>Month with most flying: <span class='bold'>2021-06</span> (10 flights, 38h 33m) or <span class='bold'>2019-12</span> (7 flights, 40h 2m)
 <p>Shortest flight: <span class='bold'>PHL</span> to <span class='bold'>JFK</span> (93mi, 29min)
 <br>Longest flight: <span class='bold'>EWR</span> to <span class='bold'>PEK</span> (6,830mi, 13h 15m)</p>
 <p>Airport distribution (top countries): <span class='bold'>United States</span>: 18, <span class='bold'>China</span>: 17, <span class='bold'>Japan</span>: 3
 <br>Airports by total visits: <span class='bold'>PEK</span>: 15, <span class='bold'>BOS</span>: 14, <span class='bold'>EWR</span>: 7
-<br>Top routes: <span class='bold'>BOS</span> to <span class='bold'>EWR</span>: 26, <span class='bold'>EWR</span> to <span class='bold'>PEK</span>: 15, <span class='bold'>BOS</span> to <span class='bold'>SFO</span>: 8, <span class='bold'>BOS</span> to <span class='bold'>IAD</span>: 6, <span class='bold'>BOS</span> to <span class='bold'>DEN</span>: 4
-<br>Top airlines: <span class='bold'>United</span>: 104, <span class='bold'>Hainan</span>: 9, <span class='bold'>JetBlue</span>: 7
-<p>Early arrivals: <span class='bold'>132</span> (70%)
+<br>Top routes: <span class='bold'>BOS</span> to <span class='bold'>EWR</span>: 26, <span class='bold'>EWR</span> to <span class='bold'>PEK</span>: 15, <span class='bold'>BOS</span> to <span class='bold'>SFO</span>: 8, <span class='bold'>BOS</span> to <span class='bold'>IAD</span>: 6, <span class='bold'>BOS</span> to <span class='bold'>ORD</span>: 4
+<br>Top airlines: <span class='bold'>United</span>: 106, <span class='bold'>Hainan</span>: 9, <span class='bold'>JetBlue</span>: 9
+<p>Early arrivals: <span class='bold'>132</span> (69%)
 <br>On-time arrivals (within 15min): <span class='bold'>27</span> (14%)
 <br>Late arrivals (up to 1hr delay): <span class='bold'>17</span> (9%)
 <br>Really late arrivals (>1hr delay): <span class='bold'>6</span> (3%)
 </p>
-<p>Morning flights (5am-12p): <span class='bold'>76</span> (40%)
-<br>Afternoon flights (12p-6p): <span class='bold'>63</span> (34%)
-<br>Evening flights (6p-11p): <span class='bold'>38</span> (20%)
+<p>Morning flights (5am-12p): <span class='bold'>77</span> (40%)
+<br>Afternoon flights (12p-6p): <span class='bold'>64</span> (33%)
+<br>Evening flights (6p-11p): <span class='bold'>40</span> (21%)
 <br>Late night flights (11p-5a): <span class='bold'>9</span> (5%)
 </p>
-<p><span class='bold'>Domestic</span>: 124,077mi, 119 flights
-<br><span class='bold'>International</span>: 306,104mi, 69 flights</p>
-<p><span class='bold'>Business</span>: 150,939mi, 48 flights
-<br><span class='bold'>Economy</span>: 276,822mi, 139 flights
+<p><span class='bold'>Domestic</span>: 128,298mi, 121 flights
+<br><span class='bold'>International</span>: 309,526mi, 71 flights</p>
+<p><span class='bold'>Business</span>: 157,029mi, 51 flights
+<br><span class='bold'>Economy</span>: 278,377mi, 140 flights
 <br><span class='bold'>Premium</span>: 2,418mi, 1 flights</p>
