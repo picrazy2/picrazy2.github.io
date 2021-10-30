@@ -1,29 +1,29 @@
-<h2><span class='bold'>Alex's Flight Log (3/2015-1/2022)</span></h2><p>Total Distance Flown: <span class='bold'>437,825</span>mi
+<h2><span class='bold'>Alex's Flight Log (3/2015-1/2022)</span></h2><p>Total Distance Flown: <span class='bold'>438,718</span>mi
 <br>Total Time in Air: <span class='bold'>35 days, 4:15:00</span>
-<br>Total Flights: <span class='bold'>192</span>
-<br>Number of Airlines: <span class='bold'>28</span>, Countries: <span class='bold'>26</span>, Airports: <span class='bold'>70</span>
+<br>Total Flights: <span class='bold'>194</span>
+<br>Number of Airlines: <span class='bold'>28</span>, Countries: <span class='bold'>26</span>, Airports: <span class='bold'>71</span>
 <p>Longest interval between flights: <span class='bold'>157 days 18:22:00</span> (2016-07-10 to 2016-12-15)
 <br>Month with most flying: <span class='bold'>2021-06</span> (10 flights, 38h 33m) or <span class='bold'>2019-12</span> (7 flights, 40h 2m)
 <p>Shortest flight: <span class='bold'>PHL</span> to <span class='bold'>JFK</span> (93mi, 29min)
 <br>Longest flight: <span class='bold'>SIN</span> to <span class='bold'>SFO</span> (8,446mi, 14h 9m)</p>
-<p>Airport distribution (top countries): <span class='bold'>United States</span>: 18, <span class='bold'>China</span>: 17, <span class='bold'>Japan</span>: 3
+<p>Airport distribution (top countries): <span class='bold'>United States</span>: 19, <span class='bold'>China</span>: 17, <span class='bold'>Japan</span>: 3
 <br>Airports by total visits: <span class='bold'>BOS</span>: 73, <span class='bold'>PEK</span>: 48, <span class='bold'>EWR</span>: 30
 <br>Top routes: <span class='bold'>BOS</span> to <span class='bold'>EWR</span>: 26, <span class='bold'>EWR</span> to <span class='bold'>PEK</span>: 15, <span class='bold'>BOS</span> to <span class='bold'>SFO</span>: 8, <span class='bold'>BOS</span> to <span class='bold'>IAD</span>: 6, <span class='bold'>BOS</span> to <span class='bold'>ORD</span>: 4
-<br>Top airlines: <span class='bold'>United</span>: 106, <span class='bold'>Hainan</span>: 9, <span class='bold'>JetBlue</span>: 9
-<p>Early arrivals: <span class='bold'>132</span> (69%)
+<br>Top airlines: <span class='bold'>United</span>: 108, <span class='bold'>Hainan</span>: 9, <span class='bold'>JetBlue</span>: 9
+<p>Early arrivals: <span class='bold'>132</span> (68%)
 <br>On-time arrivals (within 15min): <span class='bold'>27</span> (14%)
 <br>Late arrivals (up to 1hr delay): <span class='bold'>17</span> (9%)
 <br>Really late arrivals (>1hr delay): <span class='bold'>6</span> (3%)
 </p>
-<p>Morning flights (5am-12p): <span class='bold'>77</span> (40%)
+<p>Morning flights (5am-12p): <span class='bold'>78</span> (40%)
 <br>Afternoon flights (12p-6p): <span class='bold'>64</span> (33%)
-<br>Evening flights (6p-11p): <span class='bold'>40</span> (21%)
+<br>Evening flights (6p-11p): <span class='bold'>41</span> (21%)
 <br>Late night flights (11p-5a): <span class='bold'>9</span> (5%)
 </p>
-<p><span class='bold'>Domestic</span>: 128,298mi, 121 flights
+<p><span class='bold'>Domestic</span>: 129,191mi, 123 flights
 <br><span class='bold'>International</span>: 309,526mi, 71 flights</p>
-<p><span class='bold'>Business</span>: 157,029mi, 51 flights
-<br><span class='bold'>Economy</span>: 278,377mi, 140 flights
+<p><span class='bold'>Business</span>: 157,475mi, 52 flights
+<br><span class='bold'>Economy</span>: 278,823mi, 141 flights
 <br><span class='bold'>Premium</span>: 2,418mi, 1 flights</p>
 <p><span class='bold'>2015</span>: 59h 33m, 10 flights, 29,436mi 
 <br><span class='bold'>2016</span>: 116h 54m, 22 flights, 58,570mi 
@@ -31,5 +31,5 @@
 <br><span class='bold'>2018</span>: 154h 37m, 26 flights, 77,923mi 
 <br><span class='bold'>2019</span>: 168h 11m, 32 flights, 84,244mi 
 <br><span class='bold'>2020</span>: 101h 5m, 30 flights, 48,040mi 
-<br><span class='bold'>2021</span>: 85h 33m, 31 flights, 58,057mi 
+<br><span class='bold'>2021</span>: 85h 33m, 33 flights, 58,951mi 
 <br><span class='bold'>2022</span>: 0min, 2 flights, 3,503mi </p>

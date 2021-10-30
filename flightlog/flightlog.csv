@@ -183,11 +183,13 @@ Date,Scheduled Dep Time (Local),Scheduled Arr Time (Local),Scheduled Duration,Ac
 6/29/21,18:35,21:05,5:30,18:52,20:57,5:05,United,UA2435,IAD,SFO,Domestic,Premium,,,,B772,N69020,,Flightradar24
 9/4/21,8:45,14:31,3:46,9:10,14:32,3:21,United,UA1212,SFO,PVR,International,Economy,,,8A,A320,N407UA,,Flightradar24
 9/6/21,15:10,16:58,3:48,15:16,16:22,3:10,United,UA1243,PVR,SFO,International,Economy,,,23A,A320,N414UA,,Flightradar24
+11/16/21,8:30,10:08,,,,,United,UA1923,SFO,SAN,Domestic,Business,,,1F,,,,
+11/16/21,19:05,20:43,,,,,United,UA1761,SAN,SFO,Domestic,Economy,,,15A,,,,
 11/20/21,16:40,11:30,,,,,TAP,TP236,SFO,LIS,International,Economy,,,,,,1,
 11/21/21,13:05,17:00,,,,,TAP,TP842,LIS,FCO,International,Economy,,,,,,,
 11/27/21,6:05,8:10,,,,,TAP,TP837,FCO,LIS,International,Economy,,,,,,1,
 11/27/21,9:55,14:55,,,,,TAP,TP237,LIS,SFO,International,Economy,,,,,,,
-12/23/21,21:35,5:58,,,,,JetBlue,B61516,SFO,JFK,Domestic,Business,,,,,,,
-12/24/21,7:24,12:08,,,,,JetBlue,B6869,JFK,PUJ,International,Economy,,,,,,,
+12/23/21,21:35,5:59,,,,,JetBlue,B61516,SFO,JFK,Domestic,Business,,,,,,,
+12/24/21,8:00,12:43,,,,,JetBlue,B6869,JFK,PUJ,International,Economy,,,,,,,
 1/3/22,13:45,16:35,,,,,United,UA524,PUJ,IAH,International,Business,,,,,,,
-1/3/22,18:25,20:50,,,,,United,UA1853,IAH,SFO,Domestic,Business,,,,,,,
+1/3/22,19:40,22:00,,,,,United,UA2621,IAH,SFO,Domestic,Business,,,,,,,
