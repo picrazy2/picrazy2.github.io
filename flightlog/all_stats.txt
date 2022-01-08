@@ -1,5 +1,5 @@
 <h2><span class='bold'>Alex's Flight Log (3/2015-1/2022)</span></h2><p>Total Distance Flown: <span class='bold'>438,726</span>mi
-<br>Total Time in Air: <span class='bold'>37 days, 5:08:00</span>
+<br>Total Time in Air: <span class='bold'>37 days, 2:07:00</span>
 <br>Total Flights: <span class='bold'>195</span>
 <br>Number of Airlines: <span class='bold'>29</span>, Countries: <span class='bold'>26</span>, Airports: <span class='bold'>72</span>
 <p>Longest interval between flights: <span class='bold'>157 days 18:22:00</span> (2016-07-10 to 2016-12-15)
@@ -10,8 +10,8 @@
 <br>Airports by total visits: <span class='bold'>BOS</span>: 73, <span class='bold'>PEK</span>: 48, <span class='bold'>EWR</span>: 30
 <br>Top routes: <span class='bold'>BOS</span> to <span class='bold'>EWR</span>: 26, <span class='bold'>EWR</span> to <span class='bold'>PEK</span>: 15, <span class='bold'>BOS</span> to <span class='bold'>SFO</span>: 8, <span class='bold'>BOS</span> to <span class='bold'>IAD</span>: 6, <span class='bold'>BOS</span> to <span class='bold'>ORD</span>: 4
 <br>Top airlines: <span class='bold'>United</span>: 109, <span class='bold'>Hainan</span>: 9, <span class='bold'>JetBlue</span>: 9
-<p>Early arrivals: <span class='bold'>136</span> (70%)
-<br>On-time arrivals (within 15min): <span class='bold'>27</span> (14%)
+<p>Early arrivals: <span class='bold'>140</span> (72%)
+<br>On-time arrivals (within 15min): <span class='bold'>28</span> (14%)
 <br>Late arrivals (up to 1hr delay): <span class='bold'>19</span> (10%)
 <br>Really late arrivals (>1hr delay): <span class='bold'>6</span> (3%)
 </p>
@@ -22,8 +22,8 @@
 </p>
 <p><span class='bold'>Domestic</span>: 129,200mi, 124 flights
 <br><span class='bold'>International</span>: 309,526mi, 71 flights</p>
-<p><span class='bold'>Business</span>: 155,840mi, 51 flights
-<br><span class='bold'>Economy</span>: 280,467mi, 143 flights
+<p><span class='bold'>Business</span>: 157,484mi, 53 flights
+<br><span class='bold'>Economy</span>: 278,823mi, 141 flights
 <br><span class='bold'>Premium</span>: 2,418mi, 1 flights</p>
 <p><span class='bold'>2015</span>: 59h 33m, 10 flights, 29,436mi 
 <br><span class='bold'>2016</span>: 116h 54m, 22 flights, 58,570mi 
@@ -31,5 +31,5 @@
 <br><span class='bold'>2018</span>: 154h 37m, 26 flights, 77,923mi 
 <br><span class='bold'>2019</span>: 168h 11m, 32 flights, 84,244mi 
 <br><span class='bold'>2020</span>: 101h 5m, 30 flights, 48,040mi 
-<br><span class='bold'>2021</span>: 124h 34m, 33 flights, 58,951mi 
-<br><span class='bold'>2022</span>: 9h 52m, 3 flights, 3,511mi </p>
+<br><span class='bold'>2021</span>: 123h 25m, 33 flights, 58,951mi 
+<br><span class='bold'>2022</span>: 8h 0m, 3 flights, 3,511mi </p>
