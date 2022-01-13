@@ -7,7 +7,7 @@
 <p>Shortest flight: <span class='bold'>IAH</span> to <span class='bold'>AUS</span> (140mi, 31min)
 <br>Longest flight: <span class='bold'>ORD</span> to <span class='bold'>SJO</span> (2,213mi, 5h 12m)</p>
 <p>Airport distribution (top countries): <span class='bold'>United States</span>: 5, <span class='bold'>Costa Rica</span>: 1, <span class='bold'>Dominican Republic</span>: 1
-<br>Airports by total visits: <span class='bold'>SFO</span>: 5, <span class='bold'>IAH</span>: 3, <span class='bold'>AUS</span>: 2
+<br>Airports by total visits: <span class='bold'>SFO</span>: 5, <span class='bold'>AUS</span>: 2, <span class='bold'>IAH</span>: 2
 <br>Top routes: <span class='bold'>SFO</span> to <span class='bold'>SLC</span>: 2, <span class='bold'>AUS</span> to <span class='bold'>IAH</span>: 1, <span class='bold'>AUS</span> to <span class='bold'>SFO</span>: 1, <span class='bold'>IAH</span> to <span class='bold'>PUJ</span>: 1, <span class='bold'>IAH</span> to <span class='bold'>SFO</span>: 1
 <br>Top airlines: <span class='bold'>United</span>: 9
 <p>Early arrivals: <span class='bold'>3</span> (33%)
