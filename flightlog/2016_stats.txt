@@ -22,5 +22,6 @@
 </p>
 <p><span class='bold'>Domestic</span>: 11,296mi, 13 flights
 <br><span class='bold'>International</span>: 47,273mi, 9 flights</p>
-<p><span class='bold'>Business</span>: 27,053mi, 6 flights
-<br><span class='bold'>Economy</span>: 31,517mi, 16 flights</p>
+<p><span class='bold'>Economy</span>: 31,517mi, 16 flights
+<br><span class='bold'>Lie-flat Business</span>: 26,852mi, 5 flights
+<br><span class='bold'>Recliner First</span>: 200mi, 1 flights</p>
