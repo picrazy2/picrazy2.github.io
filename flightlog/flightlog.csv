@@ -32,7 +32,7 @@ Date,Scheduled Dep Time (Local),Scheduled Arr Time (Local),Scheduled Duration,Ac
 12/24/16,0:45,10:45,8:00,1:07,10:48,7:41,Singapore,SQ255,SIN,BNE,International,Lie-flat Business,,A333,9VSSI,,FlightStats
 12/29/16,17:35,20:10,1:35,18:02,20:14,1:12,Qantas,QF551,BNE,SYD,Domestic,Economy,,B738,VHVXJ,,FlightStats
 1/2/17,11:30,6:30,14:00,11:45,5:53,13:08,United,UA840,SYD,LAX,International,Lie-flat Business,8L,B789,N36962,1,FlightStats
-1/2/17,8:15,16:47,5:32,8:37,16:16,4:39,United,UA824,LAX,BOS,Domestic,Business,3F,B738,N77530,,FlightStats
+1/2/17,8:15,16:47,5:32,8:37,16:16,4:39,United,UA824,LAX,BOS,Domestic,Recliner First,3F,B738,N77530,,FlightStats
 3/11/17,7:06,8:30,1:24,7:51,8:38,0:47,United,UA1548,BOS,EWR,Domestic,Economy,10A,B739,N67827,1,FlightStats
 3/11/17,12:00,15:00,14:00,15:44,17:28,12:44,United,UA89,EWR,PEK,International,Economy,17L,B772,N76010,,FlightStats
 3/20/17,17:00,18:40,13:40,17:55,18:37,12:42,United,UA88,PEK,EWR,International,Lie-flat Business,8L,B772,N69020,1,FlightStats
@@ -119,7 +119,7 @@ Date,Scheduled Dep Time (Local),Scheduled Arr Time (Local),Scheduled Duration,Ac
 9/28/19,20:30,21:47,,20:48,21:29,0:41,United,UA421,EWR,BOS,Domestic,Economy,21A,B739,N66808,,Flightradar24
 11/21/19,18:02,21:42,,18:31,21:26,5:56,United,UA2400,BOS,SFO,Domestic,Economy,,B752,N19136,,Flightradar24
 11/23/19,8:30,17:04,,8:48,16:51,5:02,United,UA768,SFO,BOS,Domestic,Economy,,B752,N510UA,,Flightradar24
-11/28/19,5:55,7:35,,6:01,7:12,1:11,United,UA389,BOS,IAD,Domestic,Business,,B739,N69840,1,Flightradar24
+11/28/19,5:55,7:35,,6:01,7:12,1:11,United,UA389,BOS,IAD,Domestic,Recliner First,,B739,N69840,1,Flightradar24
 11/28/19,8:20,20:50,,8:14,20:40,7:27,United,UA122,IAD,LHR,International,Economy,,B752,N12116,,Flightradar24
 12/2/19,6:30,9:05,,6:39,8:56,1:17,Lufthansa,LH921,LHR,FRA,Domestic,Economy,,A320,DAINQ,1,Flightradar24
 12/2/19,11:00,13:10,,11:50,13:15,7:25,Lufthansa,LH422,FRA,BOS,International,Economy,,B744,DABTK,,Flightradar24
