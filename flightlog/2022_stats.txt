@@ -6,8 +6,8 @@
 <br>Month with most flying: <span class='bold'>2021-06</span> (10 flights, 38h 33m) or <span class='bold'>2019-12</span> (7 flights, 40h 2m)
 <p>Shortest flight: <span class='bold'>IAH</span> to <span class='bold'>AUS</span> (140mi, 31min)
 <br>Longest flight: <span class='bold'>FRA</span> to <span class='bold'>SFO</span> (5,699mi, 11h 2m)</p>
-<p>Airport distribution (top countries): <span class='bold'>United States</span>: 6, <span class='bold'>Costa Rica</span>: 1, <span class='bold'>Dominican Republic</span>: 1
-<br>Airports by total visits: <span class='bold'>SFO</span>: 9, <span class='bold'>IAH</span>: 3, <span class='bold'>AUS</span>: 2
+<p>Airport distribution (top countries): <span class='bold'>United States</span>: 6, <span class='bold'>Costa Rica</span>: 1, <span class='bold'>Dominican Republic</span>: 1, <span class='bold'>Germany</span>: 1
+<br>Airports by total visits: <span class='bold'>SFO</span>: 9, <span class='bold'>IAH</span>: 3, <span class='bold'>AUS</span>: 2, <span class='bold'>FRA</span>: 2, <span class='bold'>SJO</span>: 2
 <br>Top routes: <span class='bold'>FRA</span> to <span class='bold'>SFO</span>: 2, <span class='bold'>IAH</span> to <span class='bold'>SFO</span>: 2, <span class='bold'>IAH</span> to <span class='bold'>SJO</span>: 2, <span class='bold'>SFO</span> to <span class='bold'>SLC</span>: 2, <span class='bold'>AUS</span> to <span class='bold'>IAH</span>: 1
 <br>Top airlines: <span class='bold'>United</span>: 12, <span class='bold'>Lufthansa</span>: 1
 <p>Early arrivals: <span class='bold'>8</span> (62%)
