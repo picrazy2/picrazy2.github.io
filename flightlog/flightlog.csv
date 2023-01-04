@@ -216,14 +216,14 @@ Date,Scheduled Dep Time (Local),Scheduled Arr Time (Local),Scheduled Duration,Ac
 10/14/22,19:30,21:40,3:10,20:20,22:16,2:56,Lufthansa,LH1780,MUC,LIS,International,Economy,12D,A21N,D-AIEH,,Flightradar24
 10/19/22,6:15,10:15,3:00,6:35,10:03,2:29,Lufthansa,LH1781,LIS,MUC,International,Economy,15F,A321,D-AIDO,1,Flightradar24
 10/19/22,16:20,18:55,11:35,17:09,19:13,11:04,Lufthansa,LH458,MUC,SFO,International,Economy,21K,A359,D-AIXG,,Flightradar24
-11/10/22,10:45,20:15,17:30,,,17:30,United,UA29,SFO,SIN,International,Economy,,,,,Flightradar24
-11/25/22,13:05,13:55,1:50,,,1:50,VietJet,VJ812,SIN,SGN,International,Economy,,,,,Flightradar24
-11/27/22,21:10,0:10,2:00,,,2:00,JetStar,3K552,SGN,SIN,International,Economy,,,,,Flightradar24
-11/28/22,10:00,8:35,14:35,,,14:35,United,UA2,SIN,SFO,International,Economy,,,,,Flightradar24
-12/10/22,18:30,22:00,5:30,,,5:30,United,UA300,SFO,HNL,Domestic,Economy,,,,1,Flightradar24
-12/11/22,9:20,17:30,9:10,,,9:10,Air New Zealand,NZ9,HNL,AKL,International,Economy,,,,,Flightradar24
-12/18/22,9:00,10:25,1:25,,,1:25,Air New Zealand,NZ529,AKL,CHC,Domestic,Economy,,,,,
-12/24/22,19:10,20:55,1:45,,,1:45,Air New Zealand,NZ1266,ZQN,AKL,Domestic,Economy,,,,,
-12/27/22,15:50,7:05,11:15,,,11:15,United,UA916,AKL,SFO,International,Premium Economy,,,,1,
-12/27/22,9:10,17:18,5:08,,,5:08,United,UA2037,SFO,TPA,Domestic,Economy,,,,,
-1/2/23,18:20,21:23,6:03,,,6:03,United,UA1538,TPA,SFO,Domestic,Economy,,,,,
+11/10/22,10:40,20:15,17:35,11:30,19:39,16:08,United,UA29,SFO,SIN,International,Economy,,B789,N28987,,Flightradar24
+11/25/22,13:05,13:55,1:50,13:37,14:13,1:35,VietJet,VJ812,SIN,SGN,International,Economy,,A321,VN-A640,,Flightradar24
+11/27/22,21:10,0:10,2:00,21:23,23:57,1:33,JetStar,3K552,SGN,SIN,International,Economy,,A320,9V-JSR,,Flightradar24
+11/28/22,10:15,8:50,14:35,10:28,9:01,14:32,United,UA2,SIN,SFO,International,Economy,,B789,N29985,,Flightradar24
+12/10/22,18:30,22:00,5:30,19:21,22:09,4:48,United,UA300,SFO,HNL,Domestic,Premium Economy,,B77W,N2645U,1,Flightradar24
+12/11/22,9:20,17:30,9:10,11:46,18:28,7:42,Air New Zealand,NZ9,HNL,AKL,International,Economy,,B789,ZK-NZF,,Flightradar24
+12/18/22,9:00,10:25,1:25,9:16,10:17,1:01,Air New Zealand,NZ527,AKL,CHC,Domestic,Economy,,A320,ZK-OXM,,Flightradar24
+12/24/22,19:10,20:55,1:45,19:46,21:16,1:30,Air New Zealand,NZ1266,ZQN,AKL,Domestic,Economy,,A21N,ZK-OYB,,Flightradar24
+12/27/22,15:50,7:05,12:15,16:19,7:40,12:21,United,UA916,AKL,SFO,International,Lie-flat Business,,B772,N76010,1,Flightradar24
+12/27/22,9:10,17:18,5:08,9:41,17:11,4:31,United,UA2037,SFO,TPA,Domestic,Economy,,B752,N14107,,Flightradar24
+1/2/23,18:20,21:23,6:03,18:31,21:49,6:18,United,UA1538,TPA,SFO,Domestic,Economy,11F,B752,N17104,,Flightradar24
