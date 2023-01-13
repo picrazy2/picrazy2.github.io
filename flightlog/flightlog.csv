@@ -227,3 +227,8 @@ Date,Scheduled Dep Time (Local),Scheduled Arr Time (Local),Scheduled Duration,Ac
 12/27/22,15:50,7:05,12:15,16:19,7:40,12:21,United,UA916,AKL,SFO,International,Lie-flat Business,,B772,N76010,1,Flightradar24
 12/27/22,9:10,17:18,5:08,9:41,17:11,4:31,United,UA2037,SFO,TPA,Domestic,Economy,,B752,N14107,,Flightradar24
 1/2/23,18:20,21:23,6:03,18:31,21:49,6:18,United,UA1538,TPA,SFO,Domestic,Economy,11F,B752,N17104,,Flightradar24
+2/4/23,9:35,12:33,1:58,,,1:58,Alaska,AS2011,SFO,PHX,Domestic,Economy,,,,,
+2/5/23,20:47,21:55,2:08,,,2:08,United,UA1893,PHX,SFO,Domestic,Economy,,,,,
+3/2/23,22:50,7:04,5:14,,,5:14,United,UA2059,SFO,EWR,Domestic,Economy,,,,,
+3/3/23,17:05,21:50,5:45,,,5:45,United,UA1065,EWR,MEX,International,Economy,,,,,
+3/6/23,17:18,20:11,4:53,,,4:53,Volaris,Y45200,MEX,SFO,International,Economy,,,,,
