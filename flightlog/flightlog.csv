@@ -227,10 +227,12 @@ Date,Scheduled Dep Time (Local),Scheduled Arr Time (Local),Scheduled Duration,Ac
 12/27/22,15:50,7:05,12:15,16:19,7:40,12:21,United,UA916,AKL,SFO,International,Lie-flat Business,,B772,N76010,1,Flightradar24
 12/27/22,9:10,17:18,5:08,9:41,17:11,4:31,United,UA2037,SFO,TPA,Domestic,Economy,,B752,N14107,,Flightradar24
 1/2/23,18:20,21:23,6:03,18:31,21:49,6:18,United,UA1538,TPA,SFO,Domestic,Economy,11F,B752,N17104,,Flightradar24
-1/16/23,23:45,7:56,5:11,,,5:11,United,UA2321,SFO,EWR,Domestic,Lie-flat Business,,,,,
-1/20/23,8:35,12:02,6:27,,,6:27,United,UA731,PHL,SFO,Domestic,Economy,,,,,
-2/4/23,9:35,12:33,1:58,,,1:58,Alaska,AS2011,SFO,PHX,Domestic,Economy,,,,,
-2/5/23,20:47,21:55,2:08,,,2:08,United,UA1893,PHX,SFO,Domestic,Economy,,,,,
-3/2/23,22:50,7:04,5:14,,,5:14,United,UA2059,SFO,EWR,Domestic,Economy,,,,,
-3/3/23,17:05,21:50,5:45,,,5:45,United,UA1065,EWR,MEX,International,Economy,,,,,
-3/6/23,17:18,20:11,4:53,,,4:53,Volaris,Y45200,MEX,OAK,International,Economy,,,,,
+1/16/23,23:45,7:56,5:11,0:08,7:38,4:29,United,UA2321,SFO,EWR,Domestic,Lie-flat Business,7A,B77W,N2352U,,Flightradar24
+1/20/23,8:35,12:02,6:27,8:41,11:15,5:34,United,UA731,PHL,SFO,Domestic,Economy,,B738,N78506,,Flightradar24
+2/4/23,9:35,12:33,1:58,9:50,12:19,1:29,Alaska,AS2011,SFO,PHX,Domestic,Economy,12C,E75L,N647QX,,Flightradar24
+2/5/23,20:47,21:55,2:08,20:51,21:30,1:39,United,UA1893,PHX,SFO,Domestic,Economy,14E,B738,N26232,,Flightradar24
+3/2/23,22:50,7:04,5:14,,,5:14,United,UA2059,SFO,EWR,Domestic,Economy,,,,,Flightradar24
+3/3/23,17:05,21:50,5:45,,,5:45,United,UA1065,EWR,MEX,International,Economy,,,,,Flightradar24
+3/6/23,17:18,20:11,4:53,,,4:53,Volaris,Y45200,MEX,OAK,International,Economy,,,,,Flightradar24
+4/5/23,17:05,19:52,1:47,,,1:47,Delta,DL3879,OAK,SLC,Domestic,Economy,,,,,Flightradar24
+4/9/23,22:55,23:59,2:04,,,2:04,Delta,DL2924,SLC,OAK,Domestic,Economy,,,,,Flightradar24
