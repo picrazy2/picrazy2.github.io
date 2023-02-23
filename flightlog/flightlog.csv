@@ -234,5 +234,9 @@ Date,Scheduled Dep Time (Local),Scheduled Arr Time (Local),Scheduled Duration,Ac
 3/2/23,22:50,7:04,5:14,,,5:14,United,UA2059,SFO,EWR,Domestic,Economy,,,,,Flightradar24
 3/3/23,17:05,21:50,5:45,,,5:45,United,UA1065,EWR,MEX,International,Economy,,,,,Flightradar24
 3/6/23,17:18,20:11,4:53,,,4:53,Volaris,Y45200,MEX,OAK,International,Economy,,,,,Flightradar24
+3/25/23,19:40,14:10,10:30,,,10:30,United,UA930,SFO,LHR,International,Economy,,,,,Flightradar24
+3/29/23,18:00,21:10,8:10,,,8:10,United,UA921,LHR,EWR,International,Economy,,,,,Flightradar24
+3/31/23,6:30,9:33,6:03,,,6:03,United,UA1989,EWR,SEA,Domestic,Economy,,,,,Flightradar24
+4/1/23,21:35,23:44,2:09,,,2:09,Alaska,AS1042,SEA,SFO,Domestic,Economy,,,,,Flightradar24
 4/5/23,17:05,19:52,1:47,,,1:47,Delta,DL3879,OAK,SLC,Domestic,Economy,,,,,Flightradar24
 4/9/23,22:55,23:59,2:04,,,2:04,Delta,DL2924,SLC,OAK,Domestic,Economy,,,,,Flightradar24
