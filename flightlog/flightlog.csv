@@ -239,5 +239,8 @@ Date,Scheduled Dep Time (Local),Scheduled Arr Time (Local),Scheduled Duration,Ac
 3/29/23,18:00,21:10,8:10,18:12,20:29,7:17,United,UA921,LHR,EWR,International,Premium Economy,,B763,N671UA,,Flightradar24
 3/31/23,6:30,9:33,6:03,6:40,9:03,5:24,United,UA1989,EWR,SEA,Domestic,Economy,,B39M,N27520,,Flightradar24
 4/1/23,21:35,23:44,2:09,21:53,23:33,1:39,Alaska,AS1042,SEA,SFO,Domestic,Economy,,B39M,N972AK,,Flightradar24
-4/5/23,17:05,19:52,1:47,,,1:47,Delta,DL3879,OAK,SLC,Domestic,Economy,,,,,Flightradar24
-4/9/23,22:55,23:59,2:04,,,2:04,Delta,DL2924,SLC,OAK,Domestic,Economy,,,,,Flightradar24
+4/5/23,17:05,19:52,1:47,17:10,19:33,1:23,Delta,DL3879,OAK,SLC,Domestic,Economy,,E75L,N308SY,,Flightradar24
+4/9/23,22:55,23:59,2:04,23:06,23:28,1:22,Delta,DL2924,SLC,OAK,Domestic,Economy,,BCS1,N101DU,,Flightradar24
+4/22/23,6:00,7:38,1:38,,,1:38,United,UA1110,SFO,LAX,Domestic,Economy,,,,,
+4/22/23,8:15,9:30,1:15,,,1:15,United,UA1006,LAX,LAS,Domestic,Economy,,,,,
+4/22/23,21:11,22:50,1:39,,,1:39,Frontier,F92081,LAS,SFO,Domestic,Economy,,,,,
