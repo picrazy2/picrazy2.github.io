@@ -1,32 +1,32 @@
-<h2><span class='bold'>Alex's Flight Log (3/2015-4/2023)</span></h2><p>Total Distance Flown: <span class='bold'>553,391</span>mi
-<br>Total Time in Air: <span class='bold'>46 days, 15:45:00</span>
-<br>Total Flights: <span class='bold'>245</span>
-<br>Number of Airlines: <span class='bold'>35</span>, Countries: <span class='bold'>29</span>, Airports: <span class='bold'>87</span>
+<h2><span class='bold'>Alex's Flight Log (3/2015-5/2023)</span></h2><p>Total Distance Flown: <span class='bold'>559,611</span>mi
+<br>Total Time in Air: <span class='bold'>47 days, 6:20:00</span>
+<br>Total Flights: <span class='bold'>247</span>
+<br>Number of Airlines: <span class='bold'>36</span>, Countries: <span class='bold'>29</span>, Airports: <span class='bold'>87</span>
 <p>Longest interval between flights: <span class='bold'>157 days 18:22:00</span> (2016-07-10 to 2016-12-15)
 <br>Month with most flying: <span class='bold'>2021-06</span> (10 flights, 38h 33m) or <span class='bold'>2019-12</span> (7 flights, 40h 2m)
 <p>Shortest flight: <span class='bold'>PHL</span> to <span class='bold'>JFK</span> (93mi, 29min)
 <br>Longest flight: <span class='bold'>SFO</span> to <span class='bold'>SIN</span> (8,446mi, 16h 8m)</p>
 <p>Airport distribution (top countries): <span class='bold'>United States</span>: 29, <span class='bold'>China</span>: 17, <span class='bold'>New Zealand</span>: 3, <span class='bold'>Japan</span>: 3, <span class='bold'>Spain</span>: 3
-<br>Airports by total visits: <span class='bold'>BOS</span>: 73, <span class='bold'>SFO</span>: 50, <span class='bold'>PEK</span>: 48, <span class='bold'>EWR</span>: 38, <span class='bold'>LAX</span>: 11
+<br>Airports by total visits: <span class='bold'>BOS</span>: 73, <span class='bold'>SFO</span>: 51, <span class='bold'>PEK</span>: 49, <span class='bold'>EWR</span>: 38, <span class='bold'>LAX</span>: 10
 <br>Top routes: <span class='bold'>BOS</span> to <span class='bold'>EWR</span>: 26, <span class='bold'>EWR</span> to <span class='bold'>PEK</span>: 15, <span class='bold'>BOS</span> to <span class='bold'>SFO</span>: 8, <span class='bold'>BOS</span> to <span class='bold'>IAD</span>: 6, <span class='bold'>EWR</span> to <span class='bold'>SFO</span>: 5
-<br>Top airlines: <span class='bold'>United</span>: 141, <span class='bold'>Lufthansa</span>: 10, <span class='bold'>JetBlue</span>: 9, <span class='bold'>Hainan</span>: 9, <span class='bold'>Delta</span>: 7
+<br>Top airlines: <span class='bold'>United</span>: 142, <span class='bold'>Lufthansa</span>: 10, <span class='bold'>Hainan</span>: 9, <span class='bold'>JetBlue</span>: 9, <span class='bold'>Delta</span>: 7
 <p>Early arrivals: <span class='bold'>175</span> (71%)
 <br>On-time arrivals (within 15min): <span class='bold'>31</span> (13%)
 <br>Late arrivals (up to 1hr delay): <span class='bold'>27</span> (11%)
 <br>Really late arrivals (>1hr delay): <span class='bold'>7</span> (3%)
 </p>
-<p>Morning flights (5am-12p): <span class='bold'>95</span> (39%)
-<br>Afternoon flights (12p-6p): <span class='bold'>77</span> (31%)
-<br>Evening flights (6p-11p): <span class='bold'>58</span> (24%)
-<br>Late night flights (11p-5a): <span class='bold'>13</span> (5%)
+<p>Morning flights (5am-12p): <span class='bold'>95</span> (38%)
+<br>Afternoon flights (12p-6p): <span class='bold'>78</span> (32%)
+<br>Evening flights (6p-11p): <span class='bold'>58</span> (23%)
+<br>Late night flights (11p-5a): <span class='bold'>14</span> (6%)
 </p>
-<p><span class='bold'>Domestic</span>: 178,811mi, 157 flights
-<br><span class='bold'>International</span>: 374,580mi, 88 flights</p>
-<p><span class='bold'>Economy</span>: 355,391mi, 178 flights
+<p><span class='bold'>Domestic</span>: 179,373mi, 158 flights
+<br><span class='bold'>International</span>: 380,238mi, 89 flights</p>
+<p><span class='bold'>Economy</span>: 361,273mi, 179 flights
 <br><span class='bold'>International First</span>: 5,699mi, 1 flights
 <br><span class='bold'>Lie-flat Business</span>: 155,756mi, 32 flights
 <br><span class='bold'>Premium Economy</span>: 13,413mi, 5 flights
-<br><span class='bold'>Recliner First</span>: 23,131mi, 29 flights</p>
+<br><span class='bold'>Recliner First</span>: 23,468mi, 30 flights</p>
 <p><span class='bold'>2015</span>: 59h 33m, 10 flights, 29,436mi 
 <br><span class='bold'>2016</span>: 116h 54m, 22 flights, 58,570mi 
 <br><span class='bold'>2017</span>: 158h 22m, 39 flights, 78,048mi 
@@ -35,4 +35,4 @@
 <br><span class='bold'>2020</span>: 101h 5m, 30 flights, 48,040mi 
 <br><span class='bold'>2021</span>: 123h 25m, 33 flights, 58,951mi 
 <br><span class='bold'>2022</span>: 171h 59m, 35 flights, 88,373mi 
-<br><span class='bold'>2023</span>: 65h 39m, 18 flights, 29,803mi </p>
+<br><span class='bold'>2023</span>: 80h 14m, 20 flights, 36,023mi </p>

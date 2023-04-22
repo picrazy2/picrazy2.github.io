@@ -1,27 +1,28 @@
-<h2><span class='bold'>Alex's Flight Log (2023)</span></h2><p>Total Distance Flown: <span class='bold'>29,803</span>mi
-<br>Total Time in Air: <span class='bold'>2 days, 17:39:00</span>
-<br>Total Flights: <span class='bold'>18</span>
-<br>Number of Airlines: <span class='bold'>5</span>, Countries: <span class='bold'>3</span>, Airports: <span class='bold'>12</span>
+<h2><span class='bold'>Alex's Flight Log (2023)</span></h2><p>Total Distance Flown: <span class='bold'>36,023</span>mi
+<br>Total Time in Air: <span class='bold'>3 days, 8:14:00</span>
+<br>Total Flights: <span class='bold'>20</span>
+<br>Number of Airlines: <span class='bold'>6</span>, Countries: <span class='bold'>5</span>, Airports: <span class='bold'>14</span>
 <p>Longest interval between flights: <span class='bold'>157 days 18:22:00</span> (2016-07-10 to 2016-12-15)
 <br>Month with most flying: <span class='bold'>2021-06</span> (10 flights, 38h 33m) or <span class='bold'>2019-12</span> (7 flights, 40h 2m)
 <p>Shortest flight: <span class='bold'>SFO</span> to <span class='bold'>LAX</span> (337mi, 52min)
-<br>Longest flight: <span class='bold'>LAX</span> to <span class='bold'>LHR</span> (5,456mi, 9h 55m)</p>
-<p>Airport distribution (top countries): <span class='bold'>United States</span>: 10, <span class='bold'>Mexico</span>: 1, <span class='bold'>United Kingdom</span>: 1
-<br>Airports by total visits: <span class='bold'>SFO</span>: 10, <span class='bold'>EWR</span>: 5, <span class='bold'>LAX</span>: 4, <span class='bold'>OAK</span>: 3, <span class='bold'>LAS</span>: 2
+<br>Longest flight: <span class='bold'>SFO</span> to <span class='bold'>ICN</span> (5,658mi, 12h 35m)</p>
+<p>Airport distribution (top countries): <span class='bold'>United States</span>: 10, <span class='bold'>China</span>: 1, <span class='bold'>Mexico</span>: 1, <span class='bold'>South Korea</span>: 1, <span class='bold'>United Kingdom</span>: 1
+<br>Airports by total visits: <span class='bold'>SFO</span>: 11, <span class='bold'>EWR</span>: 5, <span class='bold'>LAX</span>: 3, <span class='bold'>OAK</span>: 3, <span class='bold'>ICN</span>: 2
 <br>Top routes: <span class='bold'>EWR</span> to <span class='bold'>SFO</span>: 2, <span class='bold'>LAX</span> to <span class='bold'>SFO</span>: 2, <span class='bold'>OAK</span> to <span class='bold'>SLC</span>: 2, <span class='bold'>PHX</span> to <span class='bold'>SFO</span>: 2, <span class='bold'>EWR</span> to <span class='bold'>LHR</span>: 1
-<br>Top airlines: <span class='bold'>United</span>: 12, <span class='bold'>Alaska</span>: 2, <span class='bold'>Delta</span>: 2, <span class='bold'>Frontier</span>: 1, <span class='bold'>Volaris</span>: 1
-<p>Early arrivals: <span class='bold'>14</span> (78%)
+<br>Top airlines: <span class='bold'>United</span>: 13, <span class='bold'>Alaska</span>: 2, <span class='bold'>Delta</span>: 2, <span class='bold'>Asiana</span>: 1, <span class='bold'>Frontier</span>: 1
+<p>Early arrivals: <span class='bold'>14</span> (70%)
 <br>On-time arrivals (within 15min): <span class='bold'>0</span> (0%)
-<br>Late arrivals (up to 1hr delay): <span class='bold'>1</span> (6%)
+<br>Late arrivals (up to 1hr delay): <span class='bold'>1</span> (5%)
 <br>Really late arrivals (>1hr delay): <span class='bold'>0</span> (0%)
 </p>
-<p>Morning flights (5am-12p): <span class='bold'>5</span> (28%)
-<br>Afternoon flights (12p-6p): <span class='bold'>4</span> (22%)
-<br>Evening flights (6p-11p): <span class='bold'>8</span> (44%)
-<br>Late night flights (11p-5a): <span class='bold'>1</span> (6%)
+<p>Morning flights (5am-12p): <span class='bold'>5</span> (25%)
+<br>Afternoon flights (12p-6p): <span class='bold'>5</span> (25%)
+<br>Evening flights (6p-11p): <span class='bold'>8</span> (40%)
+<br>Late night flights (11p-5a): <span class='bold'>2</span> (10%)
 </p>
-<p><span class='bold'>Domestic</span>: 16,927mi, 14 flights
-<br><span class='bold'>International</span>: 12,875mi, 4 flights</p>
-<p><span class='bold'>Economy</span>: 18,316mi, 15 flights
+<p><span class='bold'>Domestic</span>: 17,489mi, 15 flights
+<br><span class='bold'>International</span>: 18,533mi, 5 flights</p>
+<p><span class='bold'>Economy</span>: 24,199mi, 16 flights
 <br><span class='bold'>Lie-flat Business</span>: 8,021mi, 2 flights
-<br><span class='bold'>Premium Economy</span>: 3,465mi, 1 flights</p>
+<br><span class='bold'>Premium Economy</span>: 3,465mi, 1 flights
+<br><span class='bold'>Recliner First</span>: 337mi, 1 flights</p>
