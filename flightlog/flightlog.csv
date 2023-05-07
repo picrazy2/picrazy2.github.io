@@ -245,7 +245,7 @@ Date,Scheduled Dep Time (Local),Scheduled Arr Time (Local),Scheduled Duration,Ac
 4/22/23,8:15,9:30,1:15,8:36,9:15,0:39,United,UA1006,LAX,LAS,Domestic,Recliner First,,B738,N27239,,Flightradar24,
 4/22/23,21:11,22:50,1:39,22:10,23:19,1:09,Frontier,F92081,LAS,SFO,Domestic,Economy,,A20N,N343FR,,Flightradar24,
 5/11/23,23:45,4:20,12:35,,,12:35,United,UA805,SFO,ICN,International,Economy,,,,,Flightradar24,
-5/14/23,15:00,16:00,2:00,,,2:00,Asiana,OZ335,ICN,PEK,Domestic,Economy,,,,,Flightradar24,
+5/14/23,15:00,16:00,2:00,,,2:00,Asiana,OZ335,ICN,PEK,International,Economy,,,,,Flightradar24,
 5/26/23,8:00,11:05,3:05,,,3:05,Air China,CA1431,PEK,CKG,Domestic,Economy,,,,,,
 6/25/23,18:20,20:40,2:20,,,2:20,Air China,CA8680,PKX,PVG,Domestic,Economy,,,,,,
 7/2/23,12:25,14:45,2:20,,,2:20,Air China,CA1502,SHA,PEK,Domestic,Economy,,,,1,,
