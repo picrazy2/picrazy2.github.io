@@ -20,8 +20,8 @@
 <br>Evening flights (6p-11p): <span class='bold'>8</span> (31%)
 <br>Late night flights (11p-5a): <span class='bold'>0</span> (0%)
 </p>
-<p><span class='bold'>Domestic</span>: 7,371mi, 11 flights
-<br><span class='bold'>International</span>: 70,552mi, 15 flights</p>
+<p><span class='bold'>Domestic</span>: 6,371mi, 9 flights
+<br><span class='bold'>International</span>: 71,552mi, 17 flights</p>
 <p><span class='bold'>Economy</span>: 59,661mi, 19 flights
 <br><span class='bold'>Lie-flat Business</span>: 14,788mi, 3 flights
 <br><span class='bold'>Recliner First</span>: 3,473mi, 4 flights</p>
