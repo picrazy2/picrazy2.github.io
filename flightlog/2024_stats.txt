@@ -7,7 +7,7 @@
 <p>Shortest flight: <span class='bold'>OPO</span> to <span class='bold'>LIS</span> (171mi, 1h 0m)
 <br>Longest flight: <span class='bold'>PEK</span> to <span class='bold'>CAI</span> (4,690mi, 11h 10m)</p>
 <p>Airport distribution (top countries): <span class='bold'>Jordan</span>: 2, <span class='bold'>Portugal</span>: 2, <span class='bold'>United Kingdom</span>: 2, <span class='bold'>United States</span>: 2, <span class='bold'>Bulgaria</span>: 1
-<br>Airports by total visits: <span class='bold'>EWR</span>: 2, <span class='bold'>SOF</span>: 2, <span class='bold'>AQJ</span>: 1, <span class='bold'>CAI</span>: 1, <span class='bold'>LGW</span>: 1
+<br>Airports by total visits: <span class='bold'>EWR</span>: 2, <span class='bold'>AQJ</span>: 1, <span class='bold'>CAI</span>: 1, <span class='bold'>LGW</span>: 1, <span class='bold'>LIS</span>: 1
 <br>Top routes: <span class='bold'>AMM</span> to <span class='bold'>CAI</span>: 1, <span class='bold'>AQJ</span> to <span class='bold'>SOF</span>: 1, <span class='bold'>CAI</span> to <span class='bold'>PEK</span>: 1, <span class='bold'>EWR</span> to <span class='bold'>LIS</span>: 1, <span class='bold'>EWR</span> to <span class='bold'>SFO</span>: 1
 <br>Top airlines: <span class='bold'>TAP</span>: 3, <span class='bold'>EgyptAir</span>: 2, <span class='bold'>Ryanair</span>: 2, <span class='bold'>United</span>: 1
 <p>Early arrivals: <span class='bold'>0</span> (0%)
