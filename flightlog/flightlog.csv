@@ -259,6 +259,8 @@ Date,Scheduled Dep Time (Local),Scheduled Arr Time (Local),Scheduled Duration,Ac
 9/19/2023,20:35,22:50,1:15,21:39,23:24,0:45,British Airways,BA326,LHR,CDG,International,Economy,,A320,G-EUYE,,Flightradar24,
 9/25/2023,14:10,17:05,10:55,14:34,16:52,10:18,United,UA939,LHR,SFO,International,Economy,,B789,N36962,,Flightradar24,
 9/30/2023,23:20,5:00,14:40,23:54,4:29,13:35,United,UA877,SFO,HKG,International,Economy,,B77W,N2747U,,Flightradar24,
+11/13/2023,13:00,16:45,3:45,,,3:45,Air China,CA109,PEK,HKG,International,Economy,,,,,,
+11/15/2023,20:15,23:35,3:20,,,3:20,Air China,CA116,HKG,PEK,International,Economy,,,,,,
 11/20/2023,18:05,21:15,3:10,,,3:10,Beijing Capital,JD5251,PKX,XMN,Domestic,Economy,,,,,Flightradar24,
 11/23/2023,18:35,21:30,2:55,,,2:55,China Southern,CZ8876,XMN,PKX,Domestic,Economy,,,,,Flightradar24,
 12/8/2023,9:20,14:20,12:00,,,12:00,LOT,LO92,PEK,WAW,International,Economy,,,,1,Flightradar24,
