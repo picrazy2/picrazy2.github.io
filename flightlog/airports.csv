@@ -3183,7 +3183,7 @@
 3377,Pyongyang Sunan International Airport,Pyongyang,North Korea,FNJ,ZKPY,39.224098,125.669998,117,8.5,U,Asia/Pyongyang,airport,OurAirports
 3378,Lanzhou Zhongchuan Airport,Lanzhou,China,LHW,ZLLL,36.51520157,103.6200027,6388,8,U,Asia/Shanghai,airport,OurAirports
 3379,Xi'an Xianyang International Airport,Xi'an,China,XIY,ZLXY,34.447102,108.751999,1572,8,U,Asia/Shanghai,airport,OurAirports
-3380,Chinggis Khaan International Airport,Ulan Bator,Mongolia,ULN,ZMUB,47.843102,106.766998,4364,8,U,Asia/Ulaanbaatar,airport,OurAirports
+3380,Chinggis Khaan International Airport,Ulan Bator,Mongolia,UBN,ZMCK,47.651581,106.821772,4364,8,U,Asia/Ulaanbaatar,airport,OurAirports
 3381,Xishuangbanna Gasa Airport,Jinghonggasa,China,JHG,ZPJH,21.97389984,100.7600021,1815,8,U,Asia/Shanghai,airport,OurAirports
 3382,Kunming Changshui International Airport,Kunming,China,KMG,ZPPP,25.1019444,102.9291667,6903,8,N,Asia/Shanghai,airport,OurAirports
 3383,Xiamen Gaoqi International Airport,Xiamen,China,XMN,ZSAM,24.54400063,118.1279984,59,8,U,Asia/Shanghai,airport,OurAirports
@@ -5461,7 +5461,7 @@
 7244,Klawock Seaplane Base,Klawock,United States,\N,PAQC,55.55469894,-133.102005,0,-9,A,America/Anchorage,airport,OurAirports
 7245,Minchumina Airport,Lake Minchumina,United States,LMA,PAMH,63.886002,-152.302002,678,-9,A,America/Anchorage,airport,OurAirports
 7246,Manley Hot Springs Airport,Manley Hot Springs,United States,MLY,PAML,64.99759674,-150.6439972,270,-9,A,America/Anchorage,airport,OurAirports
-7251,Natuashish Airport,Natuashish,Canada,YNP,CNH2,55.913898,-61.184399,30,-4,A,America/Halifax,airport,OurAirports
+7251,Natuashish Airport,Natuashish,Canada,YNP,CNH 2.00,55.913898,-61.184399,30,-4,A,America/Halifax,airport,OurAirports
 7252,Postville Airport,Postville,Canada,YSO,CCD4,54.9105,-59.78507,193,-4,A,America/Halifax,airport,OurAirports
 7253,Kangiqsujuaq (Wakeham Bay) Airport,Kangiqsujuaq,Canada,YWB,CYKG,61.58860016,-71.92939758,501,-5,A,America/Toronto,airport,OurAirports
 7254,Alma Airport,Alma,Canada,YTF,CYTF,48.50889969,-71.64189911,445,-5,A,America/Toronto,airport,OurAirports
