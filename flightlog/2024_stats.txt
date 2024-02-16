@@ -1,5 +1,5 @@
-<h2><span class='bold'>Alex's Flight Log (2024)</span></h2><p>Total Distance Flown: <span class='bold'>55,716</span>mi
-<br>Total Time in Air: <span class='bold'>5 days, 8:04:00</span>
+<h2><span class='bold'>Alex's Flight Log (2024)</span></h2><p>Total Distance Flown: <span class='bold'>56,002</span>mi
+<br>Total Time in Air: <span class='bold'>5 days, 8:14:00</span>
 <br>Total Flights: <span class='bold'>25</span>
 <br>Number of Airlines: <span class='bold'>8</span>, Countries: <span class='bold'>11</span>, Airports: <span class='bold'>21</span>
 <p>Longest interval between flights: <span class='bold'>157 days 18:22:00</span> (2016-07-10 to 2016-12-15)
@@ -8,7 +8,7 @@
 <br>Longest flight: <span class='bold'>SFO</span> to <span class='bold'>TPE</span> (6,468mi, 13h 23m)</p>
 <p>Airport distribution (top countries): <span class='bold'>China</span>: 6, <span class='bold'>United States</span>: 4, <span class='bold'>United Kingdom</span>: 3, <span class='bold'>Cyprus</span>: 1, <span class='bold'>Egypt</span>: 1
 <br>Airports by total visits: <span class='bold'>PEK</span>: 10, <span class='bold'>SFO</span>: 4, <span class='bold'>EWR</span>: 3, <span class='bold'>AMM</span>: 2, <span class='bold'>KJI</span>: 2
-<br>Top routes: <span class='bold'>KJI</span> to <span class='bold'>URC</span>: 2, <span class='bold'>PEK</span> to <span class='bold'>UBN</span>: 2, <span class='bold'>AMM</span> to <span class='bold'>CAI</span>: 1, <span class='bold'>PKX</span> to <span class='bold'>URC</span>: 1, <span class='bold'>PFO</span> to <span class='bold'>STN</span>: 1
+<br>Top routes: <span class='bold'>KJI</span> to <span class='bold'>URC</span>: 2, <span class='bold'>PEK</span> to <span class='bold'>UBN</span>: 2, <span class='bold'>LGW</span> to <span class='bold'>LIS</span>: 1, <span class='bold'>PKX</span> to <span class='bold'>URC</span>: 1, <span class='bold'>PFO</span> to <span class='bold'>STN</span>: 1
 <br>Top airlines: <span class='bold'>United</span>: 7, <span class='bold'>Air China</span>: 6, <span class='bold'>China Southern</span>: 3, <span class='bold'>EgyptAir</span>: 2, <span class='bold'>MIAT</span>: 2
 <p>Early arrivals: <span class='bold'>5</span> (20%)
 <br>On-time arrivals (within 15min): <span class='bold'>3</span> (12%)
@@ -20,7 +20,7 @@
 <br>Evening flights (6p-11p): <span class='bold'>8</span> (32%)
 <br>Late night flights (11p-5a): <span class='bold'>3</span> (12%)
 </p>
-<p><span class='bold'>Domestic</span>: 8,779mi, 8 flights
+<p><span class='bold'>Domestic</span>: 9,065mi, 8 flights
 <br><span class='bold'>International</span>: 46,937mi, 17 flights</p>
-<p><span class='bold'>Economy</span>: 49,248mi, 24 flights
+<p><span class='bold'>Economy</span>: 49,534mi, 24 flights
 <br><span class='bold'>Lie-flat Business</span>: 6,468mi, 1 flights</p>

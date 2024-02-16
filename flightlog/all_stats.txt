@@ -1,5 +1,5 @@
-<h2><span class='bold'>Alex's Flight Log (1/2015-6/2024)</span></h2><p>Total Distance Flown: <span class='bold'>670,591</span>mi
-<br>Total Time in Air: <span class='bold'>57 days, 11:16:00</span>
+<h2><span class='bold'>Alex's Flight Log (1/2015-6/2024)</span></h2><p>Total Distance Flown: <span class='bold'>670,877</span>mi
+<br>Total Time in Air: <span class='bold'>57 days, 11:26:00</span>
 <br>Total Flights: <span class='bold'>297</span>
 <br>Number of Airlines: <span class='bold'>43</span>, Countries: <span class='bold'>38</span>, Airports: <span class='bold'>104</span>
 <p>Longest interval between flights: <span class='bold'>157 days 18:22:00</span> (2016-07-10 to 2016-12-15)
@@ -20,9 +20,9 @@
 <br>Evening flights (6p-11p): <span class='bold'>73</span> (25%)
 <br>Late night flights (11p-5a): <span class='bold'>18</span> (6%)
 </p>
-<p><span class='bold'>Domestic</span>: 196,893mi, 173 flights
+<p><span class='bold'>Domestic</span>: 197,179mi, 173 flights
 <br><span class='bold'>International</span>: 473,698mi, 124 flights</p>
-<p><span class='bold'>Economy</span>: 460,135mi, 226 flights
+<p><span class='bold'>Economy</span>: 460,421mi, 226 flights
 <br><span class='bold'>International First</span>: 5,699mi, 1 flights
 <br><span class='bold'>Lie-flat Business</span>: 162,225mi, 33 flights
 <br><span class='bold'>Premium Economy</span>: 18,826mi, 6 flights
@@ -36,4 +36,4 @@
 <br><span class='bold'>2021</span>: 123h 25m, 33 flights, 58,951mi 
 <br><span class='bold'>2022</span>: 171h 59m, 35 flights, 88,373mi 
 <br><span class='bold'>2023</span>: 182h 39m, 44 flights, 84,549mi 
-<br><span class='bold'>2024</span>: 128h 4m, 25 flights, 55,716mi </p>
+<br><span class='bold'>2024</span>: 128h 14m, 25 flights, 56,002mi </p>
