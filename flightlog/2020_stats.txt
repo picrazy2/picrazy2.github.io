@@ -1,10 +1,10 @@
-<h2><span class='bold'>Alex's Flight Log (2020)</span></h2><p>Total Distance Flown: <span class='bold'>48,040</span>mi
-<br>Total Time in Air: <span class='bold'>4 days, 5:05:00</span>
+<h2><span class='bold'>Alex's Flight Log (2020)</span></h2><p>Total Distance Flown: <span class='bold'>48,041</span>mi
+<br>Total Time in Air: <span class='bold'>4 days, 5:04:00</span>
 <br>Total Flights: <span class='bold'>30</span>
 <br>Number of Airlines: <span class='bold'>7</span>, Countries: <span class='bold'>6</span>, Airports: <span class='bold'>19</span>
 <p>Longest interval between flights: <span class='bold'>157 days 18:22:00</span> (2016-07-10 to 2016-12-15)
-<br>Month with most flying: <span class='bold'>2021-06</span> (10 flights, 38h 33m) or <span class='bold'>2024-01</span> (8 flights, 47h 12m)
-<p>Shortest flight: <span class='bold'>EWR</span> to <span class='bold'>BOS</span> (200mi, 35min)
+<br>Month with most flying: <span class='bold'>2021-06</span> (10 flights, 38h 32m) or <span class='bold'>2024-01</span> (8 flights, 47h 10m)
+<p>Shortest flight: <span class='bold'>EWR</span> to <span class='bold'>BOS</span> (201mi, 35min)
 <br>Longest flight: <span class='bold'>PEK</span> to <span class='bold'>SFO</span> (5,913mi, 10h 50m)</p>
 <p>Airport distribution (top countries): <span class='bold'>United States</span>: 11, <span class='bold'>China</span>: 3, <span class='bold'>Thailand</span>: 2, <span class='bold'>Japan</span>: 1, <span class='bold'>Saint Kitts and Nevis</span>: 1
 <br>Airports by total visits: <span class='bold'>BOS</span>: 14, <span class='bold'>PEK</span>: 4, <span class='bold'>ORD</span>: 4, <span class='bold'>SFO</span>: 3, <span class='bold'>EWR</span>: 3
@@ -20,8 +20,8 @@
 <br>Evening flights (6p-11p): <span class='bold'>4</span> (13%)
 <br>Late night flights (11p-5a): <span class='bold'>2</span> (7%)
 </p>
-<p><span class='bold'>Domestic</span>: 35,641mi, 24 flights
-<br><span class='bold'>International</span>: 12,398mi, 6 flights</p>
+<p><span class='bold'>Domestic</span>: 35,644mi, 24 flights
+<br><span class='bold'>International</span>: 12,397mi, 6 flights</p>
 <p><span class='bold'>Economy</span>: 27,504mi, 19 flights
 <br><span class='bold'>Lie-flat Business</span>: 15,315mi, 4 flights
-<br><span class='bold'>Recliner First</span>: 5,220mi, 7 flights</p>
+<br><span class='bold'>Recliner First</span>: 5,222mi, 7 flights</p>
