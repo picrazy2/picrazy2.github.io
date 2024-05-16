@@ -7,7 +7,7 @@
 <p>Shortest flight: <span class='bold'>BOS</span> to <span class='bold'>EWR</span> (201mi, 39min)
 <br>Longest flight: <span class='bold'>DXB</span> to <span class='bold'>YYZ</span> (6,899mi, 13h 50m)</p>
 <p>Airport distribution (top countries): <span class='bold'>United States</span>: 5, <span class='bold'>China</span>: 3, <span class='bold'>France</span>: 2, <span class='bold'>South Africa</span>: 2, <span class='bold'>Bermuda</span>: 1
-<br>Airports by total visits: <span class='bold'>BOS</span>: 11, <span class='bold'>PEK</span>: 8, <span class='bold'>EWR</span>: 4, <span class='bold'>BCN</span>: 2, <span class='bold'>KEF</span>: 2
+<br>Airports by total visits: <span class='bold'>BOS</span>: 13, <span class='bold'>EWR</span>: 7, <span class='bold'>PEK</span>: 7, <span class='bold'>SFO</span>: 5, <span class='bold'>CDG</span>: 4
 <br>Top routes: <span class='bold'>BOS</span> to <span class='bold'>EWR</span>: 5, <span class='bold'>BOS</span> to <span class='bold'>SFO</span>: 4, <span class='bold'>EWR</span> to <span class='bold'>PEK</span>: 3, <span class='bold'>BDA</span> to <span class='bold'>JFK</span>: 2, <span class='bold'>CDG</span> to <span class='bold'>NCE</span>: 2
 <br>Top airlines: <span class='bold'>United</span>: 16, <span class='bold'>Air Canada</span>: 2, <span class='bold'>Air France</span>: 2, <span class='bold'>American</span>: 2, <span class='bold'>Emirates</span>: 2
 <p>Early arrivals: <span class='bold'>24</span> (75%)

@@ -7,7 +7,7 @@
 <p>Shortest flight: <span class='bold'>HNL</span> to <span class='bold'>LIH</span> (102mi, 42min)
 <br>Longest flight: <span class='bold'>SFO</span> to <span class='bold'>TPE</span> (6,469mi, 13h 23m)</p>
 <p>Airport distribution (top countries): <span class='bold'>China</span>: 6, <span class='bold'>United States</span>: 6, <span class='bold'>United Kingdom</span>: 3, <span class='bold'>Peru</span>: 2, <span class='bold'>Canada</span>: 1
-<br>Airports by total visits: <span class='bold'>SFO</span>: 17, <span class='bold'>PEK</span>: 9, <span class='bold'>EWR</span>: 5, <span class='bold'>LHR</span>: 5, <span class='bold'>HKG</span>: 4
+<br>Airports by total visits: <span class='bold'>PEK</span>: 12, <span class='bold'>SFO</span>: 11, <span class='bold'>LHR</span>: 7, <span class='bold'>LIM</span>: 3, <span class='bold'>EWR</span>: 3
 <br>Top routes: <span class='bold'>LAS</span> to <span class='bold'>SFO</span>: 2, <span class='bold'>KJI</span> to <span class='bold'>URC</span>: 2, <span class='bold'>PEK</span> to <span class='bold'>UBN</span>: 2, <span class='bold'>NRT</span> to <span class='bold'>PEK</span>: 2, <span class='bold'>LHR</span> to <span class='bold'>SFO</span>: 2
 <br>Top airlines: <span class='bold'>United</span>: 10, <span class='bold'>Air China</span>: 8, <span class='bold'>Etihad</span>: 4, <span class='bold'>China Southern</span>: 3, <span class='bold'>EgyptAir</span>: 2
 <p>Early arrivals: <span class='bold'>14</span> (33%)

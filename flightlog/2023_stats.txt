@@ -7,7 +7,7 @@
 <p>Shortest flight: <span class='bold'>LAX</span> to <span class='bold'>LAS</span> (236mi, 39min)
 <br>Longest flight: <span class='bold'>SFO</span> to <span class='bold'>HKG</span> (6,927mi, 13h 35m)</p>
 <p>Airport distribution (top countries): <span class='bold'>China</span>: 10, <span class='bold'>United States</span>: 10, <span class='bold'>United Kingdom</span>: 2, <span class='bold'>Czech Republic</span>: 1, <span class='bold'>France</span>: 1
-<br>Airports by total visits: <span class='bold'>SFO</span>: 21, <span class='bold'>AKL</span>: 4, <span class='bold'>SIN</span>: 4, <span class='bold'>EWR</span>: 3, <span class='bold'>IAH</span>: 3
+<br>Airports by total visits: <span class='bold'>SFO</span>: 17, <span class='bold'>PEK</span>: 9, <span class='bold'>EWR</span>: 5, <span class='bold'>LHR</span>: 5, <span class='bold'>HKG</span>: 4
 <br>Top routes: <span class='bold'>SEA</span> to <span class='bold'>SFO</span>: 3, <span class='bold'>LHR</span> to <span class='bold'>SFO</span>: 2, <span class='bold'>PEK</span> to <span class='bold'>WAW</span>: 2, <span class='bold'>OAK</span> to <span class='bold'>SLC</span>: 2, <span class='bold'>LAX</span> to <span class='bold'>SFO</span>: 2
 <br>Top airlines: <span class='bold'>United</span>: 18, <span class='bold'>Air China</span>: 6, <span class='bold'>LOT</span>: 4, <span class='bold'>Delta</span>: 3, <span class='bold'>Alaska</span>: 2
 <p>Early arrivals: <span class='bold'>35</span> (80%)
