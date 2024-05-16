@@ -7,7 +7,7 @@
 <p>Shortest flight: <span class='bold'>EWR</span> to <span class='bold'>BOS</span> (201mi, 43min)
 <br>Longest flight: <span class='bold'>SIN</span> to <span class='bold'>SFO</span> (8,446mi, 14h 9m)</p>
 <p>Airport distribution (top countries): <span class='bold'>United States</span>: 5, <span class='bold'>China</span>: 3, <span class='bold'>Spain</span>: 3, <span class='bold'>Japan</span>: 2, <span class='bold'>Bahamas</span>: 1
-<br>Airports by total visits: <span class='bold'>BOS</span>: 11, <span class='bold'>PEK</span>: 8, <span class='bold'>EWR</span>: 4, <span class='bold'>BCN</span>: 2, <span class='bold'>KEF</span>: 2
+<br>Airports by total visits: <span class='bold'>PEK</span>: 15, <span class='bold'>BOS</span>: 14, <span class='bold'>EWR</span>: 7, <span class='bold'>URC</span>: 4, <span class='bold'>LAX</span>: 3
 <br>Top routes: <span class='bold'>BOS</span> to <span class='bold'>EWR</span>: 3, <span class='bold'>EWR</span> to <span class='bold'>PEK</span>: 2, <span class='bold'>BOS</span> to <span class='bold'>KEF</span>: 2, <span class='bold'>BOS</span> to <span class='bold'>PVG</span>: 2, <span class='bold'>HGH</span> to <span class='bold'>PEK</span>: 2
 <br>Top airlines: <span class='bold'>United</span>: 13, <span class='bold'>Hainan</span>: 3, <span class='bold'>Lufthansa</span>: 2, <span class='bold'>TAP</span>: 2, <span class='bold'>Wow</span>: 2
 <p>Early arrivals: <span class='bold'>18</span> (69%)

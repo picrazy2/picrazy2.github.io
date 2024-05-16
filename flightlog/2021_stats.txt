@@ -7,7 +7,7 @@
 <p>Shortest flight: <span class='bold'>EWR</span> to <span class='bold'>BOS</span> (201mi, 42min)
 <br>Longest flight: <span class='bold'>LIS</span> to <span class='bold'>SFO</span> (5,681mi, 11h 31m)</p>
 <p>Airport distribution (top countries): <span class='bold'>United States</span>: 10, <span class='bold'>Turkey</span>: 2, <span class='bold'>Dominican Republic</span>: 1, <span class='bold'>Germany</span>: 1, <span class='bold'>Italy</span>: 1
-<br>Airports by total visits: <span class='bold'>BOS</span>: 10, <span class='bold'>SFO</span>: 8, <span class='bold'>EWR</span>: 5, <span class='bold'>IST</span>: 4, <span class='bold'>DEN</span>: 4
+<br>Airports by total visits: <span class='bold'>BOS</span>: 14, <span class='bold'>PEK</span>: 4, <span class='bold'>ORD</span>: 4, <span class='bold'>SFO</span>: 3, <span class='bold'>EWR</span>: 3
 <br>Top routes: <span class='bold'>BOS</span> to <span class='bold'>EWR</span>: 4, <span class='bold'>BOS</span> to <span class='bold'>DEN</span>: 2, <span class='bold'>DEN</span> to <span class='bold'>SGU</span>: 2, <span class='bold'>PVR</span> to <span class='bold'>SFO</span>: 2, <span class='bold'>LIS</span> to <span class='bold'>SFO</span>: 2
 <br>Top airlines: <span class='bold'>United</span>: 20, <span class='bold'>JetBlue</span>: 5, <span class='bold'>TAP</span>: 4, <span class='bold'>Turkish</span>: 3, <span class='bold'>Lufthansa</span>: 1
 <p>Early arrivals: <span class='bold'>23</span> (70%)

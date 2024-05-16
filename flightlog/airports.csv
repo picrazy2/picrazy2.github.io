@@ -3253,7 +3253,7 @@
 3450,Griffiss International Airport,Rome,United States,RME,KRME,43.23379898,-75.40699768,504,-5,A,America/New_York,airport,OurAirports
 3451,Wendover Airport,Wendover,United States,ENV,KENV,40.71870041,-114.0309982,4237,-7,A,America/Denver,airport,OurAirports
 3452,Mobile Downtown Airport,Mobile,United States,BFM,KBFM,30.62680054,-88.06809998,26,-6,A,America/Chicago,airport,OurAirports
-3453,Metropolitan Oakland International Airport,Oakland,United States,OAK,KOAK,37.721298,-122.221001,9,-8,A,America/Los_Angeles,airport,OurAirports
+3453,Metropolitan Oakland International Airport,San Francisco Bay,United States,OAK,KOAK,37.721298,-122.221001,9,-8,A,America/Los_Angeles,airport,OurAirports
 3454,Eppley Airfield,Omaha,United States,OMA,KOMA,41.3032,-95.894096,984,-6,A,America/Chicago,airport,OurAirports
 3455,Port Angeles Cgas Airport,Port Angeles,United States,\N,KNOW,48.14149857,-123.4140015,13,-8,A,America/Los_Angeles,airport,OurAirports
 3456,Kahului Airport,Kahului,United States,OGG,PHOG,20.8986,-156.429993,54,-10,N,Pacific/Honolulu,airport,OurAirports
@@ -3269,7 +3269,7 @@
 3466,Anderson Regional Airport,Andersen,United States,AND,KAND,34.49459839,-82.70939636,782,-5,A,America/New_York,airport,OurAirports
 3467,Spokane International Airport,Spokane,United States,GEG,KGEG,47.61989975,-117.5339966,2376,-8,A,America/Los_Angeles,airport,OurAirports
 3468,North Perry Airport,Hollywood,United States,HWO,KHWO,26.0012,-80.2407,8,-5,A,America/New_York,airport,OurAirports
-3469,San Francisco International Airport,San Francisco,United States,SFO,KSFO,37.61899948,-122.375,13,-8,A,America/Los_Angeles,airport,OurAirports
+3469,San Francisco International Airport,San Francisco Bay,United States,SFO,KSFO,37.61899948,-122.375,13,-8,A,America/Los_Angeles,airport,OurAirports
 3470,Cut Bank International Airport,Cutbank,United States,CTB,KCTB,48.60839844,-112.3759995,3854,-7,A,America/Denver,airport,OurAirports
 3471,Acadiana Regional Airport,Louisiana,United States,ARA,KARA,30.0378,-91.883904,24,-6,A,America/Chicago,airport,OurAirports
 3472,Gainesville Regional Airport,Gainesville,United States,GNV,KGNV,29.69009972,-82.27179718,152,-5,A,America/New_York,airport,OurAirports
@@ -3294,7 +3294,7 @@
 3491,Huron Regional Airport,Huron,United States,HON,KHON,44.3852005,-98.22850037,1289,-6,A,America/Chicago,airport,OurAirports
 3492,Juneau International Airport,Juneau,United States,JNU,PAJN,58.35499954,-134.576004,21,-9,A,America/Anchorage,airport,OurAirports
 3493,Lafayette Regional Airport,Lafayette,United States,LFT,KLFT,30.20529938,-91.98760223,42,-6,A,America/Chicago,airport,OurAirports
-3494,Newark Liberty International Airport,Newark,United States,EWR,KEWR,40.69250107,-74.16870117,18,-5,A,America/New_York,airport,OurAirports
+3494,Newark Liberty International Airport,New York,United States,EWR,KEWR,40.69250107,-74.16870117,18,-5,A,America/New_York,airport,OurAirports
 3495,Boise Air Terminal/Gowen Field,Boise,United States,BOI,KBOI,43.5644,-116.223,2871,-7,A,America/Denver,airport,OurAirports
 3496,Creech Air Force Base,Indian Springs,United States,INS,KINS,36.58720016,-115.6729965,3133,-8,A,America/Los_Angeles,airport,OurAirports
 3497,Garden City Regional Airport,Garden City,United States,GCK,KGCK,37.92750168,-100.723999,2891,-6,A,America/Chicago,airport,OurAirports
@@ -3547,7 +3547,7 @@
 3745,Syracuse Hancock International Airport,Syracuse,United States,SYR,KSYR,43.11119843,-76.10630035,421,-5,A,America/New_York,airport,OurAirports
 3746,Naval Air Station Key West/Boca Chica Field,Key West,United States,NQX,KNQX,24.57579994,-81.68890381,6,-5,A,America/New_York,airport,OurAirports
 3747,Chicago Midway International Airport,Chicago,United States,MDW,KMDW,41.785999,-87.752403,620,-6,A,America/Chicago,airport,OurAirports
-3748,Norman Y. Mineta San Jose International Airport,San Jose,United States,SJC,KSJC,37.362598,-121.929001,62,-8,A,America/Los_Angeles,airport,OurAirports
+3748,Norman Y. Mineta San Jose International Airport,San Francisco Bay,United States,SJC,KSJC,37.362598,-121.929001,62,-8,A,America/Los_Angeles,airport,OurAirports
 3749,Lea County Regional Airport,Hobbs,United States,HOB,KHOB,32.6875,-103.2170029,3661,-7,A,America/Denver,airport,OurAirports
 3750,Northeast Philadelphia Airport,Philadelphia,United States,PNE,KPNE,40.081902,-75.010597,120,-5,A,America/New_York,airport,OurAirports
 3751,Denver International Airport,Denver,United States,DEN,KDEN,39.86169815,-104.6729965,5431,-7,A,America/Denver,airport,OurAirports

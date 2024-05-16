@@ -7,7 +7,7 @@
 <p>Shortest flight: <span class='bold'>IAH</span> to <span class='bold'>AUS</span> (140mi, 31min)
 <br>Longest flight: <span class='bold'>SFO</span> to <span class='bold'>SIN</span> (8,446mi, 16h 9m)</p>
 <p>Airport distribution (top countries): <span class='bold'>United States</span>: 12, <span class='bold'>New Zealand</span>: 3, <span class='bold'>Germany</span>: 2, <span class='bold'>Costa Rica</span>: 1, <span class='bold'>Dominican Republic</span>: 1
-<br>Airports by total visits: <span class='bold'>SFO</span>: 21, <span class='bold'>AKL</span>: 4, <span class='bold'>SIN</span>: 4, <span class='bold'>EWR</span>: 3, <span class='bold'>IAH</span>: 3
+<br>Airports by total visits: <span class='bold'>BOS</span>: 10, <span class='bold'>SFO</span>: 8, <span class='bold'>EWR</span>: 5, <span class='bold'>IST</span>: 4, <span class='bold'>DEN</span>: 4
 <br>Top routes: <span class='bold'>EWR</span> to <span class='bold'>SFO</span>: 3, <span class='bold'>IAH</span> to <span class='bold'>SJO</span>: 2, <span class='bold'>IAH</span> to <span class='bold'>SFO</span>: 2, <span class='bold'>SFO</span> to <span class='bold'>SLC</span>: 2, <span class='bold'>SFO</span> to <span class='bold'>SIN</span>: 2
 <br>Top airlines: <span class='bold'>United</span>: 23, <span class='bold'>Lufthansa</span>: 5, <span class='bold'>Air New Zealand</span>: 3, <span class='bold'>Alaska</span>: 2, <span class='bold'>JetStar</span>: 1
 <p>Early arrivals: <span class='bold'>24</span> (69%)

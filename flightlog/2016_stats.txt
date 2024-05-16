@@ -7,7 +7,7 @@
 <p>Shortest flight: <span class='bold'>BOS</span> to <span class='bold'>EWR</span> (201mi, 41min)
 <br>Longest flight: <span class='bold'>BOS</span> to <span class='bold'>PEK</span> (6,737mi, 13h 29m)</p>
 <p>Airport distribution (top countries): <span class='bold'>United States</span>: 7, <span class='bold'>China</span>: 6, <span class='bold'>Australia</span>: 2, <span class='bold'>Malaysia</span>: 1, <span class='bold'>Singapore</span>: 1
-<br>Airports by total visits: <span class='bold'>PEK</span>: 9, <span class='bold'>BOS</span>: 6, <span class='bold'>BNE</span>: 2, <span class='bold'>SFO</span>: 2, <span class='bold'>CTU</span>: 2
+<br>Airports by total visits: <span class='bold'>BOS</span>: 6, <span class='bold'>PEK</span>: 6, <span class='bold'>EWR</span>: 3, <span class='bold'>LAX</span>: 2, <span class='bold'>SYX</span>: 2
 <br>Top routes: <span class='bold'>BOS</span> to <span class='bold'>PEK</span>: 3, <span class='bold'>BNE</span> to <span class='bold'>SIN</span>: 1, <span class='bold'>IAD</span> to <span class='bold'>PEK</span>: 1, <span class='bold'>PHL</span> to <span class='bold'>RDU</span>: 1, <span class='bold'>PEK</span> to <span class='bold'>XIY</span>: 1
 <br>Top airlines: <span class='bold'>United</span>: 7, <span class='bold'>Hainan</span>: 4, <span class='bold'>American</span>: 2, <span class='bold'>China Eastern</span>: 2, <span class='bold'>Sichuan</span>: 2
 <p>Early arrivals: <span class='bold'>16</span> (73%)
