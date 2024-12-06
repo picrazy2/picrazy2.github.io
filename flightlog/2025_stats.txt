@@ -1,25 +1,25 @@
-<h2><span class='bold'>Alex's Flight Log (2025)</span></h2><p>Total Distance Flown: <span class='bold'>8,779</span>mi
-<br>Total Time in Air: <span class='bold'>21:45:00</span>
-<br>Total Flights: <span class='bold'>5</span>
-<br>Number of Airlines: <span class='bold'>3</span>, Countries: <span class='bold'>4</span>, Airports: <span class='bold'>6</span>
+<h2><span class='bold'>Alex's Flight Log (2025)</span></h2><p>Total Distance Flown: <span class='bold'>15,848</span>mi
+<br>Total Time in Air: <span class='bold'>1 day, 14:05:00</span>
+<br>Total Flights: <span class='bold'>8</span>
+<br>Number of Airlines: <span class='bold'>6</span>, Countries: <span class='bold'>6</span>, Airports: <span class='bold'>10</span>
 <p>Longest interval between flights: <span class='bold'>157 days 18:22:00</span> (2016-07-10 to 2016-12-15)
 <br>Month with most flying: <span class='bold'>2021-06</span> (10 flights, 38h 32m) or <span class='bold'>2024-01</span> (8 flights, 47h 10m)
-<p>Shortest flight: <span class='bold'>BCN</span> to <span class='bold'>AGP</span> (476mi, 1h 40m)
+<p>Shortest flight: <span class='bold'>AGA</span> to <span class='bold'>TFS</span> (460mi, 1h 35m)
 <br>Longest flight: <span class='bold'>PVG</span> to <span class='bold'>ATH</span> (5,329mi, 11h 40m)</p>
-<p>Airport distribution (top countries): <span class='bold'>China</span>: 2, <span class='bold'>Spain</span>: 2, <span class='bold'>Greece</span>: 1, <span class='bold'>United Kingdom</span>: 1
-<br>Airports by total visits: <span class='bold'>AGP</span>: 2, <span class='bold'>ATH</span>: 2, <span class='bold'>BCN</span>: 1, <span class='bold'>CAN</span>: 1, <span class='bold'>PVG</span>: 1
-<br>Top routes: <span class='bold'>AGP</span> to <span class='bold'>BCN</span>: 1, <span class='bold'>AGP</span> to <span class='bold'>LHR</span>: 1, <span class='bold'>ATH</span> to <span class='bold'>BCN</span>: 1, <span class='bold'>ATH</span> to <span class='bold'>PVG</span>: 1, <span class='bold'>CAN</span> to <span class='bold'>PVG</span>: 1
-<br>Top airlines: <span class='bold'>Juneyao</span>: 2, <span class='bold'>Vueling</span>: 2, <span class='bold'>British Airways</span>: 1
+<p>Airport distribution (top countries): <span class='bold'>Spain</span>: 3, <span class='bold'>China</span>: 2, <span class='bold'>United States</span>: 2, <span class='bold'>Greece</span>: 1, <span class='bold'>Morocco</span>: 1
+<br>Airports by total visits: <span class='bold'>AGP</span>: 2, <span class='bold'>ATH</span>: 2, <span class='bold'>LHR</span>: 2, <span class='bold'>AGA</span>: 1, <span class='bold'>BCN</span>: 1
+<br>Top routes: <span class='bold'>AGA</span> to <span class='bold'>TFS</span>: 1, <span class='bold'>AGP</span> to <span class='bold'>BCN</span>: 1, <span class='bold'>AGP</span> to <span class='bold'>LHR</span>: 1, <span class='bold'>ATH</span> to <span class='bold'>BCN</span>: 1, <span class='bold'>ATH</span> to <span class='bold'>PVG</span>: 1
+<br>Top airlines: <span class='bold'>Juneyao</span>: 2, <span class='bold'>Vueling</span>: 2, <span class='bold'>British Airways</span>: 1, <span class='bold'>Ryanair</span>: 1, <span class='bold'>United</span>: 1
 <p>Early arrivals: <span class='bold'>0</span> (0%)
-<br>On-time arrivals (within 15min): <span class='bold'>5</span> (100%)
+<br>On-time arrivals (within 15min): <span class='bold'>8</span> (100%)
 <br>Late arrivals (up to 1hr delay): <span class='bold'>0</span> (0%)
 <br>Really late arrivals (>1hr delay): <span class='bold'>0</span> (0%)
 </p>
-<p>Morning flights (5am-12p): <span class='bold'>1</span> (20%)
-<br>Afternoon flights (12p-6p): <span class='bold'>2</span> (40%)
-<br>Evening flights (6p-11p): <span class='bold'>1</span> (20%)
-<br>Late night flights (11p-5a): <span class='bold'>1</span> (20%)
+<p>Morning flights (5am-12p): <span class='bold'>1</span> (12%)
+<br>Afternoon flights (12p-6p): <span class='bold'>3</span> (38%)
+<br>Evening flights (6p-11p): <span class='bold'>3</span> (38%)
+<br>Late night flights (11p-5a): <span class='bold'>1</span> (12%)
 </p>
 <p><span class='bold'>Domestic</span>: 1,223mi, 2 flights
-<br><span class='bold'>International</span>: 7,556mi, 3 flights</p>
-<p><span class='bold'>Economy</span>: 8,779mi, 5 flights</p>
+<br><span class='bold'>International</span>: 14,625mi, 6 flights</p>
+<p><span class='bold'>Economy</span>: 15,848mi, 8 flights</p>
