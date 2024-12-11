@@ -326,4 +326,6 @@ Date,Scheduled Dep Time (Local),Scheduled Arr Time (Local),Actual Dep Time (Loca
 4/9/2025,13:50,17:35,,,Ryanair,RK8528,STN,OZZ,Economy,,,,
 4/15/2025,18:45,20:20,,,Ryanair,FR961,AGA,TFS,Economy,,,1,
 4/16/2025,12:00,14:55,,,United,UA249,TFS,EWR,Economy,,,,
+4/21/2025,9:30,13:14,,,Alaska,AS33,JFK,SFO,Economy,,,,
+4/23/2025,23:20,8:12+1,,,United,UA1655,SFO,BOS,Economy,,,,
 4/27/2025,20:45,8:35+1,,,Virgin Atlantic,VS158,BOS,LHR,Economy,,,,
