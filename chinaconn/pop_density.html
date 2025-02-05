@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>ChinaConn</title>
+		<script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
+		<link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
+		<style>
+			body {
+			  margin: 0;
+			  padding: 0;
+			}
+
+			h2,
+			h3 {
+			  margin: 10px;
+			  font-size: 1.2em;
+			  font-family: 'open_sansbold';
+			}
+
+			h3 {
+			  font-size: 1em;
+			  font-family: 'open_sansbold';
+			}
+
+			p {
+			  font-size: 0.85em;
+			  margin: 10px;
+			  text-align: left;
+			  font-family: 'open_sansregular';
+			}
+
+			@font-face {
+			    font-family: 'open_sansbold';
+			    src: url('../fonts/opensans-bold-webfont.woff2') format('woff2'),
+			         url('../fonts/opensans-bold-webfont.woff') format('woff');
+			    font-weight: normal;
+			    font-style: normal;
+			}
+			
+			@font-face {
+			    font-family: 'open_sansregular';
+			    src: url('../fonts/opensans-regular-webfont.woff2') format('woff2'),
+			         url('../fonts/opensans-regular-webfont.woff') format('woff');
+			    font-weight: normal;
+			    font-style: normal;
+			}
+
+			/* MAPPPPPP */
+			#map {
+			  position: absolute;
+			  top: 0;
+			  bottom: 0;
+			  width: 100%;
+			}
+
+
+			/* LAYERS: top left */
+			#menu {
+		        background: #fff;
+		        position: absolute;
+		        z-index: 1;
+		        top: 20px;
+		        left: 20px;
+		        border-radius: 3px;
+		        width: 150px;
+		        border: 1px solid rgba(0, 0, 0, 0.4);
+		        font-family: 'open_sansregular', sans-serif;
+		    }
+		    #menu a {
+		        font-size: 13px;
+		        color: #404040;
+		        display: block;
+		        margin: 0;
+		        padding: 0;
+		        padding: 10px;
+		        text-decoration: none;
+		        border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+		        text-align: center;
+		    }
+		    #menu a:last-child {
+		        border: none;
+		    }
+		    #menu a:hover {
+		        background-color: #f8f8f8;
+		        color: #404040;
+		    }
+		    #menu a.active {
+		        background-color: #3887be;
+		        color: #ffffff;
+		    }
+		    #menu a.active:hover {
+		        background: #3074a4;
+		    }
+
+
+
+
+			/*INFO: top right */
+			.map-overlay {
+			  position: absolute;
+/*			  bottom: 0;
+*/			  background: rgba(255, 255, 255, 0.8);
+			  margin-right: 20px;
+			  font-family: 'open_sansregular', sans-serif;
+			  overflow: auto;
+			  border-radius: 3px;
+			}
+
+			#city {
+			  top: 0;
+			  right: 0;
+			  height: 370px;
+			  margin-top: 20px;
+			  width: 400px;
+			}
+
+			#features {
+/*			  top: 200;
+*/			  right: 0;
+			  height: 150px;
+			  margin-top: 400px;
+			  width: 400px;
+			  visibility: hidden;
+			}
+
+
+
+			/* LEGEND: bottom left */
+			#legend {
+			  padding: 20px;
+			  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+/*			  line-height: 20px;
+*/			  bottom: 40px;
+			  left: 20px;
+			  font-family: 'open_sansregular', sans-serif;
+			}
+			.legend-key {
+			  display: inline-block;
+			  border-radius: 20%;
+			  width: 18px;
+			  height: 18px;
+			  margin-right: 5px;
+			}
+			.legend-key-circle {
+			  display: inline-block;
+			  border-radius: 50%;
+			  width: 18px;
+			  height: 18px;
+			  margin-right: 5px;
+			}
+
+
+			.bold {font-family: 'open_sansbold';}
+
+
+
+		</style>
+	</head>
+	<body>
+		<nav id='menu'></nav>
+		<div id='map'></div>
+		<div class='map-overlay' id='city'>
+			<h2><span class='bold'>Connectivity of China</span></h2>
+ 			<div>
+				<p> Welcome to ChinaConn, an interactive website to visualize and spatialize China's inter-city transportation network. As of 2019, mainland China has 2851 counties, 239 airports, and 3015 train staions. There are over 6,000 domestic air routes and 200,000 rail routes served by 10,000 sets of trains every day. </p>
+
+				<p> On this map, you'll find China's passenger train stations and civil airports with reguarly scheduled commercial flights in the context of China's population geography represented by county-level popuplation density.</p>
+
+				<p>Elsewhere on this website, you'll find detailed information about China's airports and train stations and their spatial relation to China's population. You'l also find a connectivity analysis of the capitals of each of China's 31 provinces (not including HK, Macau, or Taiwan), from three separate transportation modes: air, rail, and road. Enjoy!
+				</p>
+
+			</div>
+		</div>
+		<div class='map-overlay' id='features'>
+			<div id='pd'>
+			</div>
+		</div>
+		<div class='map-overlay' id='legend'></div>
+
+	</body>
+</html>
+<script>
+	// TO MAKE THE MAP APPEAR YOU MUST
+	// ADD YOUR ACCESS TOKEN FROM
+	// https://account.mapbox.com
+	mapboxgl.accessToken = 'pk.eyJ1IjoicGljcmF6eTIiLCJhIjoiY2thMG1vdDQ0MHMxajNtcXI1ZnpiYnFpZiJ9.iYJgxRpR27z5rtZGoGXl2g';
+
+
+	function get_time(hours) {
+		return [Math.trunc(hours), Math.trunc(60 *(hours - Math.trunc(hours)))]
+	}
+	function get_time_str(hours) {
+		if(get_time(hours)[0] == 0) {
+			return get_time(hours)[1] + 'min'
+		} else {
+			return get_time(hours)[0] + 'h ' + get_time(hours)[1] + 'm'						
+		}
+	}
+
+	function get_time_m(min) {
+		return [Math.trunc(min/60), min - 60*Math.trunc(min/60)]
+	}
+	function get_time_str_m(min) {
+		if(get_time_m(min)[0] == 0) {
+			return get_time_m(min)[1] + 'min'
+		} else {
+			return get_time_m(min)[0] + 'h ' + get_time_m(min)[1] + 'm'						
+		}
+	}
+
+
+
+	var pop_layers = ['<1 person/km2', '1-2.5', '2.5-5', '5-10', '10-25', '25-50', '50-100', '100-250', '250-500', '500-1000', '1000+'];
+	var pop_colors = ['#ffffe5', '#fff9c4', '#feeba2', '#fed777', '#febb47', '#fe9929', '#f07818', '#d95a09', '#b84203', '#8f3104', '#662506'];
+
+	var map = new mapboxgl.Map({
+		container: 'map', // container id
+		style: 'mapbox://styles/picrazy2/cka8a1z1r0d591io0ebssgmz3',
+		center: [110, 37],
+		zoom: 3.75
+	});
+
+
+	map.on('load', function() {
+
+
+		map.moveLayer('admin-1-boundary-bg', 'settlement-subdivision-label')
+		map.moveLayer('admin-0-boundary-bg', 'settlement-subdivision-label')
+		map.moveLayer('admin-1-boundary', 'settlement-subdivision-label')
+		map.moveLayer('admin-0-boundary', 'settlement-subdivision-label')
+		map.moveLayer('admin-0-boundary-disputed', 'settlement-subdivision-label')
+
+
+		map.addSource('airports', {
+			'type': 'vector',
+			'url': 'mapbox://picrazy2.6f13skae'
+		});
+
+		map.addLayer({
+			'id': 'airports',
+			'source': 'airports',
+			'source-layer': 'airports-d0tvyn',
+			'type': 'symbol',
+			'layout': {
+				'icon-image': "airport-15",
+				'icon-allow-overlap': true,
+				'icon-size': [
+				  "interpolate",
+				  ["linear"],
+				  ["zoom"],
+				  0,
+				  0.1,
+				  22,
+				  3
+				],
+				'visibility': 'visible'
+			},
+			'paint': {}
+		}, 'admin-1-boundary-bg');
+
+
+
+		map.addSource('stations', {
+			'type': 'vector',
+			'url': 'mapbox://picrazy2.amjquafy'
+		});
+		map.addLayer({
+			'id': 'stations',
+			'source': 'stations',
+			'source-layer': 'stations-1kjk07',
+			'type': 'circle',
+			'paint': {
+				"circle-color": "hsl(0, 100%, 26%)",
+                "circle-radius": [
+                    "interpolate",
+                    ["linear"],
+                    ["zoom"],
+                    2,
+                    0.2,
+                    22,
+                    15
+                ]
+			},
+			'layout': {'visibility': 'visible'}
+		}, 'admin-1-boundary-bg');
+
+		map.addSource('capitals', {
+			'type': 'vector',
+			'url': 'mapbox://picrazy2.2sfy1oip'
+		});
+		map.addLayer({
+			'id': 'capitals',
+			'source': 'capitals',
+			'source-layer': 'pc_combined-ac9jce',
+			'type': 'circle',
+			'paint': {
+				"circle-color": '#00c925',
+                "circle-radius": [
+				  "interpolate",
+				  ["linear"],
+				  ["zoom"],
+				  2,
+				  4,
+				  22,
+				  20
+				],
+				"circle-opacity": [
+				  "match",
+				  ["get", "capital_eng"],
+				  ["CITY_LABEL"],
+				  1,
+				  0.5
+				],
+				"circle-stroke-color": '#000000',
+				"circle-stroke-width": 1,
+				"circle-stroke-opacity": 0.5
+			},
+			'layout': {'visibility': 'visible'}
+		}, 'admin-1-boundary-bg');
+
+		map.moveLayer('settlement-subdivision-label', 'capitals')
+		map.moveLayer('settlement-minor-label', 'capitals')
+		map.moveLayer('settlement-major-label', 'capitals')
+		map.moveLayer('state-label', 'capitals')
+
+		map.addSource('pop_density', {
+			'type': 'vector',
+			'url': 'mapbox://picrazy2.0r12ydfl'
+		});
+		map.addLayer(
+		{
+			'id': 'pop_density',
+			'source': 'pop_density',
+			'source-layer': 'pop_density',
+			'type': 'fill',
+			'paint': {
+				'fill-color': ["step", ["get", "pop_density"], "#ffffe5", 1, "#fff9c4", 2.5, "#feeba2", 5, "#fed777", 10, "#febb47", 25, "#fe9929", 50, "#f07818", 100, "#d95a09", 250, "#b84203", 500, "#8f3104", 1000, "#662506"],
+				'fill-opacity': 0.8
+			},
+			'layout': {'visibility': 'visible'}
+		}, 'airports'
+		);
+
+		console.log(layers)
+		for (i = 0; i < pop_layers.length; i++) {
+		  console.log('hello')
+		  var layer = pop_layers[i];
+		  var color = pop_colors[i];
+		  var item = document.createElement('div');
+		  var key = document.createElement('span');
+		  key.className = 'legend-key';
+		  key.style.backgroundColor = color;
+
+		  var value = document.createElement('span');
+		  value.innerHTML = layer;
+		  item.appendChild(key);
+		  item.appendChild(value);
+		  legend.appendChild(item);
+		}
+
+		map.on('click', 'airports', function(e) {
+			new mapboxgl.Popup()
+				.setLngLat(e.lngLat)
+				.setHTML(
+					'<h3 style=\'font-size:14px\'>' + e.features[0].properties.iata + ' ' + e.features[0].properties.english_name + '</h3>'
+					+ '<p style=\'font-size:13px\'>Total destinations: <span class=\'bold\'>' + e.features[0].properties.total_dests_num + '</span>'
+					+ '<br>Domestic destinations: <span class=\'bold\'>' + e.features[0].properties.domestic_dests_num + '</span>'
+					+ '<br>Passenger volume: <span class=\'bold\'>' + Math.round(1.0*e.features[0].properties.passenger_vol_int/10000.0)/100 + ' </span>M'
+					+ '<br>Volume rank: <span class=\'bold\'>' + e.features[0].properties.passenger_rank + '</span>/239'
+					+ '<br>Dom dests rank: <span class=\'bold\'>' + e.features[0].properties.domdests_rank + '</span>/239'
+					+ '<br>Shortest: <span class=\'bold\'>' + e.features[0].properties.closest_iata + '</span> '
+					+ '(' + Math.trunc(e.features[0].properties.closest_dist) + 'km, ' + get_time_str(e.features[0].properties.closest_dur) + ')'
+					+ '<br>Longest: <span class=\'bold\'>' + e.features[0].properties.furthest_iata + '</span> '
+					+ '(' + Math.trunc(e.features[0].properties.furthest_dist) + 'km, ' + get_time_str(e.features[0].properties.furthest_dur) + ')'
+					+ '</p>'
+					)
+				.addTo(map);
+		});
+			 
+			// Change the cursor to a pointer when the mouse is over the states layer.
+		map.on('mouseenter', 'airports', function() {
+			map.getCanvas().style.cursor = 'pointer';
+		});
+			 
+			// Change it back to a pointer when it leaves.
+		map.on('mouseleave', 'airports', function() {
+			map.getCanvas().style.cursor = '';
+		});
+
+
+		map.on('click', 'stations', function(e) {
+			var hsr_str =''
+			if(e.features[0].properties.hsr_shortest_name !== '') {
+				hsr_str = '<br>Longest HSR: <span class=\'bold\'>' + e.features[0].properties.hsr_longest_name + '</span> '
+					+ '(' + Math.trunc(e.features[0].properties.hsr_longest_dist) + 'km, ' + get_time_str_m(e.features[0].properties.hsr_longest_dur) + ')'
+			}
+			var nonhsr_str =''
+			if(e.features[0].properties.nonhsr_shortest_name !== '') {
+				nonhsr_str = '<br>Longest Conventional: <span class=\'bold\'>' + e.features[0].properties.nonhsr_longest_name + '</span> '
+					+ '(' + Math.trunc(e.features[0].properties.nonhsr_longest_dist) + 'km, ' + get_time_str_m(e.features[0].properties.nonhsr_longest_dur) + ')'	
+			}
+			new mapboxgl.Popup()
+				.setLngLat(e.lngLat)
+				.setHTML(
+					'<h3 style=\'font-size:15px\'>' + e.features[0].properties.name + '</h3>'
+					+ '<p style=\'font-size:13px\'>Class: <span class=\'bold\'>' + e.features[0].properties.class + '</span>'
+					+ '<br>Total destinations: <span class=\'bold\'>' + e.features[0].properties.all_dests + '</span>'
+					+ '<br>HSR destinations: <span class=\'bold\'>' + e.features[0].properties.hsr_dests + '</span>'
+					+ '<br>Destinations rank: <span class=\'bold\'>' + e.features[0].properties.all_dests_rank + '</span>/3014'
+					+ '<br>HSR Dests rank: <span class=\'bold\'>' + e.features[0].properties.hsr_dests_rank + '</span>/993'
+					+ hsr_str
+					+ nonhsr_str		
+					+ '</p>'
+					)
+				.addTo(map);
+		});
+			 
+			// Change the cursor to a pointer when the mouse is over the states layer.
+		map.on('mouseenter', 'stations', function() {
+			map.getCanvas().style.cursor = 'pointer';
+		});
+			 
+			// Change it back to a pointer when it leaves.
+		map.on('mouseleave', 'stations', function() {
+			map.getCanvas().style.stations = '';
+		});
+
+		map.on('click', 'capitals', function(e) {
+			new mapboxgl.Popup()
+				.setLngLat(e.lngLat)
+				.setHTML(
+					'<h3 style=\'font-size:15px\'>' + e.features[0].properties.province + ' ' + e.features[0].properties.capital + '</h3>'
+					+ 	'<h3 style=\'font-size:15px\'>' + e.features[0].properties.capital_eng + ', ' + e.features[0].properties.prov_eng + '</h3>'
+					+ '<p style=\'font-size:14px\'>Population: <span class=\'bold\'>' + e.features[0].properties.pop_k + 'k</span>'
+					+ '<br>GDP: <span class=\'bold\'>$' + e.features[0].properties.gdp_usd_m + 'm </span>USD'
+					+ '<br>GDP per capita: <span class=\'bold\'>$' + e.features[0].properties.gdp_pc + ' </span>USD'
+					+ '</p>'
+					)
+				.addTo(map);
+		});
+			 
+			// Change the cursor to a pointer when the mouse is over the states layer.
+		map.on('mouseenter', 'capitals', function() {
+			map.getCanvas().style.cursor = 'pointer';
+		});
+			 
+			// Change it back to a pointer when it leaves.
+		map.on('mouseleave', 'capitals', function() {
+			map.getCanvas().style.stations = '';
+		});
+
+		
+	});
+
+
+
+
+
+
+
+	var toggleableLayerIds = ['capitals', 'airports', 'stations', 'pop_density'];
+
+	var toggleableLayerLabels = ['Provincial Capitals', 'Airports', 'Train Stations', 'Population Density'];
+
+	var links = []
+
+	for (var i = 0; i < toggleableLayerIds.length; i++) {
+        var id = toggleableLayerIds[i];
+
+        var link = document.createElement('a');
+        link.href = '#';
+        link.className = 'active';
+
+		link.id = id
+        link.textContent = toggleableLayerLabels[i];
+
+        var layers = document.getElementById('menu');
+        layers.appendChild(link);
+        links.push(link)
+    }
+
+    for (var i = 0; i < toggleableLayerIds.length; i++) {
+        links[i].onclick = function(e) {
+            var clickedLayer = this.id;
+            e.preventDefault();
+            e.stopPropagation();
+
+            var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+
+            if (visibility === 'visible') {
+                map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+                this.className = '';
+            } else {
+                this.className = 'active';
+                map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+            }
+
+        };
+
+    }
+
+	function get_suffix(num){
+	    if (num % 10 == 1 && num != 11){
+	        return 'st'
+	    }
+	    else if (num % 10 == 2 && num != 12){
+	        return 'nd'
+	    }
+	    else if (num % 10 == 3 && num != 13){
+	        return 'rd'
+	    }
+	    else {
+	        return 'th'
+	    }
+	}
+
+    map.on('mousemove', function(e) {
+		var counties = map.queryRenderedFeatures(e.point, {
+			layers: ['pop_density']
+		});
+
+
+		if (counties.length > 0) {
+			document.getElementById('features').style.visibility = 'visible';
+			var county_id = counties[0].properties.county_id
+			var province = counties[0].properties.province
+			var city = counties[0].properties.city
+			var county = counties[0].properties.county
+
+			document.getElementById('pd').innerHTML = '<h3><span class=\'bold\'>' + county_id + ' ' + province+ '<br>' + city + ' ' + county + '</span></h3>'
+			+ '<p>'
+			+ '<p>Population: <span class=\'bold\'>' + counties[0].properties.population 
+			+ '</span> (<span class=\'bold\'>' + Math.round(counties[0].properties.population_rank) + get_suffix(Math.round(counties[0].properties.population_rank)) + '</span>/2850)'
+			+ '<br>Area: <span class=\'bold\'>' + Math.round(counties[0].properties.area) + '</span> km2'
+			+ '</span> (<span class=\'bold\'>' + Math.round(counties[0].properties.area_rank) + get_suffix(Math.round(counties[0].properties.area__rank)) + '</span>/2850)'
+			+ '<br>Population density: <span class=\'bold\'>' + Math.round(10*counties[0].properties.pop_density)/10 + '</span> people/km2'
+			+ '</span> (<span class=\'bold\'>' + Math.round(counties[0].properties.density_rank) + get_suffix(Math.round(counties[0].properties.density_rank)) + '</span>/2850)'
+			+ '</p>';
+		} else {
+			document.getElementById('features').style.visibility = 'hidden';
+	  }
+	});
+
+
+</script>
+ 
+
+</html>

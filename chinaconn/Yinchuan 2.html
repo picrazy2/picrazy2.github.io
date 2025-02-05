@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>ChinaConn</title>
+
+		<link href="styles.css" rel="stylesheet">
+        <div class="topnav">
+		  	<div class="dropdown">
+			  <button onclick="myFunction()" class="dropbtn">CAPITALS <img src="icons/arrow.png" onclick="myFunction()" style="width:15px;height:15px"></img></button>
+			  <div id="myDropdown" class="dropdown-content">
+			    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+				<a href="Beijing.html">Beijing, Beijing</a>
+				<a href="Tianjin.html">Tianjin, Tianjin</a>
+				<a href="Shijiazhuang.html">Shijiazhuang, Hebei</a>
+				<a href="Taiyuan.html">Taiyuan, Shanxi</a>
+				<a href="Hohhot.html">Hohhot, Inner Mongolia</a>
+				<a href="Shenyang.html">Shenyang, Liaoning</a>
+				<a href="Changchun.html">Changchun, Jilin</a>
+				<a href="Harbin.html">Harbin, Heilongjiang</a>
+				<a href="Shanghai.html">Shanghai, Shanghai</a>
+				<a href="Nanjing.html">Nanjing, Jiangsu</a>
+				<a href="Hangzhou.html">Hangzhou, Zhejiang</a>
+				<a href="Hefei.html">Hefei, Anhui</a>
+				<a href="Fuzhou.html">Fuzhou, Fujian</a>
+				<a href="Nanchang.html">Nanchang, Jiangxi</a>
+				<a href="Jinan.html">Jinan, Shandong</a>
+				<a href="Zhengzhou.html">Zhengzhou, Henan</a>
+				<a href="Wuhan.html">Wuhan, Hubei</a>
+				<a href="Changsha.html">Changsha, Hunan</a>
+				<a href="Guangzhou.html">Guangzhou, Guangdong</a>
+				<a href="Nanning.html">Nanning, Guangxi</a>
+				<a href="Haikou.html">Haikou, Hainan</a>
+				<a href="Chongqing.html">Chongqing, Chongqing</a>
+				<a href="Chengdu.html">Chengdu, Sichuan</a>
+				<a href="Guiyang.html">Guiyang, Guizhou</a>
+				<a href="Kunming.html">Kunming, Yunnan</a>
+				<a href="Lhasa.html">Lhasa, Tibet</a>
+				<a href="Xi'an.html">Xi'an, Shaanxi</a>
+				<a href="Lanzhou.html">Lanzhou, Gansu</a>
+				<a href="Xining.html">Xining, Qinghai</a>
+				<a href="Yinchuan.html">Yinchuan, Ningxia</a>
+				<a href="Urumqi.html">Urumqi, Xinjiang</a>
+			  </div>
+			</div>
+		  <a href="stations.html" style="float:right;margin-top:8px">TRAIN STATIONS</a>
+		  <a href="airports.html" style="float:right;margin-top:8px">AIRPORTS</a>
+		  <a href="index.html" class="active" style="float:left;font-size:30px">ChinaConn</a>
+		</div>
+
+	</head>
+	<body>
+		<iframe id="mainframe" src="iframes/cities/Yinchuan.html"></iframe>
+
+	</body>
+</html>
+<script>
+	function myFunction() {
+	  document.getElementById("myDropdown").classList.toggle("show");
+	}
+
+	function filterFunction() {
+	  var input, filter, ul, li, a, i;
+	  input = document.getElementById("myInput");
+	  filter = input.value.toUpperCase();
+	  div = document.getElementById("myDropdown");
+	  a = div.getElementsByTagName("a");
+	  for (i = 0; i < a.length; i++) {
+	    txtValue = a[i].textContent || a[i].innerText;
+	    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+	      a[i].style.display = "";
+	    } else {
+	      a[i].style.display = "none";
+	    }
+	  }
+	}
+
+	window.onclick = function(e) {
+	  if (!e.target.matches('.dropbtn') && !e.target.matches('#myInput') ) {
+	  var myDropdown = document.getElementById("myDropdown");
+	    if (myDropdown.classList.contains('show')) {
+	      myDropdown.classList.remove('show');
+	    }
+	  }
+}
+
+</script>
+</html>

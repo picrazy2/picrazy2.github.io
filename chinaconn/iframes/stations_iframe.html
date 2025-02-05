@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Train Stations</title>
+		<script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
+		<link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
+		<style>
+			body {
+			  margin: 0;
+			  padding: 0;
+			}
+
+			h2,
+			h3 {
+			  margin: 10px;
+			  font-size: 1.2em;
+			  font-family: 'open_sansbold';
+			}
+
+			h3 {
+			  font-size: 1em;
+			  font-family: 'open_sansbold';
+			}
+
+			p {
+			  font-size: 0.85em;
+			  margin: 10px;
+			  text-align: left;
+			  font-family: 'open_sansregular';
+			}
+
+			@font-face {
+			    font-family: 'open_sansbold';
+			    src: url('../fonts/opensans-bold-webfont.woff2') format('woff2'),
+			         url('../fonts/opensans-bold-webfont.woff') format('woff');
+			    font-weight: normal;
+			    font-style: normal;
+			}
+			
+			@font-face {
+			    font-family: 'open_sansregular';
+			    src: url('../fonts/opensans-regular-webfont.woff2') format('woff2'),
+			         url('../fonts/opensans-regular-webfont.woff') format('woff');
+			    font-weight: normal;
+			    font-style: normal;
+			}
+
+
+			/* MAPPPPPP */
+			#map {
+			  position: absolute;
+			  top: 0;
+			  bottom: 0;
+			  width: 100%;
+			}
+
+
+			/* LAYERS: top left */
+			#menu {
+		        background: #fff;
+		        position: absolute;
+		        z-index: 1;
+		        top: 20px;
+		        left: 20px;
+		        border-radius: 3px;
+		        width: 200px;
+		        border: 1px solid rgba(0, 0, 0, 0.4);
+		        font-family: 'open_sansregular', sans-serif;
+		    }
+		    #menu a {
+		        font-size: 13px;
+		        color: #404040;
+		        display: block;
+		        margin: 0;
+		        padding: 0;
+		        padding: 10px;
+		        text-decoration: none;
+		        border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+		        text-align: center;
+		    }
+		    #menu a:last-child {
+		        border: none;
+		    }
+		    #menu a:hover {
+		        background-color: #f8f8f8;
+		        color: #404040;
+		    }
+		    #menu a.active {
+		        background-color: #3887be;
+		        color: #ffffff;
+		    }
+		    #menu a.active:hover {
+		        background: #3074a4;
+		    }
+
+
+
+
+			/*INFO: top right */
+			.map-overlay {
+			  position: absolute;
+/*			  bottom: 0;
+*/			  background: rgba(255, 255, 255, 0.8);
+			  margin-right: 20px;
+			  font-family: 'open_sansregular', sans-serif;
+			  overflow: auto;
+			  border-radius: 3px;
+			}
+
+			#city {
+			  top: 0;
+			  right: 0;
+			  height: 360px;
+			  margin-top: 20px;
+			  width: 330px;
+			}
+
+			#features {
+/*			  top: 200;
+*/			  right: 0;
+			  height: 320px;
+			  margin-top: 390px;
+			  width: 330px;
+			  visibility: hidden;
+			}
+
+
+
+			/* LEGEND: bottom left */
+			#legend {
+			  padding: 20px;
+			  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+/*			  line-height: 20px;
+*/			  bottom: 40px;
+			  left: 20px;
+			  font-family: 'open_sansregular', sans-serif;
+			}
+			.legend-key {
+			  display: inline-block;
+			  border-radius: 20%;
+			  width: 18px;
+			  height: 18px;
+			  margin-right: 5px;
+			}
+			.legend-key-circle {
+			  display: inline-block;
+			  border-radius: 50%;
+			  width: 18px;
+			  height: 18px;
+			  margin-right: 5px;
+			}
+
+
+			.bold {font-family: 'open_sansbold';}
+
+
+
+		</style>
+	</head>
+	<body>
+		<nav id='menu'></nav>
+		<div id='map'></div>
+		<div class='map-overlay' id='city'>
+			<h2><span class='bold'>Train Stations of China</span></h2>
+			<div>
+				<p>Total train stations: <span class='bold'>3015</span>
+				<br>Train stations with HSR service: <span class='bold'>993</span></p>
+
+				<p>Stations with most destinations: <span class='bold'>沈阳北</span> (605), <span class='bold'>山海关</span> (603), <span class='bold'>沈阳</span> (591), <span class='bold'>郑州</span> (573), <span class='bold'>长春</span> (565)</p>
+				<p>Stations with most HSR destinations: <span class='bold'>上海虹桥</span> (361), <span class='bold'>南京南</span> (347), <span class='bold'>郑州东</span> (329), <span class='bold'>杭州东</span> (310), <span class='bold'>武汉</span> (298)</p>
+
+ 				<p>Population within 30min, 1hr, 1.5hr, 2hr drive of a train station: <span class='bold'>62.7%, 89.2%, 95.2%, 97.4%</span>
+
+ 				<p>Longest: <span class='bold'>昆明</span> to <span class='bold'>哈尔滨西</span> (4598km, 67h 6m)
+ 				<br>Furthest: <span class='bold'>上海</span> to <span class='bold'>伊宁</span> (4742km, 50h 14m)
+ 				<br>Longest HSR: <span class='bold'>无锡</span> to <span class='bold'>西安北</span> (1355km, 34h 1m)
+ 				<br>Furthest HSR: <span class='bold'>北海</span> to <span class='bold'>北京西</span> (2697km, 12h 57m)</p>
+
+			</div>
+		</div>
+		<div class='map-overlay' id='features'>
+			<div id='pd'>
+			</div>
+		</div>
+		<div class='map-overlay' id='legend'></div>
+
+	</body>
+</html>
+<script>
+	// TO MAKE THE MAP APPEAR YOU MUST
+	// ADD YOUR ACCESS TOKEN FROM
+	// https://account.mapbox.com
+	// mapboxgl.accessToken = 'pk.eyJ1IjoicGljcmF6eTIiLCJhIjoiY2thMG1vdDQ0MHMxajNtcXI1ZnpiYnFpZiJ9.iYJgxRpR27z5rtZGoGXl2g';
+	mapboxgl.accessToken = 'pk.eyJ1IjoicGljcmF6eTIiLCJhIjoiY2thMG1xMnR2MDMxeDNtazBjYjVrcjAxZSJ9.Ku2z0w2wiQ9RmhN8oTbbYQ'
+	
+	function get_time(hours) {
+		return [Math.trunc(hours), Math.trunc(60 *(hours - Math.trunc(hours)))]
+	}
+	function get_time_str(hours) {
+		if(get_time(hours)[0] == 0) {
+			return get_time(hours)[1] + 'min'
+		} else {
+			return get_time(hours)[0] + 'h ' + get_time(hours)[1] + 'm'						
+		}
+	}
+	function get_time_m(min) {
+		return [Math.trunc(min/60), min - 60*Math.trunc(min/60)]
+	}
+	function get_time_str_m(min) {
+		if(get_time_m(min)[0] == 0) {
+			return get_time_m(min)[1] + 'min'
+		} else {
+			return get_time_m(min)[0] + 'h ' + get_time_m(min)[1] + 'm'						
+		}
+	}
+	var dest_layers = ['0', '1-99', '100-199', '200-299', '300-399', '400-499', '500-599', '600-699', '700-799', '800-899', '900+']
+	var dest_colors = ["#0d0887", "#41049d", "#6a00a8", "#8f0da4", "#b12a90", "#cc4778", "#e16462", "#f2844b", "#fca636", "#fcce25", "#f0f921"] //plasma 11
+
+	var hsr_dest_layers = ['0', '1-49', '50-99', '100-149', '150-199', '200-249', '250-299', '300-349', '350+']
+	var hsr_dest_colors = ["#0d0887", "#4c02a1", "#7e03a8", "#aa2395", "#cc4778", "#e66c5c", "#f89540", "#fdc527", "#f0f921"] //plasma 9
+
+	var conv_dest_layers = ['0', '1-99', '100-199', '200-299', '300-399', '400-499', '500-599', '600-699', '700+']
+	var conv_dest_colors = ["#0d0887", "#4c02a1", "#7e03a8", "#aa2395", "#cc4778", "#e66c5c", "#f89540", "#fdc527", "#f0f921"] //plasma 9
+
+	var dur_layers = ['<30min', '30min-1hr', '1-1.5hr', '1.5-2hr', '2-2.5hr', '2.5-3hr', '3.5-4hr', '4+hr'];
+	var dur_colors = ["#b40427","#df624e","#f4997b","#f5c4ad","#dedede","#b9d0f9","#8baffe","#6282ea","#3b4cc0"];
+
+	var map = new mapboxgl.Map({
+		container: 'map', // container id
+		style: 'mapbox://styles/picrazy2/cka8a1z1r0d591io0ebssgmz3',
+		center: [110, 37],
+		zoom: 3.75
+	});
+
+
+	map.on('load', function() {
+
+
+		map.moveLayer('admin-1-boundary-bg', 'settlement-subdivision-label')
+		map.moveLayer('admin-0-boundary-bg', 'settlement-subdivision-label')
+		map.moveLayer('admin-1-boundary', 'settlement-subdivision-label')
+		map.moveLayer('admin-0-boundary', 'settlement-subdivision-label')
+		map.moveLayer('admin-0-boundary-disputed', 'settlement-subdivision-label')
+
+		map.addSource('stations', {
+			'type': 'vector',
+			'url': 'mapbox://picrazy2.amjquafy'
+		});
+		map.addLayer({
+			'id': 'stations',
+			'source': 'stations',
+			'source-layer': 'stations-1kjk07',
+			'type': 'circle',
+			'paint': {
+				"circle-color": "#05ffde",
+                "circle-radius": [
+				  "interpolate",
+				  ["linear"],
+				  ["zoom"],
+				  0,
+				  [
+				    "interpolate",
+				    ["linear"],
+				    ["get", "all_dests_sqrt"],
+				    0,
+				    0,
+				    25,
+				    3
+				  ],
+				  22,
+				  [
+				    "interpolate",
+				    ["linear"],
+				    ["get", "all_dests_sqrt"],
+				    0,
+				    0,
+				    25,
+				    40
+				  ]
+				],
+				"circle-opacity": 0.8
+
+			},
+			'layout': {'visibility': 'visible'}
+		}, 'admin-1-boundary-bg');
+
+		map.addLayer({
+			'id': 'conv_stations',
+			'source': 'stations',
+			'source-layer': 'stations-1kjk07',
+			'type': 'circle',
+			'paint': {
+				"circle-color": "hsl(177, 0%, 75%)",
+                "circle-radius": [
+				  "interpolate",
+				  ["linear"],
+				  ["zoom"],
+				  0,
+				  [
+				    "interpolate",
+				    ["linear"],
+				    ["get", "non_hsr_dests_sqrt"],
+				    0,
+				    0,
+				    25,
+				    3
+				  ],
+				  22,
+				  [
+				    "interpolate",
+				    ["linear"],
+				    ["get", "non_hsr_dests_sqrt"],
+				    0,
+				    0,
+				    25,
+				    40
+				  ]
+				],
+				"circle-opacity": 0.8
+
+			},
+			'layout': {'visibility': 'none'}
+		}, 'admin-1-boundary-bg');		
+		
+		map.addLayer({
+			'id': 'hsr_stations',
+			'source': 'stations',
+			'source-layer': 'stations-1kjk07',
+			'type': 'circle',
+			'paint': {
+				"circle-color": "#0aff3f", 
+                "circle-radius": [
+				  "interpolate",
+				  ["linear"],
+				  ["zoom"],
+				  0,
+				  [
+				    "interpolate",
+				    ["linear"],
+				    ["get", "hsr_dests_sqrt"],
+				    0,
+				    0,
+				    25,
+				    3
+				  ],
+				  22,
+				  [
+				    "interpolate",
+				    ["linear"],
+				    ["get", "hsr_dests_sqrt"],
+				    0,
+				    0,
+				    25,
+				    40
+				  ]
+				],
+				"circle-opacity": 0.8
+			},
+			'layout': {'visibility': 'none'}
+		}, 'admin-1-boundary-bg');
+		
+
+		map.addSource('capitals', {
+			'type': 'vector',
+			'url': 'mapbox://picrazy2.2sfy1oip'
+		});
+		map.addLayer({
+			'id': 'capitals',
+			'source': 'capitals',
+			'source-layer': 'pc_combined-ac9jce',
+			'type': 'circle',
+			'paint': {
+				"circle-color": '#00c925',
+                "circle-radius": [
+				  "interpolate",
+				  ["linear"],
+				  ["zoom"],
+				  2,
+				  4,
+				  22,
+				  20
+				],
+				'circle-opacity': 0.8,
+				"circle-stroke-color": '#000000',
+				"circle-stroke-width": 1,
+				"circle-stroke-opacity": 0.5
+			},
+			'layout': {'visibility': 'none'}
+		}, 'admin-1-boundary-bg');
+
+
+
+
+		map.moveLayer('settlement-subdivision-label', 'capitals')
+		map.moveLayer('settlement-minor-label', 'capitals')
+		map.moveLayer('settlement-major-label', 'capitals')
+		map.moveLayer('state-label', 'capitals')
+
+
+
+		map.addSource('closest', {
+			'type': 'vector',
+			'url': 'mapbox://picrazy2.8zdg5rai',
+		});
+		map.addLayer(
+		{
+			'id': 'closest_dur',
+			'source': 'closest',
+			'source-layer': 'rail_closest',
+			'type': 'fill',
+			'paint': {
+				'fill-color': ["step",["get","closest_rail_0_dur"],"#b40427",0.5,"#df624e",1,"#f4997b",1.5,"#f5c4ad",2,"#dedede",2.5,"#b9d0f9",3,"#8baffe",3.5,"#6282ea",4,"#3b4cc0"],
+				'fill-opacity': 0.8
+			},
+			'layout': {'visibility': 'visible'}
+		}, 'stations'
+		);
+		map.addLayer(
+		{
+			'id': 'closest_dest',
+			'source': 'closest',
+			'source-layer': 'rail_closest',
+			'type': 'fill',
+			'paint': {
+				'fill-color': ["step",["get","closest_rail_under1_dests"],"#0d0887",1,"#41049d",100,"#6a00a8",200,"#8f0da4",300,"#b12a90",400,"#cc4778",500,"#e16462",600,"#f2844b",700,"#fca636",800,"#fcce25",900,"#f0f921"],
+				'fill-opacity': 0.8
+			},
+			'layout': {'visibility': 'none'}
+		}, 'stations'
+		);
+
+		map.addLayer(
+		{
+			'id': 'closest_dest_hsr',
+			'source': 'closest',
+			'source-layer': 'rail_closest',
+			'type': 'fill',
+			'paint': {
+				'fill-color': ["step",["get","closest_rail_under1_hsrdests"],"#0d0887",1,"#4c02a1",50,"#7e03a8",100,"#aa2395",150,"#cc4778",200,"#e66c5c",250,"#f89540",300,"#fdc527",350,"#f0f921"],
+				'fill-opacity': 0.8
+			},
+			'layout': {'visibility': 'none'}
+		}, 'stations'
+		);
+
+		map.addLayer(
+		{
+			'id': 'closest_dest_conv',
+			'source': 'closest',
+			'source-layer': 'rail_closest',
+			'type': 'fill',
+			'paint': {
+				'fill-color': ["step",["get","closest_rail_under1_nonhsrdests"],"#0d0887",1,"#4c02a1",100,"#7e03a8",200,"#aa2395",300,"#cc4778",400,"#e66c5c",500,"#f89540",600,"#fdc527",700,"#f0f921"],
+				'fill-opacity': 0.8
+			},
+			'layout': {'visibility': 'none'}
+		}, 'stations'
+		);
+
+
+		// legend setup
+		for (i = 0; i < dur_layers.length; i++) {
+		  var layer = dur_layers[i];
+		  var color = dur_colors[i];
+		  var item = document.createElement('div');
+		  var key = document.createElement('span');
+		  key.className = 'legend-key';
+		  key.style.backgroundColor = color;
+
+		  var value = document.createElement('span');
+		  value.innerHTML = layer;
+		  item.appendChild(key);
+		  item.appendChild(value);
+		  legend.appendChild(item);
+		}
+
+
+
+		// mouse moving
+
+		function station_popup(e) {
+			var hsr_str =''
+			if(e.features[0].properties.hsr_shortest_name !== '') {
+				hsr_str = '<br>Longest HSR: <span class=\'bold\'>' + e.features[0].properties.hsr_longest_name + '</span> '
+					+ '(' + Math.trunc(e.features[0].properties.hsr_longest_dist) + 'km, ' + get_time_str_m(e.features[0].properties.hsr_longest_dur) + ')'
+			}
+			var nonhsr_str =''
+			if(e.features[0].properties.nonhsr_shortest_name !== '') {
+				nonhsr_str = '<br>Longest Conventional: <span class=\'bold\'>' + e.features[0].properties.nonhsr_longest_name + '</span> '
+					+ '(' + Math.trunc(e.features[0].properties.nonhsr_longest_dist) + 'km, ' + get_time_str_m(e.features[0].properties.nonhsr_longest_dur) + ')'	
+			}
+			new mapboxgl.Popup()
+				.setLngLat(e.lngLat)
+				.setHTML(
+					'<h3 style=\'font-size:15px\'>' + e.features[0].properties.name + '</h3>'
+					+ '<p style=\'font-size:13px\'>Class: <span class=\'bold\'>' + e.features[0].properties.class + '</span>'
+					+ '<br>Total destinations: <span class=\'bold\'>' + e.features[0].properties.all_dests + '</span>'
+					+ '<br>HSR destinations: <span class=\'bold\'>' + e.features[0].properties.hsr_dests + '</span>'
+					+ '<br>Destinations rank: <span class=\'bold\'>' + e.features[0].properties.all_dests_rank + '</span>/3014'
+					+ '<br>HSR Dests rank: <span class=\'bold\'>' + e.features[0].properties.hsr_dests_rank + '</span>/993'
+					+ hsr_str
+					+ nonhsr_str		
+					+ '</p>'
+					)
+				.addTo(map);
+		}
+
+			
+		map.on('click', 'stations', function(e) {
+			map.setPaintProperty('stations', 'circle-color', '#05ffde')
+			map.setPaintProperty('stations', 'circle-opacity', 0.8)
+			station_popup(e)
+			dests = e.features[0].properties.all_dests_name.split(',')
+			dests.push(e.features[0].properties.name)
+			map.setPaintProperty('stations', 'circle-color', ["match",["get", "name"],[e.features[0].properties.name],
+				"#f5ec42","#05ffde"])
+			map.setPaintProperty('stations', 'circle-opacity', ["match",["get", "name"],dests,1,0.2])
+		});
+			 
+		map.on('mouseenter', 'stations', function() {
+			map.getCanvas().style.cursor = 'pointer';
+		});
+			 
+		map.on('mouseleave', 'stations', function() {
+			map.getCanvas().style.stations = '';
+		});
+
+		map.on('click', 'hsr_stations', function(e) {
+			map.setPaintProperty('hsr_stations', 'circle-color', '#0aff3f')
+			map.setPaintProperty('hsr_stations', 'circle-opacity', 0.8)
+			station_popup(e)
+			dests = e.features[0].properties.hsr_dests_name.split(',')
+			dests.push(e.features[0].properties.name)
+			map.setPaintProperty('hsr_stations', 'circle-color', ["match",["get", "name"],[e.features[0].properties.name],"#f5ec42","#0aff3f"])
+			map.setPaintProperty('hsr_stations', 'circle-opacity', ["match",["get", "name"],dests,1,0.2])
+		});
+			 
+		map.on('mouseenter', 'hsr_stations', function() {
+			map.getCanvas().style.cursor = 'pointer';
+		});
+			 
+		map.on('mouseleave', 'hsr_stations', function() {
+			map.getCanvas().style.stations = '';
+		});
+
+		map.on('click', 'conv_stations', function(e) {
+			map.setPaintProperty('conv_stations', 'circle-color', 'hsl(177, 0%, 75%)')
+			map.setPaintProperty('conv_stations', 'circle-opacity', 0.8)
+			station_popup(e)
+			dests = e.features[0].properties.non_hsr_dests_name.split(',')
+			dests.push(e.features[0].properties.name)
+			map.setPaintProperty('conv_stations', 'circle-color', ["match",["get", "name"],[e.features[0].properties.name],"#f5ec42","hsl(177, 0%, 75%)"])
+			map.setPaintProperty('conv_stations', 'circle-opacity', ["match",["get", "name"],dests,1,0.2])
+		});
+			 
+		map.on('mouseenter', 'conv_stations', function() {
+			map.getCanvas().style.cursor = 'pointer';
+		});
+			 
+		map.on('mouseleave', 'conv_stations', function() {
+			map.getCanvas().style.stations = '';
+		});
+
+		// click on base map
+		map.on('click', function(e){
+			var layers = map.queryRenderedFeatures(e.point, {
+				layers: ['stations', 'hsr_stations', 'conv_stations']
+			});
+
+			if(layers.length == 0) {
+				map.setPaintProperty('stations', 'circle-opacity', 0.8)
+				map.setPaintProperty('hsr_stations', 'circle-opacity', 0.8)
+				map.setPaintProperty('conv_stations', 'circle-opacity', 0.8)
+				map.setPaintProperty('stations', 'circle-color', '#05ffde')
+				map.setPaintProperty('hsr_stations', 'circle-color', '#0aff3f')
+				map.setPaintProperty('conv_stations', 'circle-color', 'hsl(177, 0%, 75%)')
+			}
+		})
+
+		map.on('click', 'capitals', function(e) {
+			new mapboxgl.Popup()
+				.setLngLat(e.lngLat)
+				.setHTML(
+					'<h3 style=\'font-size:15px\'>' + e.features[0].properties.province + ' ' + e.features[0].properties.capital + '</h3>'
+					+ 	'<h3 style=\'font-size:15px\'>' + e.features[0].properties.capital_eng + ', ' + e.features[0].properties.prov_eng + '</h3>'
+					+ '<p style=\'font-size:14px\'>Population: <span class=\'bold\'>' + e.features[0].properties.pop_k + 'k</span>'
+					+ '<br>GDP: <span class=\'bold\'>$' + e.features[0].properties.gdp_usd_m + 'm </span>USD'
+					+ '<br>GDP per capita: <span class=\'bold\'>$' + e.features[0].properties.gdp_pc + ' </span>USD'
+					+ '</p>'
+					)
+				.addTo(map);
+			map.setLayoutProperty(clicked, 'visibility', 'none');
+		});
+			 
+			// Change the cursor to a pointer when the mouse is over the states layer.
+		map.on('mouseenter', 'capitals', function() {
+			map.getCanvas().style.cursor = 'pointer';
+		});
+			 
+			// Change it back to a pointer when it leaves.
+		map.on('mouseleave', 'capitals', function() {
+			map.getCanvas().style.stations = '';
+		});
+	});
+
+
+
+
+
+
+
+	var toggleableLayerIds = ['capitals', //0
+	'stations', 'hsr_stations', 'conv_stations', //1, 2, 3 
+	'closest_dur', 'closest_dest', 'closest_dest_hsr', 'closest_dest_conv']; //4, 5, 6, 7
+
+	var toggleableLayerLabels = ['Provincial Capitals', 
+	'All Train Stations (Size by Total Dests)', 'Stations with HSR Service (Size by HSR dests)', 'Stations without HSR Service (Size by Conventional Dests)', 
+	'Driving Time to Nearest Stations', 'Direct Destinations Reachable from Stations Within a 1 Hour Drive', 'HSR Dests Reachable From Within 1hr', 'Conventional Dests Reachable From Within 1hr'];
+
+	var links = []
+
+	// first pass, add layers (static)
+	for (var i = 0; i < toggleableLayerIds.length; i++) {
+        var id = toggleableLayerIds[i];
+
+        var link = document.createElement('a');
+        link.href = '#';
+        if (i == 1 || i == 4) {        
+        	link.className = 'active'; // make sure visibility set properly
+		} else {
+			link.className = '';
+		}
+		link.id = id
+        link.textContent = toggleableLayerLabels[i];
+
+        var layers = document.getElementById('menu');
+        layers.appendChild(link);
+        links.push(link)
+    }
+
+    // second pass, which actually controls toggling
+    for (var i = 0; i < toggleableLayerIds.length; i++) {
+        links[i].onclick = function(e) {
+        	// regular stuff
+            var clickedLayer = this.id;
+            e.preventDefault();
+            e.stopPropagation();
+
+            var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+
+            if (visibility === 'visible') {
+                map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+                this.className = '';
+            } else {
+                this.className = 'active';
+                map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+            }
+
+            // custom visibility
+            if ((toggleableLayerIds.slice(1, 3).includes(this.id)) && visibility !== 'visible') {
+				for (var j = 1; j < 4; j++) {
+            		if (this.id !== links[j].id) {
+            			var clicked = links[j].id;
+            			var vis = map.getLayoutProperty(clicked, 'visibility');
+            			if (vis == 'visible') {
+			                map.setLayoutProperty(clicked, 'visibility', 'none');
+			                links[j].className = '';
+			            }
+            		}
+            	}
+            } 
+            if ((this.id == toggleableLayerIds[1] || this.id == toggleableLayerIds[3]) && visibility !== 'visible') {
+				for (var j = 1; j < 4; j++) {
+            		if (this.id !== links[j].id && j != 2) {
+            			var clicked = links[j].id;
+            			var vis = map.getLayoutProperty(clicked, 'visibility');
+            			if (vis == 'visible') {
+			                map.setLayoutProperty(clicked, 'visibility', 'none');
+			                links[j].className = '';
+			            }
+            		}
+            	}
+            } 
+            if ((toggleableLayerIds.slice(4, 8).includes(this.id)) && visibility !== 'visible') {
+				for (var j = 4; j < 8; j++) {
+            		if (this.id !== links[j].id) {
+            			var clicked = links[j].id;
+            			var vis = map.getLayoutProperty(clicked, 'visibility');
+            			if (vis == 'visible') {
+			                map.setLayoutProperty(clicked, 'visibility', 'none');
+			                links[j].className = '';
+			            }
+            		}
+            	}
+            } 
+
+
+            // dynamic legend
+            layers = [];
+            colors = [];
+            if (this.id === toggleableLayerIds[5]) {
+            	layers = dest_layers;
+            	colors = dest_colors;
+            } else if (this.id === toggleableLayerIds[6]) {
+            	layers = hsr_dest_layers;
+            	colors = hsr_dest_colors;
+            } else if (this.id === toggleableLayerIds[7]) {
+            	layers = conv_dest_layers;
+            	colors = conv_dest_colors;
+			} else if (this.id === toggleableLayerIds[4]) {
+            	layers = dur_layers;
+            	colors = dur_colors;
+            }
+
+            if (toggleableLayerIds.slice(4, toggleableLayerIds.length).includes(this.id)) {
+            	while (legend.lastElementChild) {
+				    legend.removeChild(legend.lastElementChild);
+				  }
+            	for (i = 0; i < layers.length; i++) {
+				  var layer = layers[i];
+				  var color = colors[i];
+				  var item = document.createElement('div');
+				  var key = document.createElement('span');
+
+				  key.className = 'legend-key';
+				  key.style.backgroundColor = color;
+
+				  var value = document.createElement('span');
+				  value.innerHTML = layer;
+				  item.appendChild(key);
+				  item.appendChild(value);
+				  legend.appendChild(item);
+				}
+			}
+
+        };
+    }
+
+
+
+	// RIGHT INFO SCREEN
+	var total_counties = 2850
+    map.on('mousemove', function(e) {
+		var counties = map.queryRenderedFeatures(e.point, {
+			layers: ['closest_dest', 'closest_dur', 'closest_dest_hsr', 'closest_dest_conv']
+		});
+
+		if (counties.length > 0) {
+			document.getElementById('features').style.visibility = 'visible';
+			var county_id = counties[0].properties.county_id
+			var province = counties[0].properties.province
+			var city = counties[0].properties.city
+			var county = counties[0].properties.county
+
+			var all_bool = counties[0].properties.closest_rail_under1_bool
+			var at_least = ''
+			var not_complete = ''
+			if(all_bool == 'False') {
+				at_least = 'at least '
+				not_complete = ' (list may not be complete)'
+			}
+
+			var under1_names = counties[0].properties.closest_rail_under1_names.split(',')
+			var under1_durs = counties[0].properties.closest_rail_under1_durs.split(',')
+
+
+			var under1_str = ''
+			var under1_length = 9
+			if(under1_names.length < 9){
+				under1_length = under1_names.length
+			} else {
+				not_complete = ' (list not complete)'				
+			}
+
+			for(var i = 0; i < under1_length; i++) {
+				under1_str += '<span class=\'bold\'>' + under1_names[i] + '</span> (' + get_time_str(under1_durs[i]) + ')'
+				if(i != under1_length - 1) {
+					under1_str += ', '
+				}
+			}
+
+			var closest_stations_str = 'Stations within a 1 hour drive: ' + under1_str + not_complete
+			if(under1_names[0] == '') {
+				closest_stations_str = 'Closest stations (drive): '
+				+ '<span class=\'bold\'>' + counties[0].properties.closest_rail_0_name + '</span> (' + get_time_str(counties[0].properties.closest_rail_0_dur) + '), '
+				+ '<span class=\'bold\'>' + counties[0].properties.closest_rail_1_name + '</span> (' + get_time_str(counties[0].properties.closest_rail_1_dur) + '), '
+				+ '<span class=\'bold\'>' + counties[0].properties.closest_rail_2_name + '</span> (' + get_time_str(counties[0].properties.closest_rail_2_dur) + ')'
+			}
+
+			document.getElementById('pd').innerHTML = '<h3><span class=\'bold\'>' + county_id + ' ' + province+ '<br>' + city + ' ' + county + '</span></h3>'
+			+ '<p>'
+			+ '# of stations within a 1 hour drive: ' + at_least + '<span class=\'bold\'>' + counties[0].properties.closest_rail_under1_num + '</span>'
+			+ '<br>' + closest_stations_str + '</p>'
+			+ '<p>Total direct destinations from stations within a 1 hour drive: '
+				+ '<span class=\'bold\'>' + counties[0].properties.closest_rail_under1_dests + '</span> '
+				+ '(Beats <span class=\'bold\'>' + counties[0].properties.closest_rail_under1_dests_perc + '</span>% of pop)</p>'
+			+ '<p>Direct HSR destinations from stations within a 1 hour drive: '
+				+ '<span class=\'bold\'>' + counties[0].properties.closest_rail_under1_hsrdests + '</span> '
+				+ '(Beats <span class=\'bold\'>' + counties[0].properties.closest_rail_under1_hsrdests_perc + '</span>% of pop)</p>'
+			+ '<p>Direct conventional dests from stations within a 1 hour drive: '
+				+ '<span class=\'bold\'>' + counties[0].properties.closest_rail_under1_nonhsrdests + '</span> '
+				+ '(Beats <span class=\'bold\'>' + counties[0].properties.closest_rail_under1_nonhsrdests_perc + '</span>% of pop)</p>'
+				+ '</p>';
+		} else {
+			document.getElementById('features').style.visibility = 'hidden';
+	  }
+	});
+
+
+
+</script>
+ 
+
+</html>
