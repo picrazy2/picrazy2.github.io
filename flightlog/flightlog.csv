@@ -323,6 +323,8 @@ Date,Scheduled Dep Time (Local),Scheduled Arr Time (Local),Actual Dep Time (Loca
 1/7/2025,17:00,18:40,18:58,20:09,Vueling,VY2119,BCN,AGP,Economy,A320,EC-OFU,,
 1/11/2025,17:20,19:15,17:59,19:53,British Airways,BA421,AGP,LHR,Economy,A21N,G-NEOP,,
 2/23/2025,18:15,18:20,,,British Airways,BA8456,AMS,LCY,Economy,,,,
+3/20/2025,19:10,20:55,,,Wizz,W46902,LGW,NAP,Economy,,,,
+3/25/2025,17:40,19:35,,,Ryanair,FR1833,NAP,STN,Economy,,,,
 4/9/2025,13:50,17:35,,,Ryanair,RK8528,STN,OZZ,Economy,,,,
 4/15/2025,18:45,20:20,,,Ryanair,FR961,AGA,TFS,Economy,,,1,
 4/16/2025,12:00,14:55,,,United,UA249,TFS,EWR,Economy,,,,
