@@ -1,0 +1,138 @@
+<html>
+<head>
+<title>analysis.ipynb</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #8c8c8c; font-style: italic;}
+.s1 { color: #0033b3;}
+.s2 { color: #080808;}
+.s3 { color: #067d17;}
+.s4 { color: #1750eb;}
+.s5 { color: #0037a6;}
+.ls0 { height: 1px; border-width: 0; color: #dfe1e5; background-color:#dfe1e5}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+analysis.ipynb</font>
+</center></td></tr></table>
+<pre><span class="s0">#%% 
+</span><span class="s1">import </span><span class="s2">geopandas </span><span class="s1">as </span><span class="s2">gpd</span>
+<span class="s1">import </span><span class="s2">pandas </span><span class="s1">as </span><span class="s2">pd</span>
+<span class="s1">from </span><span class="s2">pathlib </span><span class="s1">import </span><span class="s2">Path</span>
+<span class="s1">import </span><span class="s2">warnings</span>
+<span class="s0"># This warning is due to precision issues during union/intersection, data validated</span>
+<span class="s2">warnings.filterwarnings(</span><span class="s3">&quot;ignore&quot;</span><span class="s2">, message=</span><span class="s3">&quot;invalid value encountered in *&quot;</span><span class="s2">, category=RuntimeWarning)</span>
+
+<span class="s2">crs = </span><span class="s4">27700 </span><span class="s0"># British National Grid, equal-area</span>
+
+<span class="s2">pop = gpd.read_file(</span><span class="s3">'data/cambridge.geojson'</span><span class="s2">)</span>
+<span class="s2">pop_column = </span><span class="s3">'Usual resident population'</span>
+
+<span class="s2">iso_folder = Path(</span><span class="s3">'data/'</span><span class="s2">)</span>
+<span class="s2">iso_glob = </span><span class="s3">&quot;route_*_isochrone.geojson&quot;</span>
+
+<span class="s0"># Create iso by merging files, making new column &quot;route&quot;</span>
+<span class="s2">iso_list = []</span>
+<span class="s1">for </span><span class="s2">fp </span><span class="s1">in </span><span class="s2">iso_folder.glob(iso_glob):</span>
+    <span class="s2">g = gpd.read_file(fp)</span>
+    <span class="s2">g[</span><span class="s3">&quot;route&quot;</span><span class="s2">] = fp.stem.split(</span><span class="s3">'_'</span><span class="s2">)[</span><span class="s4">1</span><span class="s2">]</span>
+    <span class="s2">iso_list.append(g)</span>
+<span class="s1">if not </span><span class="s2">iso_list:</span>
+    <span class="s1">raise </span><span class="s2">RuntimeError(</span><span class="s3">&quot;No isochrone files found. Check folder/pattern.&quot;</span><span class="s2">)</span>
+<span class="s2">iso = pd.concat(iso_list, ignore_index=</span><span class="s1">True</span><span class="s2">)</span>
+<hr class="ls0"><span class="s0">#%% 
+### Assertions of inputs ###</span>
+<span class="s1">assert </span><span class="s2">pop.is_valid.all(), </span><span class="s3">&quot;Some population geometries are invalid&quot;</span>
+<span class="s1">assert </span><span class="s2">iso.is_valid.all(), </span><span class="s3">&quot;Some isochrone geometries are invalid&quot;</span>
+
+<span class="s1">assert </span><span class="s3">&quot;stepBoundaryMeters&quot; </span><span class="s1">in </span><span class="s2">iso.columns, </span><span class="s3">&quot;Column 'stepBoundaryMeters' not found in iso&quot;</span>
+<span class="s1">assert </span><span class="s2">pop_column </span><span class="s1">in </span><span class="s2">pop.columns, </span><span class="s3">f&quot;Column </span><span class="s5">{</span><span class="s2">pop_column</span><span class="s5">} </span><span class="s3">not found in pop&quot;</span>
+<hr class="ls0"><span class="s0">#%% 
+### Cleaning ###</span>
+
+<span class="s0"># Reproject CRS</span>
+<span class="s2">pop = pop.to_crs(epsg=crs)</span>
+<span class="s2">iso = iso.to_crs(epsg=crs)</span>
+
+<span class="s0"># Add a stable ID for each isochrone row</span>
+<span class="s2">iso = iso.reset_index(drop=</span><span class="s1">True</span><span class="s2">).copy()</span>
+<span class="s2">iso[</span><span class="s3">&quot;iso_id&quot;</span><span class="s2">] = iso.index  </span><span class="s0"># unique ID per isochrone polygon</span>
+
+<span class="s2">pop[</span><span class="s3">'population'</span><span class="s2">] = pop[pop_column].astype(</span><span class="s3">'int64'</span><span class="s2">)</span>
+<span class="s2">pop[</span><span class="s3">&quot;pop_area&quot;</span><span class="s2">] = pop.geometry.area</span>
+
+<span class="s0"># Reduce to only needed cols</span>
+<span class="s2">pop = pop[[</span><span class="s3">'population'</span><span class="s2">, </span><span class="s3">&quot;pop_area&quot;</span><span class="s2">, </span><span class="s3">&quot;geometry&quot;</span><span class="s2">]]</span>
+<span class="s2">iso = iso[[</span><span class="s3">&quot;iso_id&quot;</span><span class="s2">, </span><span class="s3">&quot;route&quot;</span><span class="s2">, </span><span class="s3">&quot;stepBoundaryMeters&quot;</span><span class="s2">, </span><span class="s3">&quot;geometry&quot;</span><span class="s2">]]</span>
+<hr class="ls0"><span class="s0">#%% md 
+</span><span class="s2">## Subtask 2: Calculate population in each route/catchment 
+ 
+Approach: For each bus route and for each step catchment (e.g. 400m), make one polygon 
+that's the union of all station catchments, so that population calculation is only on 
+one polygon and also avoids double-counting in the process. Then, calculate population 
+by computing overlap with census tracts, calculating percent share, and merging back. <hr class="ls0"></span><span class="s0">#%% 
+# Helper function to compute overlap between population dataset [p] and isochrone dataset [i],</span>
+<span class="s0"># returning [inter], the non-empty pair-wise geometry intersections.</span>
+<span class="s0">#</span>
+<span class="s0"># Alex's note: I made this so that code can easily be reused to calculate other things,</span>
+<span class="s0"># e.g. catchment for each station instead of union of all stations</span>
+<span class="s1">def </span><span class="s2">compute_overlap(p, i):</span>
+    <span class="s0"># Intersections between census polygons and each isochrone.</span>
+    <span class="s0"># Worst-case O(N x M) but GeoPandas uses spatial indexing, closer to linear.</span>
+    <span class="s0"># Makes subtask 2 take 303 for 5000-row iso df and 467-row pop df.</span>
+    <span class="s2">inter = gpd.overlay(p, i, how=</span><span class="s3">&quot;intersection&quot;</span><span class="s2">, keep_geom_type=</span><span class="s1">True</span><span class="s2">)</span>
+
+    <span class="s0"># Compute area overlap</span>
+    <span class="s2">inter[</span><span class="s3">&quot;inter_area&quot;</span><span class="s2">] = inter.geometry.area</span>
+    <span class="s2">inter[</span><span class="s3">&quot;pop_share&quot;</span><span class="s2">] = (inter[</span><span class="s3">&quot;inter_area&quot;</span><span class="s2">] / inter[</span><span class="s3">&quot;pop_area&quot;</span><span class="s2">]).clip(</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s2">)</span>
+    <span class="s2">inter[</span><span class="s3">&quot;pop_weighted&quot;</span><span class="s2">] = inter[</span><span class="s3">'population'</span><span class="s2">] * inter[</span><span class="s3">&quot;pop_share&quot;</span><span class="s2">]</span>
+    <span class="s1">return </span><span class="s2">inter</span>
+
+<span class="s1">def </span><span class="s2">calculate_pops(p, i):</span>
+    <span class="s0"># Dissolve by (route, stepBoundaryMeters) to merge all isochrones for a given route &amp; band</span>
+    <span class="s2">union_by_route_step = i.dissolve(by=[</span><span class="s3">&quot;route&quot;</span><span class="s2">, </span><span class="s3">&quot;stepBoundaryMeters&quot;</span><span class="s2">]).reset_index()</span>
+    <span class="s2">union_by_route_step = union_by_route_step[[</span><span class="s3">&quot;route&quot;</span><span class="s2">, </span><span class="s3">&quot;stepBoundaryMeters&quot;</span><span class="s2">, </span><span class="s3">&quot;geometry&quot;</span><span class="s2">]]</span>
+
+    <span class="s0"># Compute overlap and merge back</span>
+    <span class="s2">inter_route = compute_overlap(p, union_by_route_step)</span>
+    <span class="s2">per_route_step = inter_route.groupby([</span><span class="s3">&quot;route&quot;</span><span class="s2">, </span><span class="s3">&quot;stepBoundaryMeters&quot;</span><span class="s2">], as_index=</span><span class="s1">False</span><span class="s2">)[</span><span class="s3">&quot;pop_weighted&quot;</span><span class="s2">].sum()</span>
+
+    <span class="s0"># Rename, sort, round</span>
+    <span class="s2">per_route_step = (</span>
+        <span class="s2">per_route_step</span>
+        <span class="s2">.rename(columns={</span><span class="s3">&quot;pop_weighted&quot;</span><span class="s2">: </span><span class="s3">&quot;population&quot;</span><span class="s2">})</span>
+        <span class="s2">.assign(population=</span><span class="s1">lambda </span><span class="s2">df: df[</span><span class="s3">&quot;population&quot;</span><span class="s2">].round().astype(</span><span class="s3">&quot;int64&quot;</span><span class="s2">))</span>
+        <span class="s2">.sort_values([</span><span class="s3">&quot;route&quot;</span><span class="s2">, </span><span class="s3">&quot;stepBoundaryMeters&quot;</span><span class="s2">])</span>
+        <span class="s2">.set_index([</span><span class="s3">&quot;route&quot;</span><span class="s2">, </span><span class="s3">&quot;stepBoundaryMeters&quot;</span><span class="s2">])</span>
+    <span class="s2">)</span>
+    <span class="s1">return </span><span class="s2">per_route_step</span>
+
+<span class="s2">per_route_step = calculate_pops(pop, iso)</span>
+
+<span class="s0"># Save</span>
+<span class="s2">per_route_step.to_csv(</span><span class="s3">'per_route_step.csv'</span><span class="s2">)</span>
+<span class="s2">per_route_step.to_json(</span><span class="s3">'per_route_step.json'</span><span class="s2">)</span>
+<span class="s2">per_route_step</span><hr class="ls0"><span class="s0">#%% 
+# Alex's note: If I had more time and wanted a robust script, I would write 5-10 test cases here</span>
+<span class="s0"># with dummy data for regular and corner case handling on calculate_pops() function.</span><hr class="ls0"><span class="s0">#%% md 
+</span><span class="s2">## Subtask 3: Calculate population within 400m 
+Approach: take only 800m results, calculate trips for daily and occasional riders. 
+ <hr class="ls0"></span><span class="s0">#%% 
+</span><span class="s2">ridership_assumptions = {</span><span class="s4">400</span><span class="s2">: </span><span class="s4">0.05</span><span class="s2">, </span><span class="s4">800</span><span class="s2">: </span><span class="s4">0.03</span><span class="s2">}</span>
+<span class="s2">frequent_trips_per_week = </span><span class="s4">14</span>
+<span class="s2">occasional_trips_per_week = </span><span class="s4">2</span>
+<span class="s2">occasional_riders_multipler = </span><span class="s4">2.66</span>
+
+<span class="s2">riders = per_route_step.reset_index()</span>
+<span class="s2">riders[</span><span class="s3">'daily_riders'</span><span class="s2">] = riders.apply(</span><span class="s1">lambda </span><span class="s2">row: row[</span><span class="s3">'population'</span><span class="s2">] * ridership_assumptions[row[</span><span class="s3">'stepBoundaryMeters'</span><span class="s2">]], axis=</span><span class="s4">1</span><span class="s2">)</span>
+<span class="s2">riders[</span><span class="s3">'occasional_riders'</span><span class="s2">] = riders[</span><span class="s3">'daily_riders'</span><span class="s2">] * occasional_riders_multipler</span>
+<span class="s2">riders[</span><span class="s3">'trips_per_week'</span><span class="s2">] = riders[</span><span class="s3">'daily_riders'</span><span class="s2">] * frequent_trips_per_week + riders[</span><span class="s3">'occasional_riders'</span><span class="s2">] * occasional_trips_per_week</span>
+<span class="s2">riders[</span><span class="s3">'trips_per_week'</span><span class="s2">] = riders[</span><span class="s3">'trips_per_week'</span><span class="s2">].round().astype(</span><span class="s3">'int64'</span><span class="s2">)</span>
+
+<span class="s2">riders.to_csv(</span><span class="s3">'riders.csv'</span><span class="s2">)</span>
+</pre>
+</body>
+</html>
