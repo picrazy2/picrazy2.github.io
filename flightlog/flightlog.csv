@@ -340,6 +340,7 @@ Date,Scheduled Dep Time (Local),Scheduled Arr Time (Local),Actual Dep Time (Loca
 6/3/2025,21:35,22:15,22:19,22:28,EasyJet,U28484,BSL,LGW,Economy,A320,G-EZTZ,,
 6/6/2025,16:15,18:30,16:59,18:48,EasyJet,U24662,SEN,CDG,Economy,A320,OE-INO,,
 6/9/2025,10:15,10:25,10:33,10:16,EasyJet,U24661,CDG,SEN,Economy,A320,OE-ICW,,
+12/12/2025,1:40,19:30,,,Air China,CA898,MAD,PEK,Economy,,,,
 12/25/2025,14:55,17:50,,,Air China,CA402,ICN,TFU,Economy,,,1,
 12/26/2025,1:20,14:40,,,Sichuan,3U3891,TFU,SYD,Lie-flat Business,,,,
 1/1/2026,19:15,20:50,,,Virgin Australia,VA884,SYD,MEL,Economy,,,,
