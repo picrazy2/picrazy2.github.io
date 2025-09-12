@@ -22,4 +22,5 @@
 </p>
 <p><span class='bold'>Domestic</span>: 2,087mi, 3 flights
 <br><span class='bold'>International</span>: 12,396mi, 4 flights</p>
-<p><span class='bold'>Economy</span>: 8,437mi
+<p><span class='bold'>Economy</span>: 8,437mi, 6 flights
+<br><span class='bold'>Lie-flat Business</span>: 6,046mi, 1 flights</p>
